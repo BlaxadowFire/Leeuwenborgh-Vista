@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XP calculator", "XP calculator\XP calculator.csproj", "{A81B2732-6455-425A-8BB0-AE297DEA1748}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A81B2732-6455-425A-8BB0-AE297DEA1748}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A81B2732-6455-425A-8BB0-AE297DEA1748}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A81B2732-6455-425A-8BB0-AE297DEA1748}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A81B2732-6455-425A-8BB0-AE297DEA1748}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF8FC56F-0CA6-411D-9817-7AB74E6F9E0E}
+	EndGlobalSection
+EndGlobal
