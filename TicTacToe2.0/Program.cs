@@ -36,9 +36,9 @@ namespace TicTacToe2._0
                 if (firstrun == true)
                 {
                     Console.Title = "TicTacToe By Nando";
-                    Console.WriteLine("Player1, enter your name:");
+                    Console.WriteLine("Player1 (X), enter your name:");
                     strPlayer1 = Console.ReadLine();
-                    Console.WriteLine("Player2, enter your name:");
+                    Console.WriteLine("Player2 (O), enter your name:");
                     strPlayer2 = Console.ReadLine();
                     strCurrentPlayer = strPlayer1;
                     firstrun = false;
@@ -343,6 +343,10 @@ namespace TicTacToe2._0
             {
                 Program.Main();
             }
+        }
+        public static void funcbot()
+        {
+
         }
     }
 }
