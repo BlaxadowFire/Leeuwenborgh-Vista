@@ -36,9 +36,10 @@ namespace TicTacToe2._0
                 if (firstrun == true)
                 {
                     Console.Title = "TicTacToe By Nando";
+                    Console.WriteLine("Currently developing ai for this game, please do not use bot or ai as name. \r\nHave Fun\r\n");
                     Console.WriteLine("Player1 (X), enter your name:");
                     strPlayer1 = Console.ReadLine();
-                    Console.WriteLine("Player2 (O), enter your name:");
+                    Console.WriteLine("\r\n\r\nPlayer2 (O), enter your name:");
                     strPlayer2 = Console.ReadLine();
                     strCurrentPlayer = strPlayer1;
                     firstrun = false;
@@ -46,7 +47,14 @@ namespace TicTacToe2._0
                 do
                 {
                     Program.drawgrid();
-                    Program.strUserInput = Console.ReadLine();
+                    if (strCurrentPlayer == "bot" || strCurrentPlayer == "ai")
+                    {
+
+                    }
+                    else
+                    {
+                        Program.strUserInput = Console.ReadLine();
+                    }
                     Program.TurnCheck();
                     Program.Turn();
                     Program.checkifwon();
