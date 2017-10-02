@@ -18,6 +18,8 @@ namespace TicTacToe2._0
         public static string H = "8";
         public static string I = "9";
 
+        public static bool blnAiTurn = true;
+
         public static string strPlayer1;
         public static string strPlayer2;
         public static string strCurrentPlayer;
@@ -37,26 +39,41 @@ namespace TicTacToe2._0
                 {
                     Console.Title = "TicTacToe By Nando";
                     Console.WriteLine("Currently developing ai for this game, please do not use bot or ai as name. \r\nHave Fun\r\n");
+                    labelp1:
                     Console.WriteLine("Player1 (X), enter your name:");
                     strPlayer1 = Console.ReadLine();
+                    if (strPlayer1 == "")
+                    {
+                        strPlayer1 = "p1";
+                    }
+                    else if (strPlayer1 == "ai" || strPlayer1 == "bot")
+                    {
+                        Console.WriteLine("Player1 can't be a bot.");
+                        goto labelp1;
+                    }
                     Console.WriteLine("\r\n\r\nPlayer2 (O), enter your name:");
                     strPlayer2 = Console.ReadLine();
+                    if (strPlayer2 == "")
+                    {
+                        strPlayer2 = "p2";
+                    }
                     strCurrentPlayer = strPlayer1;
                     firstrun = false;
                 }
                 do
                 {
-                    Program.drawgrid();
                     if (strCurrentPlayer == "bot" || strCurrentPlayer == "ai")
                     {
+                        blnAiTurn = true;
                         Program.funcbot();
                     }
                     else
                     {
+                        Program.drawgrid();
                         Program.strUserInput = Console.ReadLine();
                     
-                    Program.TurnCheck();
-                    Program.Turn();
+                        Program.TurnCheck();
+                        Program.Turn();
                     }
                     Program.checkifwon();
                     Program.SwitchTurn();
@@ -355,6 +372,12 @@ namespace TicTacToe2._0
         }
         public static void funcbot()
         {
+
+            //OFFENSIVE
+
+
+
+
             //DEFENSIVE
 
 
@@ -362,22 +385,24 @@ namespace TicTacToe2._0
             * 4|X|X
             * X|8|X
             */
-            if (C == "3")
+            if (C == "3" && blnAiTurn == true)
             {
                 if (A == "X" && B == "X" || G == "X" && E == "X" || F == "X" && I == "X")
                 {
                     C = "O";
+                    blnAiTurn = false;
                 }
             }
             /* @|X|X
              * X|X|6
              * X|8|X
              */
-            if (A == "1")
+            if (A == "1" && blnAiTurn == true)
             {
                 if (C == "X" && B == "X" || I == "X" && E == "X" || D == "X" && G == "X")
                 {
                     A = "O";
+                    blnAiTurn = false;
                 }
             }
 
@@ -385,11 +410,12 @@ namespace TicTacToe2._0
             * 4|X|6
             * 7|X|9
             */
-            if (B == "2")
+            if (B == "2" && blnAiTurn == true)
             {
                 if (A == "X" && C == "X" || E == "X" && H == "X")
                 {
                     B = "O";
+                    blnAiTurn = false;
                 }
             }
 
@@ -397,11 +423,12 @@ namespace TicTacToe2._0
             * X|X|@
             * 7|8|X
             */
-            if (F == "6")
+            if (F == "6" && blnAiTurn == true)
             {
                 if (D == "X" && E == "X" || C == "X" && I == "X")
                 {
                     F = "O";
+                    blnAiTurn = false;
                 }
             }
 
@@ -409,11 +436,12 @@ namespace TicTacToe2._0
             * @|X|X
             * X|8|9
             */
-            if (D == "4")
+            if (D == "4" && blnAiTurn == true)
             {
                 if (F == "X" && E == "X" || A == "X" && G == "X")
                 {
                     D = "O";
+                    blnAiTurn = false;
                 }
             }
 
@@ -421,11 +449,12 @@ namespace TicTacToe2._0
             * X|@|X
             * X|X|X
             */
-            if (E == "5")
+            if (E == "5" && blnAiTurn == true)
             {
                 if (D == "X" && F == "X" || A == "X" && I == "X" || B == "X" && H == "X" || C == "X" && G == "X")
                 {
                     E = "O";
+                    blnAiTurn = false;
                 }
             }
 
@@ -433,11 +462,12 @@ namespace TicTacToe2._0
             * 4|X|X
             * X|X|@
             */
-            if (I == "9")
+            if (I == "9" && blnAiTurn == true)
             {
                 if (G == "X" && H == "X" || C == "X" && F == "X" || A == "X" && E == "X")
                 {
                     I = "O";
+                    blnAiTurn = false;
                 }
             }
 
@@ -445,11 +475,12 @@ namespace TicTacToe2._0
             * X|X|6
             * @|X|X
             */
-            if (G == "7")
+            if (G == "7" && blnAiTurn == true)
             {
                 if (I == "X" && H == "X" || A == "X" && D == "X" || C == "X" && E == "X")
                 {
                     G = "O";
+                    blnAiTurn = false;
                 }
             }
 
@@ -457,11 +488,12 @@ namespace TicTacToe2._0
             * 4|X|6
             * X|@|X
             */
-            if (H == "8")
+            if (H == "8" && blnAiTurn == true)
             {
                 if (G == "X" && I == "X" || B == "X" && E == "X")
                 {
                     H = "O";
+                    blnAiTurn = false;
                 }
             }
             /*
