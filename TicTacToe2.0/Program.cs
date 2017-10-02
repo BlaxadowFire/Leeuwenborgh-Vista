@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TicTacToe2._0
-{
+{//user moet naam ingeven
     class Program
     {
         public static string A = "1";
@@ -354,7 +354,100 @@ namespace TicTacToe2._0
         }
         public static void funcbot()
         {
+            //DEFENSIVE
 
+
+            /*X|X|@
+            * 4|5|6
+            * 7|8|9
+            */
+            if ( A == "X" && B == "X")
+            {
+                C = "O";
+            }
+
+           /* @|X|X
+            * 4|5|6
+            * 7|8|9
+            */
+            if (C == "X" && B == "X")
+            {
+                A = "O";
+            }
+
+            /*X|@|X
+            * 4|5|6
+            * 7|8|9
+            */
+            if (A == "X" && C == "X")
+            {
+                B = "O";
+            }
+
+            /*1|2|3
+            * X|X|@
+            * 7|8|9
+            */
+            if (D == "X" && E == "X")
+            {
+                F = "O";
+            }
+
+            /*1|2|3
+            * @|X|X
+            * 7|8|9
+            */
+            if (F == "X" && E == "X")
+            {
+                D = "O";
+            }
+
+            /*1|2|3
+            * X|@|X
+            * 7|8|9
+            */
+            if (D == "X" && F == "X")
+            {
+                E = "O";
+            }
+
+            /*1|2|3
+            * 4|5|6
+            * X|X|@
+            */
+            if (G == "X" && H == "X")
+            {
+                I = "O";
+            }
+
+            /*1|2|3
+            * 4|5|6
+            * @|X|X
+            */
+            if (I == "X" && H == "X")
+            {
+                G = "O";
+            }
+
+            /*1|2|3
+            * 4|5|6
+            * X|@|X
+            */
+            if (G == "X" && I == "X")
+            {
+                H = "O";
+            }
+            /*
+            /*1|2|3
+            * 4|5|6
+            * 7|8|9
+            -/ horizontaal & verticaal & diagonaal hierin zetten
+            if (X == "X" && X == "X")
+            {
+                X = "O";
+            }
+            */
+            
         }
     }
 }
