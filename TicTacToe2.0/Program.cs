@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TicTacToe2._0
-{//user moet naam ingeven
+{
     class Program
     {
         public static string A = "1";
