@@ -49,14 +49,15 @@ namespace TicTacToe2._0
                     Program.drawgrid();
                     if (strCurrentPlayer == "bot" || strCurrentPlayer == "ai")
                     {
-
+                        Program.funcbot();
                     }
                     else
                     {
                         Program.strUserInput = Console.ReadLine();
-                    }
+                    
                     Program.TurnCheck();
                     Program.Turn();
+                    }
                     Program.checkifwon();
                     Program.SwitchTurn();
                 }
@@ -76,7 +77,7 @@ namespace TicTacToe2._0
             while (restart == "y");
             Environment.Exit(0);
 
-            
+
         }
         public static void TurnCheck()
         {
@@ -92,7 +93,7 @@ namespace TicTacToe2._0
         public static void Turn()
         {
             Console.Clear();
-            switch(strUserInput)
+            switch (strUserInput)
             {
                 case "1":
                     {
@@ -319,7 +320,7 @@ namespace TicTacToe2._0
             }
             else
             {
-            Environment.Exit(0);
+                Environment.Exit(0);
             }
         }
         public static void funcrestart()
@@ -358,84 +359,110 @@ namespace TicTacToe2._0
 
 
             /*X|X|@
-            * 4|5|6
-            * 7|8|9
+            * 4|X|X
+            * X|8|X
             */
-            if ( A == "X" && B == "X")
+            if (C == "3")
             {
-                C = "O";
+                if (A == "X" && B == "X" || G == "X" && E == "X" || F == "X" && I == "X")
+                {
+                    C = "O";
+                }
             }
-
-           /* @|X|X
-            * 4|5|6
-            * 7|8|9
-            */
-            if (C == "X" && B == "X")
+            /* @|X|X
+             * X|X|6
+             * X|8|X
+             */
+            if (A == "1")
             {
-                A = "O";
+                if (C == "X" && B == "X" || I == "X" && E == "X" || D == "X" && G == "X")
+                {
+                    A = "O";
+                }
             }
 
             /*X|@|X
-            * 4|5|6
-            * 7|8|9
+            * 4|X|6
+            * 7|X|9
             */
-            if (A == "X" && C == "X")
+            if (B == "2")
             {
-                B = "O";
+                if (A == "X" && C == "X" || E == "X" && H == "X")
+                {
+                    B = "O";
+                }
             }
 
-            /*1|2|3
+            /*1|2|X
             * X|X|@
-            * 7|8|9
+            * 7|8|X
             */
-            if (D == "X" && E == "X")
+            if (F == "6")
             {
-                F = "O";
+                if (D == "X" && E == "X" || C == "X" && I == "X")
+                {
+                    F = "O";
+                }
             }
 
-            /*1|2|3
+            /*X|2|3
             * @|X|X
-            * 7|8|9
+            * X|8|9
             */
-            if (F == "X" && E == "X")
+            if (D == "4")
             {
-                D = "O";
+                if (F == "X" && E == "X" || A == "X" && G == "X")
+                {
+                    D = "O";
+                }
             }
 
-            /*1|2|3
+            /*X|X|X
             * X|@|X
-            * 7|8|9
+            * X|X|X
             */
-            if (D == "X" && F == "X")
+            if (E == "5")
             {
-                E = "O";
+                if (D == "X" && F == "X" || A == "X" && I == "X" || B == "X" && H == "X" || C == "X" && G == "X")
+                {
+                    E = "O";
+                }
             }
 
-            /*1|2|3
-            * 4|5|6
+            /*X|2|X
+            * 4|X|X
             * X|X|@
             */
-            if (G == "X" && H == "X")
+            if (I == "9")
             {
-                I = "O";
+                if (G == "X" && H == "X" || C == "X" && F == "X" || A == "X" && E == "X")
+                {
+                    I = "O";
+                }
             }
 
-            /*1|2|3
-            * 4|5|6
+            /*X|2|X
+            * X|X|6
             * @|X|X
             */
-            if (I == "X" && H == "X")
+            if (G == "7")
             {
-                G = "O";
+                if (I == "X" && H == "X" || A == "X" && D == "X" || C == "X" && E == "X")
+                {
+                    G = "O";
+                }
             }
 
-            /*1|2|3
-            * 4|5|6
+            /*1|X|3
+            * 4|X|6
             * X|@|X
             */
-            if (G == "X" && I == "X")
+            if (H == "8")
             {
-                H = "O";
+                if (G == "X" && I == "X" || B == "X" && E == "X")
+                {
+                    H = "O";
+                }
             }
             /*
             /*1|2|3
