@@ -78,7 +78,7 @@ namespace TicTacToe2._0
                     else
                     {
                         Program.drawgrid();
-                        Program.strUserInput = Console.ReadLine();
+                        strUserInput = Console.ReadLine();
                     
                         Program.TurnCheck();
                         Program.Turn();
@@ -322,6 +322,7 @@ namespace TicTacToe2._0
         public static void drawgrid()
         {
             Console.Clear();
+            Console.WriteLine("Last turn:{0}", strUserInput);
             Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine("{0} Give input\r\n\r\n", strCurrentPlayer);
             Console.BackgroundColor = ConsoleColor.Black;
@@ -335,7 +336,7 @@ namespace TicTacToe2._0
         }
         public static void won()
         {
-            if (strPlayer2 == "THE MOST AMAZING AI EVER CREATED")
+            if (strPlayer2 == "THE MOST AMAZING AI EVER CREATED" && strPlayer2 == strCurrentPlayer)
             {
                 Console.WriteLine("{0} | {1} | {2} ", A, B, C);
                 Console.WriteLine("----------");
@@ -416,6 +417,7 @@ namespace TicTacToe2._0
             {
                 if (A == "O" && B == "O" || G == "O" && E == "O" || F == "O" && I == "O")
                 {
+                    strUserInput = "3";
                     C = "O";
                     blnAiTurn = false;
                 }
@@ -428,6 +430,7 @@ namespace TicTacToe2._0
             {
                 if (C == "O" && B == "O" || I == "O" && E == "O" || D == "O" && G == "O")
                 {
+                    strUserInput = "1";
                     A = "O";
                     blnAiTurn = false;
                 }
@@ -441,6 +444,7 @@ namespace TicTacToe2._0
             {
                 if (A == "O" && C == "O" || E == "O" && H == "O")
                 {
+                    strUserInput = "2";
                     B = "O";
                     blnAiTurn = false;
                 }
@@ -454,6 +458,7 @@ namespace TicTacToe2._0
             {
                 if (D == "O" && E == "O" || C == "O" && I == "O")
                 {
+                    strUserInput = "6";
                     F = "O";
                     blnAiTurn = false;
                 }
@@ -467,6 +472,7 @@ namespace TicTacToe2._0
             {
                 if (F == "O" && E == "O" || A == "O" && G == "O")
                 {
+                    strUserInput = "4";
                     D = "O";
                     blnAiTurn = false;
                 }
@@ -480,6 +486,7 @@ namespace TicTacToe2._0
             {
                 if (D == "O" && F == "O" || A == "O" && I == "O" || B == "O" && H == "O" || C == "O" && G == "O")
                 {
+                    strUserInput = "5";
                     E = "O";
                     blnAiTurn = false;
                 }
@@ -493,6 +500,7 @@ namespace TicTacToe2._0
             {
                 if (G == "O" && H == "O" || C == "O" && F == "O" || A == "O" && E == "O")
                 {
+                    strUserInput = "9";
                     I = "O";
                     blnAiTurn = false;
                 }
@@ -506,6 +514,7 @@ namespace TicTacToe2._0
             {
                 if (I == "O" && H == "O" || A == "O" && D == "O" || C == "O" && E == "O")
                 {
+                    strUserInput = "7";
                     G = "O";
                     blnAiTurn = false;
                 }
@@ -519,6 +528,7 @@ namespace TicTacToe2._0
             {
                 if (G == "" && I == "X" || B == "O" && E == "O")
                 {
+                    strUserInput = "8";
                     H = "O";
                     blnAiTurn = false;
                 }
@@ -536,6 +546,7 @@ namespace TicTacToe2._0
             {
                 if (A == "X" && B == "X" || G == "X" && E == "X" || F == "X" && I == "X")
                 {
+                    strUserInput = "3";
                     C = "O";
                     blnAiTurn = false;
                 }
@@ -548,6 +559,7 @@ namespace TicTacToe2._0
             {
                 if (C == "X" && B == "X" || I == "X" && E == "X" || D == "X" && G == "X")
                 {
+                    strUserInput = "1";
                     A = "O";
                     blnAiTurn = false;
                 }
@@ -561,6 +573,7 @@ namespace TicTacToe2._0
             {
                 if (A == "X" && C == "X" || E == "X" && H == "X")
                 {
+                    strUserInput = "2";
                     B = "O";
                     blnAiTurn = false;
                 }
@@ -574,6 +587,7 @@ namespace TicTacToe2._0
             {
                 if (D == "X" && E == "X" || C == "X" && I == "X")
                 {
+                    strUserInput = "6";
                     F = "O";
                     blnAiTurn = false;
                 }
@@ -587,6 +601,7 @@ namespace TicTacToe2._0
             {
                 if (F == "X" && E == "X" || A == "X" && G == "X")
                 {
+                    strUserInput = "4";
                     D = "O";
                     blnAiTurn = false;
                 }
@@ -600,6 +615,7 @@ namespace TicTacToe2._0
             {
                 if (D == "X" && F == "X" || A == "X" && I == "X" || B == "X" && H == "X" || C == "X" && G == "X")
                 {
+                    strUserInput = "5";
                     E = "O";
                     blnAiTurn = false;
                 }
@@ -613,6 +629,7 @@ namespace TicTacToe2._0
             {
                 if (G == "X" && H == "X" || C == "X" && F == "X" || A == "X" && E == "X")
                 {
+                    strUserInput = "9";
                     I = "O";
                     blnAiTurn = false;
                 }
@@ -626,6 +643,7 @@ namespace TicTacToe2._0
             {
                 if (I == "X" && H == "X" || A == "X" && D == "X" || C == "X" && E == "X")
                 {
+                    strUserInput = "7";
                     G = "O";
                     blnAiTurn = false;
                 }
@@ -639,6 +657,7 @@ namespace TicTacToe2._0
             {
                 if (G == "X" && I == "X" || B == "X" && E == "X")
                 {
+                    strUserInput = "8";
                     H = "O";
                     blnAiTurn = false;
                 }
@@ -663,6 +682,7 @@ namespace TicTacToe2._0
             */
             if (E == "5" && blnAiTurn == true)
             {
+                strUserInput = "5";
                 E = "O";
                 blnAiTurn = false;
             }
@@ -673,6 +693,7 @@ namespace TicTacToe2._0
             */
             if (I == "9" && blnAiTurn == true)
             {
+                strUserInput = "9";
                 I = "O";
                 blnAiTurn = false;
             }
@@ -683,6 +704,7 @@ namespace TicTacToe2._0
             */
             if (G == "7" && blnAiTurn == true)
             {
+                strUserInput = "7";
                 G = "O";
                 blnAiTurn = false;
             }
@@ -693,6 +715,7 @@ namespace TicTacToe2._0
             */
             if (A == "1" && blnAiTurn == true)
             {
+                strUserInput = "1";
                 A = "O";
                 blnAiTurn = false;
             }
@@ -703,6 +726,7 @@ namespace TicTacToe2._0
             */
             if (C == "3" && blnAiTurn == true)
             {
+                strUserInput = "3";
                 C = "O";
                 blnAiTurn = false;
             }
@@ -713,10 +737,43 @@ namespace TicTacToe2._0
             */
             if (B == "2" && blnAiTurn == true)
             {
+                strUserInput = "2";
                 B = "O";
                 blnAiTurn = false;
             }
 
+            /*1|2|3
+            * 4|5|@
+            * 7|8|9
+            */
+            if (F == "6" && blnAiTurn == true)
+            {
+                strUserInput = "6";
+                F = "O";
+                blnAiTurn = false;
+            }
+
+            /*1|2|3
+            * 4|5|6
+            * 7|@|9
+            */
+            if (H == "8" && blnAiTurn == true)
+            {
+                strUserInput = "8";
+                H = "O";
+                blnAiTurn = false;
+            }
+
+            /*1|2|3
+            * @|5|6
+            * 7|8|9
+            */
+            if (D == "4" && blnAiTurn == true)
+            {
+                strUserInput = "4";
+                D = "O";
+                blnAiTurn = false;
+            }
 
         }
     }
