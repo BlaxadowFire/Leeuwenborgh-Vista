@@ -778,3 +778,4 @@ namespace TicTacToe2._0
         }
     }
 }
+// Add a temporary file where it will automatically add every move, it will reset when the game is started (in main before first do) or restarted.
