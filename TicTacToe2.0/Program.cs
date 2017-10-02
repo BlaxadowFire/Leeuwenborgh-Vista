@@ -328,6 +328,12 @@ namespace TicTacToe2._0
         }
         public static void won()
         {
+            Console.WriteLine("{0} | {1} | {2} ", A, B, C);
+            Console.WriteLine("----------");
+            Console.WriteLine("{0} | {1} | {2} ", D, E, F);
+            Console.WriteLine("----------");
+            Console.WriteLine("{0} | {1} | {2} ", G, H, I);
+            Console.WriteLine("----------\r\n");
             Console.WriteLine("Congratulations {0}, you won!", strCurrentPlayer);
             Console.WriteLine("Do you want to play again? y/n");
             restart = Console.ReadLine();
