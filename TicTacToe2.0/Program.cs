@@ -38,7 +38,7 @@ namespace TicTacToe2._0
                 if (firstrun == true)
                 {
                     Console.Title = "TicTacToe By Nando";
-                    Console.WriteLine("Currently developing ai for this game, please do not use bot or ai as name. \r\nHave Fun\r\n");
+                    Console.WriteLine("Currently developing ai for this game, it won't work unless you have a chance to win. \r\nIf you want to use the ai, give Player 2 the name 'ai' or 'bot'\r\nHave Fun\r\n");
                     labelp1:
                     Console.WriteLine("Player1 (X), enter your name:");
                     strPlayer1 = Console.ReadLine();
