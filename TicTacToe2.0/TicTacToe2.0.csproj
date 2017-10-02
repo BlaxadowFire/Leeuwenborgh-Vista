@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>https://blaxadowfire.dns.net/TicTacToe/</InstallUrl>
+    <InstallUrl>http://blaxadowfire.ddns.net/Codes/TicTacToe/</InstallUrl>
     <SupportUrl>http://blaxadowfire.ddns.net</SupportUrl>
     <ErrorReportUrl>http://blaxadowfire.ddns.net</ErrorReportUrl>
     <ProductName>TicTacToe</ProductName>
@@ -31,7 +31,7 @@
     <MinimumRequiredVersion>1.0.3.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.3.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
