@@ -48,7 +48,11 @@ namespace TicTacToe2._0
                 if (firstrun == true)
                 {
                     Console.Title = "TicTacToe By Nando";
-                    Console.WriteLine("Currently developing ai for this game, it won't work unless you have a chance to win. \r\nIf you want to use the ai, give Player 2 the name 'ai' or 'bot'\r\nHave Fun\r\n");
+                    Console.WriteLine("There is an AI function in this game\r\nIf you want to use the ai, give Player 2 the name:");
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("'ai' 'bot' '0'");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("Have Fun\r\n");
                     labelp1:
                     Console.WriteLine("Player1 (X), enter your name:");
                     strPlayer1 = Console.ReadLine();
@@ -56,7 +60,7 @@ namespace TicTacToe2._0
                     {
                         strPlayer1 = "p1";
                     }
-                    else if (strPlayer1 == "ai" || strPlayer1 == "bot")
+                    else if (strPlayer1 == "ai" || strPlayer1 == "bot" || strPlayer1 == "AI" || strPlayer1 == "BOT" || strPlayer1 == "0")
                     {
                         Console.WriteLine("Player1 can't be a bot.");
                         goto labelp1;
@@ -67,12 +71,16 @@ namespace TicTacToe2._0
                     {
                         strPlayer2 = "p2";
                     }
+                    if (strPlayer2 == "ai" || strPlayer2 == "bot" || strPlayer2 == "AI" || strPlayer2 == "BOT" || strPlayer2 == "0")
+                    {
+                        strPlayer2 = "THE MOST AMAZING AI EVER CREATED";
+                    }
                     strCurrentPlayer = strPlayer1;
                     firstrun = false;
                 }
                 do
                 {
-                    if (strCurrentPlayer == "bot" || strCurrentPlayer == "ai")
+                    if (strCurrentPlayer == "THE MOST AMAZING AI EVER CREATED")
                     {
                         blnAiTurn = true;
                         Program.funcbot();
@@ -80,7 +88,7 @@ namespace TicTacToe2._0
                     else
                     {
                         Program.drawgrid();
-                        Program.strUserInput = Console.ReadLine();
+                        strUserInput = Console.ReadLine();
                     
                         Program.TurnCheck();
                         Program.Turn();
@@ -92,17 +100,16 @@ namespace TicTacToe2._0
                 Console.WriteLine("It's a tie!");
                 Console.WriteLine("Do you want to play again? y/n");
                 restart = Console.ReadLine();
-                if (restart == "y")
-                {
-                    Program.funcrestart();
-                }
-                else
+                if (restart == "n")
                 {
                     Environment.Exit(0);
                 }
+                else
+                {
+                    Program.funcrestart();
+                }
             }
-            while (restart == "y");
-            Environment.Exit(0);
+            while (true);
 
 
         }
@@ -325,6 +332,7 @@ namespace TicTacToe2._0
         public static void drawgrid()
         {
             Console.Clear();
+            Console.WriteLine("Last turn:{0}", strUserInput);
             Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine("{0} Give input\r\n\r\n", strCurrentPlayer);
             Console.BackgroundColor = ConsoleColor.Black;
@@ -338,22 +346,36 @@ namespace TicTacToe2._0
         }
         public static void won()
         {
-            Console.WriteLine("{0} | {1} | {2} ", A, B, C);
-            Console.WriteLine("----------");
-            Console.WriteLine("{0} | {1} | {2} ", D, E, F);
-            Console.WriteLine("----------");
-            Console.WriteLine("{0} | {1} | {2} ", G, H, I);
-            Console.WriteLine("----------\r\n");
-            Console.WriteLine("Congratulations {0}, you won!", strCurrentPlayer);
-            Console.WriteLine("Do you want to play again? y/n");
-            restart = Console.ReadLine();
-            if (restart == "y")
+            if (strPlayer2 == "THE MOST AMAZING AI EVER CREATED" && strPlayer2 == strCurrentPlayer)
             {
-                Program.funcrestart();
+                Console.WriteLine("{0} | {1} | {2} ", A, B, C);
+                Console.WriteLine("----------");
+                Console.WriteLine("{0} | {1} | {2} ", D, E, F);
+                Console.WriteLine("----------");
+                Console.WriteLine("{0} | {1} | {2} ", G, H, I);
+                Console.WriteLine("----------\r\n");
+                Console.WriteLine("YOU JUST LOST FROM {0}", strPlayer2);
             }
             else
             {
+                Console.WriteLine("{0} | {1} | {2} ", A, B, C);
+                Console.WriteLine("----------");
+                Console.WriteLine("{0} | {1} | {2} ", D, E, F);
+                Console.WriteLine("----------");
+                Console.WriteLine("{0} | {1} | {2} ", G, H, I);
+                Console.WriteLine("----------\r\n");
+                Console.WriteLine("Congratulations {0}, you won!", strCurrentPlayer);
+            }
+            Console.WriteLine("Do you want to play again? y/n");
+            restart = Console.ReadLine();
+           
+            if (restart == "n" || restart =="N")
+            {
                 Environment.Exit(0);
+            }
+            else
+            {
+                Program.funcrestart();
             }
         }
         public static void funcrestart()
@@ -368,13 +390,19 @@ namespace TicTacToe2._0
             H = "8";
             I = "9";
 
-            strPlayer1 = string.Empty;
-            strPlayer2 = string.Empty;
-            strCurrentPlayer = string.Empty;
+            Console.WriteLine("Do you play with the same players?");
+            string strCheckPlayer = Console.ReadLine();
+            if (strCheckPlayer == "n" || strCheckPlayer == "N")
+            {
+                strPlayer1 = string.Empty;
+                strPlayer2 = string.Empty;
+                firstrun = true;
+            }
+            Program.SwitchTurn();
             blnGameOVer = false;
             strCPChoice = string.Empty;
             strUserInput = string.Empty;
-            firstrun = true;
+
             Console.Clear();
 
             if (restart == "n")
@@ -391,7 +419,130 @@ namespace TicTacToe2._0
 
             //OFFENSIVE
 
+            /*O|O|@
+            * 4|O|O
+            * O|8|O
+            */
+            if (C == "3" && blnAiTurn == true)
+            {
+                if (A == "O" && B == "O" || G == "O" && E == "O" || F == "O" && I == "O")
+                {
+                    strUserInput = "3";
+                    C = "O";
+                    blnAiTurn = false;
+                }
+            }
+            /* @|O|O
+             * O|O|6
+             * O|8|O
+             */
+            if (A == "1" && blnAiTurn == true)
+            {
+                if (C == "O" && B == "O" || I == "O" && E == "O" || D == "O" && G == "O")
+                {
+                    strUserInput = "1";
+                    A = "O";
+                    blnAiTurn = false;
+                }
+            }
 
+            /*O|@|O
+            * 4|O|6
+            * 7|O|9
+            */
+            if (B == "2" && blnAiTurn == true)
+            {
+                if (A == "O" && C == "O" || E == "O" && H == "O")
+                {
+                    strUserInput = "2";
+                    B = "O";
+                    blnAiTurn = false;
+                }
+            }
+
+            /*1|2|O
+            * O|O|@
+            * 7|8|O
+            */
+            if (F == "6" && blnAiTurn == true)
+            {
+                if (D == "O" && E == "O" || C == "O" && I == "O")
+                {
+                    strUserInput = "6";
+                    F = "O";
+                    blnAiTurn = false;
+                }
+            }
+
+            /*O|2|3
+            * @|O|O
+            * O|8|9
+            */
+            if (D == "4" && blnAiTurn == true)
+            {
+                if (F == "O" && E == "O" || A == "O" && G == "O")
+                {
+                    strUserInput = "4";
+                    D = "O";
+                    blnAiTurn = false;
+                }
+            }
+
+            /*O|O|O
+            * O|@|O
+            * O|O|O
+            */
+            if (E == "5" && blnAiTurn == true)
+            {
+                if (D == "O" && F == "O" || A == "O" && I == "O" || B == "O" && H == "O" || C == "O" && G == "O")
+                {
+                    strUserInput = "5";
+                    E = "O";
+                    blnAiTurn = false;
+                }
+            }
+
+            /*O|2|O
+            * 4|O|O
+            * O|O|@
+            */
+            if (I == "9" && blnAiTurn == true)
+            {
+                if (G == "O" && H == "O" || C == "O" && F == "O" || A == "O" && E == "O")
+                {
+                    strUserInput = "9";
+                    I = "O";
+                    blnAiTurn = false;
+                }
+            }
+
+            /*O|2|O
+            * O|O|6
+            * @|O|O
+            */
+            if (G == "7" && blnAiTurn == true)
+            {
+                if (I == "O" && H == "O" || A == "O" && D == "O" || C == "O" && E == "O")
+                {
+                    strUserInput = "7";
+                    G = "O";
+                    blnAiTurn = false;
+                }
+            }
+
+            /*1|O|3
+            * 4|O|6
+            * O|@|O
+            */
+            if (H == "8" && blnAiTurn == true)
+            {
+                if (G == "" && I == "X" || B == "O" && E == "O")
+                {
+                    strUserInput = "8";
+                    H = "O";
+                    blnAiTurn = false;
+                }
+            }
 
 
             //DEFENSIVE
@@ -405,6 +556,7 @@ namespace TicTacToe2._0
             {
                 if (A == "X" && B == "X" || G == "X" && E == "X" || F == "X" && I == "X")
                 {
+                    strUserInput = "3";
                     C = "O";
                     blnAiTurn = false;
                 }
@@ -417,6 +569,7 @@ namespace TicTacToe2._0
             {
                 if (C == "X" && B == "X" || I == "X" && E == "X" || D == "X" && G == "X")
                 {
+                    strUserInput = "1";
                     A = "O";
                     blnAiTurn = false;
                 }
@@ -430,6 +583,7 @@ namespace TicTacToe2._0
             {
                 if (A == "X" && C == "X" || E == "X" && H == "X")
                 {
+                    strUserInput = "2";
                     B = "O";
                     blnAiTurn = false;
                 }
@@ -443,6 +597,7 @@ namespace TicTacToe2._0
             {
                 if (D == "X" && E == "X" || C == "X" && I == "X")
                 {
+                    strUserInput = "6";
                     F = "O";
                     blnAiTurn = false;
                 }
@@ -456,6 +611,7 @@ namespace TicTacToe2._0
             {
                 if (F == "X" && E == "X" || A == "X" && G == "X")
                 {
+                    strUserInput = "4";
                     D = "O";
                     blnAiTurn = false;
                 }
@@ -469,6 +625,7 @@ namespace TicTacToe2._0
             {
                 if (D == "X" && F == "X" || A == "X" && I == "X" || B == "X" && H == "X" || C == "X" && G == "X")
                 {
+                    strUserInput = "5";
                     E = "O";
                     blnAiTurn = false;
                 }
@@ -482,6 +639,7 @@ namespace TicTacToe2._0
             {
                 if (G == "X" && H == "X" || C == "X" && F == "X" || A == "X" && E == "X")
                 {
+                    strUserInput = "9";
                     I = "O";
                     blnAiTurn = false;
                 }
@@ -495,6 +653,7 @@ namespace TicTacToe2._0
             {
                 if (I == "X" && H == "X" || A == "X" && D == "X" || C == "X" && E == "X")
                 {
+                    strUserInput = "7";
                     G = "O";
                     blnAiTurn = false;
                 }
@@ -508,6 +667,7 @@ namespace TicTacToe2._0
             {
                 if (G == "X" && I == "X" || B == "X" && E == "X")
                 {
+                    strUserInput = "8";
                     H = "O";
                     blnAiTurn = false;
                 }
@@ -522,7 +682,110 @@ namespace TicTacToe2._0
                 X = "O";
             }
             */
-            
+
+            //PASSIVE
+
+
+            /*1|2|3
+            * 4|@|6
+            * 7|8|9
+            */
+            if (E == "5" && blnAiTurn == true)
+            {
+                strUserInput = "5";
+                E = "O";
+                blnAiTurn = false;
+            }
+
+            /*1|2|3
+            * 4|5|6
+            * 7|8|@
+            */
+            if (I == "9" && blnAiTurn == true)
+            {
+                strUserInput = "9";
+                I = "O";
+                blnAiTurn = false;
+            }
+
+            /*1|2|3
+            * 4|5|6
+            * @|8|9
+            */
+            if (G == "7" && blnAiTurn == true)
+            {
+                strUserInput = "7";
+                G = "O";
+                blnAiTurn = false;
+            }
+
+            /*@|2|3
+            * 4|5|6
+            * 7|8|9
+            */
+            if (A == "1" && blnAiTurn == true)
+            {
+                strUserInput = "1";
+                A = "O";
+                blnAiTurn = false;
+            }
+
+            /*1|2|@
+            * 4|5|6
+            * 7|8|9
+            */
+            if (C == "3" && blnAiTurn == true)
+            {
+                strUserInput = "3";
+                C = "O";
+                blnAiTurn = false;
+            }
+
+            /*1|@|3
+            * 4|5|6
+            * 7|8|9
+            */
+            if (B == "2" && blnAiTurn == true)
+            {
+                strUserInput = "2";
+                B = "O";
+                blnAiTurn = false;
+            }
+
+            /*1|2|3
+            * 4|5|@
+            * 7|8|9
+            */
+            if (F == "6" && blnAiTurn == true)
+            {
+                strUserInput = "6";
+                F = "O";
+                blnAiTurn = false;
+            }
+
+            /*1|2|3
+            * 4|5|6
+            * 7|@|9
+            */
+            if (H == "8" && blnAiTurn == true)
+            {
+                strUserInput = "8";
+                H = "O";
+                blnAiTurn = false;
+            }
+
+            /*1|2|3
+            * @|5|6
+            * 7|8|9
+            */
+            if (D == "4" && blnAiTurn == true)
+            {
+                strUserInput = "4";
+                D = "O";
+                blnAiTurn = false;
+            }
+
         }
     }
 }
+// Add a temporary file where it will automatically add every move, it will reset when the game is started (in main before first do) or restarted.
