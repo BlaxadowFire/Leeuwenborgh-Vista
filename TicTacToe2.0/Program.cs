@@ -4,6 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+               /* Console.Write("Dit ");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("is ");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.Write("een ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("test.\r\n");
+                Console.ForegroundColor = ConsoleColor.White;*/
+
 namespace TicTacToe2._0
 {
     class Program
