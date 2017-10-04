@@ -17,6 +17,7 @@ namespace ConsoleBeep_Songs
     class Program
     {
         public static int REST = 37;
+        public static int GbelowC = 196;
         public static int A = 220;
         public static int Asharp = 234;
         public static int B = 248;
@@ -45,7 +46,7 @@ namespace ConsoleBeep_Songs
                 //Console.TreatControlCAsInput = true;
 
                 Console.WriteLine("Select Song");
-                Console.WriteLine("0.) Play own song\r\n1.) Mario Theme\r\n2.) Tetris Theme\r\n3.) Imperial March\r\n4.) Mission Impossible\r\n5.) Best song ever(Sightly off tune)");
+                Console.WriteLine("0.) Play own song\r\n1.) Mario Theme\r\n2.)Tetris Theme\r\n3.) Imperial March\r\n4.) Mission Impossible\r\n5.) Best song ever(Sightly off tune)\r\n6.) Song of Time\r\n7.)Song of Storms");
                 strSong = Console.ReadLine();
                 Console.Clear();
                 blnFirstRun = false;
@@ -334,6 +335,62 @@ namespace ConsoleBeep_Songs
                 Console.Beep(525, 500);
             }
 
+            //Song of Time
+            else if (strSong == "6")
+            {//Song of Time
+                Console.Beep(880, 500);
+                Console.Beep(587, 1000);
+                Console.Beep(698, 500);
+                Console.Beep(880, 500);
+                Console.Beep(587, 1000);
+                Console.Beep(698, 500);
+                Console.Beep(880, 500);
+                Console.Beep(1046, 250);
+                Console.Beep(987, 500);
+                Console.Beep(783, 500);
+                Console.Beep(687, 250);
+                Console.Beep(783, 250);
+                Console.Beep(880, 500);
+                Console.Beep(587, 500);
+                Console.Beep(523, 250);
+                Console.Beep(659, 250);
+                Console.Beep(587, 750);
+            }
+
+            //Song of Storms
+            else if (strSong == "7")
+            {//Song of Storms
+                Console.Beep(A, 500);
+                Console.Beep(E, 500);
+                Console.Beep(A*2, 1000);
+
+                Console.Beep(A, 500);
+                Console.Beep(E, 500);
+                Console.Beep(A*2, 1000);
+
+                Console.Beep(B*2, 500);
+                Console.Beep(C*2, 300);
+                Console.Beep(B*2, 500);
+                Console.Beep(C*2, 300);
+                Console.Beep(B*2, 500);
+                Console.Beep(G, 300);
+                Console.Beep(E, 1000);
+
+                Console.Beep(E, 300);
+                Console.Beep(A, 500);
+                Console.Beep(A, 500);
+                Console.Beep(C, 300);
+                Console.Beep(E, 1000);
+
+
+                Console.Beep(E, 300);
+                Console.Beep(A, 500);
+                Console.Beep(C, 500);
+                Console.Beep(D, 300);
+                Console.Beep(B, 1000);
+            }
+
+
             Console.Clear();
             blnFirstRun = true;
             Program.Main();
@@ -345,6 +402,11 @@ namespace ConsoleBeep_Songs
 
             switch (strPlay)
             {
+                case "lowG":
+                    {
+                        intPlay = GbelowC;
+                        break;
+                    }
                 case "A":
                     {
                         intPlay = A;
@@ -456,7 +518,7 @@ namespace ConsoleBeep_Songs
                 //Octave
                 case "Multiply":
                     {
-                        if (intOctave < 90)
+                        if (intOctave < 7)
                         {
                             A = A * 2;
                             Asharp = Asharp * 2;
