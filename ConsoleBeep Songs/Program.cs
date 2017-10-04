@@ -18,17 +18,17 @@ namespace ConsoleBeep_Songs
     {
         public static int REST = 37;
         public static int A = 220;
-        public static int Asharp = 233;
-        public static int B = 247;
+        public static int Asharp = 234;
+        public static int B = 248;
         public static int C = 262;
-        public static int Csharp = 277;
+        public static int Csharp = 278;
         public static int D = 294;
-        public static int Dsharp = 311;
+        public static int Dsharp = 312;
         public static int E = 330;
-        public static int F = 349;
+        public static int F = 350;
         public static int Fsharp = 370;
         public static int G = 392;
-        public static int Gsharp = 415;
+        public static int Gsharp = 418;
         public static int intPlay = 37;
 
         public static int intDuration = 500;
@@ -317,18 +317,18 @@ namespace ConsoleBeep_Songs
                     {
                         if (intOctave < 90)
                         {
-                            A = A + 219;
-                            Asharp = Asharp + 219;
-                            B = B + 219;
-                            C = C + 219;
-                            Csharp = Csharp + 219;
-                            D = D + 219;
-                            Dsharp = Dsharp + 219;
-                            E = E + 219;
-                            F = F + 219;
-                            Fsharp = Fsharp + 219;
-                            G = G + 219;
-                            Gsharp = Gsharp + 219;
+                            A = A * 2;
+                            Asharp = Asharp * 2;
+                            B = B * 2;
+                            C = C * 2;
+                            Csharp = Csharp * 2;
+                            D = D * 2;
+                            Dsharp = Dsharp * 2;
+                            E = E * 2;
+                            F = F * 2;
+                            Fsharp = Fsharp * 2;
+                            G = G * 2;
+                            Gsharp = Gsharp * 2;
                             intOctave = intOctave + 1;
                         }
                         break;
@@ -338,18 +338,18 @@ namespace ConsoleBeep_Songs
                     {
                         if (intOctave > 1)
                             {
-                            A = A - 219;
-                            Asharp = Asharp - 219;
-                            B = B - 219;
-                            C = C - 219;
-                            Csharp = Csharp - 219;
-                            D = D - 219;
-                            Dsharp = Dsharp - 219;
-                            E = E - 219;
-                            F = F - 219;
-                            Fsharp = Fsharp - 219;
-                            G = G - 219;
-                            Gsharp = Gsharp - 219;
+                            A = A / 2;
+                            Asharp = Asharp / 2;
+                            B = B / 2;
+                            C = C / 2;
+                            Csharp = Csharp / 2;
+                            D = D / 2;
+                            Dsharp = Dsharp / 2;
+                            E = E / 2;
+                            F = F / 2;
+                            Fsharp = Fsharp / 2;
+                            G = G / 2;
+                            Gsharp = Gsharp / 2;
                             intOctave = intOctave - 1;
                         }
                         break;
