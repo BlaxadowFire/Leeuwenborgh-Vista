@@ -12,6 +12,7 @@ namespace groep_test
         {
             Console.WriteLine("alles goed met jullie?");
             Console.ReadLine();
+            Console.WriteLine("nee");
             //test
             //test shunhui
             // yep
