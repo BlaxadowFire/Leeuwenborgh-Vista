@@ -43,8 +43,9 @@ namespace ConsoleBeep_Songs
             {
 
                 //Console.TreatControlCAsInput = true;
+
                 Console.WriteLine("Select Song");
-                Console.WriteLine("0.) Play own song\r\n1.) Mario Theme\r\n2.) Tetris Theme");
+                Console.WriteLine("0.) Play own song\r\n1.) Mario Theme\r\n2.) Tetris Theme\r\n3.) Imperial March\r\n4.) Mission Impossible\r\n5.) Best song ever(Sightly off tune)");
                 strSong = Console.ReadLine();
                 Console.Clear();
                 blnFirstRun = false;
@@ -193,6 +194,146 @@ namespace ConsoleBeep_Songs
                 Console.Beep(880, 1000);
                 Console.Beep(838, 2000);
             }
+
+            //Imperial March
+            else if (strSong == "3")
+            {//Imerial March
+                Console.Beep(440, 500);
+                Console.Beep(440, 500);
+                Console.Beep(440, 500);
+                Console.Beep(349, 350);
+                Console.Beep(523, 150);
+                Console.Beep(440, 500);
+                Console.Beep(349, 350);
+                Console.Beep(523, 150);
+                Console.Beep(440, 1000);
+                Console.Beep(659, 500);
+                Console.Beep(659, 500);
+                Console.Beep(659, 500);
+                Console.Beep(698, 350);
+                Console.Beep(523, 150);
+                Console.Beep(415, 500);
+                Console.Beep(349, 350);
+                Console.Beep(523, 150);
+                Console.Beep(440, 1000);
+            }
+
+            //Mission Impossible
+            else if (strSong == "4")
+            {
+                Console.Beep(784, 150);
+                Thread.Sleep(300);
+                Thread.Sleep(300);
+                Thread.Sleep(300);
+                Console.Beep(784, 150);
+                Thread.Sleep(300);
+                Console.Beep(932, 150);
+                Thread.Sleep(150);
+                Console.Beep(1047, 150);
+                Thread.Sleep(150);
+                Console.Beep(784, 150);
+                Thread.Sleep(300);
+                Console.Beep(784, 150);
+                Thread.Sleep(300);
+                Console.Beep(699, 150);
+                Thread.Sleep(150);
+                Console.Beep(740, 150);
+                Thread.Sleep(150);
+                Console.Beep(784, 150);
+                Thread.Sleep(300);
+                Console.Beep(784, 150);
+                Thread.Sleep(300);
+                Console.Beep(932, 150);
+                Thread.Sleep(150);
+                Console.Beep(1047, 150);
+                Thread.Sleep(150);
+                Console.Beep(784, 150);
+                Thread.Sleep(300);
+                Console.Beep(784, 150);
+                Thread.Sleep(300);
+                Console.Beep(699, 150);
+                Thread.Sleep(150);
+                Console.Beep(740, 150);
+                Thread.Sleep(150);
+                Console.Beep(932, 150);
+                Console.Beep(784, 150);
+                Console.Beep(587, 1200);
+                Thread.Sleep(75);
+                Console.Beep(932, 150);
+                Console.Beep(784, 150);
+                Console.Beep(554, 1200);
+                Thread.Sleep(75);
+                Console.Beep(932, 150);
+                Console.Beep(784, 150);
+                Console.Beep(523, 1200);
+                Thread.Sleep(150);
+                Console.Beep(466, 150);
+                Console.Beep(523, 150);
+            }
+
+            //Rickroll
+            else if (strSong == "5")
+            {
+
+                Console.Beep(450, 110);
+                Console.Beep(500, 110);
+                Console.Beep(550, 110);
+                Console.Beep(450, 110);
+                Console.Beep(675, 200);
+                Thread.Sleep(150);
+                Console.Beep(675, 200);
+                Console.Beep(600, 300);
+                Console.Beep(450, 110);
+                Console.Beep(500, 110);
+                Console.Beep(550, 110);
+                Console.Beep(450, 110);
+                Console.Beep(600, 200);
+                Console.Beep(600, 200);
+                Console.Beep(550, 300);
+                Console.Beep(525, 110);
+                Console.Beep(450, 300);
+                Console.Beep(450, 110);
+                Console.Beep(500, 110);
+                Console.Beep(550, 110);
+                Console.Beep(450, 110);
+                Console.Beep(500, 400);
+                Console.Beep(600, 300);
+                Console.Beep(500, 400);
+                Console.Beep(475, 200);
+                Console.Beep(450, 200);
+                Console.Beep(400, 200);
+                Console.Beep(600, 500);
+                Console.Beep(525, 500);
+                Console.Beep(450, 110);
+                Console.Beep(500, 110);
+                Console.Beep(550, 110);
+                Console.Beep(450, 110);
+                Console.Beep(675, 200);
+                Console.Beep(675, 200);
+                Console.Beep(600, 300);
+                Console.Beep(450, 110);
+                Console.Beep(500, 110);
+                Console.Beep(550, 110);
+                Console.Beep(450, 110);
+                Console.Beep(800, 200);
+                Console.Beep(500, 200);
+                Console.Beep(550, 300);
+                Console.Beep(525, 110);
+                Console.Beep(450, 300);
+                Console.Beep(450, 110);
+                Console.Beep(500, 110);
+                Console.Beep(550, 110);
+                Console.Beep(450, 110);
+                Console.Beep(500, 400);
+                Console.Beep(600, 300);
+                Console.Beep(500, 400);
+                Console.Beep(475, 200);
+                Console.Beep(450, 200);
+                Console.Beep(400, 200);
+                Console.Beep(600, 500);
+                Console.Beep(525, 500);
+            }
+
             Console.Clear();
             blnFirstRun = true;
             Program.Main();
