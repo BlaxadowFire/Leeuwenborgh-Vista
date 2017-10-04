@@ -10,6 +10,8 @@ namespace groep_test
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("alles goed met jullie?");
+            Console.ReadLine();
             //test
         }
     }
