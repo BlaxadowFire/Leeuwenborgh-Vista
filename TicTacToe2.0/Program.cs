@@ -329,6 +329,16 @@ namespace TicTacToe2._0
                 blnGameOVer = true;
             }
         }
+
+        public static void gridcolor()
+        {
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+            }
+        }
+
+
+
         public static void drawgrid()
         {
             Console.Clear();
@@ -337,33 +347,47 @@ namespace TicTacToe2._0
             Console.WriteLine("{0} Give input\r\n\r\n", strCurrentPlayer);
             Console.BackgroundColor = ConsoleColor.Black;
 
-            Console.WriteLine("{0} | {1} | {2} ", A, B, C);
+            gridcolor(); Console.Write(A); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+            gridcolor(); Console.Write(B); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+            gridcolor(); Console.Write(C); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
+
             Console.WriteLine("----------");
-            Console.WriteLine("{0} | {1} | {2} ", D, E, F);
+
+            gridcolor(); Console.Write(D); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+            gridcolor(); Console.Write(E); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+            gridcolor(); Console.Write(F); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
+
             Console.WriteLine("----------");
-            Console.WriteLine("{0} | {1} | {2} ", G, H, I);
+
+            gridcolor(); Console.Write(G); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+            gridcolor(); Console.Write(H); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+            gridcolor(); Console.Write(I); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
+
             Console.WriteLine("----------\r\n");
         }
         public static void won()
         {
+            gridcolor(); Console.Write(A); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+            gridcolor(); Console.Write(B); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+            gridcolor(); Console.Write(C); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
+
+            Console.WriteLine("----------");
+
+            gridcolor(); Console.Write(D); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+            gridcolor(); Console.Write(E); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+            gridcolor(); Console.Write(F); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
+
+            Console.WriteLine("----------");
+
+            gridcolor(); Console.Write(G); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+            gridcolor(); Console.Write(H); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+            gridcolor(); Console.Write(I); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
             if (strPlayer2 == "THE MOST AMAZING AI EVER CREATED" && strPlayer2 == strCurrentPlayer)
             {
-                Console.WriteLine("{0} | {1} | {2} ", A, B, C);
-                Console.WriteLine("----------");
-                Console.WriteLine("{0} | {1} | {2} ", D, E, F);
-                Console.WriteLine("----------");
-                Console.WriteLine("{0} | {1} | {2} ", G, H, I);
-                Console.WriteLine("----------\r\n");
                 Console.WriteLine("YOU JUST LOST FROM {0}", strPlayer2);
             }
             else
             {
-                Console.WriteLine("{0} | {1} | {2} ", A, B, C);
-                Console.WriteLine("----------");
-                Console.WriteLine("{0} | {1} | {2} ", D, E, F);
-                Console.WriteLine("----------");
-                Console.WriteLine("{0} | {1} | {2} ", G, H, I);
-                Console.WriteLine("----------\r\n");
                 Console.WriteLine("Congratulations {0}, you won!", strCurrentPlayer);
             }
             Console.WriteLine("Do you want to play again? y/n");
