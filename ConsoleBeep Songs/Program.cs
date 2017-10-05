@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.IO;
 
 /*
  * https://msdn.microsoft.com/nl-nl/library/4fe3hdb1(v=vs.110).aspx
@@ -11,6 +12,10 @@ using System.Threading;
  * 
  */
 
+
+
+
+    //Moet vragen hoe ik een array heb , deze resize +1 zodag deze een waarde op nieuwe regel kan krijgen.
 
 namespace ConsoleBeep_Songs
 {
@@ -35,18 +40,24 @@ namespace ConsoleBeep_Songs
         public static int intDuration = 500;
         public static int intOctave = 1;
         public static string strSong;
+        public static string strLastPlay;
         public static bool blnFirstRun = true;
+
+        public static string strFileName = "/Song.txt";
+        public static string strFileLocation = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+
+
         static void Main()
         {
             ConsoleKeyInfo cki;
-
+            Console.Title = "BeepSongs";
             if (blnFirstRun == true)
             {
 
                 //Console.TreatControlCAsInput = true;
 
                 Console.WriteLine("Select Song");
-                Console.WriteLine("0.) Play own song\r\n1.) Mario Theme\r\n2.)Tetris Theme\r\n3.) Imperial March\r\n4.) Mission Impossible\r\n5.) Best song ever(Sightly off tune)\r\n6.) Song of Time\r\n7.)Song of Storms");
+                Console.WriteLine("0.) Play own song\r\n1.) Mario Theme\r\n2.) Tetris Theme\r\n3.) Imperial March\r\n4.) Mission Impossible\r\n5.) Best song ever(Sightly off tune)\r\n6.) Song of Time\r\n7.) Song of Storms\r\n8.) Attack on Titan");
                 strSong = Console.ReadLine();
                 Console.Clear();
                 blnFirstRun = false;
@@ -55,6 +66,7 @@ namespace ConsoleBeep_Songs
             //Play self
             if (strSong == "0")
             {
+                Console.Title = "Keyboard";
                 do
                 {
                     Console.Clear();
@@ -390,6 +402,24 @@ namespace ConsoleBeep_Songs
                 Console.Beep(B, 1000);
             }
 
+            //Attack on Titan
+            else if (strSong == "8")
+            {//Attack on Titan
+                Console.Beep(D, 200);
+                Console.Beep(D, 200);
+                Console.Beep(F, 300);
+                Thread.Sleep(150);
+                Console.Beep(E, 200);
+                Console.Beep(C, 200);
+                Console.Beep(C, 200);
+                Console.Beep(D, 300);
+                Thread.Sleep(150);
+                Console.Beep(D, 200);
+                Console.Beep(F, 200);
+                Console.Beep(E, 300);
+                Console.Beep(C, 500);
+            }
+
 
             Console.Clear();
             blnFirstRun = true;
@@ -490,27 +520,27 @@ namespace ConsoleBeep_Songs
                 //Duration
                 case "Add":
                     {
-                        intDuration = intDuration + 100;
+                        intDuration = intDuration + 50;
                         break;
                     }
                 case "Subtract":
                     {
                         if (intDuration > 100)
                         {
-                            intDuration = intDuration - 100;
+                            intDuration = intDuration - 50;
                         }
                         break;
                     }
                 case "OemPlus":
                     {
-                        intDuration = intDuration + 100;
+                        intDuration = intDuration + 50;
                         break;
                     }
                 case "OemMinus":
                     {
                         if (intDuration > 100)
                         {
-                            intDuration = intDuration - 100;
+                            intDuration = intDuration - 50;
                         }
                         break;
                     }
@@ -557,6 +587,25 @@ namespace ConsoleBeep_Songs
                         }
                         break;
                     }
+                case "Spacebar":
+                    {
+                        if (!File.Exists(strFileLocation + strFileName))
+                        {
+                            File.WriteAllText(strFileLocation + strFileName, "");
+                        }
+                        string strConverted = Convert.ToString(intPlay);
+
+                        string[] strText = File.ReadAllLines(strFileLocation + strFileName);
+
+                        /* Array.Resize(ref strText, strText.Length+);
+                        int i;
+                        for (i = 0; i < strText.Length; i++) { }
+                        strText[i] = strLastPlay;
+                        */
+                        File.WriteAllText(strFileLocation + strFileName, "Console.Beep(" + strConverted + ", " + intDuration + ");" /*strText*/ /*+ strLastPlay*/);
+                        break;
+
+                    }
 
 
 
@@ -567,6 +616,7 @@ namespace ConsoleBeep_Songs
         public static void Play(string strPlay/* int A, int B, int C, int D, int E, int F, int G, int Asharp, int Csharp, int Dsharp, int Fsharp, int Gsharp, int REST*/)
         {
             int intDuration = Program.Duration_octave(strPlay);
+            strLastPlay = strPlay;
             int intPlay = Program.Tones(strPlay);
 
             Console.Beep(intPlay,intDuration);
