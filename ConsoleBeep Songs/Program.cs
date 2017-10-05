@@ -45,6 +45,10 @@ namespace ConsoleBeep_Songs
 
         public static int intLastPlay;
 
+        public static int intReadSong;
+        public static int intReadDuration;
+        public static int intSongCounter;
+
 
         public static string strFileName = "Tone.txt";
         public static string strFileSpace = "/Song/";
@@ -459,8 +463,7 @@ namespace ConsoleBeep_Songs
             //Play Song From File
             else if (strSong =="+")
             {
-                Console.WriteLine("Test");
-                Console.ReadLine();
+                Program.PlaySong();
             }
 
             Console.Clear();
@@ -684,7 +687,24 @@ namespace ConsoleBeep_Songs
 
         public static void PlaySong()
         {
+            string[] strReadSong = File.ReadAllLines(strFileLocation + strFileSpace + strFileName);
+            string[] strReadDuration = File.ReadAllLines(strFileLocation + strFileSpace + strFileDuration);
+            intSongCounter = 0;
+            do
+            {
+                for (int i = 0; i < strReadSong.Length; i++)
+                {
+                    intReadSong = Convert.ToInt32(strReadSong[intSongCounter]);
+                }
 
+                for (int i = 0; i < strReadDuration.Length; i++)
+                {
+                    intReadDuration = Convert.ToInt32(strReadDuration[intSongCounter]);
+                }
+                intSongCounter++;
+                Console.Beep(intReadSong, intReadDuration);
+            } while (intSongCounter < strReadSong.Length);
+            intSongCounter = 0;
         }
 
         public static void Play(string strPlay)
