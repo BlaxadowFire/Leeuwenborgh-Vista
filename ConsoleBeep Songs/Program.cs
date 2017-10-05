@@ -632,6 +632,12 @@ namespace ConsoleBeep_Songs
                         }
                         break;
                     }
+                case "Escape":
+                    {
+                        blnFirstRun = true;
+                        Program.Main();
+                        break;
+                    }
                 case "Spacebar":
                     {
                         if (!Directory.Exists(strFileLocation + strFileSpace))
