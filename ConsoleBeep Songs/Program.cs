@@ -46,7 +46,9 @@ namespace ConsoleBeep_Songs
         public static int intLastPlay;
 
 
-        public static string strFileName = "/Song.txt";
+        public static string strFileName = "Tone.txt";
+        public static string strFileSpace = "/Song/";
+        public static string strFileDuration = "Duration.txt";
         public static string strFileLocation = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
 
@@ -60,7 +62,7 @@ namespace ConsoleBeep_Songs
                 //Console.TreatControlCAsInput = true;
 
                 Console.WriteLine("Select Song");
-                Console.WriteLine("0.) Play own song\r\n1.) Mario Theme\r\n2.) Tetris Theme\r\n3.) Imperial March\r\n4.) Mission Impossible\r\n5.) Best song ever(Sightly off tune)\r\n6.) Song of Time\r\n7.) Song of Storms\r\n8.) Attack on Titan");
+                Console.WriteLine("+.)Play From File\r\n0.) Keyboard\r\n1.) Mario Theme\r\n2.) Tetris Theme\r\n3.) Imperial March\r\n4.) Mission Impossible\r\n5.) Best song ever(Sightly off tune)\r\n6.) Song of Time\r\n7.) Song of Storms\r\n8.) Attack on Titan\r\n9.) Mary had a little lamb");
                 strSong = Console.ReadLine();
                 Console.Clear();
                 blnFirstRun = false;
@@ -454,6 +456,12 @@ namespace ConsoleBeep_Songs
                 Console.Beep(294, 250);
             }
 
+            //Play Song From File
+            else if (strSong =="+")
+            {
+                Console.WriteLine("Test");
+                Console.ReadLine();
+            }
 
             Console.Clear();
             blnFirstRun = true;
@@ -623,11 +631,20 @@ namespace ConsoleBeep_Songs
                     }
                 case "Spacebar":
                     {
-                        if (!File.Exists(strFileLocation + strFileName))
+                        if (!Directory.Exists(strFileLocation + strFileSpace))
                         {
-                            File.WriteAllText(strFileLocation + strFileName, "");
+                            Directory.CreateDirectory(strFileLocation + strFileSpace);
                         }
-                        string[] strText = File.ReadAllLines(strFileLocation + strFileName);
+                        if (!File.Exists(strFileLocation + strFileSpace + strFileName))
+                        {
+                           File.WriteAllText(strFileLocation + strFileSpace + strFileName, "");
+                        }
+                        if (!File.Exists(strFileLocation + strFileSpace + strFileDuration))
+                        {
+                            File.WriteAllText(strFileLocation + strFileSpace + strFileDuration, "");
+                        }
+                        string[] strText = File.ReadAllLines(strFileLocation + strFileSpace + strFileName);
+                        string[] strDuration = File.ReadAllLines(strFileLocation + strFileSpace + strFileDuration);
 
                         Array.Resize(ref strText, strText.Length + 1);
                         int i;
@@ -638,22 +655,39 @@ namespace ConsoleBeep_Songs
                             if (x < strText.Length - 1) { }
                             else
                             {
-                                strText[x] = /*"Console.Beep(" + */strText[x] + ", " + intDuration /*+ ");"*/;
+                                strText[x] = /*"Console.Beep(" + */strText[x];
                             }
                         }
 
-                        File.WriteAllLines(strFileLocation + strFileName, strText);
+                        Array.Resize(ref strDuration, strDuration.Length + 1);
+                        i = 0;
+                        for (i = 0; i < strDuration.Length; i++) { }
+                        strDuration[i - 1] = Convert.ToString(intDuration);
+                        for (int x = 0; x < strDuration.Length; x++)
+                        {
+                            if (x < strDuration.Length - 1) { }
+                            else
+                            {
+                                strDuration[x] = strDuration[x];
+                            }
+                        }
+
+                        File.WriteAllLines(strFileLocation + strFileSpace + strFileDuration, strDuration);
+                        File.WriteAllLines(strFileLocation + strFileSpace + strFileName, strText);
                         break;
 
                     }
 
-
-
-
             }
             return intDuration;
         }
-        public static void Play(string strPlay/* int A, int B, int C, int D, int E, int F, int G, int Asharp, int Csharp, int Dsharp, int Fsharp, int Gsharp, int REST*/)
+
+        public static void PlaySong()
+        {
+
+        }
+
+        public static void Play(string strPlay)
         {
             int intDuration = Program.Duration_octave(strPlay);
             strLastPlay = strPlay;
