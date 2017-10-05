@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ConsoleBeep Songs")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Keyboard")]
+[assembly: AssemblyDescription("A simple keyboard by Nando Kools")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ConsoleBeep Songs")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCompany("BlaxadowFire")]
+[assembly: AssemblyProduct("Keyboard")]
+[assembly: AssemblyCopyright("Copyright © Nando Kools 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -13,15 +13,21 @@ using System.IO;
  */
 
 
+/*In excel 
+ * A1 = "Console.Beep("
+ * B1 = "Frequention"
+ * C1 = ", "
+ * D1 = "Duration"
+ * E1 = ");"
+ */
 
 
-    //Moet vragen hoe ik een array heb , deze resize +1 zodag deze een waarde op nieuwe regel kan krijgen.
 
 namespace ConsoleBeep_Songs
 {
     class Program
     {
-        public static int REST = 37;
+        public static int REST = 0;
         public static int GbelowC = 196;
         public static int A = 220;
         public static int Asharp = 234;
@@ -65,15 +71,33 @@ namespace ConsoleBeep_Songs
 
                 //Console.TreatControlCAsInput = true;
 
+                Console.WriteLine("Type \"?\" for help");
                 Console.WriteLine("Select Song");
-                Console.WriteLine("+.)Play From File\r\n0.) Keyboard\r\n1.) Mario Theme\r\n2.) Tetris Theme\r\n3.) Imperial March\r\n4.) Mission Impossible\r\n5.) Best song ever(Sightly off tune)\r\n6.) Song of Time\r\n7.) Song of Storms\r\n8.) Attack on Titan\r\n9.) Mary had a little lamb");
+                Console.WriteLine("-.)\tPlay From File\r\n+.)\tKeyboard\r\n1.)\tMario Theme\r\n2.)\tTetris Theme\r\n3.)\tImperial March\r\n4.)\tMission Impossible");
+                Console.WriteLine("5.)\tBest song ever(Sightly off tune)\r\n6.)\tSong of Time\r\n7.)\tSong of Storms\r\n8.)\tAttack on Titan\r\n9.)\tMary had a little lamb\r\n10.)\tHe was a pirate");
                 strSong = Console.ReadLine();
                 Console.Clear();
                 blnFirstRun = false;
             }
 
+
+            //Info
+            if (strSong == "?")
+            {
+                if (!Directory.Exists(strFileLocation + strFileSpace))
+                {
+                    Directory.CreateDirectory(strFileLocation + strFileSpace);
+                }
+                File.WriteAllText(strFileLocation + strFileSpace + "Help.txt", "/=====\\_/=====\\\r\n|Nando _ Kools|\r\n\\=====/ \\=====/\r\n\r\nMain screen:\r\n\r\nyou can enter one of the numbers to start playing a song.\r\nIf you press \"+\" (Refered to as keyboard) you are able to play your own music.\r\nIf you press \"-\" you are able to listen to the music that is in the same folder as this file.\r\n\r\nKeyboard:\r\n\r\nWith \"ASDFGHJ\" you can play the white keys of a keyboard.\r\nWith \"WRTUI\" you can play the black keys of a keyboard. (These keys have been chosen because of their relative white keys positions.)\r\nWith the keys \"+\" en \"-\" You can change the lengt of the note. \"+\" is longer and \"-\" is shorter. (This is done by steps of 50 milleseconds)\r\nWith the keys \"*\" and \"/\" you can change the octave. \"*\" is higher and \"/\" is lower.\r\nWith \"Esc\" you can return to the main screen.\r\n\r\nMaking/Saving music:\r\n\r\nWhen you are in Keyboard, you can use the \"Spacebar\" to save the last note you played. It will be stored in a file called \"Tone.txt\" and can be found in the same folder as this help file.\r\nWhen you are in Keyboard, you can use the \"Enter\" to create a rest in your music. (You need to save it with \"Spacebar\")\r\nYou can use this to create small pauses in between your notes.\r\n\r\nFAQ:\r\n\r\nQ|Why is the duration default 500?\r\nA|This means it is 500milliseconds. That means 0.5 or 1/2 seconds.\r\n |\r\nQ|I want to Make a new song/keep the song I made.\r\nA|The files Tone.txt and Duration.txt are the files that store the data to play the song. You can create a new folder, give it the name of your song, and keep the files there. If you want to listen to that song again, just copy them back to the Song folder.\r\n |\r\nQ|Where are the songs stored?\r\nA|The songs are stored in a folder called Song. This folder can be found on your desktop.\r\n |\r\nQ|I can't find the Song folder on my desktop.\r\nA|If the folder doesn't exist, you can make it youself, or press space when you are in Keyboard.\r\n |\r\nQ|I accidentally removed the Song folder, can I retreive the song I made?\r\nA|If the song was in that folder, you can't.\r\n |\r\nQ|I made a song, but it has a low frequency tone in it.\r\nA|This is what happens when you don't press any button before pressing \"Spacebar\" you can recognise it in Tone.txt as number '37'.\r\n |\r\nQ|Can I edit my stored songs?\r\nA|Yes you can, in Tone.txt you fill find the Frequency of the tone. You can change this frequency manually. The same applies for the duration which can be found in Duration.txt\r\n |IMPORTANT!!! If you delete any of the tones, make sure to delete the duration as well! Same goes vice versa! (Same goes for adding Tones)\r\n |\r\nQ|What is the easiest way to edit the Songs manually?\r\nA|The easiest way is to open Excel (Or any other speadsheet software) And to copy the frequency and tone to the grid. This way, it is easy to change. When you are dont, just copy the value's back to the corrosponding file.\r\n\r\nIf you have any questions left, please send an e-mail to nando.kools@hotmail.com and I will see if I can answer your question.\r\nA copy of this file can be found on http://bladadowfire.ddns.net/Codes/KeyboardHelp/Help.txt");
+                Console.Write("A help file has been made in ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(strFileLocation + "\\Song\\Help.txt");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.ReadLine();
+            }
+
             //Play self
-            if (strSong == "0")
+            else if (strSong == "+")
             {
                 Console.Title = "Keyboard";
                 do
@@ -89,6 +113,12 @@ namespace ConsoleBeep_Songs
                     Program.Play(strPlay);
                 }
                 while (true);
+            }
+
+            //Play Song From File
+            else if (strSong == "-")
+            {
+                Program.PlaySong();
             }
 
             //Mario
@@ -460,11 +490,30 @@ namespace ConsoleBeep_Songs
                 Console.Beep(294, 250);
             }
 
-            //Play Song From File
-            else if (strSong =="+")
+            //He was a pirate
+            else if (strSong == "10")
             {
-                Program.PlaySong();
+                Console.Beep(220, 200);
+                Console.Beep(262, 200);
+                Console.Beep(294, 400);
+                Console.Beep(294, 400);
+                Console.Beep(294, 200);
+                Console.Beep(330, 200);
+                Console.Beep(350, 400);
+                Console.Beep(350, 400);
+                Console.Beep(350, 200);
+                Console.Beep(392, 200);
+                Console.Beep(330, 400);
+                Console.Beep(330, 400);
+                Console.Beep(294, 200);
+                Console.Beep(262, 200);
+                Console.Beep(262, 200);
+                Console.Beep(294, 200);
+                Console.Beep(294, 400);
+
             }
+
+
 
             Console.Clear();
             blnFirstRun = true;
@@ -542,7 +591,7 @@ namespace ConsoleBeep_Songs
                         intPlay = Gsharp;
                         break;
                     }
-                case "P":
+                case "Enter":
                     {
                         intPlay = REST;
                         break;
@@ -708,7 +757,14 @@ namespace ConsoleBeep_Songs
                     intReadDuration = Convert.ToInt32(strReadDuration[intSongCounter]);
                 }
                 intSongCounter++;
-                Console.Beep(intReadSong, intReadDuration);
+                if (intReadSong != 0)
+                {
+                    Console.Beep(intReadSong, intReadDuration);
+                }
+                else
+                {
+                    Thread.Sleep(intReadDuration);
+                }
             } while (intSongCounter < strReadSong.Length);
             intSongCounter = 0;
         }
@@ -719,8 +775,10 @@ namespace ConsoleBeep_Songs
             strLastPlay = strPlay;
             intLastPlay = intPlay;
             intPlay = Program.Tones(strPlay);
-
-            Console.Beep(intPlay, intDuration);
+            if (intPlay != 0)
+            {
+                Console.Beep(intPlay, intDuration);
+            }
         }
     }
 }
