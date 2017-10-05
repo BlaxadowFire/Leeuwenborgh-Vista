@@ -43,6 +43,9 @@ namespace ConsoleBeep_Songs
         public static string strLastPlay;
         public static bool blnFirstRun = true;
 
+        public static int intLastPlay;
+
+
         public static string strFileName = "/Song.txt";
         public static string strFileLocation = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
@@ -419,6 +422,37 @@ namespace ConsoleBeep_Songs
                 Console.Beep(E, 300);
                 Console.Beep(C, 500);
             }
+            
+            //Mary had a little lamb
+            else if (strSong == "9")
+            {
+                Console.Beep(330, 250);
+                Console.Beep(330, 250);
+                Console.Beep(294, 250);
+                Console.Beep(262, 250);
+                Console.Beep(294, 250);
+                Console.Beep(330, 250);
+                Console.Beep(330, 250);
+                Console.Beep(330, 250);
+                Console.Beep(294, 250);
+                Console.Beep(294, 250);
+                Console.Beep(294, 250);
+                Console.Beep(330, 250);
+                Console.Beep(330, 250);
+                Console.Beep(330, 250);
+                Console.Beep(330, 250);
+                Console.Beep(294, 250);
+                Console.Beep(262, 250);
+                Console.Beep(294, 250);
+                Console.Beep(330, 250);
+                Console.Beep(330, 250);
+                Console.Beep(330, 250);
+                Console.Beep(330, 250);
+                Console.Beep(294, 250);
+                Console.Beep(294, 250);
+                Console.Beep(330, 250);
+                Console.Beep(294, 250);
+            }
 
 
             Console.Clear();
@@ -593,16 +627,22 @@ namespace ConsoleBeep_Songs
                         {
                             File.WriteAllText(strFileLocation + strFileName, "");
                         }
-                        string strConverted = Convert.ToString(intPlay);
-
                         string[] strText = File.ReadAllLines(strFileLocation + strFileName);
 
-                        /* Array.Resize(ref strText, strText.Length+);
+                        Array.Resize(ref strText, strText.Length + 1);
                         int i;
                         for (i = 0; i < strText.Length; i++) { }
-                        strText[i] = strLastPlay;
-                        */
-                        File.WriteAllText(strFileLocation + strFileName, "Console.Beep(" + strConverted + ", " + intDuration + ");" /*strText*/ /*+ strLastPlay*/);
+                        strText[i - 1] = Convert.ToString(intPlay);
+                        for (int x = 0; x < strText.Length; x++)
+                        {
+                            if (x < strText.Length - 1) { }
+                            else
+                            {
+                                strText[x] = /*"Console.Beep(" + */strText[x] + ", " + intDuration /*+ ");"*/;
+                            }
+                        }
+
+                        File.WriteAllLines(strFileLocation + strFileName, strText);
                         break;
 
                     }
@@ -617,9 +657,10 @@ namespace ConsoleBeep_Songs
         {
             int intDuration = Program.Duration_octave(strPlay);
             strLastPlay = strPlay;
-            int intPlay = Program.Tones(strPlay);
+            intLastPlay = intPlay;
+            intPlay = Program.Tones(strPlay);
 
-            Console.Beep(intPlay,intDuration);
+            Console.Beep(intPlay, intDuration);
         }
     }
 }
