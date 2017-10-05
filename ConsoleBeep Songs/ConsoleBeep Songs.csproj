@@ -23,7 +23,7 @@
     <UpdateRequired>true</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://blaxadowfire.ddns.net/Codes/Keyboard/</InstallUrl>
-    <SupportUrl>http://blaxadowfire.ddns.net</SupportUrl>
+    <SupportUrl>http://blaxadowfire.ddns.net/Codes/Help/</SupportUrl>
     <ErrorReportUrl>http://blaxadowfire.ddns.net</ErrorReportUrl>
     <TargetCulture>en</TargetCulture>
     <ProductName>Keyboard</ProductName>
@@ -32,7 +32,7 @@
     <MinimumRequiredVersion>2.0.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -73,6 +73,16 @@
   <PropertyGroup>
     <ApplicationIcon>Keyboard.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -90,6 +100,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ConsoleBeep Songs_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

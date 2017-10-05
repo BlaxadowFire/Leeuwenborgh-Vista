@@ -65,7 +65,7 @@ namespace ConsoleBeep_Songs
         static void Main()
         {
             ConsoleKeyInfo cki;
-            Console.Title = "BeepSongs";
+            Console.Title = "Keyboard";
             if (blnFirstRun == true)
             {
 
