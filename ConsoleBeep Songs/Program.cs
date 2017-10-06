@@ -62,6 +62,7 @@ namespace ConsoleBeep_Songs
         public static string strFileLocation = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
 
+
         static void Main()
         {
             ConsoleKeyInfo cki;
@@ -75,6 +76,7 @@ namespace ConsoleBeep_Songs
                 Console.WriteLine("Select Song");
                 Console.WriteLine("-.)\tPlay From File\r\n+.)\tKeyboard\r\n1.)\tMario Theme\r\n2.)\tTetris Theme\r\n3.)\tImperial March\r\n4.)\tMission Impossible");
                 Console.WriteLine("5.)\tBest song ever(Sightly off tune)\r\n6.)\tSong of Time\r\n7.)\tSong of Storms\r\n8.)\tAttack on Titan\r\n9.)\tMary had a little lamb\r\n10.)\tHe was a pirate");
+                Console.WriteLine("11.)\tMortal Kombat\r\n12.)\tDarude Sandstorm");
                 strSong = Console.ReadLine();
                 Console.Clear();
                 blnFirstRun = false;
@@ -513,7 +515,85 @@ namespace ConsoleBeep_Songs
 
             }
 
+            //Mortal Kombat
+            else if (strSong == "11")
+            {//Mortal Kombat
+                Console.Beep(440, 200);
+                Console.Beep(440, 200);
+                Console.Beep(524, 200);
+                Console.Beep(440, 200);
+                Console.Beep(588, 200);
+                Console.Beep(440, 200);
+                Console.Beep(660, 200);
+                Console.Beep(588, 200);
+                Console.Beep(524, 200);
+                Console.Beep(524, 200);
+                Console.Beep(660, 200);
+                Console.Beep(524, 200);
+                Console.Beep(784, 200);
+                Console.Beep(524, 200);
+                Console.Beep(660, 200);
+                Console.Beep(524, 200);
+                Console.Beep(392, 200);
+                Console.Beep(392, 200);
+                Console.Beep(496, 200);
+                Console.Beep(392, 200);
+                Console.Beep(524, 200);
+                Console.Beep(392, 200);
+                Console.Beep(524, 200);
+                Console.Beep(496, 200);
+                Console.Beep(350, 200);
+                Console.Beep(350, 200);
+                Console.Beep(440, 200);
+                Console.Beep(350, 200);
+                Thread.Sleep(10);
+                Console.Beep(524, 300);
+                Console.Beep(524, 200);
+                Console.Beep(496, 200);
+            }
 
+            //Darude Sandstorm
+            else if (strSong == "12")
+            {
+                Console.Beep(440, 100);
+                Console.Beep(440, 100);
+                Console.Beep(440, 100);
+                Console.Beep(440, 100);
+                Console.Beep(440, 100);
+                Thread.Sleep(0);
+                Console.Beep(440, 100);
+                Console.Beep(440, 100);
+                Console.Beep(440, 100);
+                Console.Beep(440, 100);
+                Console.Beep(440, 100);
+                Console.Beep(440, 100);
+                Console.Beep(440, 100);
+                Thread.Sleep(0);
+                Console.Beep(588, 100);
+                Console.Beep(588, 100);
+                Console.Beep(588, 100);
+                Console.Beep(588, 100);
+                Console.Beep(588, 100);
+                Console.Beep(588, 100);
+                Console.Beep(588, 100);
+                Thread.Sleep(0);
+                Console.Beep(524, 100);
+                Console.Beep(524, 100);
+                Console.Beep(524, 100);
+                Console.Beep(524, 100);
+                Console.Beep(524, 100);
+                Console.Beep(524, 100);
+                Console.Beep(524, 100);
+                Thread.Sleep(0);
+                Console.Beep(392, 300);
+                Console.Beep(440, 100);
+                Console.Beep(440, 100);
+                Console.Beep(440, 100);
+                Console.Beep(440, 100);
+                Console.Beep(440, 100);
+                Thread.Sleep(0);
+
+            }
 
             Console.Clear();
             blnFirstRun = true;
@@ -723,7 +803,7 @@ namespace ConsoleBeep_Songs
                         strDuration[i - 1] = Convert.ToString(intDuration);
                         for (int x = 0; x < strDuration.Length; x++)
                         {
-                            if (x < strDuration.Length - 1) { }
+                            if (x < (strDuration.Length - 1)) { }
                             else
                             {
                                 strDuration[x] = strDuration[x];
@@ -735,7 +815,11 @@ namespace ConsoleBeep_Songs
                         break;
 
                     }
-
+                case "Decimal":
+                    {
+                        Program.PlaySong();
+                        break;
+                    }
             }
             return intDuration;
         }
