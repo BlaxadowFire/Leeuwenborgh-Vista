@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 
                /* Console.Write("Dit ");
@@ -41,12 +42,22 @@ namespace TicTacToe2._0
 
         public static bool firstrun = true;
 
+        public static ThreadStart ts = new ThreadStart(BGM);
+        public static Thread BGMThread = new Thread(ts);
+
         static void Main()
         {
             do
             {
                 if (firstrun == true)
                 {
+                    if (BGMThread.IsAlive == false)
+                    {
+                        BGMThread.Start();
+                    }
+
+
+
                     Console.Title = "TicTacToe By Nando";
                     Console.WriteLine("There is an AI function in this game\r\nIf you want to use the ai, give Player 2 the name:");
                     Console.ForegroundColor = ConsoleColor.Green;
@@ -113,6 +124,47 @@ namespace TicTacToe2._0
 
 
         }
+
+        public static void BGM()
+        {
+            do
+            {
+                Console.Beep(440, 200);
+                Console.Beep(440, 200);
+                Console.Beep(524, 200);
+                Console.Beep(440, 200);
+                Console.Beep(588, 200);
+                Console.Beep(440, 200);
+                Console.Beep(660, 200);
+                Console.Beep(588, 200);
+                Console.Beep(524, 200);
+                Console.Beep(524, 200);
+                Console.Beep(660, 200);
+                Console.Beep(524, 200);
+                Console.Beep(784, 200);
+                Console.Beep(524, 200);
+                Console.Beep(660, 200);
+                Console.Beep(524, 200);
+                Console.Beep(392, 200);
+                Console.Beep(392, 200);
+                Console.Beep(496, 200);
+                Console.Beep(392, 200);
+                Console.Beep(524, 200);
+                Console.Beep(392, 200);
+                Console.Beep(524, 200);
+                Console.Beep(496, 200);
+                Console.Beep(350, 200);
+                Console.Beep(350, 200);
+                Console.Beep(440, 200);
+                Console.Beep(350, 200);
+                Thread.Sleep(10);
+                Console.Beep(524, 300);
+                Console.Beep(524, 200);
+                Console.Beep(496, 200);
+            }
+            while (true);
+        }
+
         public static void TurnCheck()
         {
             if (strCurrentPlayer == strPlayer1)
