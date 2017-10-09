@@ -33,6 +33,13 @@ namespace Subwaj
         public static string strHALL5 = "HALL5";
         public static string strHALL6 = "HALL6";
         public static string strHALL7 = "HALL7";
+        public static string strHALL8 = "HALL8";
+        public static string strHALL9 = "HALL9";
+        public static string strHALL10 = "HALL10";
+        public static string strHALL11 = "HALL11";
+        public static string strHALL12 = "HALL12";
+        public static string strHALL13 = "HALL13";
+        public static string strHALL14 = "HALL14";
 
 
         static void Main(string[] args)
@@ -47,8 +54,9 @@ namespace Subwaj
         }
 
         //Checks UserInput
-        public static void UserInput(ConsoleKeyInfo cki)
+        public static void UserInput()
         {
+            Program.cki = Console.ReadKey();
             string strCKI = cki.Key.ToString();
             switch (CurrentRoom)
             {
@@ -147,6 +155,10 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Enter":
+                                {
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -297,6 +309,83 @@ namespace Subwaj
                         }
                         break;
                     }
+                case "HALL8":
+                    {
+                        switch (strCKI)
+                        {
+                            default:
+                                {
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                case "HALL9":
+                    {
+                        switch (strCKI)
+                        {
+                            default:
+                                {
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                case "HALL10":
+                    {
+                        switch (strCKI)
+                        {
+                            default:
+                                {
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                case "HALL11":
+                    {
+                        switch (strCKI)
+                        {
+                            default:
+                                {
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                case "HALL12":
+                    {
+                        switch (strCKI)
+                        {
+                            default:
+                                {
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                case "HALL13":
+                    {
+                        switch (strCKI)
+                        {
+                            default:
+                                {
+                                    break;
+                                }
+                        }
+                        break;
+                    }
+                case "HALL14":
+                    {
+                        switch (strCKI)
+                        {
+                            default:
+                                {
+                                    break;
+                                }
+                        }
+                        break;
+                    }
                 default:
                     {
                         Program.ErrorHandlerStart();
@@ -341,45 +430,40 @@ namespace Subwaj
                     "0.)\tExit");
 
                 Console.ForegroundColor = ConsoleColor.White;
-                cki = Console.ReadKey();
-                Program.UserInput(cki);
+                Program.UserInput();
 
             } while (true);
         }
         public static void MainMenuStart()
         {
+            Console.Clear();
             //story
+            Program.NextRoom();
             Program.ROOM1();
         }
         public static void MainMenuHelp()
         {
             Program.ErrorNotYetCreated();
-            Program.MAINMENU();
         }
         public static void MainMenuOptions()
         {
             Program.ErrorNotYetCreated();
-            Program.MAINMENU();
         }
         public static void MainMenuCode()
         {
             Program.ErrorNotYetCreated();
-            Program.MAINMENU();
         }
         public static void MainMenuAchievements()
         {
             Program.ErrorNotYetCreated();
-            Program.MAINMENU();
         }
         public static void MainMenuLoadSaveGame()
         {
             Program.ErrorNotYetCreated();
-            Program.MAINMENU();
         }
         public static void MainMenuExit()
         {
             Program.ErrorNotYetCreated();
-            Program.MAINMENU();
         }
         //END OF MAINMENU
 
@@ -388,31 +472,56 @@ namespace Subwaj
         public static void ROOM1()
         {
             CurrentRoom = strROOM1;
-            Program.ErrorNotYetCreated();
+            Console.Clear();
+            Program.NextRoom();
+            Program.HALL1();
+            Program.ErrorOutOfBounds();
         }
         public static void ROOM2()
         {
             CurrentRoom = strROOM2;
+            Console.Clear();
+            Program.NextRoom();
+            Program.HALL2();
+            Program.ErrorOutOfBounds();
         }
         public static void ROOM3()
         {
             CurrentRoom = strROOM3;
+            Console.Clear();
+            Program.NextRoom();
+            Program.HALL4();
+            Program.ErrorOutOfBounds();
         }
         public static void ROOM4()
         {
             CurrentRoom = strROOM5;
+            Console.Clear();
+            Program.NextRoom();
+            Program.HALL6();
+            Program.ErrorOutOfBounds();
         }
         public static void ROOM5()
         {
             CurrentRoom = strROOM5;
+            Console.Clear();
+            Program.NextRoom();
+            Program.HALL7();
+            Program.ErrorOutOfBounds();
         }
         public static void ROOM6()
         {
             CurrentRoom = strROOM6;
+            Console.Clear();
+            Program.NextRoom();
+            Program.HALL13();
+            Program.ErrorOutOfBounds();
         }
         public static void ROOM7()
         {
             CurrentRoom = strROOM7;
+            Console.WriteLine("BOSSROOM");
+            Console.ReadLine();
         }
         //END OF ROOMS
 
@@ -420,32 +529,113 @@ namespace Subwaj
         public static void HALL1()
         {
             CurrentRoom = strHALL1;
+            Console.Clear();
+            Program.NextRoom();
+            Program.ROOM2();
+            Program.ErrorOutOfBounds();
         }
         public static void HALL2()
         {
             CurrentRoom = strHALL2;
+            Console.Clear();
+            Program.NextRoom();
+            Program.ROOM3();
+            Program.ErrorOutOfBounds();
         }
         public static void HALL3()
         {
             CurrentRoom = strHALL3;
+            Program.ErrorNotYetCreated();
         }
         public static void HALL4()
         {
             CurrentRoom = strHALL4;
+            Console.Clear();
+            Program.NextRoom();
+            Program.HALL5();
+            Program.ErrorOutOfBounds();
         }
         public static void HALL5()
         {
             CurrentRoom = strHALL5;
+            Console.Clear();
+            Program.NextRoom();
+            Program.ROOM4();
+            Program.ErrorOutOfBounds();
         }
         public static void HALL6()
         {
             CurrentRoom = strHALL6;
+            Console.Clear();
+            Program.NextRoom();
+            Program.ROOM5();
+            Program.ErrorOutOfBounds();
         }
         public static void HALL7()
         {
             CurrentRoom = strHALL7;
+            Console.Clear();
+            Program.NextRoom();
+            Program.HALL8();
+            Program.ErrorOutOfBounds();
+        }
+        public static void HALL8()
+        {
+            CurrentRoom = strHALL8;
+            Console.Clear();
+            Program.NextRoom();
+            Program.HALL12();
+            Program.ErrorOutOfBounds();
+        }
+        public static void HALL9()
+        {
+            CurrentRoom = strHALL9;
+            Program.ErrorNotYetCreated();
+        }
+        public static void HALL10()
+        {
+            CurrentRoom = strHALL10;
+            Program.ErrorNotYetCreated();
+        }
+        public static void HALL11()
+        {
+            CurrentRoom = strHALL11;
+            Program.ErrorNotYetCreated();
+        }
+        public static void HALL12()
+        {
+            CurrentRoom = strHALL12;
+            Console.Clear();
+            Program.NextRoom();
+            Program.ROOM6();
+            Program.ErrorOutOfBounds();
+        }
+        public static void HALL13()
+        {
+            CurrentRoom = strHALL13;
+            Console.Clear();
+            Program.NextRoom();
+            Program.HALL14();
+            Program.ErrorOutOfBounds();
+        }
+        public static void HALL14()
+        {
+            CurrentRoom = strHALL14;
+            Console.Clear();
+            Program.NextRoom();
+            Program.ROOM7();
+            Program.ErrorOutOfBounds();
         }
         //END OF HALLS
+
+        public static void NextRoom()
+        {
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+            Console.Clear();
+
+        }
+
 
         //Random ConsoleColor Generator
         public static ConsoleColor GetRandomConsoleColor()
@@ -477,16 +667,28 @@ namespace Subwaj
             Console.ReadLine();
             Console.ReadLine();// made 2 readlines to make sure the user doesnt skip the error.
         }
-
+        //If code isn't created yet
         public static void ErrorNotYetCreated()
         {
             Program.ErrorHandlerStart();
             Console.WriteLine("ERROR: CODE DOES'T EXIST");
             Console.WriteLine("ERROR ID: 0003");
             Program.ErrorFinisher();
-            Console.WriteLine("Returning to Main Menu");
+            Console.WriteLine("Press any button to return to Main Menu");
+            Console.ReadKey();
             Program.MAINMENU();
 
+        }
+        //Error code out of bounds
+        public static void ErrorOutOfBounds()
+        {
+            Program.ErrorHandlerStart();
+            Console.WriteLine("ERROR: CODE OUT OF BOUNDS");
+            Console.WriteLine("ERROR ID: 0004");
+            Program.ErrorFinisher();
+            Console.WriteLine("Press any button to return to Main Menu");
+            Console.ReadKey();
+            Program.MAINMENU();
         }
     }
 }

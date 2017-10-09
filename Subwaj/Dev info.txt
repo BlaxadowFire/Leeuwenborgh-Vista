@@ -1,1 +1,11 @@
 ﻿In main menu, press ` to open a debug window for the user input.
+
+
+We begin a functiom always with:
+CurrentRoom = ...
+Console.Clear();
+This way, The currentroom will be updated and the screen will always be clear.
+
+We end a function always with:
+Program.ErrorOutOfBounds();
+This way, we know when the code goes out of bounds.
