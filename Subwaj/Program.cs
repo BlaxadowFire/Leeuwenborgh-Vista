@@ -438,6 +438,7 @@ namespace Subwaj
         {
             Console.Clear();
             //story
+            Console.WriteLine("Going to ROOM1");
             Program.NextRoom();
             Program.ROOM1();
         }
@@ -473,6 +474,7 @@ namespace Subwaj
         {
             CurrentRoom = strROOM1;
             Console.Clear();
+            Console.WriteLine("Going to " + strHALL1);
             Program.NextRoom();
             Program.HALL1();
             Program.ErrorOutOfBounds();
@@ -481,6 +483,7 @@ namespace Subwaj
         {
             CurrentRoom = strROOM2;
             Console.Clear();
+            Console.WriteLine("Going to " + strHALL2);
             Program.NextRoom();
             Program.HALL2();
             Program.ErrorOutOfBounds();
@@ -489,6 +492,7 @@ namespace Subwaj
         {
             CurrentRoom = strROOM3;
             Console.Clear();
+            Console.WriteLine("Going to " + strHALL4);
             Program.NextRoom();
             Program.HALL4();
             Program.ErrorOutOfBounds();
@@ -497,6 +501,7 @@ namespace Subwaj
         {
             CurrentRoom = strROOM5;
             Console.Clear();
+            Console.WriteLine("Going to " + strHALL6);
             Program.NextRoom();
             Program.HALL6();
             Program.ErrorOutOfBounds();
@@ -505,6 +510,7 @@ namespace Subwaj
         {
             CurrentRoom = strROOM5;
             Console.Clear();
+            Console.WriteLine("Going to " + strHALL7);
             Program.NextRoom();
             Program.HALL7();
             Program.ErrorOutOfBounds();
@@ -513,6 +519,7 @@ namespace Subwaj
         {
             CurrentRoom = strROOM6;
             Console.Clear();
+            Console.WriteLine("Going to " + strHALL13);
             Program.NextRoom();
             Program.HALL13();
             Program.ErrorOutOfBounds();
@@ -530,6 +537,7 @@ namespace Subwaj
         {
             CurrentRoom = strHALL1;
             Console.Clear();
+            Console.WriteLine("Going to " + strROOM2);
             Program.NextRoom();
             Program.ROOM2();
             Program.ErrorOutOfBounds();
@@ -538,6 +546,7 @@ namespace Subwaj
         {
             CurrentRoom = strHALL2;
             Console.Clear();
+            Console.WriteLine("Going to " + strROOM3);
             Program.NextRoom();
             Program.ROOM3();
             Program.ErrorOutOfBounds();
@@ -551,6 +560,7 @@ namespace Subwaj
         {
             CurrentRoom = strHALL4;
             Console.Clear();
+            Console.WriteLine("Going to " + strHALL5);
             Program.NextRoom();
             Program.HALL5();
             Program.ErrorOutOfBounds();
@@ -559,6 +569,7 @@ namespace Subwaj
         {
             CurrentRoom = strHALL5;
             Console.Clear();
+            Console.WriteLine("Going to " + strROOM4);
             Program.NextRoom();
             Program.ROOM4();
             Program.ErrorOutOfBounds();
@@ -567,6 +578,7 @@ namespace Subwaj
         {
             CurrentRoom = strHALL6;
             Console.Clear();
+            Console.WriteLine("Going to " + strROOM5);
             Program.NextRoom();
             Program.ROOM5();
             Program.ErrorOutOfBounds();
@@ -575,6 +587,7 @@ namespace Subwaj
         {
             CurrentRoom = strHALL7;
             Console.Clear();
+            Console.WriteLine("Going to " + strHALL8);
             Program.NextRoom();
             Program.HALL8();
             Program.ErrorOutOfBounds();
@@ -583,6 +596,7 @@ namespace Subwaj
         {
             CurrentRoom = strHALL8;
             Console.Clear();
+            Console.WriteLine("Going to " + strHALL12);
             Program.NextRoom();
             Program.HALL12();
             Program.ErrorOutOfBounds();
@@ -606,6 +620,7 @@ namespace Subwaj
         {
             CurrentRoom = strHALL12;
             Console.Clear();
+            Console.WriteLine("Going to " + strROOM6);
             Program.NextRoom();
             Program.ROOM6();
             Program.ErrorOutOfBounds();
@@ -614,6 +629,7 @@ namespace Subwaj
         {
             CurrentRoom = strHALL13;
             Console.Clear();
+            Console.WriteLine("Going to " + strHALL14);
             Program.NextRoom();
             Program.HALL14();
             Program.ErrorOutOfBounds();
@@ -622,6 +638,7 @@ namespace Subwaj
         {
             CurrentRoom = strHALL14;
             Console.Clear();
+            Console.WriteLine("Going to " + strROOM7);
             Program.NextRoom();
             Program.ROOM7();
             Program.ErrorOutOfBounds();
