@@ -64,6 +64,21 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="BGM subwaj\Duration.BGM">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="BGM subwaj\MainMenu\Duration.txt" />
+    <Content Include="BGM subwaj\MainMenu\Tone.txt" />
+    <Content Include="BGM subwaj\notes.txt" />
+    <None Include="BGM subwaj\MainMenu\Duration.BGM">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="BGM subwaj\MainMenu\Tone.BGM">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="BGM subwaj\Tone.BGM">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Dev info.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

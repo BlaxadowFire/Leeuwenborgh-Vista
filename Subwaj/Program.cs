@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.IO;
 
 namespace Subwaj
 {
@@ -14,7 +15,17 @@ namespace Subwaj
         public static ConsoleColor originalForegroundColor;     //Sets the old foreground to a variable to make sure it isn't the same.
 
         public static ConsoleKeyInfo cki; //uses cki to use readkey.
-        public static string CurrentRoom = string.Empty; //Makes sure the program knows in what room the user is.
+        public static string CurrentRoom = "MainMenu"; //Makes sure the program knows in what room the user is.
+
+        //BGM
+        public static int intReadSong;
+        public static int intReadDuration;
+        public static int intSongCounter;
+        public static string BGMFileTone = "Tone.BGM";
+        public static string BGMFolder = "BGM subwaj/";
+        public static string BGMFileDuration = "Duration.BGM";
+        public static ThreadStart ts = new ThreadStart(BGM);
+        public static Thread BGMThread = new Thread(ts);
 
         //Makes it easier to change rooms
         public static string strMainMenu = "MainMenu";
@@ -48,6 +59,7 @@ namespace Subwaj
             //Loops the program
             do
             {
+                BGMThread.Start();
                 Program.MAINMENU();
             }
             while (true);
@@ -408,7 +420,7 @@ namespace Subwaj
             //Loops the main menu.
             do
             {
-                CurrentRoom = "MainMenu";
+                CurrentRoom = strMainMenu;
 
                 //makes the text a random color and prevents the foregroundcolor to be the same as the backgroundcolor.
                 do
@@ -419,8 +431,10 @@ namespace Subwaj
                 while (Console.ForegroundColor == Console.BackgroundColor || Console.ForegroundColor == originalForegroundColor);
                 Console.Clear();
                 Console.WriteLine("\t\t\t\t\tMade by Nando, Shunhui, Julean, Tom\r\n" +
-                    "\t\t\t\t\t\tPresenting\r\n" +
-                    "\t\t\t\t\t\tNOT A GAME\r\n\r\n" +
+                    "\t\t\t\t\t\tPresenting\r\n\r\n" +
+                    "\t\t\t\t\t\t============\r\n" +
+                    "\t\t\t\t\t\t|NOT A GAME|\r\n" +
+                    "\t\t\t\t\t\t============\r\n\r\n" +
                     "1.)\tStart\r\n" +
                     "2.)\tHelp\r\n" +
                     "3.)\tOptions\r\n" +
@@ -661,6 +675,77 @@ namespace Subwaj
             return (ConsoleColor)consoleColors.GetValue(_randomforeground.Next(consoleColors.Length));
         }
 
+        //BGM
+        public static void BGM()
+        {
+            do
+            {
+                if (CurrentRoom != strMainMenu && CurrentRoom != string.Empty)
+                {
+                    do
+                    {
+                        string[] strReadSong = File.ReadAllLines(BGMFolder + BGMFileTone);
+                        string[] strReadDuration = File.ReadAllLines(BGMFolder + BGMFileDuration);
+                        intSongCounter = 0;
+                        if (CurrentRoom != string.Empty && CurrentRoom != strMainMenu)
+
+                            do
+                            {
+                                for (int i = 0; i < strReadSong.Length; i++)
+                                {
+                                    intReadSong = Convert.ToInt32(strReadSong[intSongCounter]);
+                                }
+
+                                for (int i = 0; i < strReadDuration.Length; i++)
+                                {
+                                    intReadDuration = Convert.ToInt32(strReadDuration[intSongCounter]);
+                                }
+                                intSongCounter++;
+                                if (intReadSong != 0)
+                                {
+                                    Console.Beep(intReadSong, intReadDuration);
+                                }
+                                else
+                                {
+                                    Thread.Sleep(intReadDuration);
+                                }
+                            } while (intSongCounter < strReadSong.Length && CurrentRoom != strMainMenu);
+                        intSongCounter = 0;
+                    } while (CurrentRoom != string.Empty || CurrentRoom != strMainMenu);
+                }
+                else if (CurrentRoom != string.Empty && CurrentRoom == strMainMenu)
+                {
+                    do
+                    {
+                        string[] strReadSong = File.ReadAllLines(BGMFolder + "MainMenu/" + BGMFileTone);
+                        string[] strReadDuration = File.ReadAllLines(BGMFolder + "MainMenu/" + BGMFileDuration);
+                        intSongCounter = 0;
+                        do
+                        {
+                            for (int i = 0; i < strReadSong.Length; i++)
+                            {
+                                intReadSong = Convert.ToInt32(strReadSong[intSongCounter]);
+                            }
+
+                            for (int i = 0; i < strReadDuration.Length; i++)
+                            {
+                                intReadDuration = Convert.ToInt32(strReadDuration[intSongCounter]);
+                            }
+                            intSongCounter++;
+                            if (intReadSong != 0)
+                            {
+                                Console.Beep(intReadSong, intReadDuration);
+                            }
+                            else
+                            {
+                                Thread.Sleep(intReadDuration);
+                            }
+                        } while (intSongCounter < strReadSong.Length && CurrentRoom == strMainMenu);
+                        intSongCounter = 0;
+                    } while (CurrentRoom == strMainMenu);
+                }
+            } while (true);
+        }
 
         //Error color
         public static void ErrorHandlerStart()
@@ -675,7 +760,8 @@ namespace Subwaj
         {
             Console.WriteLine("\r\nInformation:\r\nCurrentRoom = {0}\r\n", CurrentRoom);
             Console.WriteLine("An unexpected error occured, please contact me at nando.kools@hotmail.com and give me the error ID");
-
+            CurrentRoom = string.Empty;
+            Thread.Sleep(500);
             Console.Beep(500, 1200);
 
             Console.ForegroundColor = ConsoleColor.White;
