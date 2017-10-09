@@ -774,7 +774,7 @@ namespace Subwaj
         public static void ErrorNotYetCreated()
         {
             Program.ErrorHandlerStart();
-            Console.WriteLine("ERROR: CODE DOES'T EXIST");
+            Console.WriteLine("ERROR: CODE DOESN'T EXIST");
             Console.WriteLine("ERROR ID: 0003");
             Program.ErrorFinisher();
             Console.WriteLine("Press any button to return to Main Menu");
