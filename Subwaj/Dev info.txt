@@ -1,0 +1,1 @@
+﻿In main menu, press ` to open a debug window for the user input.
