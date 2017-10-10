@@ -53,6 +53,10 @@ namespace Subwaj
         public static string strHALL13 = "HALL13";
         public static string strHALL14 = "HALL14";
 
+        //boolean's for code menu
+        public static bool blnBoss = false;
+        public static bool blnShop = false;
+
 
         static void Main(string[] args)
         {
@@ -500,7 +504,67 @@ namespace Subwaj
         }
         public static void MainMenuCode()
         {
-            Program.ErrorNotYetCreated();
+
+            int intCode = 0;
+            do
+            {
+                            Console.Clear();
+            Console.WriteLine("Press Enter to go back to Main Menu");
+                while (intCode == 0)
+                {
+                    string strAnswer = Console.ReadLine();
+                    if(strAnswer == "boss")
+                    {
+                        blnBoss = true;
+                        Console.WriteLine("Boss enabeld");
+                        Thread.Sleep(4000);
+                        Console.Clear();
+                        Program.MAINMENU();
+                    }
+                    else if(strAnswer == "shop")
+                    {
+                        blnShop = true;
+                        Console.WriteLine("Shop enebeld");
+                        Thread.Sleep(4000);
+                        Console.Clear();
+                        Program.MAINMENU();
+                    }
+                    else if(strAnswer == "konami")
+                    {
+                        intCode = 1;
+                    }
+                    else
+                    {
+                        Program.MAINMENU();
+                    }
+                }
+                while(intCode == 0);
+                do
+                {
+                    cki = Console.ReadKey();
+                    string strCKI = cki.Key.ToString();
+                    switch (strCKI)
+                    {
+                        case "NumPad1":
+                        case "D1":
+		                {
+			                break;
+		                }
+                        case "Esc":
+                        {
+                            Program.MAINMENU();
+                            break;
+                        }
+                        default:
+                        {
+                            break;
+                        }
+                    }
+                } while (true);
+            }
+            while (true);
+            Program.ErrorOutOfBounds();
+
         }
         public static void MainMenuAchievements()
         {
