@@ -614,7 +614,7 @@ namespace Subwaj
                             }
                         case "B":
                             {
-                                if (Konamicode == 8 || Konamicode == 10)
+                                if (Konamicode == 8)
                                 {
                                     Konamicode += 1;
                                 }
@@ -626,7 +626,7 @@ namespace Subwaj
                             }
                         case "A":
                             {
-                                if (Konamicode == 9 || Konamicode == 11)
+                                if (Konamicode == 9)
                                 {
                                     Konamicode += 1;
                                 }
@@ -638,7 +638,7 @@ namespace Subwaj
                             }
                         case "Enter":
                             {
-                                if (Konamicode == 12)
+                                if (Konamicode == 10)
                                 {
                                     string strFilename = "files/Achievements/Konami.Achievement";
                                     Console.WriteLine(File.ReadAllText(strFilename));
