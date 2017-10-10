@@ -433,9 +433,9 @@ namespace Subwaj
                 Console.Clear();
                 Console.WriteLine("\t\t\t\t\tMade by Nando, Shunhui, Julean, Tom\r\n" +
                     "\t\t\t\t\t\tPresenting\r\n\r\n" +
-                    "\t\t\t\t\t\t============\r\n" +
-                    "\t\t\t\t\t\t|NOT A GAME|\r\n" +
-                    "\t\t\t\t\t\t============\r\n\r\n" +
+                    "\t\t\t\t\t\t╔════════════╗\r\n" +
+                    "\t\t\t\t\t\t║ NOT A GAME ║\r\n" +
+                    "\t\t\t\t\t\t╚════════════╝\r\n\r\n" +
                     "1.)\tStart\r\n" +
                     "2.)\tHelp\r\n" +
                     "3.)\tOptions\r\n" +
@@ -459,7 +459,30 @@ namespace Subwaj
         }
         public static void MainMenuHelp()
         {
-            Program.ErrorNotYetCreated();
+
+            do
+            {
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                string strFilename = "files/help.menu";
+                Console.WriteLine(File.ReadAllText(strFilename));
+                Console.ForegroundColor = ConsoleColor.White;
+                cki = Console.ReadKey();
+                string strCKI = cki.Key.ToString();
+                switch (strCKI)
+                {
+                    case "Escape":
+                        {
+                            Program.MAINMENU();
+                            break;
+                        }
+                    default:
+                        {
+                            break;
+                        }
+                }
+            }
+            while (true);
         }
         public static void MainMenuOptions()
         {
