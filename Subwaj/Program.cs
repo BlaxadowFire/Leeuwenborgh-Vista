@@ -466,7 +466,8 @@ namespace Subwaj
             do
             {
                 Console.Clear();
-                Console.WriteLine("1.) Toggle BGM(BackGroundMusic)");
+                Console.WriteLine("Press Esc to go back to Main Menu\r\n");
+                Console.WriteLine("1.)\tToggle BGM(BackGroundMusic)");
                 cki = Console.ReadKey();
                 string strCKI = cki.Key.ToString();
                 switch (strCKI)
@@ -484,7 +485,7 @@ namespace Subwaj
                             }
                             break;
                         }
-                    case "Esc":
+                    case "Escape":
                         {
                             Program.MAINMENU();
                             break;
@@ -496,7 +497,6 @@ namespace Subwaj
                 }
             }
             while (true);
-            Program.ErrorOutOfBounds();
         }
         public static void MainMenuCode()
         {
@@ -748,7 +748,7 @@ namespace Subwaj
                         intSongCounter = 0;
                     } while (CurrentRoom != string.Empty || CurrentRoom != strMainMenu && blnPlayMusic == true);
                 }
-                else if (CurrentRoom != string.Empty && CurrentRoom == strMainMenu) //BGM Main Menu
+                else if (CurrentRoom != string.Empty && CurrentRoom == strMainMenu && blnPlayMusic == true) //BGM Main Menu
                 {
                     do
                     {
