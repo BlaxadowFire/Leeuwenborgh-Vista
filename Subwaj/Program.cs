@@ -433,7 +433,7 @@ namespace Subwaj
                     originalForegroundColor = Console.ForegroundColor;
                     Console.ForegroundColor = GetRandomConsoleColor();
                 }
-                while (Console.ForegroundColor == Console.BackgroundColor || Console.ForegroundColor == originalForegroundColor);
+                while (Console.ForegroundColor == Console.BackgroundColor || Console.ForegroundColor == originalForegroundColor || Console.ForegroundColor == ConsoleColor.Gray || Console.ForegroundColor == ConsoleColor.DarkGray || Console.ForegroundColor == ConsoleColor.DarkRed || Console.ForegroundColor == ConsoleColor.DarkMagenta || Console.ForegroundColor == ConsoleColor.DarkYellow || Console.ForegroundColor == ConsoleColor.DarkBlue);
                 Console.Clear();
                 string strFilenamee = "files/mainmenu.menu";
                 Console.WriteLine(File.ReadAllText(strFilenamee));
