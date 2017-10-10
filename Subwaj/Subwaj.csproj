@@ -29,12 +29,12 @@
     <ProductName>Not A Game</ProductName>
     <PublisherName>Nando</PublisherName>
     <SuiteName>Subwaj</SuiteName>
-    <MinimumRequiredVersion>0.0.0.1</MinimumRequiredVersion>
+    <MinimumRequiredVersion>0.0.0.3</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
-    <UseApplicationTrust>false</UseApplicationTrust>
+    <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -68,7 +68,7 @@
     <ManifestKeyFile>Subwaj_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <GenerateManifests>false</GenerateManifests>
+    <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -95,40 +95,38 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="files\Achievements\Konami.Achievement">
+    <Content Include="files\Achievements\Konami.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="files\BossEnabled.Codes">
+    </Content>
+    <Content Include="files\BossEnabled.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="files\help.menu">
+    </Content>
+    <Content Include="files\help.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="files\mainmenu.menu">
+    </Content>
+    <Content Include="files\mainmenu.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="files\ShopEnabled.Codes">
+    </Content>
+    <Content Include="files\ShopEnabled.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <None Include="Properties\app.manifest" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="game.ico" />
-    <None Include="BGM subwaj\Duration.BGM">
+    <Content Include="BGM subwaj\Duration.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <Content Include="BGM subwaj\MainMenu\Duration.txt" />
-    <Content Include="BGM subwaj\MainMenu\Tone.txt" />
+    </Content>
     <Content Include="BGM subwaj\notes.txt" />
-    <None Include="BGM subwaj\MainMenu\Duration.BGM">
+    <Content Include="BGM subwaj\MainMenu\Duration.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="BGM subwaj\MainMenu\Tone.BGM">
+    </Content>
+    <Content Include="BGM subwaj\MainMenu\Tone.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="BGM subwaj\Tone.BGM">
+    </Content>
+    <Content Include="BGM subwaj\Tone.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
     <Content Include="Dev info.txt" />
     <Content Include="Error codes.txt" />
   </ItemGroup>
@@ -144,5 +142,38 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="BGM subwaj\notes.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Dev info.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Error codes.txt">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Exclude</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
