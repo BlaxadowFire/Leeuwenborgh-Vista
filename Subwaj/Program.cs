@@ -510,9 +510,10 @@ namespace Subwaj
         {
             Program.ErrorNotYetCreated();
         }
-        public static void MainMenuExit()
+       
+        public static void MainMenuExit() 
         {
-            Program.ErrorNotYetCreated();
+             Environment.Exit(0);
         }
         //END OF MAINMENU
 
