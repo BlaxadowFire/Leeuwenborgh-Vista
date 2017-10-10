@@ -465,6 +465,7 @@ namespace Subwaj
                 string strCKI = cki.Key.ToString();
                 switch (strCKI)
                 {
+                    case "Enter":
                     case "Escape":
                         {
                             Program.MAINMENU();
@@ -521,28 +522,30 @@ namespace Subwaj
             int intCode = 0;
             do
             {
-                            Console.Clear();
-            Console.WriteLine("Press Enter to go back to Main Menu");
+                Console.Clear();
+                Console.WriteLine("Press Enter to go back to Main Menu");
                 while (intCode == 0)
                 {
                     string strAnswer = Console.ReadLine();
-                    if(strAnswer == "boss")
+                    if(strAnswer == "boss" || strAnswer == "BOSS" || strAnswer == "Boss")
                     {
                         blnBoss = true;
-                        Console.WriteLine("Boss enabeld");
-                        Thread.Sleep(4000);
+                        string strFilename = "files/BossEnabled.Codes";
+                        Console.WriteLine(File.ReadAllText(strFilename));
+                        Thread.Sleep(1000);
                         Console.Clear();
                         Program.MAINMENU();
                     }
-                    else if(strAnswer == "shop")
+                    else if(strAnswer == "shop" ||  strAnswer == "SHOP" || strAnswer == "Shop")
                     {
                         blnShop = true;
-                        Console.WriteLine("Shop enebeld");
-                        Thread.Sleep(4000);
+                        string strFilename = "files/ShopEnabled.Codes";
+                        Console.WriteLine(File.ReadAllText(strFilename));
+                        Thread.Sleep(1000);
                         Console.Clear();
                         Program.MAINMENU();
                     }
-                    else if(strAnswer == "konami")
+                    else if(strAnswer == "konami" || strAnswer == "KONAMI" || strAnswer == "Konami")
                     {
                         intCode = 1;
                     }
@@ -552,18 +555,104 @@ namespace Subwaj
                     }
                 }
                 while(intCode == 0);
+                int Konamicode = 0;
+                Console.Clear();
+                Console.WriteLine("Please enter the Konami Code (START = ENTER)");
                 do
                 {
                     cki = Console.ReadKey();
                     string strCKI = cki.Key.ToString();
                     switch (strCKI)
                     {
-                        case "NumPad1":
-                        case "D1":
+                        case "UpArrow":
 		                {
+                                if (Konamicode == 0 || Konamicode == 1)
+                                {
+                                    Konamicode += 1;
+                                }
+                                else
+                                {
+                                    Konamicode = 0;
+                                }
 			                break;
 		                }
-                        case "Esc":
+                        case "DownArrow":
+                            {
+                                if (Konamicode == 2 || Konamicode == 3)
+                                {
+                                    Konamicode += 1;
+                                }
+                                else
+                                {
+                                    Konamicode = 0;
+                                }
+                                break;
+                            }
+                        case "LeftArrow":
+                            {
+                                if (Konamicode == 4 || Konamicode == 6)
+                                {
+                                    Konamicode += 1;
+                                }
+                                else
+                                {
+                                    Konamicode = 0;
+                                }
+                                break;
+                            }
+                        case "RightArrow":
+                            {
+                                if (Konamicode == 5 || Konamicode == 7)
+                                {
+                                    Konamicode += 1;
+                                }
+                                else
+                                {
+                                    Konamicode = 0;
+                                }
+                                break;
+                            }
+                        case "B":
+                            {
+                                if (Konamicode == 8 || Konamicode == 10)
+                                {
+                                    Konamicode += 1;
+                                }
+                                else
+                                {
+                                    Konamicode = 0;
+                                }
+                                break;
+                            }
+                        case "A":
+                            {
+                                if (Konamicode == 9 || Konamicode == 11)
+                                {
+                                    Konamicode += 1;
+                                }
+                                else
+                                {
+                                    Konamicode = 0;
+                                }
+                                break;
+                            }
+                        case "Enter":
+                            {
+                                if (Konamicode == 12)
+                                {
+                                    string strFilename = "files/Achievements/Konami.Achievement";
+                                    Console.WriteLine(File.ReadAllText(strFilename));
+                                    Thread.Sleep(1000);
+                                    Console.Clear();
+                                    Program.MAINMENU();
+                                }
+                                else
+                                {
+                                    Konamicode = 0;
+                                }
+                                break;
+                            }
+                        case "Escape":
                         {
                             Program.MAINMENU();
                             break;
@@ -576,7 +665,6 @@ namespace Subwaj
                 } while (true);
             }
             while (true);
-            Program.ErrorOutOfBounds();
 
         }
         public static void MainMenuAchievements()

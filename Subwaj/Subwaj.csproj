@@ -62,10 +62,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="files\Achievements\Konami.Achievement">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="files\BossEnabled.Codes">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="files\help.menu">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="files\mainmenu.menu">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="files\ShopEnabled.Codes">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
