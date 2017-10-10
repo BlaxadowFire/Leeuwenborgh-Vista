@@ -3,7 +3,9 @@ When the currentroom isnt right
 
 ERROR ID: 0002 = OUT OF ROOM EXCEPTION
 when it reaches a code which should be unreachable (check where 0002 can be found)
+
 ERROR ID: 0003 = CODE DOES'T EXIST
 This is an error code that we WILL place in functions or places where we haven't finished our codes yet.
+
 ERROR ID: 0004 = OUT OF BOUNDS
 Means that the code loops back to a place where it shouldn't come.

@@ -26,6 +26,7 @@ namespace Subwaj
         public static string BGMFileDuration = "Duration.BGM";
         public static ThreadStart ts = new ThreadStart(BGM);
         public static Thread BGMThread = new Thread(ts);
+        public static bool blnPlayMusic = true;
 
         //Makes it easier to change rooms
         public static string strMainMenu = "MainMenu";
@@ -462,7 +463,40 @@ namespace Subwaj
         }
         public static void MainMenuOptions()
         {
-            Program.ErrorNotYetCreated();
+            do
+            {
+                Console.Clear();
+                Console.WriteLine("1.) Toggle BGM(BackGroundMusic)");
+                cki = Console.ReadKey();
+                string strCKI = cki.Key.ToString();
+                switch (strCKI)
+                {
+                    case "NumPad1":
+                    case "D1":
+                        {
+                            if (blnPlayMusic == true)
+                            {
+                                blnPlayMusic = false;
+                            }
+                            else
+                            {
+                                blnPlayMusic = true;
+                            }
+                            break;
+                        }
+                    case "Esc":
+                        {
+                            Program.MAINMENU();
+                            break;
+                        }
+                    default:
+                        {
+                            break;
+                        }
+                }
+            }
+            while (true);
+            Program.ErrorOutOfBounds();
         }
         public static void MainMenuCode()
         {
@@ -543,6 +577,7 @@ namespace Subwaj
             CurrentRoom = strROOM7;
             Console.WriteLine("BOSSROOM");
             Console.ReadLine();
+            Program.ErrorNotYetCreated();
         }
         //END OF ROOMS
 
@@ -680,7 +715,7 @@ namespace Subwaj
         {
             do
             {
-                if (CurrentRoom != strMainMenu && CurrentRoom != string.Empty)
+                if (CurrentRoom != strMainMenu && CurrentRoom != string.Empty && blnPlayMusic == true) //BGM In Game
                 {
                     do
                     {
@@ -709,11 +744,11 @@ namespace Subwaj
                                 {
                                     Thread.Sleep(intReadDuration);
                                 }
-                            } while (intSongCounter < strReadSong.Length && CurrentRoom != strMainMenu);
+                            } while (intSongCounter < strReadSong.Length && CurrentRoom != strMainMenu && blnPlayMusic == true);
                         intSongCounter = 0;
-                    } while (CurrentRoom != string.Empty || CurrentRoom != strMainMenu);
+                    } while (CurrentRoom != string.Empty || CurrentRoom != strMainMenu && blnPlayMusic == true);
                 }
-                else if (CurrentRoom != string.Empty && CurrentRoom == strMainMenu)
+                else if (CurrentRoom != string.Empty && CurrentRoom == strMainMenu) //BGM Main Menu
                 {
                     do
                     {
@@ -740,9 +775,9 @@ namespace Subwaj
                             {
                                 Thread.Sleep(intReadDuration);
                             }
-                        } while (intSongCounter < strReadSong.Length && CurrentRoom == strMainMenu);
+                        } while (intSongCounter < strReadSong.Length && CurrentRoom == strMainMenu && blnPlayMusic == true);
                         intSongCounter = 0;
-                    } while (CurrentRoom == strMainMenu);
+                    } while (CurrentRoom == strMainMenu && blnPlayMusic == true);
                 }
             } while (true);
         }
