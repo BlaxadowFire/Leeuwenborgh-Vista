@@ -435,18 +435,8 @@ namespace Subwaj
                 }
                 while (Console.ForegroundColor == Console.BackgroundColor || Console.ForegroundColor == originalForegroundColor);
                 Console.Clear();
-                Console.WriteLine("\t\t\t\t\tMade by Nando, Shunhui, Julean, Tom\r\n" +
-                    "\t\t\t\t\t\tPresenting\r\n\r\n" +
-                    "\t\t\t\t\t\t╔════════════╗\r\n" +
-                    "\t\t\t\t\t\t║ NOT A GAME ║\r\n" +
-                    "\t\t\t\t\t\t╚════════════╝\r\n\r\n" +
-                    "1.)\tStart\r\n" +
-                    "2.)\tHelp\r\n" +
-                    "3.)\tOptions\r\n" +
-                    "4.)\tCode\r\n" +
-                    "5.)\tAchievements\r\n" +
-                    "6.)\tLoad Save Game\r\n" +
-                    "0.)\tExit");
+                string strFilenamee = "files/mainmenu.menu";
+                Console.WriteLine(File.ReadAllText(strFilenamee));
 
                 Console.ForegroundColor = ConsoleColor.White;
                 Program.UserInput();
