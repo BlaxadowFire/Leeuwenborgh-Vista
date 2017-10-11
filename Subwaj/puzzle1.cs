@@ -55,46 +55,9 @@ namespace Subwaj
             {
                 do
                 {
-                    if (firstrun == true)
-                    {
-                        if (BGMThread.IsAlive == false)
-                        {
-                            BGMThread.Start();
-                        }
-
-
-
-                        Console.Title = "TicTacToe By Nando";
-                        Console.WriteLine("There is an AI function in this game\r\nIf you want to use the ai, give Player 2 the name:");
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("'ai' 'bot' '0'");
-                        Console.ForegroundColor = ConsoleColor.White;
-                        Console.WriteLine("Have Fun\r\n");
-                        labelp1:
-                        Console.WriteLine("Player1 (X), enter your name:");
-                        strPlayer1 = Console.ReadLine();
-                        if (strPlayer1 == "")
-                        {
-                            strPlayer1 = "p1";
-                        }
-                        else if (strPlayer1 == "ai" || strPlayer1 == "bot" || strPlayer1 == "AI" || strPlayer1 == "BOT" || strPlayer1 == "0")
-                        {
-                            Console.WriteLine("Player1 can't be a bot.");
-                            goto labelp1;
-                        }
-                        Console.WriteLine("\r\n\r\nPlayer2 (O), enter your name:");
-                        strPlayer2 = Console.ReadLine();
-                        if (strPlayer2 == "")
-                        {
-                            strPlayer2 = "p2";
-                        }
-                        if (strPlayer2 == "ai" || strPlayer2 == "bot" || strPlayer2 == "AI" || strPlayer2 == "BOT" || strPlayer2 == "0")
-                        {
-                            strPlayer2 = "THE MOST AMAZING AI EVER CREATED";
-                        }
-                        strCurrentPlayer = strPlayer1;
-                        firstrun = false;
-                    }
+                    strPlayer1 = "p1";
+                    strPlayer2 = "THE MOST AMAZING AI EVER CREATED";
+                    strCurrentPlayer = strPlayer1;
                     do
                     {
                         if (strCurrentPlayer == "THE MOST AMAZING AI EVER CREATED")
@@ -119,12 +82,9 @@ namespace Subwaj
                     restart = Console.ReadLine();
                     if (restart == "n")
                     {
-                        Environment.Exit(0);
+                        Console.WriteLine("Sucks to be you, you can't stop");
                     }
-                    else
-                    {
                         puzzle1.funcrestart();
-                    }
                 }
                 while (true);
 
@@ -447,18 +407,10 @@ namespace Subwaj
                 else
                 {
                     Console.WriteLine("Congratulations {0}, you won!", strCurrentPlayer);
+                //ADD WIN CODE HERE
                 }
-                Console.WriteLine("Do you want to play again? y/n");
                 restart = Console.ReadLine();
-
-                if (restart == "n" || restart == "N")
-                {
-                    Environment.Exit(0);
-                }
-                else
-                {
-                    puzzle1.funcrestart();
-                }
+                puzzle1.funcrestart();
             }
             public static void funcrestart()
             {
@@ -472,14 +424,6 @@ namespace Subwaj
                 H = "8";
                 I = "9";
 
-                Console.WriteLine("Do you play with the same players?");
-                string strCheckPlayer = Console.ReadLine();
-                if (strCheckPlayer == "n" || strCheckPlayer == "N")
-                {
-                    strPlayer1 = string.Empty;
-                    strPlayer2 = string.Empty;
-                    firstrun = true;
-                }
                 puzzle1.SwitchTurn();
                 blnGameOVer = false;
                 strCPChoice = string.Empty;
@@ -487,14 +431,7 @@ namespace Subwaj
 
                 Console.Clear();
 
-                if (restart == "n")
-                {
-                    Environment.Exit(0);
-                }
-                else
-                {
                     puzzle1.Main1();
-                }
             }
             public static void funcbot()
             {
