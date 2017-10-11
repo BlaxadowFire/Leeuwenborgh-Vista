@@ -607,7 +607,7 @@ namespace Subwaj
                             }
                             else if (CurrentRoom == strInGameMenu)
                             {
-                                Program.ingamemenu();
+                                Program.InGameMenu();
                             }
                             break;
                         }
@@ -821,8 +821,8 @@ namespace Subwaj
         }
         //END OF MAINMENU
 
-        //BEGIN OF INGAMEMENU
-        public static void ingamemenu()
+        //BEGIN OF InGameMenu
+        public static void InGameMenu()
         {
             CurrentRoom = strInGameMenu;
             Console.Clear();
@@ -832,7 +832,7 @@ namespace Subwaj
             Console.ForegroundColor = ConsoleColor.White;
 
         }
-        //END OF INGAMEMENU
+        //END OF InGameMenu
 
         //BEGIN OF HUD
         public static void HUD()
