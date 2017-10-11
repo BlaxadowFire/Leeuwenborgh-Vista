@@ -48,14 +48,11 @@ namespace Subwaj
 
             public static bool firstrun = true;
 
-            public static ThreadStart ts = new ThreadStart(BGM);
-            public static Thread BGMThread = new Thread(ts);
-
             static void Main1()
             {
                 do
                 {
-                    strPlayer1 = "p1";
+                    strPlayer1 = Environment.UserName;
                     strPlayer2 = "THE MOST AMAZING AI EVER CREATED";
                     strCurrentPlayer = strPlayer1;
                     do
@@ -400,7 +397,7 @@ namespace Subwaj
                 gridcolor(); Console.Write(G); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
                 gridcolor(); Console.Write(H); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
                 gridcolor(); Console.Write(I); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
-                if (strPlayer2 == "THE MOST AMAZING AI EVER CREATED" && strPlayer2 == strCurrentPlayer)
+                if (strPlayer2 == strCurrentPlayer)
                 {
                     Console.WriteLine("YOU JUST LOST FROM {0}", strPlayer2);
                 }
@@ -409,8 +406,10 @@ namespace Subwaj
                     Console.WriteLine("Congratulations {0}, you won!", strCurrentPlayer);
                 //ADD WIN CODE HERE
                 }
-                restart = Console.ReadLine();
-                puzzle1.funcrestart();
+            Console.WriteLine("Press any key to continue");
+            Console.ReadKey();
+            Program.blnPuzzle1Complete = true;
+            Program.ROOM2();
             }
             public static void funcrestart()
             {

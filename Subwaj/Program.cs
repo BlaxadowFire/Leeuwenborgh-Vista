@@ -33,6 +33,12 @@ namespace Subwaj
         public static Thread BGMThread = new Thread(ts);
         public static bool blnPlayMusic = true;
 
+        //Puzzle complete bools
+        public static bool blnPuzzle1Complete = false;
+        public static bool blnPuzzle2Complete = false;
+        public static bool blnPuzzle3Complete = false;
+        public static bool blnPuzzle4Complete = false;
+
         //Makes it easier to change rooms
         public static string strMainMenu = "MainMenu";
         public static string strInGameMenu = "InGameMenu";
@@ -64,8 +70,6 @@ namespace Subwaj
         public static Thread TimerThread = new Thread(tsTimer);
         public static int intCursorpositionLeft;
         public static int intCursorpositionTop;
-
-
 
         //boolean's for code menu
         public static bool blnBoss = false;
@@ -508,6 +512,17 @@ namespace Subwaj
             //story
             string strUserStart;
             bool blnLoopQuestion = true;
+            string strIntroTextName = "Ah, you're Finally here: " + Environment.UserName + "!\r\n";
+            for (int x = 0; x < strIntroTextName.Length; x++)
+            {
+                Console.Write(strIntroTextName[x]);
+                if (strIntroTextName[x] == ',' || strIntroTextName[x] == ':')
+                {
+                    Thread.Sleep(400); //400
+                }
+                Thread.Sleep(40); //40
+
+            }
             string strFilename = "files/story/intro/intro.txt";
             string[] IntroText = File.ReadAllLines(strFilename);
             for (int i = 0; i < IntroText.Length; i++)
@@ -515,20 +530,19 @@ namespace Subwaj
                 string strIntroText = IntroText[i];
                 for (int x = 0; x < strIntroText.Length; x++)
                 {
+                    Console.Write(strIntroText[x]);
                     if (strIntroText[x] == ',')
                     {
-                        Thread.Sleep(400);
+                        Thread.Sleep(400); //400
                     }
-                    Console.Write(strIntroText[x]);
-                    Thread.Sleep(40);
+                    Thread.Sleep(40); //40
 
                 }
                 Console.Write("\r\n");
-                Thread.Sleep(400);
+                Thread.Sleep(400); //400
 
             }
             Console.WriteLine("\r\n");
-            TimerThread.Start();
 
             do
             {
@@ -554,11 +568,11 @@ namespace Subwaj
                     string strIntroText = IntroText[i];
                     for (int x = 0; x < strIntroText.Length; x++)
                     {
+                        Console.Write(strIntroText[x]);
                         if (strIntroText[x] == ',')
                         {
                             Thread.Sleep(400);
                         }
-                        Console.Write(strIntroText[x]);
                         Thread.Sleep(40);
 
                     }
@@ -576,7 +590,7 @@ namespace Subwaj
             do
             {
                 Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Magenta;
+                GetRandomConsoleColor();
                 string strFilename = "files/help.txt";
                 Console.WriteLine(File.ReadAllText(strFilename));
                 Console.ForegroundColor = ConsoleColor.White;
@@ -822,9 +836,12 @@ namespace Subwaj
 
         //BEGIN OF HUD
         public static void HUD()
-            {
-                Console.WriteLine("TIME: {0}\t\t╠═╦╗ = 0", intTimer);
-            }
+        {
+            Console.SetCursorPosition(Console.CursorLeft = 30, Console.CursorTop = 0);
+            Console.WriteLine("║   TIME: {0}\t\t╠═╦╗ = 0  ║", intTimer);
+            Console.SetCursorPosition(Console.CursorLeft = 30, Console.CursorTop = 1);
+            Console.WriteLine("╚═══════════════════════════════════╝");
+        }
 
         public static void TimerFunction()
         {
@@ -833,7 +850,6 @@ namespace Subwaj
                 intTimer -= 1;
                     intCursorpositionLeft = Console.CursorLeft;
                     intCursorpositionTop = Console.CursorTop;
-                    Console.SetCursorPosition(Console.CursorLeft = 0, Console.CursorTop = 0);
                     Program.HUD();
                     Console.SetCursorPosition(intCursorpositionLeft, intCursorpositionTop);
                 Thread.Sleep(1000);
@@ -850,6 +866,7 @@ namespace Subwaj
 
             CurrentRoom = strROOM1;
             Console.Clear();
+            TimerThread.Start();
             //story
             string strFilename = "files/story/Room1/Room1.txt";
             string[] IntroText = File.ReadAllLines(strFilename);
@@ -858,11 +875,11 @@ namespace Subwaj
                 string strIntroText = IntroText[i];
                 for (int x = 0; x < strIntroText.Length; x++)
                 {
+                    Console.Write(strIntroText[x]);
                     if (strIntroText[x] == ',')
                     {
                         Thread.Sleep(400);
                     }
-                    Console.Write(strIntroText[x]);
                     Thread.Sleep(40);
 
                 }
@@ -882,8 +899,10 @@ namespace Subwaj
         {
             CurrentRoom = strROOM2;
             Console.Clear();
-            Program.HUD();
-            puzzle1.startpuzzle1();
+            if (blnPuzzle1Complete == false)
+            {
+                puzzle1.startpuzzle1();
+            }
             Console.WriteLine("Going to " + strHALL2);
             Program.NextRoom();
             Program.HALL2();
@@ -1143,7 +1162,10 @@ namespace Subwaj
         //GAMEOVER
         public static void GameOver()
         {
-            Console.WriteLine("How did you even manage to lose? this isn't even a game.\r\nYOU SUCK");
+            Console.Clear();
+            Console.WriteLine("How did you even manage to lose? this isn't even a game.\r\nPress any key to exit");
+            Console.ReadKey();
+            Environment.Exit(0);
         }
 
         //Error color
