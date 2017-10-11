@@ -94,7 +94,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="files\story\intro.txt" />
+    <Content Include="files\story\intro.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="test.txt" />
     <None Include="App.config" />
     <Content Include="files\Achievements\Konami.txt">
