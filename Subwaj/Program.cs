@@ -428,12 +428,9 @@ namespace Subwaj
                 CurrentRoom = strMainMenu;
 
                 //makes the text a random color and prevents the foregroundcolor to be the same as the backgroundcolor.
-                do
-                {
-                    originalForegroundColor = Console.ForegroundColor;
-                    Console.ForegroundColor = GetRandomConsoleColor();
-                }
-                while (Console.ForegroundColor == Console.BackgroundColor || Console.ForegroundColor == originalForegroundColor || Console.ForegroundColor == ConsoleColor.Gray || Console.ForegroundColor == ConsoleColor.DarkGray || Console.ForegroundColor == ConsoleColor.DarkRed || Console.ForegroundColor == ConsoleColor.DarkMagenta || Console.ForegroundColor == ConsoleColor.DarkYellow || Console.ForegroundColor == ConsoleColor.DarkBlue);
+                
+                Program.GetRandomConsoleColor();
+
                 Console.Clear();
                 string strFilenamee = "files/menu/mainmenu.txt";
                 Console.WriteLine(File.ReadAllText(strFilenamee));
@@ -942,10 +939,14 @@ namespace Subwaj
 
 
         //Random ConsoleColor Generator
-        public static ConsoleColor GetRandomConsoleColor()
+        public static void GetRandomConsoleColor()
         {
             Array consoleColors = Enum.GetValues(typeof(ConsoleColor));
-            return (ConsoleColor)consoleColors.GetValue(_randomforeground.Next(consoleColors.Length));
+            do
+            {
+                originalForegroundColor = Console.ForegroundColor;
+                Console.ForegroundColor = (ConsoleColor)consoleColors.GetValue(_randomforeground.Next(consoleColors.Length));
+            } while (Console.ForegroundColor == Console.BackgroundColor || Console.ForegroundColor == originalForegroundColor || Console.ForegroundColor == ConsoleColor.Gray || Console.ForegroundColor == ConsoleColor.DarkGray || Console.ForegroundColor == ConsoleColor.DarkRed || Console.ForegroundColor == ConsoleColor.DarkMagenta || Console.ForegroundColor == ConsoleColor.DarkYellow || Console.ForegroundColor == ConsoleColor.DarkBlue);
         }
 
         //BGM
