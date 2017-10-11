@@ -447,18 +447,69 @@ namespace Subwaj
         {
             Console.Clear();
             //story
-            string strFilename = "files/story/intro.txt";
-            string IntroText = File.ReadAllText(strFilename);
+            string strUserStart;
+            bool blnLoopQuestion = true;
+            string strFilename = "files/story/intro/intro.txt";
+            string[] IntroText = File.ReadAllLines(strFilename);
             for (int i = 0; i < IntroText.Length; i++)
             {
-                Console.Write(IntroText[i]);
-                Thread.Sleep(40);
+                string strIntroText = IntroText[i];
+                for (int x = 0; x < strIntroText.Length; x++)
+                {
+                    if (strIntroText[x] == ',')
+                    {
+                        Thread.Sleep(400);
+                    }
+                    Console.Write(strIntroText[x]);
+                    Thread.Sleep(40);
+
+                }
+                Console.Write("\r\n");
+                Thread.Sleep(400);
 
             }
+            Console.WriteLine("\r\n");
 
-            Console.WriteLine("Going to ROOM1");
-            Program.NextRoom();
-            Program.ROOM1();
+            do
+            {
+                strUserStart = Console.ReadLine().ToLower();
+                if (strUserStart == "start" || strUserStart == "exit")
+                {
+                    blnLoopQuestion = false;
+                }
+            } while (blnLoopQuestion == true);
+
+            if (strUserStart == "start")
+            {
+                Console.WriteLine("\r\nGoing to ROOM1");
+                Program.NextRoom();
+                Program.ROOM1();
+            }
+            else
+            {
+                Console.Clear();
+                strFilename = "files/story/intro/exit.txt";
+                IntroText = File.ReadAllLines(strFilename);
+                for (int i = 0; i < IntroText.Length; i++)
+                {
+                    string strIntroText = IntroText[i];
+                    for (int x = 0; x < strIntroText.Length; x++)
+                    {
+                        if (strIntroText[x] == ',')
+                        {
+                            Thread.Sleep(400);
+                        }
+                        Console.Write(strIntroText[x]);
+                        Thread.Sleep(40);
+
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(400);
+
+                }
+                Thread.Sleep(5000);
+                Environment.Exit(0);
+            }
         }
         public static void MainMenuHelp()
         {
@@ -536,7 +587,7 @@ namespace Subwaj
                 while (intCode == 0)
                 {
                     string strAnswer = Console.ReadLine();
-                    if(strAnswer == "boss" || strAnswer == "BOSS" || strAnswer == "Boss")
+                    if (strAnswer == "boss" || strAnswer == "BOSS" || strAnswer == "Boss")
                     {
                         blnBoss = true;
                         string strFilename = "files/BossEnabled.txt";
@@ -545,7 +596,7 @@ namespace Subwaj
                         Console.Clear();
                         Program.MAINMENU();
                     }
-                    else if(strAnswer == "shop" ||  strAnswer == "SHOP" || strAnswer == "Shop")
+                    else if (strAnswer == "shop" || strAnswer == "SHOP" || strAnswer == "Shop")
                     {
                         blnShop = true;
                         string strFilename = "files/ShopEnabled.txt";
@@ -554,7 +605,7 @@ namespace Subwaj
                         Console.Clear();
                         Program.MAINMENU();
                     }
-                    else if(strAnswer == "konami" || strAnswer == "KONAMI" || strAnswer == "Konami")
+                    else if (strAnswer == "konami" || strAnswer == "KONAMI" || strAnswer == "Konami")
                     {
                         intCode = 1;
                     }
@@ -563,7 +614,7 @@ namespace Subwaj
                         Program.MAINMENU();
                     }
                 }
-                while(intCode == 0);
+                while (intCode == 0) ;
                 int Konamicode = 0;
                 Console.Clear();
                 Console.WriteLine("Please enter the Konami Code (START = ENTER)");
@@ -574,7 +625,7 @@ namespace Subwaj
                     switch (strCKI)
                     {
                         case "UpArrow":
-		                {
+                            {
                                 if (Konamicode == 0 || Konamicode == 1)
                                 {
                                     Konamicode += 1;
@@ -583,8 +634,8 @@ namespace Subwaj
                                 {
                                     Konamicode = 0;
                                 }
-			                break;
-		                }
+                                break;
+                            }
                         case "DownArrow":
                             {
                                 if (Konamicode == 2 || Konamicode == 3)
@@ -662,14 +713,14 @@ namespace Subwaj
                                 break;
                             }
                         case "Escape":
-                        {
-                            Program.MAINMENU();
-                            break;
-                        }
+                            {
+                                Program.MAINMENU();
+                                break;
+                            }
                         default:
-                        {
-                            break;
-                        }
+                            {
+                                break;
+                            }
                     }
                 } while (true);
             }
@@ -684,10 +735,10 @@ namespace Subwaj
         {
             Program.ErrorNotYetCreated();
         }
-       
-        public static void MainMenuExit() 
+
+        public static void MainMenuExit()
         {
-             Environment.Exit(0);
+            Environment.Exit(0);
         }
         //END OF MAINMENU
 
@@ -959,12 +1010,12 @@ namespace Subwaj
 
         //Error color
         public static void ErrorHandlerStart()
-            {
-                Console.BackgroundColor = ConsoleColor.DarkYellow;
-                Console.Clear();
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.BackgroundColor = ConsoleColor.Yellow;
-            }
+        {
+            Console.BackgroundColor = ConsoleColor.DarkYellow;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.BackgroundColor = ConsoleColor.Yellow;
+        }
         //Error preventor
         public static void ErrorFinisher()
         {
