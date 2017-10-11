@@ -103,7 +103,7 @@
     <Content Include="files\story\Intro\intro.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Intro\Room1.txt" />
+    <Content Include="files\story\Room1\Room1.txt" />
     <None Include="App.config" />
     <Content Include="files\Achievements\Konami.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
