@@ -826,8 +826,8 @@ namespace Subwaj
         {
             CurrentRoom = strInGameMenu;
             Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Magenta;
-            string strFilename = "files/menu/ingamemeu.txt";
+            GetRandomConsoleColor();
+            string strFilename = "files/menu/ingamenu.txt";
             Console.WriteLine(File.ReadAllText(strFilename));
             Console.ForegroundColor = ConsoleColor.White;
 
