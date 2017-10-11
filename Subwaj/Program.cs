@@ -161,6 +161,14 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    //escape gaat terug naar de room
+                                    break;
+                                }
+                                    
                             default:
                                 {
                                     break;
