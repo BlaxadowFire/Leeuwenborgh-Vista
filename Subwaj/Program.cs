@@ -435,7 +435,7 @@ namespace Subwaj
                 }
                 while (Console.ForegroundColor == Console.BackgroundColor || Console.ForegroundColor == originalForegroundColor || Console.ForegroundColor == ConsoleColor.Gray || Console.ForegroundColor == ConsoleColor.DarkGray || Console.ForegroundColor == ConsoleColor.DarkRed || Console.ForegroundColor == ConsoleColor.DarkMagenta || Console.ForegroundColor == ConsoleColor.DarkYellow || Console.ForegroundColor == ConsoleColor.DarkBlue);
                 Console.Clear();
-                string strFilenamee = "files/mainmenu.txt";
+                string strFilenamee = "files/menu/mainmenu.txt";
                 Console.WriteLine(File.ReadAllText(strFilenamee));
 
                 Console.ForegroundColor = ConsoleColor.White;
@@ -590,7 +590,7 @@ namespace Subwaj
                     if (strAnswer == "boss" || strAnswer == "BOSS" || strAnswer == "Boss")
                     {
                         blnBoss = true;
-                        string strFilename = "files/BossEnabled.txt";
+                        string strFilename = "files/mainmenucodes/BossEnabled.txt";
                         Console.WriteLine(File.ReadAllText(strFilename));
                         Thread.Sleep(1000);
                         Console.Clear();
@@ -599,7 +599,7 @@ namespace Subwaj
                     else if (strAnswer == "shop" || strAnswer == "SHOP" || strAnswer == "Shop")
                     {
                         blnShop = true;
-                        string strFilename = "files/ShopEnabled.txt";
+                        string strFilename = "files/mainmenucodes/ShopEnabled.txt";
                         Console.WriteLine(File.ReadAllText(strFilename));
                         Thread.Sleep(1000);
                         Console.Clear();

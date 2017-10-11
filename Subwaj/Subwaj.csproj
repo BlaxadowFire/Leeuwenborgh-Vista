@@ -92,8 +92,11 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="puzzle1.cs" />
+    <Compile Include="puzzle2.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="files\menu\ingamemenu.txt" />
     <Content Include="files\story\Intro\exit.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -106,16 +109,16 @@
     <Content Include="files\Achievements\Konami.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\BossEnabled.txt">
+    <Content Include="files\mainmenucodes\BossEnabled.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\help.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\mainmenu.txt">
+    <Content Include="files\menu\mainmenu.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\ShopEnabled.txt">
+    <Content Include="files\mainmenucodes\ShopEnabled.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\app.manifest" />
