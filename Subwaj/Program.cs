@@ -447,6 +447,15 @@ namespace Subwaj
         {
             Console.Clear();
             //story
+            string strFilename = "files/story/intro.txt";
+            string IntroText = File.ReadAllText(strFilename);
+            for (int i = 0; i < IntroText.Length; i++)
+            {
+                Console.Write(IntroText[i]);
+                Thread.Sleep(40);
+
+            }
+
             Console.WriteLine("Going to ROOM1");
             Program.NextRoom();
             Program.ROOM1();
