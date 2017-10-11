@@ -8,14 +8,19 @@ using System.IO;
 
 namespace Subwaj
 {
+
     class Program
     {
+
         //Here we will place the public static variables
         public static Random _randomforeground = new Random();  //Gets used for random foregroundcolor.
         public static ConsoleColor originalForegroundColor;     //Sets the old foreground to a variable to make sure it isn't the same.
 
         public static ConsoleKeyInfo cki; //uses cki to use readkey.
+
+        //Rooms
         public static string CurrentRoom = "MainMenu"; //Makes sure the program knows in what room the user is.
+        public static string MenuCurRoom = string.Empty; //Makes a temporary room when you go to the ingame menu
 
         //BGM
         public static int intReadSong;
@@ -53,6 +58,15 @@ namespace Subwaj
         public static string strHALL13 = "HALL13";
         public static string strHALL14 = "HALL14";
 
+        //HUD STUFF
+        public static int intTimer = 3600;
+        public static ThreadStart tsTimer = new ThreadStart(TimerFunction);
+        public static Thread TimerThread = new Thread(tsTimer);
+        public static int intCursorpositionLeft;
+        public static int intCursorpositionTop;
+
+
+
         //boolean's for code menu
         public static bool blnBoss = false;
         public static bool blnShop = false;
@@ -64,6 +78,7 @@ namespace Subwaj
             //Loops the program
             do
             {
+                Console.OutputEncoding = Encoding.UTF8;
                 BGMThread.Start();
                 Program.MAINMENU();
             }
@@ -161,8 +176,56 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    //escape gaat terug naar de room
+                                    CurrentRoom = MenuCurRoom;
+                                    MenuCurRoom = string.Empty;
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.MainMenuHelp();
+                                    break;
+                                }
+                            case "D3":
+                            case "NumPad3":
+                                {
+                                    Program.MainMenuOptions();
+                                    break;
+                                }
+                            case "D4":
+                            case "NumPad4":
+                                {
+                                    //achievment options
+                                    Program.ErrorNotYetCreated();
+                                    break;
+                                }
+                            case "D5":
+                            case "NumPad5":
+                                {
+                                    //save game option
+                                    Program.ErrorNotYetCreated();
+                                    break;
+                                }
+                            case "D6":
+                            case "NumPad6":
+                                {
+                                    Program.MAINMENU();
+                                    break;
+                                }
+                            case "D0":
+                            case "NumPad0":
+                                {
+                                    Program.MainMenuExit();
+                                    break;
+                                }
                             default:
                                 {
+                                 
                                     break;
                                 }
                         }
@@ -434,7 +497,6 @@ namespace Subwaj
                 Console.Clear();
                 string strFilenamee = "files/menu/mainmenu.txt";
                 Console.WriteLine(File.ReadAllText(strFilenamee));
-
                 Console.ForegroundColor = ConsoleColor.White;
                 Program.UserInput();
 
@@ -466,6 +528,7 @@ namespace Subwaj
 
             }
             Console.WriteLine("\r\n");
+            TimerThread.Start();
 
             do
             {
@@ -478,7 +541,6 @@ namespace Subwaj
 
             if (strUserStart == "start")
             {
-                Console.WriteLine("\r\nGoing to ROOM1");
                 Program.NextRoom();
                 Program.ROOM1();
             }
@@ -504,7 +566,7 @@ namespace Subwaj
                     Thread.Sleep(400);
 
                 }
-                Thread.Sleep(5000);
+                Thread.Sleep(3000);
                 Environment.Exit(0);
             }
         }
@@ -525,7 +587,14 @@ namespace Subwaj
                     case "Enter":
                     case "Escape":
                         {
-                            Program.MAINMENU();
+                            if (CurrentRoom == strMainMenu)
+                            {
+                                Program.MAINMENU();
+                            }
+                            else if (CurrentRoom == strInGameMenu)
+                            {
+                                Program.ingamemenu();
+                            }
                             break;
                         }
                     default:
@@ -732,7 +801,6 @@ namespace Subwaj
         {
             Program.ErrorNotYetCreated();
         }
-
         public static void MainMenuExit()
         {
             Environment.Exit(0);
@@ -752,6 +820,30 @@ namespace Subwaj
         }
         //END OF INGAMEMENU
 
+        //BEGIN OF HUD
+        public static void HUD()
+            {
+                Console.WriteLine("TIME: {0}\t\t╠═╦╗ = 0", intTimer);
+            }
+
+        public static void TimerFunction()
+        {
+            while (intTimer > 0)
+            {
+                intTimer -= 1;
+                    intCursorpositionLeft = Console.CursorLeft;
+                    intCursorpositionTop = Console.CursorTop;
+                    Console.SetCursorPosition(Console.CursorLeft = 0, Console.CursorTop = 0);
+                    Program.HUD();
+                    Console.SetCursorPosition(intCursorpositionLeft, intCursorpositionTop);
+                Thread.Sleep(1000);
+            }
+            Program.GameOver();
+
+        }
+        //END OF HUD
+
+
         //BEGIN OF ROOMS
         public static void ROOM1()
         {
@@ -759,7 +851,6 @@ namespace Subwaj
             CurrentRoom = strROOM1;
             Console.Clear();
             //story
-
             string strFilename = "files/story/Room1/Room1.txt";
             string[] IntroText = File.ReadAllLines(strFilename);
             for (int i = 0; i < IntroText.Length; i++)
@@ -779,8 +870,9 @@ namespace Subwaj
                 Thread.Sleep(400);
 
             }
+            Thread.Sleep(1000);
+            Console.Clear();
             Console.WriteLine("\r\n");
-
             Console.WriteLine("Going to " + strHALL1);
             Program.NextRoom();
             Program.HALL1();
@@ -790,6 +882,7 @@ namespace Subwaj
         {
             CurrentRoom = strROOM2;
             Console.Clear();
+            Program.HUD();
             puzzle1.startpuzzle1();
             Console.WriteLine("Going to " + strHALL2);
             Program.NextRoom();
@@ -846,6 +939,7 @@ namespace Subwaj
         {
             CurrentRoom = strHALL1;
             Console.Clear();
+            Program.HUD();
             Console.WriteLine("Going to " + strROOM2);
             Program.NextRoom();
             Program.ROOM2();
@@ -1044,6 +1138,12 @@ namespace Subwaj
                     } while (CurrentRoom == strMainMenu && blnPlayMusic == true);
                 }
             } while (true);
+        }
+
+        //GAMEOVER
+        public static void GameOver()
+        {
+            Console.WriteLine("How did you even manage to lose? this isn't even a game.\r\nYOU SUCK");
         }
 
         //Error color
