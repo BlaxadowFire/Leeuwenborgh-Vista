@@ -742,6 +742,18 @@ namespace Subwaj
         }
         //END OF MAINMENU
 
+        //BEGIN OF INGAMEMENU
+        public static void ingamemenu()
+        {
+            CurrentRoom = strInGameMenu;
+            Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            string strFilename = "files/menu/ingamemeu.txt";
+            Console.WriteLine(File.ReadAllText(strFilename));
+            Console.ForegroundColor = ConsoleColor.White;
+
+        }
+        //END OF INGAMEMENU
 
         //BEGIN OF ROOMS
         public static void ROOM1()
@@ -1054,5 +1066,6 @@ namespace Subwaj
             Console.ReadKey();
             Program.MAINMENU();
         }
+
     }
 }
