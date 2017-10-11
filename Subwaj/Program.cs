@@ -16,6 +16,7 @@ namespace Subwaj
 
         public static ConsoleKeyInfo cki; //uses cki to use readkey.
         public static string CurrentRoom = "MainMenu"; //Makes sure the program knows in what room the user is.
+        public static string MenuCurRoom = string.Empty; //Makes a temporary room when you go to the ingame menu
 
         //BGM
         public static int intReadSong;
