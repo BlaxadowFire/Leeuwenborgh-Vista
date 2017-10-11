@@ -96,6 +96,9 @@
     <Compile Include="puzzle2.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="files\menu\map.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="files\menu\ingamemenu.txt" />
     <Content Include="files\story\Intro\exit.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

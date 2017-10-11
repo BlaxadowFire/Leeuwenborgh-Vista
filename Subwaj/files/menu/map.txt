@@ -1,0 +1,36 @@
+ 	`............           ----------..``                                                             
+ 	+   Room 1   .``````````ooooooooooo`
+ 	 :////////////`Hall 1   Room 2
+               	      ----------ooooooooooo
+                        	|Hall 2  |                `oooooooooo	--------------------------------- |                
+                        	|        |                `Room 4	      hall 6                      |
+                           	|        |                `sooooooooo	 ------------------------ |       |        
+                                |        |                   /ooo/                                |Hall 6 |
+                           	.ooooooooooooo------------ |       |--------   'ooooo////         |       |
+                                .Room 3         hall 4     | hall 5|Hall 11    'Wall 1            |       |
+                                .oooooooooo+  ------------ |       |--------   'ooooo////         |       |
+                                               |+++++++|   |       |                              |       |
+                                               |Hall 10|   |+++++++|                              |       |  
+                           	               |       |   | Hall 8|                              |       |
+                                               |       |   |       |                              |       |
+ 					       |       |   |       | |                            |       |
+                               ooooooooooo"  ------------- |       | +  ---------  ooooooooooooooooossoooosos         
+                    	       	 Wall 2   "       Hall 9   |       | |    Hall 7   		Room 5  
+                	       ///////////o  ------------- |       | |  ---------- .ooooooooooooooossossososs 
+                                                           |       |
+   oooosssooooo++  -------------|                          |_______|    
+   Room 6            Hall 12    | 			   |       |   
+   ooooooooooo:--   -----|      |      			   |Hall 12|     
+   /+oooooo+//`          |      |--------------------------        |			                
+     |       |           |-----------------------------------------|
+     |Hall 13|      
+     |       |                             
+     |        -------- 	 ///------///+++++++++++++++++++++-``````````                                           
+     |	      Hall 14  	 sssssssssssooooooooooooooooooooooo-                                                     
+     |	      --------	 +++++++++ooooooooooosssoooooooooo-                                                  
+     |       |  	  Room 7 the Boss Room                                
+     ooooooo; 		 +ooooooooooooooooooooooo-                               
+     Wall to             +ooooooooooooooooooooooo-  
+     Room 6  		                               
+     sososoo                                                                   
+                                                                                                 
