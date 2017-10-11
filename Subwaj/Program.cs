@@ -167,11 +167,51 @@ namespace Subwaj
                             case "NumPad1":
                                 {
                                     //escape gaat terug naar de room
+                                    CurrentRoom = MenuCurRoom;
+                                    MenuCurRoom = string.Empty;
                                     break;
                                 }
-                                    
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.MainMenuHelp();
+                                    break;
+                                }
+                            case "D3":
+                            case "NumPad3":
+                                {
+                                    Program.MainMenuOptions();
+                                    break;
+                                }
+                            case "D4":
+                            case "NumPad4":
+                                {
+                                    //achievment options
+                                    Program.ErrorNotYetCreated();
+                                    break;
+                                }
+                            case "D5":
+                            case "NumPad5":
+                                {
+                                    //save game option
+                                    Program.ErrorNotYetCreated();
+                                    break;
+                                }
+                            case "D6":
+                            case "NumPad6":
+                                {
+                                    Program.MAINMENU();
+                                    break;
+                                }
+                            case "D0":
+                            case "NumPad0":
+                                {
+                                    Program.MainMenuExit();
+                                    break;
+                                }
                             default:
                                 {
+                                 
                                     break;
                                 }
                         }
@@ -534,7 +574,14 @@ namespace Subwaj
                     case "Enter":
                     case "Escape":
                         {
-                            Program.MAINMENU();
+                            if (CurrentRoom == strMainMenu)
+                            {
+                                Program.MAINMENU();
+                            }
+                            else if (CurrentRoom == strInGameMenu)
+                            {
+                                Program.ingamemenu();
+                            }
                             break;
                         }
                     default:
