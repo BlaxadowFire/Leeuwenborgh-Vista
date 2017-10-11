@@ -755,8 +755,32 @@ namespace Subwaj
         //BEGIN OF ROOMS
         public static void ROOM1()
         {
+
             CurrentRoom = strROOM1;
             Console.Clear();
+            //story
+
+            string strFilename = "files/story/Room1/Room1.txt";
+            string[] IntroText = File.ReadAllLines(strFilename);
+            for (int i = 0; i < IntroText.Length; i++)
+            {
+                string strIntroText = IntroText[i];
+                for (int x = 0; x < strIntroText.Length; x++)
+                {
+                    if (strIntroText[x] == ',')
+                    {
+                        Thread.Sleep(400);
+                    }
+                    Console.Write(strIntroText[x]);
+                    Thread.Sleep(40);
+
+                }
+                Console.Write("\r\n");
+                Thread.Sleep(400);
+
+            }
+            Console.WriteLine("\r\n");
+
             Console.WriteLine("Going to " + strHALL1);
             Program.NextRoom();
             Program.HALL1();
