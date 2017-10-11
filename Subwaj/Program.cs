@@ -71,10 +71,12 @@ namespace Subwaj
         public static int intCursorpositionLeft;
         public static int intCursorpositionTop;
 
+        //TTS
+        public static System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+
         //boolean's for code menu
         public static bool blnBoss = false;
         public static bool blnShop = false;
-
 
         static void Main(string[] args)
         {
@@ -82,7 +84,11 @@ namespace Subwaj
             //Loops the program
             do
             {
-                Console.OutputEncoding = Encoding.UTF8;
+                Console.WriteLine("\t\t\t\tPlease turn on the volume for best user experience");
+                Console.Beep(800, 200); //default beep settings
+                Console.Beep(600, 200);
+                Console.Beep(400, 200);
+                Thread.Sleep(1000);
                 BGMThread.Start();
                 Program.MAINMENU();
             }
@@ -512,6 +518,10 @@ namespace Subwaj
             //story
             string strUserStart;
             bool blnLoopQuestion = true;
+
+            player.SoundLocation = "files/story/TTS/Intro/intro1.wav";
+            player.Play();
+
             string strIntroTextName = "Ah, you're Finally here: " + Environment.UserName + "!\r\n";
             for (int x = 0; x < strIntroTextName.Length; x++)
             {
@@ -524,9 +534,23 @@ namespace Subwaj
 
             }
             string strFilename = "files/story/intro/intro.txt";
+
+            int intIntroTTS = 1; //Used to count the file
+
             string[] IntroText = File.ReadAllLines(strFilename);
             for (int i = 0; i < IntroText.Length; i++)
             {
+
+                //Makes the TTS speak when int i is on 1, 3, 5, 7, 9, 11, 13 This way, it will speak at the same way as the text appears on the screen.
+                //The location of the TTS changes  based on intIntroTTS
+                if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 11 || i == 13)
+                {
+                    intIntroTTS += 1;
+                    player.SoundLocation = "files/story/TTS/Intro/intro" + intIntroTTS + ".wav";
+                    player.Play();
+                }
+
+
                 string strIntroText = IntroText[i];
                 for (int x = 0; x < strIntroText.Length; x++)
                 {
@@ -537,6 +561,11 @@ namespace Subwaj
                     }
                     Thread.Sleep(40); //40
 
+                    //This had to be added to make line 8 of the text file (byte 7) in sync with the audio. Because the audio would else be interrupted.
+                    if (i == 7 && x == 47) 
+                    {
+                        Thread.Sleep(600);
+                    }
                 }
                 Console.Write("\r\n");
                 Thread.Sleep(400); //400
@@ -555,7 +584,6 @@ namespace Subwaj
 
             if (strUserStart == "start")
             {
-                Program.NextRoom();
                 Program.ROOM1();
             }
             else
@@ -838,9 +866,9 @@ namespace Subwaj
         public static void HUD()
         {
             Console.SetCursorPosition(Console.CursorLeft = 30, Console.CursorTop = 0);
-            Console.WriteLine("║   TIME: {0}\t\t╠═╦╗ = 0  ║", intTimer);
+            Console.WriteLine("║\tTIME:\t{0}\tCurrent location:   {1}\t╠═╦╗:\t0\t║", intTimer, CurrentRoom);
             Console.SetCursorPosition(Console.CursorLeft = 30, Console.CursorTop = 1);
-            Console.WriteLine("╚═══════════════════════════════════╝");
+            Console.WriteLine("╚═════════════════════════════════════════════════════════════════╝");
         }
 
         public static void TimerFunction()
@@ -890,8 +918,6 @@ namespace Subwaj
             Thread.Sleep(1000);
             Console.Clear();
             Console.WriteLine("\r\n");
-            Console.WriteLine("Going to " + strHALL1);
-            Program.NextRoom();
             Program.HALL1();
             Program.ErrorOutOfBounds();
         }
@@ -901,7 +927,7 @@ namespace Subwaj
             Console.Clear();
             if (blnPuzzle1Complete == false)
             {
-                puzzle1.startpuzzle1();
+                Puzzle1.StartPuzzle1();
             }
             Console.WriteLine("Going to " + strHALL2);
             Program.NextRoom();
@@ -958,8 +984,7 @@ namespace Subwaj
         {
             CurrentRoom = strHALL1;
             Console.Clear();
-            Program.HUD();
-            Console.WriteLine("Going to " + strROOM2);
+            Console.WriteLine("There is nothing to see here");
             Program.NextRoom();
             Program.ROOM2();
             Program.ErrorOutOfBounds();
@@ -1084,7 +1109,8 @@ namespace Subwaj
             {
                 originalForegroundColor = Console.ForegroundColor;
                 Console.ForegroundColor = (ConsoleColor)consoleColors.GetValue(_randomforeground.Next(consoleColors.Length));
-            } while (Console.ForegroundColor == Console.BackgroundColor || Console.ForegroundColor == originalForegroundColor || Console.ForegroundColor == ConsoleColor.Gray || Console.ForegroundColor == ConsoleColor.DarkGray || Console.ForegroundColor == ConsoleColor.DarkRed || Console.ForegroundColor == ConsoleColor.DarkMagenta || Console.ForegroundColor == ConsoleColor.DarkYellow || Console.ForegroundColor == ConsoleColor.DarkBlue);
+            } while (Console.ForegroundColor == Console.BackgroundColor || Console.ForegroundColor == originalForegroundColor || Console.ForegroundColor == ConsoleColor.Gray || Console.ForegroundColor == ConsoleColor.DarkGray || Console.ForegroundColor == ConsoleColor.DarkRed || Console.ForegroundColor == ConsoleColor.DarkMagenta || Console.ForegroundColor == ConsoleColor.DarkYellow || Console.ForegroundColor == ConsoleColor.DarkBlue || Console.ForegroundColor == ConsoleColor.DarkGreen || Console.ForegroundColor == ConsoleColor.Blue);
+            originalForegroundColor = Console.ForegroundColor;
         }
 
         //BGM

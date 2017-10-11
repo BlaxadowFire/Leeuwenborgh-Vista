@@ -8,13 +8,13 @@ using System.IO;
 
 namespace Subwaj
 {
-    class puzzle1
+    class Puzzle1
     {
-        public puzzle1(){/*Start methode*/}
+        public Puzzle1(){/*Start methode*/}
 
-        public static void startpuzzle1()
+        public static void StartPuzzle1()
         {
-            puzzle1.Main1();
+            Puzzle1.Main1();
         }
                /* Console.Write("Dit ");
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -60,18 +60,18 @@ namespace Subwaj
                         if (strCurrentPlayer == "THE MOST AMAZING AI EVER CREATED")
                         {
                             blnAiTurn = true;
-                            puzzle1.funcbot();
+                            Puzzle1.FuncBot();
                         }
                         else
                         {
-                            puzzle1.drawgrid();
+                            Puzzle1.DrawGrid();
                             strUserInput = Console.ReadLine();
 
-                            puzzle1.TurnCheck();
-                            puzzle1.Turn();
+                            Puzzle1.TurnCheck();
+                            Puzzle1.Turn();
                         }
-                        puzzle1.checkifwon();
-                        puzzle1.SwitchTurn();
+                        Puzzle1.CheckIfWon();
+                        Puzzle1.SwitchTurn();
                     }
                     while (blnGameOVer == false);
                     Console.WriteLine("It's a tie!");
@@ -81,7 +81,7 @@ namespace Subwaj
                     {
                         Console.WriteLine("Sucks to be you, you can't stop");
                     }
-                        puzzle1.funcrestart();
+                        Puzzle1.FuncRestart();
                 }
                 while (true);
 
@@ -154,7 +154,7 @@ namespace Subwaj
                             {
                                 Console.WriteLine("Error, this one is already taken");
                                 Console.ReadLine();
-                                puzzle1.Main1();
+                                Puzzle1.Main1();
                             }
                             break;
                         }
@@ -168,7 +168,7 @@ namespace Subwaj
                             {
                                 Console.WriteLine("Error, this one is already taken");
                                 Console.ReadLine();
-                                puzzle1.Main1();
+                                Puzzle1.Main1();
                             }
                             break;
                         }
@@ -182,7 +182,7 @@ namespace Subwaj
                             {
                                 Console.WriteLine("Error, this one is already taken");
                                 Console.ReadLine();
-                                puzzle1.Main1();
+                                Puzzle1.Main1();
                             }
                             break;
                         }
@@ -196,7 +196,7 @@ namespace Subwaj
                             {
                                 Console.WriteLine("Error, this one is already taken");
                                 Console.ReadLine();
-                                puzzle1.Main1();
+                                Puzzle1.Main1();
                             }
                             break;
                         }
@@ -210,7 +210,7 @@ namespace Subwaj
                             {
                                 Console.WriteLine("Error, this one is already taken");
                                 Console.ReadLine();
-                                puzzle1.Main1();
+                                Puzzle1.Main1();
                             }
                             break;
                         }
@@ -224,7 +224,7 @@ namespace Subwaj
                             {
                                 Console.WriteLine("Error, this one is already taken");
                                 Console.ReadLine();
-                                puzzle1.Main1();
+                                Puzzle1.Main1();
                             }
                             break;
                         }
@@ -238,7 +238,7 @@ namespace Subwaj
                             {
                                 Console.WriteLine("Error, this one is already taken");
                                 Console.ReadLine();
-                                puzzle1.Main1();
+                                Puzzle1.Main1();
                             }
                             break;
                         }
@@ -252,7 +252,7 @@ namespace Subwaj
                             {
                                 Console.WriteLine("Error, this one is already taken");
                                 Console.ReadLine();
-                                puzzle1.Main1();
+                                Puzzle1.Main1();
                             }
                             break;
                         }
@@ -266,7 +266,7 @@ namespace Subwaj
                             {
                                 Console.WriteLine("Error, this one is already taken");
                                 Console.ReadLine();
-                                puzzle1.Main1();
+                                Puzzle1.Main1();
                             }
                             break;
                         }
@@ -281,7 +281,7 @@ namespace Subwaj
                         H = strCPChoice;
                         I = strCPChoice;
                         Console.Clear();
-                        puzzle1.drawgrid();
+                        Puzzle1.DrawGrid();
                         Console.ReadLine();
 
                         break;
@@ -289,7 +289,7 @@ namespace Subwaj
                         {
                             Console.WriteLine("Error, give valid input");
                             Console.ReadLine();
-                            puzzle1.Main1();
+                            Puzzle1.Main1();
                             break;
                         }
                 }
@@ -305,39 +305,39 @@ namespace Subwaj
                     strCurrentPlayer = strPlayer1;
                 }
             }
-            public static void checkifwon()
+            public static void CheckIfWon()
             {
                 if (A == B && B == C)
                 {
-                    puzzle1.won();
+                    Puzzle1.Won();
                 }
                 else if (D == E && E == F)
                 {
-                    puzzle1.won();
+                    Puzzle1.Won();
                 }
                 else if (G == H && H == I)
                 {
-                    puzzle1.won();
+                    Puzzle1.Won();
                 }
                 else if (A == D && D == G)
                 {
-                    puzzle1.won();
+                    Puzzle1.Won();
                 }
                 else if (B == E && E == H)
                 {
-                    puzzle1.won();
+                    Puzzle1.Won();
                 }
                 else if (C == F && F == I)
                 {
-                    puzzle1.won();
+                    Puzzle1.Won();
                 }
                 else if (A == E && E == I)
                 {
-                    puzzle1.won();
+                    Puzzle1.Won();
                 }
                 else if (C == E && E == G)
                 {
-                    puzzle1.won();
+                    Puzzle1.Won();
                 }
                 if (A != "1" && B != "2" && C != "3" && D != "4" && E != "5" && F != "6" && G != "7" && H != "8" && I != "9")
                 {
@@ -345,7 +345,7 @@ namespace Subwaj
                 }
             }
 
-            public static void gridcolor()
+            public static void GridColor()
             {
                 {
                     Console.ForegroundColor = ConsoleColor.Magenta;
@@ -354,7 +354,7 @@ namespace Subwaj
 
 
 
-            public static void drawgrid()
+            public static void DrawGrid()
             {
                 Console.Clear();
                 Console.WriteLine("Last turn:{0}", strUserInput);
@@ -362,48 +362,49 @@ namespace Subwaj
                 Console.WriteLine("{0} Give input\r\n\r\n", strCurrentPlayer);
                 Console.BackgroundColor = ConsoleColor.Black;
 
-                gridcolor(); Console.Write(A); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
-                gridcolor(); Console.Write(B); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
-                gridcolor(); Console.Write(C); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
+                GridColor(); Console.Write(A); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+                GridColor(); Console.Write(B); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+                GridColor(); Console.Write(C); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
 
                 Console.WriteLine("----------");
 
-                gridcolor(); Console.Write(D); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
-                gridcolor(); Console.Write(E); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
-                gridcolor(); Console.Write(F); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
+                GridColor(); Console.Write(D); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+                GridColor(); Console.Write(E); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+                GridColor(); Console.Write(F); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
 
                 Console.WriteLine("----------");
 
-                gridcolor(); Console.Write(G); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
-                gridcolor(); Console.Write(H); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
-                gridcolor(); Console.Write(I); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
+                GridColor(); Console.Write(G); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+                GridColor(); Console.Write(H); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+                GridColor(); Console.Write(I); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
 
                 Console.WriteLine("----------\r\n");
             }
-            public static void won()
+            public static void Won()
             {
-                gridcolor(); Console.Write(A); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
-                gridcolor(); Console.Write(B); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
-                gridcolor(); Console.Write(C); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
+                GridColor(); Console.Write(A); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+                GridColor(); Console.Write(B); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+                GridColor(); Console.Write(C); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
 
                 Console.WriteLine("----------");
 
-                gridcolor(); Console.Write(D); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
-                gridcolor(); Console.Write(E); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
-                gridcolor(); Console.Write(F); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
+                GridColor(); Console.Write(D); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+                GridColor(); Console.Write(E); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+                GridColor(); Console.Write(F); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
 
                 Console.WriteLine("----------");
 
-                gridcolor(); Console.Write(G); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
-                gridcolor(); Console.Write(H); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
-                gridcolor(); Console.Write(I); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
+                GridColor(); Console.Write(G); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+                GridColor(); Console.Write(H); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
+                GridColor(); Console.Write(I); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
                 if (strPlayer2 == strCurrentPlayer)
                 {
                     Console.WriteLine("YOU JUST LOST FROM {0}", strPlayer2);
+                Puzzle1.FuncRestart();
                 }
                 else
                 {
-                    Console.WriteLine("Congratulations {0}, you won!", strCurrentPlayer);
+                    Console.WriteLine("Congratulations {0}, you Won!", strCurrentPlayer);
                 //ADD WIN CODE HERE
                 }
             Console.WriteLine("Press any key to continue");
@@ -411,7 +412,7 @@ namespace Subwaj
             Program.blnPuzzle1Complete = true;
             Program.ROOM2();
             }
-            public static void funcrestart()
+            public static void FuncRestart()
             {
                 A = "1";
                 B = "2";
@@ -423,16 +424,16 @@ namespace Subwaj
                 H = "8";
                 I = "9";
 
-                puzzle1.SwitchTurn();
+                Puzzle1.SwitchTurn();
                 blnGameOVer = false;
                 strCPChoice = string.Empty;
                 strUserInput = string.Empty;
 
                 Console.Clear();
 
-                    puzzle1.Main1();
+                    Puzzle1.Main1();
             }
-            public static void funcbot()
+            public static void FuncBot()
             {
 
                 //OFFENSIVE

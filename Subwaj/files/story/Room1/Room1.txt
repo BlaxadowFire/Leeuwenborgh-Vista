@@ -1,6 +1,6 @@
 ﻿
 
-Oh great, now we got a timer...
+Oh great, now we got a Heads up display...
 
 How did you even knew what to type?
 
@@ -10,10 +10,10 @@ Because there is nothing here!
 
 Oh, that timer? That's nothing, just forget about it alright?
 
-... system error ...
+--- system error ---
 
 Oh no, What's going on!
 
-... opening file: Games ...
+--- opening file: Game.exe ---
 
 Nooooo!!!
