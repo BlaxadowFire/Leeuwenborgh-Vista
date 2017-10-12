@@ -270,7 +270,7 @@ namespace Subwaj
                             }
                             break;
                         }
-                    case "bomboozle":
+                    case "e":
                         A = strCPChoice;
                         B = strCPChoice;
                         C = strCPChoice;

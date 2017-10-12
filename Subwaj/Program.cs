@@ -20,7 +20,7 @@ namespace Subwaj
 
         //Rooms
         public static string CurrentRoom = "MainMenu"; //Makes sure the program knows in what room the user is.
-        public static string MenuCurRoom = string.Empty; //Makes a temporary room when you go to the ingame menu
+        public static string InGameMenuTempRoom = string.Empty; //Makes a temporary room when you go to the ingame menu
 
         //BGM
         public static int intReadSong;
@@ -73,6 +73,7 @@ namespace Subwaj
 
         //TTS
         public static System.Media.SoundPlayer player = new System.Media.SoundPlayer();
+        public static bool blnBGMCancel = false;
 
         //boolean's for code menu
         public static bool blnBoss = false;
@@ -93,6 +94,118 @@ namespace Subwaj
                 Program.MAINMENU();
             }
             while (true);
+        }
+        //Back to current room
+        public static void BackToCurrentRoom()
+        {
+            switch (CurrentRoom)
+            {
+                case "ROOM1":
+                    {
+                        Program.ROOM1();
+                        break;
+                    }
+                case "ROOM2":
+                    {
+                        Program.ROOM2();
+                        break;
+                    }
+                case "ROOM3":
+                    {
+                        Program.ROOM3();
+                        break;
+                    }
+                case "ROOM4":
+                    {
+                        Program.ROOM4();
+                        break;
+                    }
+                case "ROOM5":
+                    {
+                        Program.ROOM5();
+                        break;
+                    }
+                case "ROOM6":
+                    {
+                        Program.ROOM6();
+                        break;
+                    }
+                case "ROOM7":
+                    {
+                        Program.ROOM7();
+                        break;
+                    }
+                case "HALL1":
+                    {
+                        Program.HALL1();
+                        break;
+                    }
+                case "HALL2":
+                    {
+                        Program.HALL2();
+                        break;
+                    }
+                case "HALL3":
+                    {
+                        Program.HALL3();
+                        break;
+                    }
+                case "HALL4":
+                    {
+                        Program.HALL4();
+                        break;
+                    }
+                case "HALL5":
+                    {
+                        Program.HALL5();
+                        break;
+                    }
+                case "HALL6":
+                    {
+                        Program.HALL6();
+                        break;
+                    }
+                case "HALL7":
+                    {
+                        Program.HALL7();
+                        break;
+                    }
+                case "HALL8":
+                    {
+                        Program.HALL8();
+                        break;
+                    }
+                case "HALL9":
+                    {
+                        Program.HALL9();
+                        break;
+                    }
+                case "HALL10":
+                    {
+                        Program.HALL10();
+                        break;
+                    }
+                case "HALL11":
+                    {
+                        Program.HALL11();
+                        break;
+                    }
+                case "HALL12":
+                    {
+                        Program.HALL12();
+                        break;
+                    }
+                case "HALL13":
+                    {
+                        Program.HALL13();
+                        break;
+                    }
+                case "HALL14":
+                    {
+                        Program.HALL14();
+                        break;
+                    }
+            }
         }
 
         //Checks UserInput
@@ -191,8 +304,9 @@ namespace Subwaj
                             case "NumPad1":
                                 {
                                     //escape gaat terug naar de room
-                                    CurrentRoom = MenuCurRoom;
-                                    MenuCurRoom = string.Empty;
+                                    CurrentRoom = InGameMenuTempRoom;
+                                    InGameMenuTempRoom = string.Empty;
+                                    Program.BackToCurrentRoom();
                                     break;
                                 }
                             case "D2":
@@ -245,12 +359,14 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
-                            case "Enter":
+                            case "Escape":
                                 {
+                                    Program.InGameMenu();
                                     break;
                                 }
                             default:
                                 {
+                                    Program.HALL1();
                                     break;
                                 }
                         }
@@ -518,7 +634,7 @@ namespace Subwaj
             //story
             string strUserStart;
             bool blnLoopQuestion = true;
-
+            blnBGMCancel = true;
             player.SoundLocation = "files/story/TTS/Intro/intro1.wav";
             player.Play();
 
@@ -528,9 +644,9 @@ namespace Subwaj
                 Console.Write(strIntroTextName[x]);
                 if (strIntroTextName[x] == ',' || strIntroTextName[x] == ':')
                 {
-                    Thread.Sleep(400); //400
+                    Thread.Sleep(4); //400
                 }
-                Thread.Sleep(40); //40
+                Thread.Sleep(4); //40
 
             }
             string strFilename = "files/story/intro/intro.txt";
@@ -557,22 +673,21 @@ namespace Subwaj
                     Console.Write(strIntroText[x]);
                     if (strIntroText[x] == ',')
                     {
-                        Thread.Sleep(400); //400
+                        Thread.Sleep(4); //400
                     }
-                    Thread.Sleep(40); //40
+                    Thread.Sleep(4); //40
 
                     //This had to be added to make line 8 of the text file (byte 7) in sync with the audio. Because the audio would else be interrupted.
                     if (i == 7 && x == 47) 
                     {
-                        Thread.Sleep(600);
+                        Thread.Sleep(6); //600
                     }
                 }
                 Console.Write("\r\n");
-                Thread.Sleep(400); //400
+                Thread.Sleep(4); //400
 
             }
             Console.WriteLine("\r\n");
-
             do
             {
                 strUserStart = Console.ReadLine().ToLower();
@@ -852,11 +967,13 @@ namespace Subwaj
         //BEGIN OF InGameMenu
         public static void InGameMenu()
         {
+            InGameMenuTempRoom = CurrentRoom;
             CurrentRoom = strInGameMenu;
             Console.Clear();
             GetRandomConsoleColor();
             string strFilename = "files/menu/ingamenu.txt";
             Console.WriteLine(File.ReadAllText(strFilename));
+            Program.UserInput();
             Console.ForegroundColor = ConsoleColor.White;
 
         }
@@ -865,10 +982,13 @@ namespace Subwaj
         //BEGIN OF HUD
         public static void HUD()
         {
-            Console.SetCursorPosition(Console.CursorLeft = 30, Console.CursorTop = 0);
-            Console.WriteLine("║\tTIME:\t{0}\tCurrent location:   {1}\t╠═╦╗:\t0\t║", intTimer, CurrentRoom);
-            Console.SetCursorPosition(Console.CursorLeft = 30, Console.CursorTop = 1);
-            Console.WriteLine("╚═════════════════════════════════════════════════════════════════╝");
+            if (CurrentRoom != strMainMenu && CurrentRoom != strInGameMenu)
+            {
+                Console.SetCursorPosition(Console.CursorLeft = 30, Console.CursorTop = 0);
+                Console.WriteLine("║\tTIME:\t{0}\tCurrent location:   {1}\t╠═╦╗:\t0\t║", intTimer, CurrentRoom);
+                Console.SetCursorPosition(Console.CursorLeft = 30, Console.CursorTop = 1);
+                Console.WriteLine("╚═════════════════════════════════════════════════════════════════╝");
+            }
         }
 
         public static void TimerFunction()
@@ -894,8 +1014,12 @@ namespace Subwaj
 
             CurrentRoom = strROOM1;
             Console.Clear();
-            TimerThread.Start();
-            //story
+            if (TimerThread.IsAlive == false)
+            {
+                TimerThread.Start();
+            }
+                //story
+            blnBGMCancel = true;
             string strFilename = "files/story/Room1/Room1.txt";
             string[] IntroText = File.ReadAllLines(strFilename);
             for (int i = 0; i < IntroText.Length; i++)
@@ -906,18 +1030,19 @@ namespace Subwaj
                     Console.Write(strIntroText[x]);
                     if (strIntroText[x] == ',')
                     {
-                        Thread.Sleep(400);
+                        Thread.Sleep(4); //400
                     }
-                    Thread.Sleep(40);
+                    Thread.Sleep(4); //40
 
                 }
                 Console.Write("\r\n");
-                Thread.Sleep(400);
+                Thread.Sleep(4); //400
 
             }
             Thread.Sleep(1000);
-            Console.Clear();
+            blnBGMCancel = false;
             Console.WriteLine("\r\n");
+            Program.UserInput();
             Program.HALL1();
             Program.ErrorOutOfBounds();
         }
@@ -1105,11 +1230,11 @@ namespace Subwaj
         public static void GetRandomConsoleColor()
         {
             Array consoleColors = Enum.GetValues(typeof(ConsoleColor));
+            originalForegroundColor = Console.ForegroundColor;
             do
             {
-                originalForegroundColor = Console.ForegroundColor;
                 Console.ForegroundColor = (ConsoleColor)consoleColors.GetValue(_randomforeground.Next(consoleColors.Length));
-            } while (Console.ForegroundColor == Console.BackgroundColor || Console.ForegroundColor == originalForegroundColor || Console.ForegroundColor == ConsoleColor.Gray || Console.ForegroundColor == ConsoleColor.DarkGray || Console.ForegroundColor == ConsoleColor.DarkRed || Console.ForegroundColor == ConsoleColor.DarkMagenta || Console.ForegroundColor == ConsoleColor.DarkYellow || Console.ForegroundColor == ConsoleColor.DarkBlue || Console.ForegroundColor == ConsoleColor.DarkGreen || Console.ForegroundColor == ConsoleColor.Blue);
+            } while (Console.ForegroundColor == Console.BackgroundColor || Console.ForegroundColor == originalForegroundColor || Console.ForegroundColor == ConsoleColor.Gray || Console.ForegroundColor == ConsoleColor.DarkGray || Console.ForegroundColor == ConsoleColor.DarkRed || Console.ForegroundColor == ConsoleColor.DarkMagenta || Console.ForegroundColor == ConsoleColor.DarkYellow || Console.ForegroundColor == ConsoleColor.DarkBlue || Console.ForegroundColor == ConsoleColor.DarkGreen || Console.ForegroundColor == ConsoleColor.Blue || Console.ForegroundColor == ConsoleColor.DarkCyan);
             originalForegroundColor = Console.ForegroundColor;
         }
 
@@ -1118,7 +1243,7 @@ namespace Subwaj
         {
             do
             {
-                if (CurrentRoom != strMainMenu && CurrentRoom != string.Empty && blnPlayMusic == true) //BGM In Game
+                if (CurrentRoom != strMainMenu && CurrentRoom != string.Empty && blnPlayMusic == true && blnBGMCancel ==false) //BGM In Game
                 {
                     do
                     {
@@ -1147,11 +1272,11 @@ namespace Subwaj
                                 {
                                     Thread.Sleep(intReadDuration);
                                 }
-                            } while (intSongCounter < strReadSong.Length && CurrentRoom != strMainMenu && blnPlayMusic == true);
+                            } while (intSongCounter < strReadSong.Length && CurrentRoom != strMainMenu && blnPlayMusic == true && blnBGMCancel == false);
                         intSongCounter = 0;
-                    } while (CurrentRoom != string.Empty || CurrentRoom != strMainMenu && blnPlayMusic == true);
+                    } while (CurrentRoom != string.Empty || CurrentRoom != strMainMenu && blnPlayMusic == true && blnBGMCancel == false);
                 }
-                else if (CurrentRoom != string.Empty && CurrentRoom == strMainMenu && blnPlayMusic == true) //BGM Main Menu
+                else if (CurrentRoom != string.Empty && CurrentRoom == strMainMenu && blnPlayMusic == true && blnBGMCancel == false) //BGM Main Menu
                 {
                     do
                     {
@@ -1178,9 +1303,9 @@ namespace Subwaj
                             {
                                 Thread.Sleep(intReadDuration);
                             }
-                        } while (intSongCounter < strReadSong.Length && CurrentRoom == strMainMenu && blnPlayMusic == true);
+                        } while (intSongCounter < strReadSong.Length && CurrentRoom == strMainMenu && blnPlayMusic == true && blnBGMCancel == false);
                         intSongCounter = 0;
-                    } while (CurrentRoom == strMainMenu && blnPlayMusic == true);
+                    } while (CurrentRoom == strMainMenu && blnPlayMusic == true && blnBGMCancel == false);
                 }
             } while (true);
         }
