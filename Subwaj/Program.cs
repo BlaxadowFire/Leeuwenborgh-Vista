@@ -83,6 +83,8 @@ namespace Subwaj
         {
             Console.Title = "NOT A GAME";
             //Loops the program
+            Console.WindowWidth = 120;
+            Console.WindowHeight = 30;
             do
             {
                 Console.WriteLine("\t\t\t\tPlease turn on the volume for best user experience");
@@ -211,6 +213,8 @@ namespace Subwaj
         //Checks UserInput
         public static void UserInput()
         {
+            Program.DrawBottom();
+            Console.SetCursorPosition(Console.CursorLeft, 28);
             Program.cki = Console.ReadKey();
             string strCKI = cki.Key.ToString();
             switch (CurrentRoom)
@@ -644,9 +648,9 @@ namespace Subwaj
                 Console.Write(strIntroTextName[x]);
                 if (strIntroTextName[x] == ',' || strIntroTextName[x] == ':')
                 {
-                    Thread.Sleep(4); //400
+                    Thread.Sleep(400); //400
                 }
-                Thread.Sleep(4); //40
+                Thread.Sleep(40); //40
 
             }
             string strFilename = "files/story/intro/intro.txt";
@@ -673,23 +677,31 @@ namespace Subwaj
                     Console.Write(strIntroText[x]);
                     if (strIntroText[x] == ',')
                     {
-                        Thread.Sleep(4); //400
+                        Thread.Sleep(400); //400
                     }
-                    Thread.Sleep(4); //40
+                    Thread.Sleep(40); //40
 
                     //This had to be added to make line 8 of the text file (byte 7) in sync with the audio. Because the audio would else be interrupted.
                     if (i == 7 && x == 47) 
                     {
-                        Thread.Sleep(6); //600
+                        Thread.Sleep(600); //600
                     }
                 }
                 Console.Write("\r\n");
-                Thread.Sleep(4); //400
+                Thread.Sleep(400); //400
 
             }
             Console.WriteLine("\r\n");
             do
             {
+                Console.Clear();
+                Console.WriteLine("Ah, you're Finally here: " + Environment.UserName + "!");
+                Console.WriteLine(File.ReadAllText("files/story/intro/intro.txt"));
+
+                Program.DrawBottom();
+                Console.SetCursorPosition(Console.CursorLeft, 28);
+
+
                 strUserStart = Console.ReadLine().ToLower();
                 if (strUserStart == "start" || strUserStart == "exit")
                 {
@@ -706,11 +718,20 @@ namespace Subwaj
                 Console.Clear();
                 strFilename = "files/story/intro/exit.txt";
                 IntroText = File.ReadAllLines(strFilename);
+                intIntroTTS = 0;
                 for (int i = 0; i < IntroText.Length; i++)
                 {
+                    if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 11 || i == 13)
+                    {
+                        intIntroTTS += 1;
+                        player.SoundLocation = "files/story/TTS/Intro/Exit/exit" + intIntroTTS + ".wav";
+                        player.Play();
+                    }
+
                     string strIntroText = IntroText[i];
                     for (int x = 0; x < strIntroText.Length; x++)
                     {
+
                         Console.Write(strIntroText[x]);
                         if (strIntroText[x] == ',')
                         {
@@ -720,10 +741,10 @@ namespace Subwaj
 
                     }
                     Console.Write("\r\n");
-                    Thread.Sleep(400);
+                    Thread.Sleep(500);
 
                 }
-                Thread.Sleep(3000);
+                Thread.Sleep(2000);
                 Environment.Exit(0);
             }
         }
@@ -984,10 +1005,12 @@ namespace Subwaj
         {
             if (CurrentRoom != strMainMenu && CurrentRoom != strInGameMenu)
             {
-                Console.SetCursorPosition(Console.CursorLeft = 30, Console.CursorTop = 0);
-                Console.WriteLine("║\tTIME:\t{0}\tCurrent location:   {1}\t╠═╦╗:\t0\t║", intTimer, CurrentRoom);
-                Console.SetCursorPosition(Console.CursorLeft = 30, Console.CursorTop = 1);
-                Console.WriteLine("╚═════════════════════════════════════════════════════════════════╝");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.SetCursorPosition(Console.CursorLeft = 54, Console.CursorTop = 0);
+                Console.WriteLine("║\t   TIME:  {0}\t  Current location:   {1}\t╠═╦╗:\t0", intTimer, CurrentRoom);
+                Console.SetCursorPosition(Console.CursorLeft = 54, Console.CursorTop = 1);
+                Console.WriteLine("╚═════════════════════════════════════════════════════════════════");
+                Console.ForegroundColor = ConsoleColor.White;
             }
         }
 
@@ -1022,26 +1045,40 @@ namespace Subwaj
             blnBGMCancel = true;
             string strFilename = "files/story/Room1/Room1.txt";
             string[] IntroText = File.ReadAllLines(strFilename);
+            int intIntroTTS = 0; //Used to count the file
             for (int i = 0; i < IntroText.Length; i++)
             {
+
+                if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 13 || i == 17)
+                {
+                    intIntroTTS += 1;
+                    player.SoundLocation = "files/story/TTS/ROOM1/room1-" + intIntroTTS + ".wav";
+                    player.Play();
+                }
+                if ( i == 12 || i == 15)
+                {
+                    Console.Beep();
+                    Console.Beep();
+                    Console.Beep();
+                }
                 string strIntroText = IntroText[i];
                 for (int x = 0; x < strIntroText.Length; x++)
                 {
                     Console.Write(strIntroText[x]);
                     if (strIntroText[x] == ',')
                     {
-                        Thread.Sleep(4); //400
+                        Thread.Sleep(400); //400
                     }
-                    Thread.Sleep(4); //40
+                    Thread.Sleep(40); //40
 
                 }
                 Console.Write("\r\n");
-                Thread.Sleep(4); //400
+                Thread.Sleep(400); //400
 
             }
             Thread.Sleep(1000);
             blnBGMCancel = false;
-            Console.WriteLine("\r\n");
+            Console.WriteLine("\r\nPress any key to continue.");
             Program.UserInput();
             Program.HALL1();
             Program.ErrorOutOfBounds();
@@ -1225,6 +1262,14 @@ namespace Subwaj
 
         }
 
+        //Draw a line above user input
+        public static void DrawBottom()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.SetCursorPosition(Console.CursorLeft, 27);
+            Console.WriteLine("════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
 
         //Random ConsoleColor Generator
         public static void GetRandomConsoleColor()
@@ -1243,7 +1288,7 @@ namespace Subwaj
         {
             do
             {
-                if (CurrentRoom != strMainMenu && CurrentRoom != string.Empty && blnPlayMusic == true && blnBGMCancel ==false) //BGM In Game
+                if (CurrentRoom != strMainMenu && CurrentRoom != string.Empty && blnPlayMusic == true /*&& blnBGMCancel ==false*/) //BGM In Game
                 {
                     do
                     {
@@ -1272,11 +1317,11 @@ namespace Subwaj
                                 {
                                     Thread.Sleep(intReadDuration);
                                 }
-                            } while (intSongCounter < strReadSong.Length && CurrentRoom != strMainMenu && blnPlayMusic == true && blnBGMCancel == false);
+                            } while (intSongCounter < strReadSong.Length && CurrentRoom != strMainMenu && blnPlayMusic == true /*&& blnBGMCancel == false*/);
                         intSongCounter = 0;
-                    } while (CurrentRoom != string.Empty || CurrentRoom != strMainMenu && blnPlayMusic == true && blnBGMCancel == false);
+                    } while (CurrentRoom != string.Empty || CurrentRoom != strMainMenu && blnPlayMusic == true /*&& blnBGMCancel == false*/);
                 }
-                else if (CurrentRoom != string.Empty && CurrentRoom == strMainMenu && blnPlayMusic == true && blnBGMCancel == false) //BGM Main Menu
+                else if (CurrentRoom != string.Empty && CurrentRoom == strMainMenu && blnPlayMusic == true /*&& blnBGMCancel == false*/) //BGM Main Menu
                 {
                     do
                     {
@@ -1303,9 +1348,9 @@ namespace Subwaj
                             {
                                 Thread.Sleep(intReadDuration);
                             }
-                        } while (intSongCounter < strReadSong.Length && CurrentRoom == strMainMenu && blnPlayMusic == true && blnBGMCancel == false);
+                        } while (intSongCounter < strReadSong.Length && CurrentRoom == strMainMenu && blnPlayMusic == true /*&& blnBGMCancel == false*/);
                         intSongCounter = 0;
-                    } while (CurrentRoom == strMainMenu && blnPlayMusic == true && blnBGMCancel == false);
+                    } while (CurrentRoom == strMainMenu && blnPlayMusic == true /*&& blnBGMCancel == false*/);
                 }
             } while (true);
         }

@@ -1,16 +1,27 @@
 ﻿                                
 
-                               ╔═════════════╗
-                               ║  HELP MENU  ║	                                            
-                               ╚═════════════╝
+                            ╔═══════════════════╗
+                            ║  NOT A HELP MENU  ║	                                            
+                            ╚═══════════════════╝
 
                                   CONTROLS
 
-Use the numbers 1 to 9 to navigate trough the dungeon.
-You can always use the ESC key to go back to the main menu.
 
-                            concept/errors
+Your main controls will be the told by the options on the screen (1 to 9) (or by typing some text)
 
-you have exactly one hour to finish this dungeon
-please turn on your audio for the best exprience.
-if you find any errors please contact us by emailing nando.kools@hotmail.com.
+You can always use the ESC key to open you in game menu. Except when a cutscene is in progress.
+
+
+                                THE NOT GAME
+
+
+You have 1 hour to not beat this NOT GAME.
+
+if you find any errors please contact me by emailing nando.kools@hotmail.com.
+
+
+								DO NOT
+
+
+Do not change the size of the screen, this will cause the NOT GAME to look strange.
+Do not button mash, as it might break the game.
