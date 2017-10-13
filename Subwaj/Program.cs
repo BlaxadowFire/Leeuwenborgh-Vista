@@ -82,6 +82,9 @@ namespace Subwaj
         public static bool blnShop = false;
         public static bool blnDebug = false;
 
+        //sleep
+        public static int intSleep400 = 400; //400
+    
         static void Main(string[] args)
         {
             Console.Title = "NOT A GAME";
@@ -139,7 +142,7 @@ namespace Subwaj
                 Console.Write(strIntroTextName[x]);
                 if (strIntroTextName[x] == ',' || strIntroTextName[x] == ':')
                 {
-                    Thread.Sleep(400); //400
+                    Thread.Sleep(intSleep400); //400
                 }
                 Thread.Sleep(40); //40
 
@@ -168,7 +171,7 @@ namespace Subwaj
                     Console.Write(strIntroText[x]);
                     if (strIntroText[x] == ',')
                     {
-                        Thread.Sleep(400); //400
+                        Thread.Sleep(intSleep400); //400
                     }
                     Thread.Sleep(40); //40
 
@@ -179,7 +182,7 @@ namespace Subwaj
                     }
                 }
                 Console.Write("\r\n");
-                Thread.Sleep(400); //400
+                Thread.Sleep(intSleep400); //400
 
             }
             Console.WriteLine("\r\n");
@@ -230,7 +233,7 @@ namespace Subwaj
                         Console.Write(strIntroText[x]);
                         if (strIntroText[x] == ',')
                         {
-                            Thread.Sleep(400);
+                            Thread.Sleep(intSleep400);
                         }
                         Thread.Sleep(40);
 
@@ -561,13 +564,13 @@ namespace Subwaj
                     Console.Write(strIntroText[x]);
                     if (strIntroText[x] == ',')
                     {
-                        Thread.Sleep(400); //400
+                        Thread.Sleep(intSleep400); //400
                     }
                     Thread.Sleep(40); //40
 
                 }
                 Console.Write("\r\n");
-                Thread.Sleep(400); //400
+                Thread.Sleep(intSleep400); //400
 
             }
             Thread.Sleep(1000);
