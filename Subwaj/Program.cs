@@ -11,7 +11,7 @@ namespace Subwaj
 
     class Program
     {
-
+        public static string strAnswer = string.Empty;
         //Here we will place the public static variables
         public static Random _randomforeground = new Random();  //Gets used for random foregroundcolor.
         public static ConsoleColor originalForegroundColor;     //Sets the old foreground to a variable to make sure it isn't the same.
@@ -183,6 +183,10 @@ namespace Subwaj
 
             }
             Console.WriteLine("\r\n");
+            if (TimerThread.IsAlive == false)
+            {
+                TimerThread.Start();
+            }
             do
             {
                 Console.Clear();
@@ -321,7 +325,8 @@ namespace Subwaj
                 Console.WriteLine("Press Enter to go back to Main Menu");
                 while (intCode == 0)
                 {
-                    string strAnswer = Console.ReadLine();
+                     strAnswer = Console.ReadLine().ToLower();
+                    Debug.debug();
                     if (strAnswer == "boss" || strAnswer == "BOSS" || strAnswer == "Boss")
                     {
                         blnBoss = true;
@@ -529,10 +534,7 @@ namespace Subwaj
 
             CurrentRoom = strROOM1;
             Console.Clear();
-            if (TimerThread.IsAlive == false)
-            {
-                TimerThread.Start();
-            }
+
                 //story
             blnBGMCancel = true;
             string strFilename = strTXTLocation + "Room1/Room1.txt";

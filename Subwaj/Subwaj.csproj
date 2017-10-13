@@ -99,7 +99,10 @@
     <Compile Include="UserInputs.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="files\mainmenucodes\debug.txt">
+    <Content Include="files\mainmenucodes\DebugDisabled.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\mainmenucodes\Debug.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\menu\map.txt">
