@@ -78,6 +78,7 @@ namespace Subwaj
         //boolean's for code menu
         public static bool blnBoss = false;
         public static bool blnShop = false;
+        public static bool blnDebug = false;
 
         static void Main(string[] args)
         {
@@ -849,6 +850,7 @@ namespace Subwaj
                         Console.Clear();
                         Program.MAINMENU();
                     }
+                    
                     else if (strAnswer == "konami" || strAnswer == "KONAMI" || strAnswer == "Konami")
                     {
                         intCode = 1;
