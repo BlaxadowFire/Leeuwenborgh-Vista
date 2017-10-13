@@ -90,10 +90,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Debug.cs" />
+    <Compile Include="Errors.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="puzzle1.cs" />
     <Compile Include="puzzle2.cs" />
+    <Compile Include="UserInputs.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="files\mainmenucodes\debug.txt">

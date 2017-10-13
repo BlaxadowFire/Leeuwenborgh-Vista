@@ -74,6 +74,8 @@ namespace Subwaj
         //TTS
         public static System.Media.SoundPlayer player = new System.Media.SoundPlayer();
         public static bool blnBGMCancel = false;
+        public static string strTTSLocation = "files/story/TTS/";
+        public static string strTXTLocation = "files/story/";
 
         //boolean's for code menu
         public static bool blnBoss = false;
@@ -98,519 +100,7 @@ namespace Subwaj
             }
             while (true);
         }
-        //Back to current room
-        public static void BackToCurrentRoom()
-        {
-            switch (CurrentRoom)
-            {
-                case "ROOM1":
-                    {
-                        Program.ROOM1();
-                        break;
-                    }
-                case "ROOM2":
-                    {
-                        Program.ROOM2();
-                        break;
-                    }
-                case "ROOM3":
-                    {
-                        Program.ROOM3();
-                        break;
-                    }
-                case "ROOM4":
-                    {
-                        Program.ROOM4();
-                        break;
-                    }
-                case "ROOM5":
-                    {
-                        Program.ROOM5();
-                        break;
-                    }
-                case "ROOM6":
-                    {
-                        Program.ROOM6();
-                        break;
-                    }
-                case "ROOM7":
-                    {
-                        Program.ROOM7();
-                        break;
-                    }
-                case "HALL1":
-                    {
-                        Program.HALL1();
-                        break;
-                    }
-                case "HALL2":
-                    {
-                        Program.HALL2();
-                        break;
-                    }
-                case "HALL3":
-                    {
-                        Program.HALL3();
-                        break;
-                    }
-                case "HALL4":
-                    {
-                        Program.HALL4();
-                        break;
-                    }
-                case "HALL5":
-                    {
-                        Program.HALL5();
-                        break;
-                    }
-                case "HALL6":
-                    {
-                        Program.HALL6();
-                        break;
-                    }
-                case "HALL7":
-                    {
-                        Program.HALL7();
-                        break;
-                    }
-                case "HALL8":
-                    {
-                        Program.HALL8();
-                        break;
-                    }
-                case "HALL9":
-                    {
-                        Program.HALL9();
-                        break;
-                    }
-                case "HALL10":
-                    {
-                        Program.HALL10();
-                        break;
-                    }
-                case "HALL11":
-                    {
-                        Program.HALL11();
-                        break;
-                    }
-                case "HALL12":
-                    {
-                        Program.HALL12();
-                        break;
-                    }
-                case "HALL13":
-                    {
-                        Program.HALL13();
-                        break;
-                    }
-                case "HALL14":
-                    {
-                        Program.HALL14();
-                        break;
-                    }
-            }
-        }
 
-        //Checks UserInput
-        public static void UserInput()
-        {
-            Program.DrawBottom();
-            Console.SetCursorPosition(Console.CursorLeft, 28);
-            Program.cki = Console.ReadKey();
-            string strCKI = cki.Key.ToString();
-            switch (CurrentRoom)
-            {
-                case "MainMenu":
-                    {
-                        switch (strCKI)
-                        {
-                            case "NumPad1":
-                            case "D1":
-                                {
-                                    Program.MainMenuStart();
-                                    break;
-                                }
-
-                            case "NumPad2":
-                            case "D2":
-                                {
-                                    Program.MainMenuHelp();
-                                    break;
-                                }
-
-                            case "NumPad3":
-                            case "D3":
-                                {
-                                    Program.MainMenuOptions();
-                                    break;
-                                }
-
-                            case "NumPad4":
-                            case "D4":
-                                {
-                                    Program.MainMenuCode();
-                                    break;
-                                }
-
-                            case "NumPad5":
-                            case "D5":
-                                {
-                                    Program.MainMenuAchievements();
-                                    break;
-                                }
-
-                            case "NumPad6":
-                            case "D6":
-                                {
-                                    Program.MainMenuLoadSaveGame();
-                                    break;
-                                }
-
-                            case "NumPad0":
-                            case "D0":
-                                {
-                                    Program.MainMenuExit();
-                                    break;
-                                }
-
-                            default:
-                                {
-                                    Program.MAINMENU();
-                                    break;
-                                }
-
-                            case "Oem3":
-                                {
-                                    Console.Clear();
-                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                    Console.BackgroundColor = ConsoleColor.DarkRed;
-                                    Console.WriteLine("ControlKeyInfo output debug");
-                                    Console.BackgroundColor = ConsoleColor.Black;
-                                    Console.ForegroundColor = ConsoleColor.White;
-                                    do
-                                    {
-
-                                        cki = Console.ReadKey();
-                                        strCKI = cki.Key.ToString();
-                                        Console.WriteLine("");
-                                        Console.WriteLine("OUTPUT:" + strCKI);
-                                    } while (true);
-                                }
-
-                        }
-                        break;
-                    }
-                case "InGameMenu":
-                    {
-                        switch (strCKI)
-                        {
-                            case "Escape":
-                            case "D1":
-                            case "NumPad1":
-                                {
-                                    //escape gaat terug naar de room
-                                    CurrentRoom = InGameMenuTempRoom;
-                                    InGameMenuTempRoom = string.Empty;
-                                    Program.BackToCurrentRoom();
-                                    break;
-                                }
-                            case "D2":
-                            case "NumPad2":
-                                {
-                                    Program.MainMenuHelp();
-                                    break;
-                                }
-                            case "D3":
-                            case "NumPad3":
-                                {
-                                    Program.MainMenuOptions();
-                                    break;
-                                }
-                            case "D4":
-                            case "NumPad4":
-                                {
-                                    //achievment options
-                                    Program.ErrorNotYetCreated();
-                                    break;
-                                }
-                            case "D5":
-                            case "NumPad5":
-                                {
-                                    //save game option
-                                    Program.ErrorNotYetCreated();
-                                    break;
-                                }
-                            case "D6":
-                            case "NumPad6":
-                                {
-                                    Program.MAINMENU();
-                                    break;
-                                }
-                            case "D0":
-                            case "NumPad0":
-                                {
-                                    Program.MainMenuExit();
-                                    break;
-                                }
-                            default:
-                                {
-                                 
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "ROOM1":
-                    {
-                        switch (strCKI)
-                        {
-                            case "Escape":
-                                {
-                                    Program.InGameMenu();
-                                    break;
-                                }
-                            default:
-                                {
-                                    Program.HALL1();
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "ROOM2":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "ROOM3":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "ROOM4":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "ROOM5":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "ROOM6":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "ROOM7":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "HALL1":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "HALL2":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "HALL3":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "HALL4":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "HALL5":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "HALL6":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "HALL7":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "HALL8":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "HALL9":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "HALL10":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "HALL11":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "HALL12":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "HALL13":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                case "HALL14":
-                    {
-                        switch (strCKI)
-                        {
-                            default:
-                                {
-                                    break;
-                                }
-                        }
-                        break;
-                    }
-                default:
-                    {
-                        Program.ErrorHandlerStart();
-                        Console.WriteLine("ERROR: ROOM NOT KNOWN");
-                        Console.WriteLine("ERROR ID:0001");
-                        Program.ErrorFinisher();
-                        break;
-                    }
-            }
-            Program.ErrorHandlerStart();
-            Console.WriteLine("ERROR: OUT OF ROOM EXCEPTION");
-            Console.WriteLine("ERROR ID: 0002");
-            Program.ErrorFinisher();
-        }
 
         // BEGIN OF MAINMENU
         public static void MAINMENU()
@@ -629,7 +119,7 @@ namespace Subwaj
                 string strFilenamee = "files/menu/mainmenu.txt";
                 Console.WriteLine(File.ReadAllText(strFilenamee));
                 Console.ForegroundColor = ConsoleColor.White;
-                Program.UserInput();
+                UserInputs.UserInput();
 
             } while (true);
         }
@@ -640,7 +130,7 @@ namespace Subwaj
             string strUserStart;
             bool blnLoopQuestion = true;
             blnBGMCancel = true;
-            player.SoundLocation = "files/story/TTS/Intro/intro1.wav";
+            player.SoundLocation = strTTSLocation + "Intro/intro1.wav";
             player.Play();
 
             string strIntroTextName = "Ah, you're Finally here: " + Environment.UserName + "!\r\n";
@@ -654,7 +144,7 @@ namespace Subwaj
                 Thread.Sleep(40); //40
 
             }
-            string strFilename = "files/story/intro/intro.txt";
+            string strFilename = strTXTLocation + "intro/intro.txt";
 
             int intIntroTTS = 1; //Used to count the file
 
@@ -667,7 +157,7 @@ namespace Subwaj
                 if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 11 || i == 13)
                 {
                     intIntroTTS += 1;
-                    player.SoundLocation = "files/story/TTS/Intro/intro" + intIntroTTS + ".wav";
+                    player.SoundLocation = strTTSLocation + "Intro/intro" + intIntroTTS + ".wav";
                     player.Play();
                 }
 
@@ -697,7 +187,7 @@ namespace Subwaj
             {
                 Console.Clear();
                 Console.WriteLine("Ah, you're Finally here: " + Environment.UserName + "!");
-                Console.WriteLine(File.ReadAllText("files/story/intro/intro.txt"));
+                Console.WriteLine(File.ReadAllText(strTXTLocation + "intro/intro.txt"));
 
                 Program.DrawBottom();
                 Console.SetCursorPosition(Console.CursorLeft, 28);
@@ -717,7 +207,7 @@ namespace Subwaj
             else
             {
                 Console.Clear();
-                strFilename = "files/story/intro/exit.txt";
+                strFilename = strTXTLocation + "intro/exit.txt";
                 IntroText = File.ReadAllLines(strFilename);
                 intIntroTTS = 0;
                 for (int i = 0; i < IntroText.Length; i++)
@@ -725,7 +215,7 @@ namespace Subwaj
                     if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 11 || i == 13)
                     {
                         intIntroTTS += 1;
-                        player.SoundLocation = "files/story/TTS/Intro/Exit/exit" + intIntroTTS + ".wav";
+                        player.SoundLocation = strTTSLocation + "Intro/Exit/exit" + intIntroTTS + ".wav";
                         player.Play();
                     }
 
@@ -975,11 +465,11 @@ namespace Subwaj
         }
         public static void MainMenuAchievements()
         {
-            Program.ErrorNotYetCreated();
+            Errors.ErrorNotYetCreated();
         }
         public static void MainMenuLoadSaveGame()
         {
-            Program.ErrorNotYetCreated();
+            Errors.ErrorNotYetCreated();
         }
         public static void MainMenuExit()
         {
@@ -996,7 +486,7 @@ namespace Subwaj
             GetRandomConsoleColor();
             string strFilename = "files/menu/ingamenu.txt";
             Console.WriteLine(File.ReadAllText(strFilename));
-            Program.UserInput();
+            UserInputs.UserInput();
             Console.ForegroundColor = ConsoleColor.White;
 
         }
@@ -1045,7 +535,7 @@ namespace Subwaj
             }
                 //story
             blnBGMCancel = true;
-            string strFilename = "files/story/Room1/Room1.txt";
+            string strFilename = strTXTLocation + "Room1/Room1.txt";
             string[] IntroText = File.ReadAllLines(strFilename);
             int intIntroTTS = 0; //Used to count the file
             for (int i = 0; i < IntroText.Length; i++)
@@ -1054,7 +544,7 @@ namespace Subwaj
                 if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 13 || i == 17)
                 {
                     intIntroTTS += 1;
-                    player.SoundLocation = "files/story/TTS/ROOM1/room1-" + intIntroTTS + ".wav";
+                    player.SoundLocation = strTTSLocation + "ROOM1/room1-" + intIntroTTS + ".wav";
                     player.Play();
                 }
                 if ( i == 12 || i == 15)
@@ -1081,9 +571,9 @@ namespace Subwaj
             Thread.Sleep(1000);
             blnBGMCancel = false;
             Console.WriteLine("\r\nPress any key to continue.");
-            Program.UserInput();
+            UserInputs.UserInput();
             Program.HALL1();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         public static void ROOM2()
         {
@@ -1096,7 +586,7 @@ namespace Subwaj
             Console.WriteLine("Going to " + strHALL2);
             Program.NextRoom();
             Program.HALL2();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         public static void ROOM3()
         {
@@ -1105,7 +595,7 @@ namespace Subwaj
             Console.WriteLine("Going to " + strHALL4);
             Program.NextRoom();
             Program.HALL4();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         public static void ROOM4()
         {
@@ -1114,7 +604,7 @@ namespace Subwaj
             Console.WriteLine("Going to " + strHALL6);
             Program.NextRoom();
             Program.HALL6();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         public static void ROOM5()
         {
@@ -1123,7 +613,7 @@ namespace Subwaj
             Console.WriteLine("Going to " + strHALL7);
             Program.NextRoom();
             Program.HALL7();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         public static void ROOM6()
         {
@@ -1132,14 +622,14 @@ namespace Subwaj
             Console.WriteLine("Going to " + strHALL13);
             Program.NextRoom();
             Program.HALL13();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         public static void ROOM7()
         {
             CurrentRoom = strROOM7;
             Console.WriteLine("BOSSROOM");
             Console.ReadLine();
-            Program.ErrorNotYetCreated();
+            Errors.ErrorNotYetCreated();
         }
         //END OF ROOMS
 
@@ -1151,7 +641,7 @@ namespace Subwaj
             Console.WriteLine("There is nothing to see here");
             Program.NextRoom();
             Program.ROOM2();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         public static void HALL2()
         {
@@ -1160,12 +650,12 @@ namespace Subwaj
             Console.WriteLine("Going to " + strROOM3);
             Program.NextRoom();
             Program.ROOM3();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         public static void HALL3()
         {
             CurrentRoom = strHALL3;
-            Program.ErrorNotYetCreated();
+            Errors.ErrorNotYetCreated();
         }
         public static void HALL4()
         {
@@ -1174,7 +664,7 @@ namespace Subwaj
             Console.WriteLine("Going to " + strHALL5);
             Program.NextRoom();
             Program.HALL5();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         public static void HALL5()
         {
@@ -1183,7 +673,7 @@ namespace Subwaj
             Console.WriteLine("Going to " + strROOM4);
             Program.NextRoom();
             Program.ROOM4();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         public static void HALL6()
         {
@@ -1192,7 +682,7 @@ namespace Subwaj
             Console.WriteLine("Going to " + strROOM5);
             Program.NextRoom();
             Program.ROOM5();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         public static void HALL7()
         {
@@ -1201,7 +691,7 @@ namespace Subwaj
             Console.WriteLine("Going to " + strHALL8);
             Program.NextRoom();
             Program.HALL8();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         public static void HALL8()
         {
@@ -1210,22 +700,22 @@ namespace Subwaj
             Console.WriteLine("Going to " + strHALL12);
             Program.NextRoom();
             Program.HALL12();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         public static void HALL9()
         {
             CurrentRoom = strHALL9;
-            Program.ErrorNotYetCreated();
+            Errors.ErrorNotYetCreated();
         }
         public static void HALL10()
         {
             CurrentRoom = strHALL10;
-            Program.ErrorNotYetCreated();
+            Errors.ErrorNotYetCreated();
         }
         public static void HALL11()
         {
             CurrentRoom = strHALL11;
-            Program.ErrorNotYetCreated();
+            Errors.ErrorNotYetCreated();
         }
         public static void HALL12()
         {
@@ -1234,7 +724,7 @@ namespace Subwaj
             Console.WriteLine("Going to " + strROOM6);
             Program.NextRoom();
             Program.ROOM6();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         public static void HALL13()
         {
@@ -1243,7 +733,7 @@ namespace Subwaj
             Console.WriteLine("Going to " + strHALL14);
             Program.NextRoom();
             Program.HALL14();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         public static void HALL14()
         {
@@ -1252,7 +742,7 @@ namespace Subwaj
             Console.WriteLine("Going to " + strROOM7);
             Program.NextRoom();
             Program.ROOM7();
-            Program.ErrorOutOfBounds();
+            Errors.ErrorOutOfBounds();
         }
         //END OF HALLS
 
@@ -1364,53 +854,6 @@ namespace Subwaj
             Console.WriteLine("How did you even manage to lose? this isn't even a game.\r\nPress any key to exit");
             Console.ReadKey();
             Environment.Exit(0);
-        }
-
-        //Error color
-        public static void ErrorHandlerStart()
-        {
-            Console.BackgroundColor = ConsoleColor.DarkYellow;
-            Console.Clear();
-            Console.ForegroundColor = ConsoleColor.Black;
-            Console.BackgroundColor = ConsoleColor.Yellow;
-        }
-        //Error preventor
-        public static void ErrorFinisher()
-        {
-            Console.WriteLine("\r\nInformation:\r\nCurrentRoom = {0}\r\n", CurrentRoom);
-            Console.WriteLine("An unexpected error occured, please contact me at nando.kools@hotmail.com and give me the error ID");
-            CurrentRoom = string.Empty;
-            Thread.Sleep(500);
-            Console.Beep(500, 1200);
-
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.BackgroundColor = ConsoleColor.Black;
-
-            Console.ReadLine();
-            Console.ReadLine();// made 2 readlines to make sure the user doesnt skip the error.
-        }
-        //If code isn't created yet
-        public static void ErrorNotYetCreated()
-        {
-            Program.ErrorHandlerStart();
-            Console.WriteLine("ERROR: CODE DOESN'T EXIST");
-            Console.WriteLine("ERROR ID: 0003");
-            Program.ErrorFinisher();
-            Console.WriteLine("Press any button to return to Main Menu");
-            Console.ReadKey();
-            Program.MAINMENU();
-
-        }
-        //Error code out of bounds
-        public static void ErrorOutOfBounds()
-        {
-            Program.ErrorHandlerStart();
-            Console.WriteLine("ERROR: CODE OUT OF BOUNDS");
-            Console.WriteLine("ERROR ID: 0004");
-            Program.ErrorFinisher();
-            Console.WriteLine("Press any button to return to Main Menu");
-            Console.ReadKey();
-            Program.MAINMENU();
         }
 
     }
