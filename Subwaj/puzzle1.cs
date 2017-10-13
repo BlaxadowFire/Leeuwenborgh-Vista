@@ -48,85 +48,47 @@ namespace Subwaj
 
             public static bool firstrun = true;
 
-            static void Main1()
+        static void Main1()
+        {
+            do
             {
+                strPlayer1 = Environment.UserName;
+                strPlayer2 = "THE MOST AMAZING AI EVER CREATED";
+                strCurrentPlayer = strPlayer1;
                 do
                 {
-                    strPlayer1 = Environment.UserName;
-                    strPlayer2 = "THE MOST AMAZING AI EVER CREATED";
-                    strCurrentPlayer = strPlayer1;
-                    do
+                    if (strCurrentPlayer == "THE MOST AMAZING AI EVER CREATED")
                     {
-                        if (strCurrentPlayer == "THE MOST AMAZING AI EVER CREATED")
-                        {
-                            blnAiTurn = true;
-                            Puzzle1.FuncBot();
-                        }
-                        else
-                        {
-                            Puzzle1.DrawGrid();
-                            strUserInput = Console.ReadLine();
+                        blnAiTurn = true;
+                        Puzzle1.FuncBot();
+                    }
+                    else
+                    {
+                        Puzzle1.DrawGrid();
+                        strUserInput = Console.ReadKey().Key.ToString();
 
-                            Puzzle1.TurnCheck();
-                            Puzzle1.Turn();
-                        }
-                        Puzzle1.CheckIfWon();
-                        Puzzle1.SwitchTurn();
+                        Puzzle1.TurnCheck();
+                        Puzzle1.Turn();
                     }
-                    while (blnGameOVer == false);
-                    Console.WriteLine("It's a tie!");
-                    Console.WriteLine("Do you want to play again? y/n");
-                    restart = Console.ReadLine();
-                    if (restart == "n")
-                    {
-                        Console.WriteLine("Sucks to be you, you can't stop");
-                    }
-                        Puzzle1.FuncRestart();
+                    Puzzle1.CheckIfWon();
+                    Puzzle1.SwitchTurn();
                 }
-                while (true);
-
-
-            }
-
-            public static void BGM()
-            {
-                do
+                while (blnGameOVer == false);
+                Console.WriteLine("It's a tie!");
+                
+                Console.WriteLine("Do you want to play again? y/n");
+                restart = Console.ReadKey().Key.ToString();
+                if (restart != "y")
                 {
-                    Console.Beep(440, 200);
-                    Console.Beep(440, 200);
-                    Console.Beep(524, 200);
-                    Console.Beep(440, 200);
-                    Console.Beep(588, 200);
-                    Console.Beep(440, 200);
-                    Console.Beep(660, 200);
-                    Console.Beep(588, 200);
-                    Console.Beep(524, 200);
-                    Console.Beep(524, 200);
-                    Console.Beep(660, 200);
-                    Console.Beep(524, 200);
-                    Console.Beep(784, 200);
-                    Console.Beep(524, 200);
-                    Console.Beep(660, 200);
-                    Console.Beep(524, 200);
-                    Console.Beep(392, 200);
-                    Console.Beep(392, 200);
-                    Console.Beep(496, 200);
-                    Console.Beep(392, 200);
-                    Console.Beep(524, 200);
-                    Console.Beep(392, 200);
-                    Console.Beep(524, 200);
-                    Console.Beep(496, 200);
-                    Console.Beep(350, 200);
-                    Console.Beep(350, 200);
-                    Console.Beep(440, 200);
-                    Console.Beep(350, 200);
-                    Thread.Sleep(10);
-                    Console.Beep(524, 300);
-                    Console.Beep(524, 200);
-                    Console.Beep(496, 200);
+                    Console.WriteLine("Sucks to be you, you can't stop");
+                    Thread.Sleep(2000);
                 }
-                while (true);
+                Puzzle1.FuncRestart();
             }
+            while (true);
+
+
+        }
 
             public static void TurnCheck()
             {
@@ -144,7 +106,8 @@ namespace Subwaj
                 Console.Clear();
                 switch (strUserInput)
                 {
-                    case "1":
+                    case "D1":
+                    case "NumPad1":
                         {
                             if (A == "1")
                             {
@@ -152,83 +115,90 @@ namespace Subwaj
                             }
                             else
                             {
-                                Console.WriteLine("Error, this one is already taken");
-                                Console.ReadLine();
+                                Console.WriteLine("Error, this one is already taken\r\nPress any key to continue.");
+                                Console.ReadKey();
                                 Puzzle1.Main1();
                             }
                             break;
                         }
-                    case "2":
+                    case "D2":
+                    case "NumPad2":
                         {
                             if (B == "2")
                             {
                                 B = strCPChoice;
                             }
                             else
-                            {
-                                Console.WriteLine("Error, this one is already taken");
-                                Console.ReadLine();
-                                Puzzle1.Main1();
+                        {
+                            Console.WriteLine("Error, this one is already taken\r\nPress any key to continue.");
+                            Console.ReadKey();
+                            Puzzle1.Main1();
                             }
                             break;
                         }
-                    case "3":
+                    case "D3":
+                    case "NumPad3":
                         {
                             if (C == "3")
                             {
                                 C = strCPChoice;
                             }
                             else
-                            {
-                                Console.WriteLine("Error, this one is already taken");
-                                Console.ReadLine();
-                                Puzzle1.Main1();
+                        {
+                            Console.WriteLine("Error, this one is already taken\r\nPress any key to continue.");
+                            Console.ReadKey();
+                            Puzzle1.Main1();
                             }
                             break;
                         }
-                    case "4":
+                    case "D4":
+                    case "NumPad4":
                         {
                             if (D == "4")
                             {
                                 D = strCPChoice;
                             }
                             else
-                            {
-                                Console.WriteLine("Error, this one is already taken");
-                                Console.ReadLine();
-                                Puzzle1.Main1();
+                        {
+                            Console.WriteLine("Error, this one is already taken\r\nPress any key to continue.");
+                            Console.ReadKey();
+                            Puzzle1.Main1();
                             }
                             break;
                         }
-                    case "5":
+                    case "D5":
+                    case "Numpad5": 
                         {
                             if (E == "5")
                             {
                                 E = strCPChoice;
                             }
                             else
-                            {
-                                Console.WriteLine("Error, this one is already taken");
-                                Console.ReadLine();
-                                Puzzle1.Main1();
+                        {
+                            Console.WriteLine("Error, this one is already taken\r\nPress any key to continue.");
+                            Console.ReadKey();
+                            Puzzle1.Main1();
                             }
                             break;
                         }
-                    case "6":
+                    case "D6":
+                    case "NumPad6":
                         {
                             if (F == "6")
                             {
                                 F = strCPChoice;
                             }
                             else
+                            
                             {
-                                Console.WriteLine("Error, this one is already taken");
-                                Console.ReadLine();
+                                Console.WriteLine("Error, this one is already taken\r\nPress any key to continue.");
+                                Console.ReadKey();
                                 Puzzle1.Main1();
                             }
                             break;
                         }
-                    case "7":
+                    case "D7":
+                    case "NumPad7":
                         {
                             if (G == "7")
                             {
@@ -236,37 +206,40 @@ namespace Subwaj
                             }
                             else
                             {
-                                Console.WriteLine("Error, this one is already taken");
-                                Console.ReadLine();
+                            
+                                Console.WriteLine("Error, this one is already taken\r\nPress any key to continue.");
+                                Console.ReadKey();
                                 Puzzle1.Main1();
                             }
                             break;
                         }
-                    case "8":
+                    case "D8":
+                    case "NumPad8": 
                         {
                             if (H == "8")
                             {
                                 H = strCPChoice;
                             }
                             else
-                            {
-                                Console.WriteLine("Error, this one is already taken");
-                                Console.ReadLine();
-                                Puzzle1.Main1();
+                        {
+                            Console.WriteLine("Error, this one is already taken\r\nPress any key to continue.");
+                            Console.ReadKey();
+                            Puzzle1.Main1();
                             }
                             break;
                         }
-                    case "9":
+                    case "D9":
+                    case "NumPad9":
                         {
                             if (I == "9")
                             {
                                 I = strCPChoice;
                             }
                             else
-                            {
-                                Console.WriteLine("Error, this one is already taken");
-                                Console.ReadLine();
-                                Puzzle1.Main1();
+                        {
+                            Console.WriteLine("Error, this one is already taken\r\nPress any key to continue.");
+                            Console.ReadKey();
+                            Puzzle1.Main1();
                             }
                             break;
                         }
@@ -287,9 +260,9 @@ namespace Subwaj
                         break;
                     default:
                         {
-                            Console.WriteLine("Error, give valid input");
-                            Console.ReadLine();
-                            Puzzle1.Main1();
+                        
+                            Console.WriteLine("Error,give valid input\r\nPress any key to continue.");
+                            Console.ReadKey();
                             break;
                         }
                 }

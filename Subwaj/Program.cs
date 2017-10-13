@@ -193,6 +193,7 @@ namespace Subwaj
             do
             {
                 Console.Clear();
+                Console.SetCursorPosition(0, 0);
                 Console.WriteLine("Ah, you're Finally here: " + Environment.UserName + "!");
                 Console.WriteLine(File.ReadAllText(strTXTLocation + "intro/intro.txt"));
 
