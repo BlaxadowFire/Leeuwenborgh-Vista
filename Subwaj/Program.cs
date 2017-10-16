@@ -264,14 +264,7 @@ namespace Subwaj
                     case "Enter":
                     case "Escape":
                         {
-                            if (CurrentRoom == strMainMenu)
-                            {
-                                Program.MAINMENU();
-                            }
-                            else if (CurrentRoom == strInGameMenu)
-                            {
-                                Program.InGameMenu();
-                            }
+                                UserInputs.BackToCurrentRoom();
                             break;
                         }
                     default:
@@ -308,7 +301,7 @@ namespace Subwaj
                         }
                     case "Escape":
                         {
-                            Program.MAINMENU();
+                            UserInputs.BackToCurrentRoom();
                             break;
                         }
                     default:
@@ -489,8 +482,11 @@ namespace Subwaj
         //BEGIN OF InGameMenu
         public static void InGameMenu()
         {
-            InGameMenuTempRoom = CurrentRoom;
-            CurrentRoom = strInGameMenu;
+            if (CurrentRoom != strInGameMenu)
+            {
+                InGameMenuTempRoom = CurrentRoom;
+                CurrentRoom = strInGameMenu;
+            }
             Console.Clear();
             GetRandomConsoleColor();
             string strFilename = "files/menu/ingamenu.txt";
@@ -588,6 +584,7 @@ namespace Subwaj
             if (blnPuzzle1Complete == false)
             {
                 Puzzle1.StartPuzzle1();
+                
             }
             Console.WriteLine("Going to " + strHALL2);
             Program.NextRoom();
