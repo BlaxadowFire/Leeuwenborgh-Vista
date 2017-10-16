@@ -577,6 +577,7 @@ namespace Subwaj
             Thread.Sleep(1000);
             blnBGMCancel = false;
             Console.WriteLine("\r\nPress any key to continue.");
+            Console.ReadKey();
             UserInputs.UserInput();
             Program.HALL1();
             Errors.ErrorOutOfBounds();
