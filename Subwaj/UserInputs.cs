@@ -153,7 +153,7 @@ namespace Subwaj
                                 }
                             default:
                                 {
-
+                                    UserInputs.UserInput();
                                     break;
                                 }
                         }
@@ -180,6 +180,11 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -519,6 +524,16 @@ namespace Subwaj
                 case "HALL14":
                     {
                         Program.HALL14();
+                        break;
+                    }
+                case "InGameMenu":
+                    {
+                        Program.InGameMenu();
+                        break;
+                    }
+                case "MainMenu":
+                    {
+                        Program.MAINMENU();
                         break;
                     }
             }
