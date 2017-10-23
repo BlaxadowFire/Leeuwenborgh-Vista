@@ -596,6 +596,7 @@ namespace Subwaj
         {
             CurrentRoom = strROOM3;
             Console.Clear();
+            puzzle2.startpuzzle2();
             Console.WriteLine("Going to " + strHALL4);
             Program.NextRoom();
             Program.HALL4();

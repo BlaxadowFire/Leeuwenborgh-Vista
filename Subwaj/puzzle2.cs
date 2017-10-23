@@ -10,15 +10,26 @@ namespace Subwaj
 {
     class puzzle2
     {
+        public static string answer = string.Empty;
         public puzzle2() {/*Start methode*/}
 
         public static void startpuzzle2()
         {
             Console.Clear();
-            string[] strFile = File.ReadAllLines("files/Puzzles/puzzle3.txt");
+            string[] strQuestionFile = File.ReadAllLines("files/Puzzles/Questions.txt");
+            string[] strAnserFile = File.ReadAllLines("files/Puzzles/Answers.txt");
             int i = 0;
-            Console.WriteLine(strFile[0]);
-            Console.ReadLine();
+            do
+            {
+                Console.WriteLine(strQuestionFile[i]);
+                answer = Console.ReadLine().ToLower();
+                if (answer == strAnserFile[i])
+                {
+                    i++;
+                }
+
+            } while (i < 7);
+            Program.blnPuzzle2Complete = true;
         }
     }
 }
