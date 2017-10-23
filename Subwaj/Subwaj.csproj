@@ -262,6 +262,7 @@
     </PublishFile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="files\Puzzles\" />
     <Folder Include="files\story\Room2\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
