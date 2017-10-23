@@ -113,6 +113,7 @@
     <Content Include="files\menu\Map\map.txt" />
     <Content Include="files\menu\Map\mapRoom1tm3.txt" />
     <Content Include="files\menu\Map\mapRoom1tm5.txt" />
+    <Content Include="files\Puzzles\Questions.txt" />
     <Content Include="files\story\Intro\exit.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -263,7 +264,6 @@
     </PublishFile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="files\Puzzles\" />
     <Folder Include="files\story\Room2\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
