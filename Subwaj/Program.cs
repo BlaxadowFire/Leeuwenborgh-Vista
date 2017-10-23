@@ -12,6 +12,7 @@ namespace Subwaj
     class Program
     {
         public static string strAnswer = string.Empty;
+        public static int intCode = 0;
         //Here we will place the public static variables
         public static Random _randomforeground = new Random();  //Gets used for random foregroundcolor.
         public static ConsoleColor originalForegroundColor;     //Sets the old foreground to a variable to make sure it isn't the same.
@@ -315,7 +316,6 @@ namespace Subwaj
         public static void MainMenuCode()
         {
 
-            int intCode = 0;
             do
             {
                 Console.Clear();
@@ -352,7 +352,7 @@ namespace Subwaj
                         Program.MAINMENU();
                     }
                 }
-                while (intCode == 0) ;
+                while (intCode == 0);
                 int Konamicode = 0;
                 Console.Clear();
                 Console.WriteLine("Please enter the Konami Code (START = ENTER)");
