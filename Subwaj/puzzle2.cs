@@ -14,7 +14,11 @@ namespace Subwaj
 
         public static void startpuzzle2()
         {
-
+            Console.Clear();
+            string[] strFile = File.ReadAllLines("files/Puzzles/puzzle3.txt");
+            int i = 0;
+            Console.WriteLine(strFile[0]);
+            Console.ReadLine();
         }
     }
 }

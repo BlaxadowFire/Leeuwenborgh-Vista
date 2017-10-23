@@ -10,5 +10,11 @@ namespace Subwaj
 {
     class puzzle3
     {
+        public puzzle3() {/*Start methode*/}
+
+        public static void startpuzzle3()
+        {
+
+        }
     }
 }
