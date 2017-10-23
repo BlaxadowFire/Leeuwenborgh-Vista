@@ -10,7 +10,8 @@ namespace Subwaj
 {
     class Konami_Code
     {
-        public Konami_Code()
+        public Konami_Code() { }
+        public static void CheckKonami_Code()
         {
             while (Program.intCode == 0) ;
             int Konamicode = 0;
