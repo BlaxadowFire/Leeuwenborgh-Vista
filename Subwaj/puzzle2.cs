@@ -16,6 +16,7 @@ namespace Subwaj
         public static void startpuzzle2()
         {
             Console.Clear();
+            Console.WriteLine("\r\n\r\n");
             string[] strQuestionFile = File.ReadAllLines("files/Puzzles/Questions.txt");
             string[] strAnserFile = File.ReadAllLines("files/Puzzles/Answers.txt");
             int i = 0;
