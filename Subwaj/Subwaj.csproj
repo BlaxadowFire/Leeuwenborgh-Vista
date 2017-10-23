@@ -97,6 +97,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="puzzle1.cs" />
     <Compile Include="puzzle2.cs" />
+    <Compile Include="puzzle3.cs" />
     <Compile Include="UserInputs.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -124,6 +125,19 @@
     <Content Include="files\story\Halls\Hall3.txt" />
     <Content Include="files\story\Halls\Hall2.txt" />
     <Content Include="files\story\Halls\Hall1.txt" />
+    <Content Include="files\menu\Map\mapRoom1tm3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\menu\Map\mapRoom1tm5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\Puzzles\Answers.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\Puzzles\letters.txt" />
+    <Content Include="files\Puzzles\Questions.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="files\story\Intro\exit.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
