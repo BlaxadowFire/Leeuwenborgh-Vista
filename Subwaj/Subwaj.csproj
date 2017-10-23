@@ -111,8 +111,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\menu\Map\map.txt" />
-    <Content Include="files\menu\Map\mapRoom1tm3.txt" />
-    <Content Include="files\menu\Map\mapRoom1tm5.txt" />
+    <Content Include="files\menu\Map\mapRoom1tm3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\menu\Map\mapRoom1tm5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="files\Puzzles\Questions.txt" />
     <Content Include="files\story\Intro\exit.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
