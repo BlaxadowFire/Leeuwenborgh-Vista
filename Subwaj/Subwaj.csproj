@@ -109,6 +109,20 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\menu\Map\map.txt" />
+    <Content Include="files\story\Halls\Hall14.txt" />
+    <Content Include="files\story\Halls\Hall13.txt" />
+    <Content Include="files\story\Halls\Hall12.txt" />
+    <Content Include="files\story\Halls\Hall11.txt" />
+    <Content Include="files\story\Halls\Hall10.txt" />
+    <Content Include="files\story\Halls\Hall9.txt" />
+    <Content Include="files\story\Halls\Hall8.txt" />
+    <Content Include="files\story\Halls\Hall7.txt" />
+    <Content Include="files\story\Halls\Hall6.txt" />
+    <Content Include="files\story\Halls\Hall5.txt" />
+    <Content Include="files\story\Halls\Hall4.txt" />
+    <Content Include="files\story\Halls\Hall3.txt" />
+    <Content Include="files\story\Halls\Hall2.txt" />
+    <Content Include="files\story\Halls\Hall1.txt" />
     <Content Include="files\story\Intro\exit.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
