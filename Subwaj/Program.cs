@@ -542,6 +542,7 @@ namespace Subwaj
             Program.NextRoom();
             Program.ROOM2();
             Errors.ErrorOutOfBounds();
+
         }
         public static void HALL2()
         {
