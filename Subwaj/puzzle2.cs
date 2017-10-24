@@ -16,18 +16,21 @@ namespace Subwaj
         public static void startpuzzle2()
         {
             Console.Clear();
-            string[] strQuestionFile = File.ReadAllLines("files/Puzzles/Questions.txt");
-            string[] strAnserFile = File.ReadAllLines("files/Puzzles/Answers.txt");
+            string[] strQuestionFile = File.ReadAllLines("files/Puzzles/puzzle2/Questions.txt");
+            string[] strAnserFile = File.ReadAllLines("files/Puzzles/puzzle2/Answers.txt");
+            string[] strLettersFile = File.ReadAllLines("files/Puzzles/puzzle2/Letters.txt");
             int i = 0;
             int WrongAnswer = 0;
             do
             {
                 Console.Clear();
-                Console.WriteLine(strQuestionFile[i]);
+                Console.WriteLine("\r\n\r\n");
+                Console.WriteLine(strQuestionFile[i] + "\r\n");
 
                 if (WrongAnswer >= 3)
                 {
-                    Console.WriteLine("The length of the answer is:" + strAnserFile[i].Length);
+                    Console.WriteLine("The length of the answer is:" + strAnserFile[i].Length + "\r\n");
+                    Console.WriteLine("Use the following letters to solve the puzzle.\r\n" + strLettersFile[i] + "\r\n");
                 }
                 Program.DrawBottom();
                 answer = Console.ReadLine().ToLower();
