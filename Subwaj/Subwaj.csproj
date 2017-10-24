@@ -159,11 +159,13 @@
     <Content Include="files\menu\Map\mapRoom1tm5.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\Puzzles\Answers.txt">
+    <Content Include="files\Puzzles\puzzle2\Answers.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\Puzzles\letters.txt" />
-    <Content Include="files\Puzzles\Questions.txt">
+    <Content Include="files\Puzzles\puzzle2\Letters.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\Puzzles\puzzle2\Questions.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\story\Intro\exit.txt">
