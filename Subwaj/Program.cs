@@ -494,7 +494,7 @@ namespace Subwaj
             Console.Clear();
             if (blnPuzzle2Complete == false)
             {
-                puzzle2.startpuzzle2();
+                Puzzle2.Startpuzzle2();
             }
             Console.WriteLine("Going to " + strHALL4);
             Program.NextRoom();

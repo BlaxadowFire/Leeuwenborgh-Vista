@@ -8,17 +8,17 @@ using System.IO;
 
 namespace Subwaj
 {
-    class puzzle2
+    class Puzzle2
     {
         public static string answer = string.Empty;
-        public puzzle2() {/*Start methode*/}
+        public Puzzle2() {/*Start methode*/}
 
-        public static void startpuzzle2()
+        public static void Startpuzzle2()
         {
             Console.Clear();
-            string[] strQuestionFile = File.ReadAllLines("files/Puzzles/puzzle2/Questions.txt");
-            string[] strAnserFile = File.ReadAllLines("files/Puzzles/puzzle2/Answers.txt");
-            string[] strLettersFile = File.ReadAllLines("files/Puzzles/puzzle2/Letters.txt");
+            string[] strQuestionFile = File.ReadAllLines("files/Puzzles/Puzzle2/Questions.txt");
+            string[] strAnserFile = File.ReadAllLines("files/Puzzles/Puzzle2/Answers.txt");
+            string[] strLettersFile = File.ReadAllLines("files/Puzzles/Puzzle2/Letters.txt");
             int i = 0;
             int WrongAnswer = 0;
             do
