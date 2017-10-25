@@ -468,7 +468,6 @@ namespace Subwaj
             Thread.Sleep(1000);
             blnBGMCancel = false;
             Console.WriteLine("\r\nPress any key to continue.");
-            Console.ReadKey();
             UserInputs.UserInput();
             Program.HALL1();
             Errors.ErrorOutOfBounds();
@@ -513,7 +512,7 @@ namespace Subwaj
         {
             CurrentRoom = strROOM5;
             Console.Clear();
-            if (blnPuzzle1Complete == false)
+            if (blnPuzzle3Complete == false)
             {
                 puzzle3.startpuzzle3();
             }

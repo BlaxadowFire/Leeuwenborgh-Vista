@@ -171,7 +171,15 @@ namespace Subwaj
                     }
                     counter++;
                 } while (counter <= 3);
+                Console.Clear();
+                Console.WriteLine("2 4 1 3");
+                Console.WriteLine("{0} {1} {2} {3}", strRoom1, strRoom2, strRoom3, strRoom4);
+                Thread.Sleep(250);
             } while (i <= 3);
+            Console.WriteLine("Correct!");
+            Program.DrawBottom();
+            Thread.Sleep(400);
+            Console.Clear();
             Program.blnPuzzle3Complete = true;
         }
     }
