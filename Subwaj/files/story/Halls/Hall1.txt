@@ -7,4 +7,4 @@
 1.)    go to room 2
 2.)    go to room 1
 3.)    look at walls
-4.)	   press red button
+4.)    press red button

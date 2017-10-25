@@ -544,9 +544,8 @@ namespace Subwaj
         {
             CurrentRoom = strHALL1;
             Console.Clear();
-            Console.WriteLine("There is nothing to see here");
-            Program.NextRoom();
-            Program.ROOM2();
+            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall1.txt"));
+            UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
 
         }
@@ -554,9 +553,8 @@ namespace Subwaj
         {
             CurrentRoom = strHALL2;
             Console.Clear();
-            Console.WriteLine("Going to " + strROOM3);
-            Program.NextRoom();
-            Program.ROOM3();
+            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall2.txt"));
+            UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void HALL3()
@@ -568,87 +566,86 @@ namespace Subwaj
         {
             CurrentRoom = strHALL4;
             Console.Clear();
-            Console.WriteLine("Going to " + strHALL5);
-            Program.NextRoom();
-            Program.HALL5();
+            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall4.txt"));
+            UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void HALL5()
         {
             CurrentRoom = strHALL5;
             Console.Clear();
-            Console.WriteLine("Going to " + strROOM4);
-            Program.NextRoom();
-            Program.ROOM4();
+            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall5.txt"));
+            UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void HALL6()
         {
             CurrentRoom = strHALL6;
             Console.Clear();
-            Console.WriteLine("Going to " + strROOM5);
-            Program.NextRoom();
-            Program.ROOM5();
+            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall6.txt"));
+            UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void HALL7()
         {
             CurrentRoom = strHALL7;
             Console.Clear();
-            Console.WriteLine("Going to " + strHALL8);
-            Program.NextRoom();
-            Program.HALL8();
+            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall7.txt"));
+            UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void HALL8()
         {
             CurrentRoom = strHALL8;
             Console.Clear();
-            Console.WriteLine("Going to " + strHALL12);
-            Program.NextRoom();
-            Program.HALL12();
+            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall8.txt"));
+            UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void HALL9()
         {
-            CurrentRoom = strHALL9;
-            Errors.ErrorNotYetCreated();
+            Console.Clear();
+            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall9.txt"));
+            UserInputs.UserInput();
+            Errors.ErrorOutOfBounds();
         }
         public static void HALL10()
         {
-            CurrentRoom = strHALL10;
-            Errors.ErrorNotYetCreated();
+            Console.Clear();
+            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall10.txt"));
+            UserInputs.UserInput();
+            Errors.ErrorOutOfBounds();
         }
         public static void HALL11()
         {
-            CurrentRoom = strHALL11;
-            Errors.ErrorNotYetCreated();
+            Console.Clear();
+            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall11.txt"));
+            UserInputs.UserInput();
+            Errors.ErrorOutOfBounds();
         }
         public static void HALL12()
         {
             CurrentRoom = strHALL12;
             Console.Clear();
-            Console.WriteLine("Going to " + strROOM6);
-            Program.NextRoom();
-            Program.ROOM6();
+            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall12.txt"));
+            UserInputs.UserInput();
+            Errors.ErrorOutOfBounds();
             Errors.ErrorOutOfBounds();
         }
         public static void HALL13()
         {
             CurrentRoom = strHALL13;
             Console.Clear();
-            Console.WriteLine("Going to " + strHALL14);
-            Program.NextRoom();
-            Program.HALL14();
+            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall13.txt"));
+            UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void HALL14()
         {
             CurrentRoom = strHALL14;
             Console.Clear();
-            Console.WriteLine("Going to " + strROOM7);
-            Program.NextRoom();
-            Program.ROOM7();
+            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall14.txt"));
+            UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         //END OF HALLS
