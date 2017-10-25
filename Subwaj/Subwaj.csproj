@@ -202,6 +202,7 @@
     <None Include="Properties\app.manifest" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="files\story\Halls\Hall2Story\StoryHall2.txt" />
     <Content Include="files\story\TTS\Intro\Exit\exit1.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
