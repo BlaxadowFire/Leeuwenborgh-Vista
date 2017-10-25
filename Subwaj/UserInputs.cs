@@ -196,6 +196,11 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -207,6 +212,11 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -218,6 +228,11 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -229,6 +244,11 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -240,6 +260,11 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -251,6 +276,23 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.ROOM2();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.ROOM1();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -262,6 +304,23 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.ROOM3();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.ROOM2();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -273,6 +332,23 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.ROOM2();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.ROOM1();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -284,6 +360,23 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.HALL5();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.ROOM3();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -295,6 +388,29 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.HALL8();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.HALL11();
+                                    break;
+                                }
+                            case "D3":
+                            case "NumPad3":
+                                {
+                                    Program.HALL4();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -306,6 +422,23 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.ROOM4();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.ROOM5();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -317,6 +450,23 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.HALL8();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.ROOM5();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -328,6 +478,23 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.HALL12();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.HALL5();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -339,6 +506,23 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.HALL10();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.HALL8();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -350,6 +534,23 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.HALL9();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.HALL4();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -361,6 +562,17 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.HALL5();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -372,6 +584,23 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.ROOM6();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.HALL8();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -383,6 +612,23 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.HALL14();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.ROOM6();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
@@ -394,6 +640,23 @@ namespace Subwaj
                     {
                         switch (strCKI)
                         {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.ROOM7();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.HALL13();
+                                    break;
+                                }
                             default:
                                 {
                                     break;
