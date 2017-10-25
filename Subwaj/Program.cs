@@ -491,7 +491,10 @@ namespace Subwaj
         {
             CurrentRoom = strROOM3;
             Console.Clear();
-            puzzle2.startpuzzle2();
+            if (blnPuzzle2Complete == false)
+            {
+                puzzle2.startpuzzle2();
+            }
             Console.WriteLine("Going to " + strHALL4);
             Program.NextRoom();
             Program.HALL4();
@@ -499,7 +502,7 @@ namespace Subwaj
         }
         public static void ROOM4()
         {
-            CurrentRoom = strROOM5;
+            CurrentRoom = strROOM4;
             Console.Clear();
             Console.WriteLine("Going to " + strHALL6);
             Program.NextRoom();
@@ -510,6 +513,10 @@ namespace Subwaj
         {
             CurrentRoom = strROOM5;
             Console.Clear();
+            if (blnPuzzle1Complete == false)
+            {
+                puzzle3.startpuzzle3();
+            }
             Console.WriteLine("Going to " + strHALL7);
             Program.NextRoom();
             Program.HALL7();

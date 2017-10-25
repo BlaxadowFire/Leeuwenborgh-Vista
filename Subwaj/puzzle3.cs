@@ -10,11 +10,169 @@ namespace Subwaj
 {
     class puzzle3
     {
+        public static int Room1 = 5;
+        public static int Room2 = 7;
+        public static int Room3 = 2;
+        public static int Room4 = 9;
         public puzzle3() {/*Start methode*/}
+        public static string strcki = string.Empty;
+        public static int intcki = 0;
+
+        public static string strRoom1 = string.Empty;
+        public static string strRoom2 = string.Empty;
+        public static string strRoom3 = string.Empty;
+        public static string strRoom4 = string.Empty;
 
         public static void startpuzzle3()
         {
+            int i = 0;
+            int counter = 0;
 
+            do
+            {
+                i = 0;
+                counter = 0;
+                strRoom1 = string.Empty;
+                strRoom2 = string.Empty;
+                strRoom3 = string.Empty;
+                strRoom4 = string.Empty;
+                do
+                {
+                    Console.Clear();
+                    Console.WriteLine("2 4 1 3");
+                    Console.WriteLine("{0} {1} {2} {3}", strRoom1, strRoom2, strRoom3, strRoom4);
+                    Program.DrawBottom();
+                    strcki = Console.ReadKey().Key.ToString();
+
+                    switch (strcki)
+                    {
+                        case"D1":
+                        case "NumPad1":
+                            {
+                                intcki = 1;
+                                break;
+                            }
+                        case "D2":
+                        case "NumPad2":
+                            {
+                                intcki = 2;
+                                break;
+                            }
+                        case "D3":
+                        case "NumPad3":
+                            {
+                                intcki = 3;
+                                break;
+                            }
+                        case "D4":
+                        case "NumPad4":
+                            {
+                                intcki = 4;
+                                break;
+                            }
+                        case "D5":
+                        case "NumPad5":
+                            {
+                                intcki = 5;
+                                break;
+                            }
+                        case "D6":
+                        case "NumPad6":
+                            {
+                                intcki = 6;
+                                break;
+                            }
+                        case "D7":
+                        case "NumPad7":
+                            {
+                                intcki = 7;
+                                break;
+                            }
+                        case "D8":
+                        case "NumPad8":
+                            {
+                                intcki = 8;
+                                break;
+                            }
+                        case "D9":
+                        case "NumPad9":
+                            {
+                                intcki = 9;
+                                break;
+                            }
+                        case "D0":
+                        case "NumPad0":
+                            {
+                                intcki = 0;
+                                break;
+                            }
+                        case "Escape":
+                            {
+                                Program.InGameMenu();
+                                break;
+                            }
+                        default:
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Please give valid input.");
+                                Thread.Sleep(250);
+                                break;
+                            }
+                    }
+
+
+                    if (i == 0 && intcki == Room2)
+                    {
+                        i++;
+                    }
+                    else if (i == 1 && intcki == Room4)
+                    {
+                        i++;
+                    }
+                    else if (i == 2 && intcki == Room1)
+                    {
+                        i++;
+                    }
+                    else if (i == 3 && intcki == Room3)
+                    {
+                        i++;
+                    }
+                    else
+                    {
+                        i = 0;
+                    }
+                    strcki = Convert.ToString(intcki);
+                    switch (counter)
+                    {
+                        case 0:
+                            {
+                                strRoom1 = strcki;
+                                break;
+                            }
+                        case 1:
+                            {
+                                strRoom2 = strcki;
+                                break;
+                            }
+                        case 2:
+                            {
+                                strRoom3 = strcki;
+                                break;
+                            }
+                        case 3:
+                            {
+                                strRoom4 = strcki;
+                                break;
+                            }
+                        default:
+                            {
+                                break;
+                            }
+                    }
+                    counter++;
+                } while (counter <= 3);
+            } while (i <= 3);
+            Program.blnPuzzle3Complete = true;
         }
     }
 }
