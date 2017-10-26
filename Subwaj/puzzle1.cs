@@ -239,7 +239,7 @@ namespace Subwaj
                         }
                         break;
                     }
-                case "e":
+                case "E":
                     {
                         if (Program.blnDebug == true)
                         {
