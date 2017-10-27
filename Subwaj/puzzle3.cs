@@ -114,8 +114,9 @@ namespace Subwaj
                         default:
                             {
                                 Console.Clear();
+                                intcki = -1;
                                 Console.WriteLine("Please give valid input.");
-                                Thread.Sleep(250);
+                                Thread.Sleep(1000);
                                 break;
                             }
                     }
@@ -141,7 +142,14 @@ namespace Subwaj
                     {
                         i = 0;
                     }
-                    strcki = Convert.ToString(intcki);
+                    if (intcki != -1)
+                    {
+                        strcki = Convert.ToString(intcki);
+                    }
+                    else
+                    {
+                        strcki = string.Empty;
+                    }
                     switch (counter)
                     {
                         case 0:
@@ -169,7 +177,10 @@ namespace Subwaj
                                 break;
                             }
                     }
-                    counter++;
+                    if (intcki != -1)
+                    {
+                        counter++;
+                    }
                 } while (counter <= 3);
                 Console.Clear();
                 Console.WriteLine("2 4 1 3");
