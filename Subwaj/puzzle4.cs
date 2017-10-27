@@ -33,7 +33,7 @@ namespace Subwaj
                     Program.DrawBottom();
                     string cki = CheckInput();
                     CheckLever(cki);
-                } while (!(Lever1 == true && Lever3 == true && Lever5 == true && Lever6 == true && Lever2 == false && Lever4 == false && Lever6 == false && Lever7 == false && Lever8 == false && Lever9 == false));
+                } while (!(Lever1 == true && Lever3 == true && Lever5 == true && Lever6 == true && Lever2 == false && Lever4 == false && Lever7 == false && Lever8 == false && Lever9 == false));
             }
             Console.Clear();
             Draw();

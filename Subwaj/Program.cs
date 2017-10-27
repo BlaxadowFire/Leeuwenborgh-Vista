@@ -522,6 +522,7 @@ namespace Subwaj
         {
             CurrentRoom = strROOM6;
             Console.Clear();
+            puzzle4.startpuzzle4();
             Console.WriteLine(File.ReadAllText("files/story/Rooms/Room6/Room6.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
