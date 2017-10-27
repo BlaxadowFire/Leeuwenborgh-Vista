@@ -10,6 +10,6 @@ namespace Subwaj.files
 {
     class puzzle4
     {
-        File.ReadAllLines();
+        
     }
 }
