@@ -492,7 +492,7 @@ namespace Subwaj
             Console.Clear();
             if (blnPuzzle2Complete == false)
             {
-                Puzzle2.Startpuzzle2();
+                Puzzle2.StartPuzzle2();
             }
             Console.WriteLine(File.ReadAllText("files/story/Rooms/Room3/Room3.txt"));
             UserInputs.UserInput();
@@ -512,7 +512,7 @@ namespace Subwaj
             Console.Clear();
             if (blnPuzzle3Complete == false)
             {
-                puzzle3.startpuzzle3();
+                Puzzle3.StartPuzzle3();
             }
             Console.WriteLine(File.ReadAllText("files/story/Rooms/Room5/Room5.txt"));
             UserInputs.UserInput();
@@ -522,7 +522,7 @@ namespace Subwaj
         {
             CurrentRoom = strROOM6;
             Console.Clear();
-            puzzle4.startpuzzle4();
+            Puzzle4.StartPuzzle4();
             Console.WriteLine(File.ReadAllText("files/story/Rooms/Room6/Room6.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();

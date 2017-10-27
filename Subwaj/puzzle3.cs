@@ -8,13 +8,13 @@ using System.IO;
 
 namespace Subwaj
 {
-    class puzzle3
+    class Puzzle3
     {
         public static int Room1 = 5;
         public static int Room2 = 7;
         public static int Room3 = 2;
         public static int Room4 = 9;
-        public puzzle3() {/*Start methode*/}
+        public Puzzle3() {/*Start methode*/}
         public static string strcki = string.Empty;
         public static int intcki = 0;
 
@@ -23,7 +23,7 @@ namespace Subwaj
         public static string strRoom3 = string.Empty;
         public static string strRoom4 = string.Empty;
 
-        public static void startpuzzle3()
+        public static void StartPuzzle3()
         {
             int i = 0;
             int counter = 0;

@@ -1,28 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Threading;
 using System.IO;
 
 namespace Subwaj
 {
-    class puzzle4
+    internal class Puzzle4
     {
-        public static string[] lever = File.ReadAllLines("files/Puzzles/puzzle4/lever.txt");
-        public static bool Lever1 = false;
-        public static bool Lever2 = false;
-        public static bool Lever3 = false;
-        public static bool Lever4 = false;
-        public static bool Lever5 = false;
-        public static bool Lever6 = false;
-        public static bool Lever7 = false;
-        public static bool Lever8 = false;
-        public static bool Lever9 = false;
+        public static string[] lever = File.ReadAllLines("files/Puzzles/Puzzle4/lever.txt");
+        public static bool Lever1;
+        public static bool Lever2;
+        public static bool Lever3;
+        public static bool Lever4;
+        public static bool Lever5;
+        public static bool Lever6;
+        public static bool Lever7;
+        public static bool Lever8;
+        public static bool Lever9;
 
-
-        public static void startpuzzle4()
+        public static void StartPuzzle4()
         {
             {
                 do
@@ -31,17 +25,19 @@ namespace Subwaj
                     Draw();
                     Console.CursorLeft = 0;
                     Program.DrawBottom();
-                    string cki = CheckInput();
+                    var cki = CheckInput();
                     CheckLever(cki);
-                } while (!(Lever1 == true && Lever3 == true && Lever5 == true && Lever6 == true && Lever2 == false && Lever4 == false && Lever7 == false && Lever8 == false && Lever9 == false));
+                } while (!(Lever1 && Lever3 && Lever5 && Lever6 && Lever2 == false && Lever4 == false &&
+                           Lever7 == false && Lever8 == false && Lever9 == false));
             }
             Console.Clear();
             Draw();
             Program.blnPuzzle4Complete = true;
         }
+
         public static void DrawNumbers()
         {
-            Console.SetCursorPosition(12,8);
+            Console.SetCursorPosition(12, 8);
             Console.Write("1");
             Console.SetCursorPosition(22, 8);
             Console.Write("2");
@@ -60,10 +56,11 @@ namespace Subwaj
             Console.SetCursorPosition(92, 8);
             Console.Write("9");
         }
+
         public static void Draw()
         {
             DrawNumbers();
-            Console.SetCursorPosition(10,10);
+            Console.SetCursorPosition(10, 10);
             CheckLeverOnOff(Lever1);
             Console.SetCursorPosition(20, 10);
             CheckLeverOnOff(Lever2);
@@ -90,49 +87,41 @@ namespace Subwaj
 
         public static void LeverOn()
         {
-            for (int i = 0; i <= 7; i++)
+            for (var i = 0; i <= 7; i++)
             {
-                int CurLeft = Console.CursorLeft;
+                var CurLeft = Console.CursorLeft;
                 Console.Write(lever[i]);
-                Console.CursorTop = Console.CursorTop +1;
+                Console.CursorTop = Console.CursorTop + 1;
                 Console.CursorLeft = CurLeft;
             }
         }
 
         public static void LeverOff()
         {
-            for (int i = 8; i <= 16; i++)
+            for (var i = 8; i <= 16; i++)
             {
-                int CurLeft = Console.CursorLeft;
+                var CurLeft = Console.CursorLeft;
                 Console.Write(lever[i]);
                 Console.CursorTop = Console.CursorTop + 1;
                 Console.CursorLeft = CurLeft;
             }
         }
-        
+
         public static bool SwitchLever(bool i)
         {
-            if (i == true)
-            {
+            if (i)
                 i = false;
-            }
             else
-            {
                 i = true;
-            }
             return i;
         }
 
         public static bool CheckLeverOnOff(bool i)
         {
             if (i == false)
-            {
                 LeverOn();
-            }
             else
-            {
                 LeverOff();
-            }
             return i;
         }
 
@@ -142,62 +131,62 @@ namespace Subwaj
             {
                 case "NumPad1":
                 case "D1":
-                    {
-                        Lever1 = SwitchLever(Lever1);
-                        break;
-                    }
+                {
+                    Lever1 = SwitchLever(Lever1);
+                    break;
+                }
                 case "NumPad2":
                 case "D2":
-                    {
-                        Lever2 = SwitchLever(Lever2);
-                        break;
-                    }
+                {
+                    Lever2 = SwitchLever(Lever2);
+                    break;
+                }
                 case "NumPad3":
                 case "D3":
-                    {
-                        Lever3 = SwitchLever(Lever3);
-                        break;
-                    }
+                {
+                    Lever3 = SwitchLever(Lever3);
+                    break;
+                }
                 case "NumPad4":
                 case "D4":
-                    {
-                        Lever4 = SwitchLever(Lever4);
-                        break;
-                    }
+                {
+                    Lever4 = SwitchLever(Lever4);
+                    break;
+                }
                 case "NumPad5":
                 case "D5":
-                    {
-                        Lever5 = SwitchLever(Lever5);
-                        break;
-                    }
+                {
+                    Lever5 = SwitchLever(Lever5);
+                    break;
+                }
                 case "NumPad6":
                 case "D6":
-                    {
-                        Lever6 = SwitchLever(Lever6);
-                        break;
-                    }
+                {
+                    Lever6 = SwitchLever(Lever6);
+                    break;
+                }
                 case "NumPad7":
                 case "D7":
-                    {
-                        Lever7 = SwitchLever(Lever7);
-                        break;
-                    }
+                {
+                    Lever7 = SwitchLever(Lever7);
+                    break;
+                }
                 case "NumPad8":
                 case "D8":
-                    {
-                        Lever8 = SwitchLever(Lever8);
-                        break;
-                    }
+                {
+                    Lever8 = SwitchLever(Lever8);
+                    break;
+                }
                 case "NumPad9":
                 case "D9":
-                    {
-                        Lever9 = SwitchLever(Lever9);
-                        break;
-                    }
+                {
+                    Lever9 = SwitchLever(Lever9);
+                    break;
+                }
                 default:
-                    {
-                        break;
-                    }
+                {
+                    break;
+                }
             }
         }
     }

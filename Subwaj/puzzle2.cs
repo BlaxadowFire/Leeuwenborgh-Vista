@@ -13,7 +13,7 @@ namespace Subwaj
         public static string answer = string.Empty;
         public Puzzle2() {/*Start methode*/}
 
-        public static void Startpuzzle2()
+        public static void StartPuzzle2()
         {
             Console.Clear();
             string[] strQuestionFile = File.ReadAllLines("files/Puzzles/Puzzle2/Questions.txt");

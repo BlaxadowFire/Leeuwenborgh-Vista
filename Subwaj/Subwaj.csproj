@@ -29,11 +29,11 @@
     <ProductName>Not A Game</ProductName>
     <PublisherName>Nando Kools</PublisherName>
     <SuiteName>Subwaj</SuiteName>
-    <MinimumRequiredVersion>0.0.0.9</MinimumRequiredVersion>
+    <MinimumRequiredVersion>0.0.1.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>11</ApplicationRevision>
-    <ApplicationVersion>0.0.0.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>0.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -90,9 +90,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="puzzle4.cs" />
     <Compile Include="Debug.cs" />
     <Compile Include="Errors.cs" />
-    <Compile Include="puzzle4.cs" />
     <Compile Include="Konami Code.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
