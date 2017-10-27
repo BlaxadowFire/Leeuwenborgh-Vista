@@ -185,8 +185,21 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.HALL2();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.HALL1();
+                                    break;
+                                }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -201,8 +214,21 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.HALL4();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.HALL2();
+                                    break;
+                                }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -217,8 +243,21 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.HALL6();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.HALL5();
+                                    break;
+                                }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -233,8 +272,21 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.HALL7();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.HALL6();
+                                    break;
+                                }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -249,8 +301,21 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    Program.HALL13();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.HALL12();
+                                    break;
+                                }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -265,8 +330,26 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    // is tijdelijk
+                                   
+                                    Console.Clear();
+                                    Console.WriteLine("Congrats you killed the boss GG");
+                                    Console.ReadLine();
+                                    Environment.Exit(0);
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    Program.HALL14();
+                                    break;
+                                }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -295,6 +378,7 @@ namespace Subwaj
                                 }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -323,6 +407,7 @@ namespace Subwaj
                                 }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -351,6 +436,7 @@ namespace Subwaj
                                 }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -379,6 +465,7 @@ namespace Subwaj
                                 }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -413,6 +500,7 @@ namespace Subwaj
                                 }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -441,6 +529,7 @@ namespace Subwaj
                                 }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -469,6 +558,7 @@ namespace Subwaj
                                 }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -497,6 +587,7 @@ namespace Subwaj
                                 }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -525,6 +616,7 @@ namespace Subwaj
                                 }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -553,6 +645,7 @@ namespace Subwaj
                                 }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -575,6 +668,7 @@ namespace Subwaj
                                 }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -603,6 +697,7 @@ namespace Subwaj
                                 }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -631,6 +726,7 @@ namespace Subwaj
                                 }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }
@@ -659,6 +755,7 @@ namespace Subwaj
                                 }
                             default:
                                 {
+                                    UserInputs.BackToCurrentRoom();
                                     break;
                                 }
                         }

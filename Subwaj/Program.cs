@@ -432,7 +432,7 @@ namespace Subwaj
 
                 //story
             blnBGMCancel = true;
-            string strFilename = strTXTLocation + "Room1/Room1.txt";
+            string strFilename = strTXTLocation + "Rooms/Room1/Room1.txt";
             string[] IntroText = File.ReadAllLines(strFilename);
             int intIntroTTS = 0; //Used to count the file
             for (int i = 0; i < IntroText.Length; i++)
@@ -467,9 +467,8 @@ namespace Subwaj
             }
             Thread.Sleep(1000);
             blnBGMCancel = false;
-            Console.WriteLine("\r\nPress any key to continue.");
+            Console.WriteLine(File.ReadAllText("files/story/Rooms/Room1/Room1.txt"));
             UserInputs.UserInput();
-            Program.HALL1();
             Errors.ErrorOutOfBounds();
         }
         public static void ROOM2()
@@ -481,9 +480,8 @@ namespace Subwaj
                 Puzzle1.StartPuzzle1();
                 
             }
-            Console.WriteLine("Going to " + strHALL2);
-            Program.NextRoom();
-            Program.HALL2();
+            Console.WriteLine(File.ReadAllText("files/story/Rooms/Room2/Room2.txt"));
+            UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void ROOM3()
@@ -494,18 +492,16 @@ namespace Subwaj
             {
                 puzzle2.startpuzzle2();
             }
-            Console.WriteLine("Going to " + strHALL4);
-            Program.NextRoom();
-            Program.HALL4();
+            Console.WriteLine(File.ReadAllText("files/story/Rooms/Room3/Room3.txt"));
+            UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void ROOM4()
         {
             CurrentRoom = strROOM4;
             Console.Clear();
-            Console.WriteLine("Going to " + strHALL6);
-            Program.NextRoom();
-            Program.HALL6();
+            Console.WriteLine(File.ReadAllText("files/story/Rooms/Room4/Room4.txt"));
+            UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void ROOM5()
@@ -516,26 +512,25 @@ namespace Subwaj
             {
                 puzzle3.startpuzzle3();
             }
-            Console.WriteLine("Going to " + strHALL7);
-            Program.NextRoom();
-            Program.HALL7();
+            Console.WriteLine(File.ReadAllText("files/story/Rooms/Room5/Room5.txt"));
+            UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void ROOM6()
         {
             CurrentRoom = strROOM6;
             Console.Clear();
-            Console.WriteLine("Going to " + strHALL13);
-            Program.NextRoom();
-            Program.HALL13();
+            Console.WriteLine(File.ReadAllText("files/story/Rooms/Room6/Room6.txt"));
+            UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void ROOM7()
         {
             CurrentRoom = strROOM7;
+            Console.Clear();
             Console.WriteLine("BOSSROOM");
-            Console.ReadLine();
-            Errors.ErrorNotYetCreated();
+            Console.WriteLine(File.ReadAllText("files/story/Rooms/Room7/Room7.txt"));
+            UserInputs.UserInput();
         }
         //END OF ROOMS
 
