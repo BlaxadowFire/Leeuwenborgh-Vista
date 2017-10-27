@@ -483,7 +483,7 @@ namespace Subwaj
                             case "D1":
                             case "NumPad1":
                                 {
-                                    Program.HALL8();
+                                    Program.ROOM4();
                                     break;
                                 }
                             case "D2":

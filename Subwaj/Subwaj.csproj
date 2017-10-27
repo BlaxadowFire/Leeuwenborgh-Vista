@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="Debug.cs" />
     <Compile Include="Errors.cs" />
+    <Compile Include="puzzle4.cs" />
     <Compile Include="Konami Code.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -115,6 +116,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\menu\Map\mapRoom1tmBoss.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\Puzzles\puzzle4\lever.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\story\Halls\Hall14.txt">
@@ -220,6 +224,7 @@
     <Content Include="files\story\Rooms\Room7\Room7.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="files\story\Halls\Hall2Story\StoryHall2.txt" />
     <Content Include="files\story\TTS\Intro\Exit\exit1.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

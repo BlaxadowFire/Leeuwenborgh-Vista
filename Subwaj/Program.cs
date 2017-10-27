@@ -195,8 +195,10 @@ namespace Subwaj
             {
                 Console.Clear();
                 Console.SetCursorPosition(0, 0);
+                Thread.Sleep(50);
                 Console.WriteLine("Ah, you're Finally here: " + Environment.UserName + "!\r\n");
                 Console.WriteLine(File.ReadAllText(strTXTLocation + "intro/intro.txt"));
+                Thread.Sleep(50);
 
                 Program.DrawBottom();
                 Console.SetCursorPosition(Console.CursorLeft, 28);
@@ -490,7 +492,7 @@ namespace Subwaj
             Console.Clear();
             if (blnPuzzle2Complete == false)
             {
-                puzzle2.startpuzzle2();
+                Puzzle2.Startpuzzle2();
             }
             Console.WriteLine(File.ReadAllText("files/story/Rooms/Room3/Room3.txt"));
             UserInputs.UserInput();
