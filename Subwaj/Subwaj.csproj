@@ -118,7 +118,9 @@
     <Content Include="files\menu\Map\mapRoom1tmBoss.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\Puzzles\puzzle4\lever.txt" />
+    <Content Include="files\Puzzles\puzzle4\lever.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="files\story\Halls\Hall14.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
