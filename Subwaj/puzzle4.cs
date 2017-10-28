@@ -32,7 +32,7 @@ namespace Subwaj
             }
             Console.Clear();
             Draw();
-            Program.blnPuzzle4Complete = true;
+            Program.BlnPuzzle4Complete = true;
         }
 
         public static void DrawNumbers()

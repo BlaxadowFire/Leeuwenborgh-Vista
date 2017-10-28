@@ -8,6 +8,4 @@
 2.)    Help
 3.)    Options
 4.)    Code
-5.)    Achievements
-6.)    Load Save Game
 0.)    Exit

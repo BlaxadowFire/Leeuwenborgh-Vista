@@ -42,7 +42,7 @@ namespace Subwaj
             Errors.ErrorFinisher();
             Console.WriteLine("Press any button to return to Main Menu");
             Console.ReadKey();
-            Program.MAINMENU();
+            Program.MainMenu();
 
         }
         //Error code out of bounds
@@ -54,7 +54,7 @@ namespace Subwaj
             Errors.ErrorFinisher();
             Console.WriteLine("Press any button to return to Main Menu");
             Console.ReadKey();
-            Program.MAINMENU();
+            Program.MainMenu();
         }
     }
 }

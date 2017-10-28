@@ -45,7 +45,7 @@ namespace Subwaj
                 }
 
             } while (i < 6);
-            Program.blnPuzzle2Complete = true;
+            Program.BlnPuzzle2Complete = true;
         }
     }
 }

@@ -191,7 +191,7 @@ namespace Subwaj
             Program.DrawBottom();
             Thread.Sleep(400);
             Console.Clear();
-            Program.blnPuzzle3Complete = true;
+            Program.BlnPuzzle3Complete = true;
         }
     }
 }

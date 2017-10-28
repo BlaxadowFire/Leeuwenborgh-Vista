@@ -14,11 +14,11 @@ namespace Subwaj
         {
 
 
-            if (Program.strAnswer == "debug" || Program.strAnswer == "DEBUG" || Program.strAnswer == "Debug")
+            if (Program.StrAnswer == "debug" || Program.StrAnswer == "DEBUG" || Program.StrAnswer == "Debug")
             {
-                if (Program.blnDebug == false)
+                if (Program.BlnDebug == false)
                 {
-                    Program.blnDebug = true;
+                    Program.BlnDebug = true;
                     string strFilename = "files/mainmenucodes/Debug.txt";
                     Console.WriteLine(File.ReadAllText(strFilename));
                     Thread.Sleep(1000);
@@ -139,7 +139,7 @@ namespace Subwaj
                             case "":
                             case "mainmenu":
                                 {
-                                    Program.MAINMENU();
+                                    Program.MainMenu();
                                     break;
                                 }
                             default:
@@ -153,11 +153,11 @@ namespace Subwaj
                 else
                 {
                     string strFilename = "files/mainmenucodes/DebugDisabled.txt";
-                    Program.blnDebug = false;
+                    Program.BlnDebug = false;
                     Console.WriteLine(File.ReadAllText(strFilename));
                     Thread.Sleep(1000);
                     Console.Clear();
-                    Program.MAINMENU();
+                    Program.MainMenu();
                 }
             }
         }

@@ -15,8 +15,8 @@ namespace Subwaj
         {
             Program.DrawBottom();
             Console.SetCursorPosition(Console.CursorLeft, 28);
-            Program.cki = Console.ReadKey();
-            string strCKI = Program.cki.Key.ToString();
+            Program.Cki = Console.ReadKey();
+            string strCKI = Program.Cki.Key.ToString();
             switch (Program.CurrentRoom)
             {
                 case "MainMenu":
@@ -51,20 +51,6 @@ namespace Subwaj
                                     break;
                                 }
 
-                            case "NumPad5":
-                            case "D5":
-                                {
-                                    Program.MainMenuAchievements();
-                                    break;
-                                }
-
-                            case "NumPad6":
-                            case "D6":
-                                {
-                                    Program.MainMenuLoadSaveGame();
-                                    break;
-                                }
-
                             case "NumPad0":
                             case "D0":
                                 {
@@ -74,7 +60,7 @@ namespace Subwaj
 
                             default:
                                 {
-                                    Program.MAINMENU();
+                                    Program.MainMenu();
                                     break;
                                 }
 
@@ -89,8 +75,8 @@ namespace Subwaj
                                     do
                                     {
 
-                                        Program.cki = Console.ReadKey();
-                                        strCKI = Program.cki.Key.ToString();
+                                        Program.Cki = Console.ReadKey();
+                                        strCKI = Program.Cki.Key.ToString();
                                         Console.WriteLine("");
                                         Console.WriteLine("OUTPUT:" + strCKI);
                                     } while (true);
@@ -142,7 +128,7 @@ namespace Subwaj
                             case "D6":
                             case "NumPad6":
                                 {
-                                    Program.MAINMENU();
+                                    Program.MainMenu();
                                     break;
                                 }
                             case "D0":
@@ -893,7 +879,7 @@ namespace Subwaj
                     }
                 case "MainMenu":
                     {
-                        Program.MAINMENU();
+                        Program.MainMenu();
                         break;
                     }
             }

@@ -13,14 +13,14 @@ namespace Subwaj
         public Konami_Code() { }
         public static void CheckKonami_Code()
         {
-            while (Program.intCode == 0) ;
+            while (Program.IntCode == 0) ;
             int Konamicode = 0;
             Console.Clear();
             Console.WriteLine("Please enter the Konami Code (START = ENTER)");
             do
             {
-                Program.cki = Console.ReadKey();
-                string strCKI = Program.cki.Key.ToString();
+                Program.Cki = Console.ReadKey();
+                string strCKI = Program.Cki.Key.ToString();
                 switch (strCKI)
                 {
                     case "UpArrow":
@@ -103,7 +103,7 @@ namespace Subwaj
                                 Console.WriteLine(File.ReadAllText(strFilename));
                                 Thread.Sleep(1000);
                                 Console.Clear();
-                                Program.MAINMENU();
+                                Program.MainMenu();
                             }
                             else
                             {
@@ -113,7 +113,7 @@ namespace Subwaj
                         }
                     case "Escape":
                         {
-                            Program.MAINMENU();
+                            Program.MainMenu();
                             break;
                         }
                     default:

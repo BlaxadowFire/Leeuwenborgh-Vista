@@ -241,7 +241,7 @@ namespace Subwaj
                     }
                 case "E":
                     {
-                        if (Program.blnDebug == true)
+                        if (Program.BlnDebug == true)
                         {
                             A = strCPChoice;
                             B = strCPChoice;
@@ -385,7 +385,7 @@ namespace Subwaj
             Console.WriteLine("Congratulations {0}, you Won!", strCurrentPlayer);
             
             Console.ReadKey().Key.ToString();
-            Program.blnPuzzle1Complete = true;
+            Program.BlnPuzzle1Complete = true;
             Program.ROOM2();
             
         }
