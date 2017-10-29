@@ -4,8 +4,9 @@
                                ║   HALL 5   ║
                                ╚════════════╝
 
-1.)    go to hall 8
-2.)    go to hall 11
+1.)    go to room 4
+2.)    go to hall 4
 3.)    look at walls
 4.)    press red button
-5.)    go to hall 4
+5.)    go to hall 11
+6.)    go to hall 8

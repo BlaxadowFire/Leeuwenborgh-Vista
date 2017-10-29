@@ -171,8 +171,10 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                                 {
+                                    Console.Clear();
+                                    Console.WriteLine("Note This");
                                     Console.WriteLine(Puzzle3.Room1.ToString());
-                                    Thread.Sleep(1000);
+                                    Thread.Sleep(2500);
                                     break;
                                 }
                             case "NumPad4":
@@ -213,6 +215,8 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                                 {
+                                    Console.Clear();
+                                    Console.WriteLine("Note This");
                                     Console.WriteLine(Puzzle3.Room2.ToString());
                                     Thread.Sleep(1000);
                                     break;
@@ -270,6 +274,8 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                                 {
+                                    Console.Clear();
+                                    Console.WriteLine("Note This");
                                     Console.WriteLine(Puzzle3.Room3.ToString());
                                     Thread.Sleep(1000);
                                     break;
@@ -333,6 +339,8 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                                 {
+                                    Console.Clear();
+                                    Console.WriteLine("Note This");
                                     Console.WriteLine(Puzzle3.Room4.ToString());
                                     Thread.Sleep(1000);
                                     break;
@@ -691,13 +699,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Program.HALL8();
+                                Program.ROOM4();
                                 break;
                             }
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.HALL11();
+                                Program.HALL4();
                                 break;
                             }
                             case "NumPad3":
@@ -715,7 +723,13 @@ namespace Subwaj
                             case "NumPad5":
                             case "D5":
                             {
-                                Program.HALL4();
+                                Program.HALL11();
+                                break;
+                            }
+                            case "NumPad6":
+                            case "D6":
+                            {
+                                Program.HALL8();
                                 break;
                             }
                             default:
@@ -738,13 +752,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Program.ROOM4();
+                                Program.ROOM5();
                                 break;
                             }
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.ROOM5();
+                                Program.ROOM4();
                                 break;
                             }
                             case "NumPad3":
@@ -820,13 +834,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                                 {
-                                    Program.HALL8();
+                                    Program.HALL12();
                                     break;
                                 }
                             case "NumPad2":
                             case "D2":
                                 {
-                                    Program.ROOM5();
+                                    Program.HALL7();
                                     break;
                                 }
                             case "NumPad3":
@@ -839,6 +853,18 @@ namespace Subwaj
                             case "D4":
                                 {
                                     Nothing();
+                                    break;
+                                }
+                            case "NumPad5":
+                            case "D5":
+                                {
+                                    Program.HALL9();
+                                    break;
+                                }
+                            case "NumPad6":
+                            case "D6":
+                                {
+                                    Program.HALL5();
                                     break;
                                 }
                             default:
@@ -902,13 +928,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Program.HALL9();
+                                Program.HALL4();
                                 break;
                             }
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.HALL4();
+                                Program.HALL9();
                                 break;
                             }
                             case "NumPad3":
