@@ -8,4 +8,5 @@
 2.)    Help
 3.)    Options
 4.)    Code
+5.)    Back to not game
 0.)    Exit

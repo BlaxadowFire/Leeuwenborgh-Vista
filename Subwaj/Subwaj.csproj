@@ -29,10 +29,10 @@
     <ProductName>Not A Game</ProductName>
     <PublisherName>Nando Kools</PublisherName>
     <SuiteName>Subwaj</SuiteName>
-    <MinimumRequiredVersion>0.0.1.0</MinimumRequiredVersion>
+    <MinimumRequiredVersion>0.0.1.1</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>0.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -121,46 +121,46 @@
     <Content Include="files\Puzzles\puzzle4\lever.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall14.txt">
+    <Content Include="files\Halls\Hall14.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall13.txt">
+    <Content Include="files\Halls\Hall13.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall12.txt">
+    <Content Include="files\Halls\Hall12.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall11.txt">
+    <Content Include="files\Halls\Hall11.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall10.txt">
+    <Content Include="files\Halls\Hall10.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall9.txt">
+    <Content Include="files\Halls\Hall9.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall8.txt">
+    <Content Include="files\Halls\Hall8.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall7.txt">
+    <Content Include="files\Halls\Hall7.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall6.txt">
+    <Content Include="files\Halls\Hall6.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall5.txt">
+    <Content Include="files\Halls\Hall5.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall4.txt">
+    <Content Include="files\Halls\Hall4.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall3.txt">
+    <Content Include="files\Halls\Hall3.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall2.txt">
+    <Content Include="files\Halls\Hall2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall1.txt">
+    <Content Include="files\Halls\Hall1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\menu\Map\mapRoom1tm3.txt">
@@ -176,6 +176,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\Puzzles\puzzle2\Questions.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\Rooms\Room1\Room1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\story\Intro\exit.txt">
@@ -206,22 +209,22 @@
     <None Include="Properties\app.manifest" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="files\story\Rooms\Room2\Room2.txt">
+    <Content Include="files\Rooms\Room2\Room2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Rooms\Room3\Room3.txt">
+    <Content Include="files\Rooms\Room3\Room3.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Rooms\Room4\Room4.txt">
+    <Content Include="files\Rooms\Room4\Room4.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Rooms\Room5\Room5.txt">
+    <Content Include="files\Rooms\Room5\Room5.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Rooms\Room6\Room6.txt">
+    <Content Include="files\Rooms\Room6\Room6.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Rooms\Room7\Room7.txt">
+    <Content Include="files\Rooms\Room7\Room7.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\story\Halls\Hall2Story\StoryHall2.txt" />
@@ -346,6 +349,14 @@
       <FileType>File</FileType>
     </PublishFile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="files\Halls\Halls\" />
+    <Folder Include="files\story\Rooms\Room2\" />
+    <Folder Include="files\story\Rooms\Room3\" />
+    <Folder Include="files\story\Rooms\Room4\" />
+    <Folder Include="files\story\Rooms\Room5\" />
+    <Folder Include="files\story\Rooms\Room6\" />
+    <Folder Include="files\story\Rooms\Room7\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

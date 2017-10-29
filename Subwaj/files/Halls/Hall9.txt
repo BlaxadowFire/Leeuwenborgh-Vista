@@ -1,10 +1,10 @@
 ﻿                   
                    
                                ╔════════════╗
-                               ║   HALL 4   ║
+                               ║   HALL 9   ║
                                ╚════════════╝
 
-1.)    go to hall 5
-2.)    go to room 3
+1.)    go to hall 10
+2.)    go to hall 8
 3.)    look at walls
 4.)    press red button

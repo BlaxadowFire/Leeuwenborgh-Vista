@@ -248,31 +248,13 @@ namespace Subwaj
         }
         public static void MainMenuHelp()
         {
-
-            do
-            {
-                Console.Clear();
-                GetRandomConsoleColor();
-                string strFilename = "files/help.txt";
-                Console.WriteLine(File.ReadAllText(strFilename));
-                Console.ForegroundColor = ConsoleColor.White;
-                Cki = Console.ReadKey();
-                string strCki = Cki.Key.ToString();
-                switch (strCki)
-                {
-                    case "Enter":
-                    case "Escape":
-                        {
-                                UserInputs.BackToCurrentRoom();
-                            break;
-                        }
-                    default:
-                        {
-                            break;
-                        }
-                }
-            }
-            while (true);
+            Console.Clear();
+            GetRandomConsoleColor();
+            string strFilename = "files/help.txt";
+            Console.WriteLine(File.ReadAllText(strFilename));
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.ReadKey();
+            UserInputs.BackToCurrentRoom();
         }
         public static void MainMenuOptions()
         {
@@ -457,7 +439,8 @@ namespace Subwaj
             }
             Thread.Sleep(1000);
             BlnBgmCancel = false;
-            Console.WriteLine(File.ReadAllText("files/story/Rooms/Room1/Room1.txt"));
+            Console.Clear();
+            Console.WriteLine(File.ReadAllText("files/Rooms/Room1/Room1.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
@@ -470,7 +453,7 @@ namespace Subwaj
                 Puzzle1.StartPuzzle1();
                 
             }
-            Console.WriteLine(File.ReadAllText("files/story/Rooms/Room2/Room2.txt"));
+            Console.WriteLine(File.ReadAllText("files/Rooms/Room2/Room2.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
@@ -482,7 +465,7 @@ namespace Subwaj
             {
                 Puzzle2.StartPuzzle2();
             }
-            Console.WriteLine(File.ReadAllText("files/story/Rooms/Room3/Room3.txt"));
+            Console.WriteLine(File.ReadAllText("files/Rooms/Room3/Room3.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
@@ -490,7 +473,7 @@ namespace Subwaj
         {
             CurrentRoom = StrRoom4;
             Console.Clear();
-            Console.WriteLine(File.ReadAllText("files/story/Rooms/Room4/Room4.txt"));
+            Console.WriteLine(File.ReadAllText("files/Rooms/Room4/Room4.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
@@ -502,7 +485,7 @@ namespace Subwaj
             {
                 Puzzle3.StartPuzzle3();
             }
-            Console.WriteLine(File.ReadAllText("files/story/Rooms/Room5/Room5.txt"));
+            Console.WriteLine(File.ReadAllText("files/Rooms/Room5/Room5.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
@@ -511,7 +494,7 @@ namespace Subwaj
             CurrentRoom = StrRoom6;
             Console.Clear();
             Puzzle4.StartPuzzle4();
-            Console.WriteLine(File.ReadAllText("files/story/Rooms/Room6/Room6.txt"));
+            Console.WriteLine(File.ReadAllText("files/Rooms/Room6/Room6.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
@@ -520,7 +503,7 @@ namespace Subwaj
             CurrentRoom = StrRoom7;
             Console.Clear();
             Console.WriteLine("BOSSROOM");
-            Console.WriteLine(File.ReadAllText("files/story/Rooms/Room7/Room7.txt"));
+            Console.WriteLine(File.ReadAllText("files/Rooms/Room7/Room7.txt"));
             UserInputs.UserInput();
         }
         //END OF ROOMS
@@ -530,7 +513,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall1;
             Console.Clear();
-            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall1.txt"));
+            Console.WriteLine(File.ReadAllText("files/Halls/Hall1.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
 
@@ -539,20 +522,23 @@ namespace Subwaj
         {
             CurrentRoom = StrHall2;
             Console.Clear();
-            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall2.txt"));
+            Console.WriteLine(File.ReadAllText("files/Halls/Hall2.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void HALL3()
         {
             CurrentRoom = StrHall3;
+            Console.Clear();
+            Console.WriteLine(File.ReadAllText("files/Halls/Hall3.txt"));
+            UserInputs.UserInput();
             Errors.ErrorNotYetCreated();
         }
         public static void HALL4()
         {
             CurrentRoom = StrHall4;
             Console.Clear();
-            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall4.txt"));
+            Console.WriteLine(File.ReadAllText("files/Halls/Hall4.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
@@ -560,7 +546,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall5;
             Console.Clear();
-            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall5.txt"));
+            Console.WriteLine(File.ReadAllText("files/Halls/Hall5.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
@@ -568,7 +554,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall6;
             Console.Clear();
-            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall6.txt"));
+            Console.WriteLine(File.ReadAllText("files/Halls/Hall6.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
@@ -576,7 +562,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall7;
             Console.Clear();
-            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall7.txt"));
+            Console.WriteLine(File.ReadAllText("files/Halls/Hall7.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
@@ -584,28 +570,28 @@ namespace Subwaj
         {
             CurrentRoom = StrHall8;
             Console.Clear();
-            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall8.txt"));
+            Console.WriteLine(File.ReadAllText("files/Halls/Hall8.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void HALL9()
         {
             Console.Clear();
-            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall9.txt"));
+            Console.WriteLine(File.ReadAllText("files/Halls/Hall9.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void HALL10()
         {
             Console.Clear();
-            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall10.txt"));
+            Console.WriteLine(File.ReadAllText("files/Halls/Hall10.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
         public static void HALL11()
         {
             Console.Clear();
-            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall11.txt"));
+            Console.WriteLine(File.ReadAllText("files/Halls/Hall11.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
@@ -613,7 +599,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall12;
             Console.Clear();
-            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall12.txt"));
+            Console.WriteLine(File.ReadAllText("files/Halls/Hall12.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
             Errors.ErrorOutOfBounds();
@@ -622,7 +608,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall13;
             Console.Clear();
-            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall13.txt"));
+            Console.WriteLine(File.ReadAllText("files/Halls/Hall13.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
@@ -630,7 +616,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall14;
             Console.Clear();
-            Console.WriteLine(File.ReadAllText("files/story/Halls/Hall14.txt"));
+            Console.WriteLine(File.ReadAllText("files/Halls/Hall14.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }

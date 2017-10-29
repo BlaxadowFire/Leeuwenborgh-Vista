@@ -35,30 +35,131 @@ namespace Subwaj
             Program.BlnPuzzle4Complete = true;
         }
 
+        public static void DrawNumberBorder(string i)
+        {
+            Light(i);
+            Console.CursorLeft = Console.CursorLeft - 1;
+            Console.Write("╔═╗");
+            Console.SetCursorPosition(Console.CursorLeft - 3, Console.CursorTop + 1);
+            Console.Write("║{0}║", i);
+            Console.SetCursorPosition(Console.CursorLeft - 3, Console.CursorTop + 1);
+            Console.Write("╚═╝");
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+        }
         public static void DrawNumbers()
         {
-            Console.SetCursorPosition(12, 8);
-            Console.Write("1");
-            Console.SetCursorPosition(22, 8);
-            Console.Write("2");
-            Console.SetCursorPosition(32, 8);
-            Console.Write("3");
-            Console.SetCursorPosition(42, 8);
-            Console.Write("4");
-            Console.SetCursorPosition(52, 8);
-            Console.Write("5");
-            Console.SetCursorPosition(62, 8);
-            Console.Write("6");
-            Console.SetCursorPosition(72, 8);
-            Console.Write("7");
-            Console.SetCursorPosition(82, 8);
+            Console.SetCursorPosition(12, 7);
+            DrawNumberBorder("1");
+            Console.SetCursorPosition(22, 7);
+            DrawNumberBorder("2");
+            Console.SetCursorPosition(32, 7);
+            DrawNumberBorder("3");
+            Console.SetCursorPosition(42, 7);
+            DrawNumberBorder("4");
+            Console.SetCursorPosition(52, 7);
+            DrawNumberBorder("5");
+            Console.SetCursorPosition(62, 7);
+            DrawNumberBorder("6");
+            Console.SetCursorPosition(72, 7);
+            DrawNumberBorder("7");
+            Console.SetCursorPosition(82, 7);
+            DrawNumberBorder("8");
+            Console.SetCursorPosition(92, 7);
+            DrawNumberBorder("9");
+        }
+
+        public static void Light(string i)
+        {
+            switch (i)
+            {
+                case "1":
+                {
+                    CheckLight(Lever1);
+                    break;
+                }
+                case "2":
+                {
+                    CheckLight(Lever2);
+                        break;
+                }
+                case "3":
+                {
+                    CheckLight(Lever3);
+                        break;
+                }
+                case "4":
+                {
+                    CheckLight(Lever4);
+                        break;
+                }
+                case "5":
+                {
+                    CheckLight(Lever5);
+                        break;
+                }
+                case "6":
+                {
+                    CheckLight(Lever6);
+                        break;
+                }
+                case "7":
+                {
+                    CheckLight(Lever7);
+                        break;
+                }
+                case "8":
+                {
+                    CheckLight(Lever8);
+                        break;
+                }
+                case "9":
+                {
+                    CheckLight(Lever9);
+                        break;
+                }
+            }
+        }
+
+        public static void CheckLight(bool i)
+        {
+            if (i == false)
+            {
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.Yellow;
+                Console.ForegroundColor = ConsoleColor.Black;
+            }
+        }
+
+        public static void DrawBytes()
+        {
+            Console.SetCursorPosition(12, 19);
+            Console.Write("254");
+            Console.SetCursorPosition(21, 19);
+            Console.Write("128");
+            Console.SetCursorPosition(32, 19);
+            Console.Write("64");
+            Console.SetCursorPosition(42, 19);
+            Console.Write("32");
+            Console.SetCursorPosition(52, 19);
+            Console.Write("16");
+            Console.SetCursorPosition(62, 19);
             Console.Write("8");
-            Console.SetCursorPosition(92, 8);
-            Console.Write("9");
+            Console.SetCursorPosition(72, 19);
+            Console.Write("4");
+            Console.SetCursorPosition(82, 19);
+            Console.Write("2");
+            Console.SetCursorPosition(92, 19);
+            Console.Write("1");
         }
 
         public static void Draw()
         {
+            Console.WriteLine("342");
             DrawNumbers();
             Console.SetCursorPosition(10, 10);
             CheckLeverOnOff(Lever1);
@@ -78,6 +179,7 @@ namespace Subwaj
             CheckLeverOnOff(Lever8);
             Console.SetCursorPosition(90, 10);
             CheckLeverOnOff(Lever9);
+            DrawBytes();
         }
 
         public static string CheckInput()
@@ -87,7 +189,7 @@ namespace Subwaj
 
         public static void LeverOn()
         {
-            for (var i = 0; i <= 7; i++)
+            for (int i = 0; i <= 7; i++)
             {
                 var CurLeft = Console.CursorLeft;
                 Console.Write(lever[i]);
@@ -98,7 +200,7 @@ namespace Subwaj
 
         public static void LeverOff()
         {
-            for (var i = 8; i <= 16; i++)
+            for (int i = 8; i <= 16; i++)
             {
                 var CurLeft = Console.CursorLeft;
                 Console.Write(lever[i]);
