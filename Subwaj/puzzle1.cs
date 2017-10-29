@@ -66,15 +66,21 @@ namespace Subwaj
                     }
                     Puzzle1.CheckIfWon();
                     Puzzle1.SwitchTurn();
-                }
-                while (blnGameOVer == false);
+                } while (blnGameOVer == false);
+                lblplayagain:
+                Console.Clear();
                 Console.WriteLine("It's a tie!");
                 Console.WriteLine("Do you want to play again? y/n");
                 restart = Console.ReadKey().Key.ToString();
-                if (restart != "y")
+                if (restart == "N")
                 {
+                    Console.Clear();
                     Console.WriteLine("YOU HAVE NO CHOICE");
                     Thread.Sleep(1500);
+                }
+                else if (restart != "Y")
+                {
+                    goto lblplayagain;
                 }
                 Puzzle1.FuncRestart();
             }
