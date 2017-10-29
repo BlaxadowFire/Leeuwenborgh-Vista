@@ -63,10 +63,16 @@ namespace Subwaj
 
                             case "NumPad5":
                             case "D5":
-                            {
-                                BackToCurrentRoom();
-                                break;
-                            }
+                                {
+                                    BackToCurrentRoom();
+                                    break;
+                                }
+                            case "NumPad6":
+                            case "D6":
+                                {
+                                    Program.MainMenuDlc();
+                                    break;
+                                }
                             case "NumPad0":
                             case "D0":
                                 {
@@ -1136,6 +1142,10 @@ namespace Subwaj
         //Back to current room
         public static void BackToCurrentRoom()
         {
+            if (Program.CurrentRoom == Program.StrMainMenu)
+            {
+                Program.CurrentRoom = Program.InGameMenuTempRoom;
+            }
             switch (Program.CurrentRoom)
             {
                 case "ROOM1":
@@ -1250,6 +1260,7 @@ namespace Subwaj
                     }
                 case "MainMenu":
                     {
+                        //moet value uit ingametemproom pakken.
                         Program.MainMenu();
                         break;
                     }

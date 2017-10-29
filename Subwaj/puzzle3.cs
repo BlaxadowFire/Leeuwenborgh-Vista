@@ -192,6 +192,7 @@ namespace Subwaj
             Thread.Sleep(400);
             Console.Clear();
             Program.BlnPuzzle3Complete = true;
+            Program.IntKey += 1;
         }
     }
 }

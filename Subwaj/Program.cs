@@ -9,6 +9,8 @@ namespace Subwaj
     {
         public static string StrAnswer = string.Empty;
         public static int IntCode;
+
+        public static int IntKey;
         //Here we will place the public static variables
         public static Random RandomForeGround = new Random();  //Gets used for random foregroundcolor.
         public static ConsoleColor OriginalForeGroundColor;     //Sets the old foreground to a variable to make sure it isn't the same.
@@ -17,7 +19,7 @@ namespace Subwaj
 
         //Rooms
         public static string CurrentRoom = "MainMenu"; //Makes sure the program knows in what room the user is.
-        public static string InGameMenuTempRoom = string.Empty; //Makes a temporary room when you go to the ingame menu
+        public static string InGameMenuTempRoom = "MainMenu"; //Makes a temporary room when you go to the ingame menu
 
         //BGM
         public static int IntReadSong;
@@ -117,7 +119,10 @@ namespace Subwaj
                 Console.Beep(600, 200);
                 Console.Beep(400, 200);
                 Thread.Sleep(1000);
-                BgmThread.Start();
+                if (BgmThread.IsAlive == false)
+                {
+                    BgmThread.Start();
+                }
                 MainMenuHelp();
             }
             while (true);
@@ -343,6 +348,10 @@ namespace Subwaj
                         Console.Clear();
                         MainMenu();
                     }
+                    else if (StrAnswer == "dlc")
+                    {
+                        Console.BackgroundColor = ConsoleColor.DarkGray;
+                    }
                     
                     else if (StrAnswer == "konami" || StrAnswer == "KONAMI" || StrAnswer == "Konami")
                     {
@@ -360,6 +369,18 @@ namespace Subwaj
             }
             while (true);
 
+        }
+        public static void MainMenuDlc()
+        {
+            Console.Clear();
+            Console.WriteLine("If you want the extra DLC options, you can donate any amount of money to:");
+            Console.BackgroundColor = ConsoleColor.DarkGreen;
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("paypal.me/NandoK");
+            Console.BackgroundColor = ConsoleColor.Black;
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("The Current available dlc is: Gray Background \r\nPress any key to continue.");
+            Console.ReadKey();
         }
         public static void MainMenuExit()
         {
@@ -392,7 +413,7 @@ namespace Subwaj
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.SetCursorPosition(Console.CursorLeft = 54, Console.CursorTop = 0);
-                Console.WriteLine("║\t   TIME:  {0}\t  Current location:   {1}\t╠═╦╗:\t0", IntTimer, CurrentRoom);
+                Console.WriteLine("║\t   TIME:  {0}\t  Current location:   {1}\t╠═╦╗:\t{2}", IntTimer, CurrentRoom, IntKey);
                 Console.SetCursorPosition(Console.CursorLeft = 54, Console.CursorTop = 1);
                 Console.WriteLine("╚═════════════════════════════════════════════════════════════════");
                 Console.ForegroundColor = ConsoleColor.White;
@@ -797,15 +818,8 @@ namespace Subwaj
 
                             do
                             {
-                                for (int i = 0; i < strReadSong.Length; i++)
-                                {
-                                    IntReadSong = Convert.ToInt32(strReadSong[IntSongCounter]);
-                                }
-
-                                for (int i = 0; i < strReadDuration.Length; i++)
-                                {
-                                    IntReadDuration = Convert.ToInt32(strReadDuration[IntSongCounter]);
-                                }
+                                IntReadSong = Convert.ToInt32(strReadSong[IntSongCounter]);
+                                IntReadDuration = Convert.ToInt32(strReadDuration[IntSongCounter]);
                                 IntSongCounter++;
                                 if (IntReadSong != 0)
                                 {
@@ -817,7 +831,7 @@ namespace Subwaj
                                 }
                             } while (IntSongCounter < strReadSong.Length && CurrentRoom != StrMainMenu && BlnPlayMusic == true /*&& blnBGMCancel == false*/);
                         IntSongCounter = 0;
-                    } while (CurrentRoom != string.Empty || CurrentRoom != StrMainMenu && BlnPlayMusic == true /*&& blnBGMCancel == false*/);
+                    } while (CurrentRoom != StrMainMenu && BlnPlayMusic == true /*&& blnBGMCancel == false*/);
                 }
                 else if (CurrentRoom != string.Empty && CurrentRoom == StrMainMenu && BlnPlayMusic == true /*&& blnBGMCancel == false*/) //BGM Main Menu
                 {
@@ -828,15 +842,8 @@ namespace Subwaj
                         IntSongCounter = 0;
                         do
                         {
-                            for (int i = 0; i < strReadSong.Length; i++)
-                            {
-                                IntReadSong = Convert.ToInt32(strReadSong[IntSongCounter]);
-                            }
-
-                            for (int i = 0; i < strReadDuration.Length; i++)
-                            {
-                                IntReadDuration = Convert.ToInt32(strReadDuration[IntSongCounter]);
-                            }
+                            IntReadSong = Convert.ToInt32(strReadSong[IntSongCounter]);
+                            IntReadDuration = Convert.ToInt32(strReadDuration[IntSongCounter]);
                             IntSongCounter++;
                             if (IntReadSong != 0)
                             {
