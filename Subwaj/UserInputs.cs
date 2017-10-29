@@ -1104,10 +1104,7 @@ namespace Subwaj
                         break;
                     }
             }
-            Errors.ErrorHandlerStart();
-            Console.WriteLine("ERROR: OUT OF ROOM EXCEPTION");
-            Console.WriteLine("ERROR ID: 0002");
-            Errors.ErrorFinisher();
+            BackToCurrentRoom();
         }
 
         //Back to current room

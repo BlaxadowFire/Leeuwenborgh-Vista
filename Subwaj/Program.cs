@@ -70,7 +70,6 @@ namespace Subwaj
 
         //TTS
         public static System.Media.SoundPlayer Player = new System.Media.SoundPlayer();
-        public static bool BlnBgmCancel;
         public static string StrTtsLocation = "files/story/TTS/";
         public static string StrTxtLocation = "files/story/";
 
@@ -78,6 +77,29 @@ namespace Subwaj
         public static bool BlnBoss = false;
         public static bool BlnShop = false;
         public static bool BlnDebug = false;
+
+        //Story read (so you don't get the story every time you go into the room)
+        public static bool BlnRoom1Story = false;
+        public static bool BlnRoom2Story = false;
+        public static bool BlnRoom3Story = false;
+        public static bool BlnRoom4Story = false;
+        public static bool BlnRoom5Story = false;
+        public static bool BlnRoom6Story = false;
+        public static bool BlnRoom7Story = false;
+        public static bool BlnHall1Story = false;
+        public static bool BlnHall2Story = false;
+        public static bool BlnHall3Story = false;
+        public static bool BlnHall4Story = false;
+        public static bool BlnHall5Story = false;
+        public static bool BlnHall6Story = false;
+        public static bool BlnHall7Story = false;
+        public static bool BlnHall8Story = false;
+        public static bool BlnHall9Story = false;
+        public static bool BlnHall10Story = false;
+        public static bool BlnHall11Story = false;
+        public static bool BlnHall12Story = false;
+        public static bool BlnHall13Story = false;
+        public static bool BlnHall14Story = false;
 
         //sleep
         public static int IntSleep400 = 400; //400
@@ -129,7 +151,6 @@ namespace Subwaj
             //story
             string strUserStart;
             bool blnLoopQuestion = true;
-            BlnBgmCancel = true;
             Player.SoundLocation = StrTtsLocation + "Intro/intro1.wav";
             Player.Play();
 
@@ -394,52 +415,52 @@ namespace Subwaj
         }
         //END OF HUD
 
-
         //BEGIN OF ROOMS
         public static void ROOM1()
         {
 
             CurrentRoom = StrRoom1;
             Console.Clear();
-
-                //story
-            BlnBgmCancel = true;
-            string strFilename = StrTxtLocation + "Rooms/Room1/Room1.txt";
-            string[] IntroText = File.ReadAllLines(strFilename);
-            int intIntroTts = 0; //Used to count the file
-            for (int i = 0; i < IntroText.Length; i++)
+            if (BlnRoom1Story == false)
             {
+                //story
+                string strFilename = StrTxtLocation + "Rooms/Room1/Room1.txt";
+                string[] IntroText = File.ReadAllLines(strFilename);
+                int intIntroTts = 0; //Used to count the file
+                for (int i = 0; i < IntroText.Length; i++)
+                {
 
-                if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 13 || i == 17)
-                {
-                    intIntroTts += 1;
-                    Player.SoundLocation = StrTtsLocation + "ROOM1/room1-" + intIntroTts + ".wav";
-                    Player.Play();
-                }
-                if ( i == 12 || i == 15)
-                {
-                    Console.Beep();
-                    Console.Beep();
-                    Console.Beep();
-                }
-                string strIntroText = IntroText[i];
-                for (int x = 0; x < strIntroText.Length; x++)
-                {
-                    Console.Write(strIntroText[x]);
-                    if (strIntroText[x] == ',')
+                    if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 13 || i == 17)
                     {
-                        Thread.Sleep(IntSleep400); //400
+                        intIntroTts += 1;
+                        Player.SoundLocation = StrTtsLocation + "ROOM1/room1-" + intIntroTts + ".wav";
+                        Player.Play();
                     }
-                    Thread.Sleep(40); //40
+                    if (i == 12 || i == 15)
+                    {
+                        Console.Beep();
+                        Console.Beep();
+                        Console.Beep();
+                    }
+                    string strIntroText = IntroText[i];
+                    for (int x = 0; x < strIntroText.Length; x++)
+                    {
+                        Console.Write(strIntroText[x]);
+                        if (strIntroText[x] == ',')
+                        {
+                            Thread.Sleep(IntSleep400); //400
+                        }
+                        Thread.Sleep(40); //40
+
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(IntSleep400); //400
 
                 }
-                Console.Write("\r\n");
-                Thread.Sleep(IntSleep400); //400
-
+                Thread.Sleep(1000);
+                Console.Clear();
+                BlnRoom1Story = true;
             }
-            Thread.Sleep(1000);
-            BlnBgmCancel = false;
-            Console.Clear();
             Console.WriteLine(File.ReadAllText("files/Rooms/Room1/Room1.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -448,10 +469,10 @@ namespace Subwaj
         {
             CurrentRoom = StrRoom2;
             Console.Clear();
-            if (BlnPuzzle1Complete == false)
+            if (BlnRoom2Story == false)
             {
-                Puzzle1.StartPuzzle1();
-                
+                //story
+                BlnRoom2Story = true;
             }
             Console.WriteLine(File.ReadAllText("files/Rooms/Room2/Room2.txt"));
             UserInputs.UserInput();
@@ -461,9 +482,10 @@ namespace Subwaj
         {
             CurrentRoom = StrRoom3;
             Console.Clear();
-            if (BlnPuzzle2Complete == false)
+            if (BlnRoom3Story == false)
             {
-                Puzzle2.StartPuzzle2();
+                //story
+                BlnRoom3Story = true;
             }
             Console.WriteLine(File.ReadAllText("files/Rooms/Room3/Room3.txt"));
             UserInputs.UserInput();
@@ -473,6 +495,11 @@ namespace Subwaj
         {
             CurrentRoom = StrRoom4;
             Console.Clear();
+            if (BlnRoom4Story == false)
+            {
+                //story
+                BlnRoom4Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Rooms/Room4/Room4.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -481,9 +508,10 @@ namespace Subwaj
         {
             CurrentRoom = StrRoom5;
             Console.Clear();
-            if (BlnPuzzle3Complete == false)
+            if (BlnRoom5Story == false)
             {
-                Puzzle3.StartPuzzle3();
+                //story
+                BlnRoom5Story = true;
             }
             Console.WriteLine(File.ReadAllText("files/Rooms/Room5/Room5.txt"));
             UserInputs.UserInput();
@@ -493,7 +521,11 @@ namespace Subwaj
         {
             CurrentRoom = StrRoom6;
             Console.Clear();
-            Puzzle4.StartPuzzle4();
+            if (BlnRoom6Story == false)
+            {
+                //story
+                BlnRoom6Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Rooms/Room6/Room6.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -502,6 +534,11 @@ namespace Subwaj
         {
             CurrentRoom = StrRoom7;
             Console.Clear();
+            if (BlnRoom7Story == false)
+            {
+                //story
+                BlnRoom7Story = true;
+            }
             Console.WriteLine("BOSSROOM");
             Console.WriteLine(File.ReadAllText("files/Rooms/Room7/Room7.txt"));
             UserInputs.UserInput();
@@ -513,6 +550,11 @@ namespace Subwaj
         {
             CurrentRoom = StrHall1;
             Console.Clear();
+            if (BlnHall1Story == false)
+            {
+                //story
+                BlnHall1Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall1.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -522,6 +564,33 @@ namespace Subwaj
         {
             CurrentRoom = StrHall2;
             Console.Clear();
+            if (BlnHall2Story == false)
+            {
+                //story
+                //story
+                string strFilename = StrTxtLocation + "Halls/Hall2.txt";
+                string[] IntroText = File.ReadAllLines(strFilename);
+                for (int i = 0; i < IntroText.Length; i++)
+                {
+                    string strIntroText = IntroText[i];
+                    for (int x = 0; x < strIntroText.Length; x++)
+                    {
+                        Console.Write(strIntroText[x]);
+                        if (strIntroText[x] == ',')
+                        {
+                            Thread.Sleep(IntSleep400); //400
+                        }
+                        Thread.Sleep(40); //40
+
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(IntSleep400); //400
+
+                }
+                Thread.Sleep(1000);
+                Console.Clear();
+                BlnHall2Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall2.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -530,6 +599,11 @@ namespace Subwaj
         {
             CurrentRoom = StrHall3;
             Console.Clear();
+            if (BlnHall3Story == false)
+            {
+                //story
+                BlnHall3Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall3.txt"));
             UserInputs.UserInput();
             Errors.ErrorNotYetCreated();
@@ -538,6 +612,11 @@ namespace Subwaj
         {
             CurrentRoom = StrHall4;
             Console.Clear();
+            if (BlnHall4Story == false)
+            {
+                //story
+                BlnHall4Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall4.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -546,6 +625,11 @@ namespace Subwaj
         {
             CurrentRoom = StrHall5;
             Console.Clear();
+            if (BlnHall5Story == false)
+            {
+                //story
+                BlnHall5Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall5.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -554,6 +638,11 @@ namespace Subwaj
         {
             CurrentRoom = StrHall6;
             Console.Clear();
+            if (BlnHall6Story == false)
+            {
+                //story
+                BlnHall6Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall6.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -562,6 +651,11 @@ namespace Subwaj
         {
             CurrentRoom = StrHall7;
             Console.Clear();
+            if (BlnHall7Story == false)
+            {
+                //story
+                BlnHall7Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall7.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -570,6 +664,11 @@ namespace Subwaj
         {
             CurrentRoom = StrHall8;
             Console.Clear();
+            if (BlnHall8Story == false)
+            {
+                //story
+                BlnHall8Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall8.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -577,6 +676,11 @@ namespace Subwaj
         public static void HALL9()
         {
             Console.Clear();
+            if (BlnHall9Story == false)
+            {
+                //story
+                BlnHall9Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall9.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -584,6 +688,11 @@ namespace Subwaj
         public static void HALL10()
         {
             Console.Clear();
+            if (BlnHall10Story == false)
+            {
+                //story
+                BlnHall10Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall10.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -591,6 +700,11 @@ namespace Subwaj
         public static void HALL11()
         {
             Console.Clear();
+            if (BlnHall11Story == false)
+            {
+                //story
+                BlnHall11Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall11.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -599,6 +713,11 @@ namespace Subwaj
         {
             CurrentRoom = StrHall12;
             Console.Clear();
+            if (BlnHall12Story == false)
+            {
+                //story
+                BlnHall12Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall12.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -608,6 +727,11 @@ namespace Subwaj
         {
             CurrentRoom = StrHall13;
             Console.Clear();
+            if (BlnHall13Story == false)
+            {
+                //story
+                BlnHall13Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall13.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -616,6 +740,11 @@ namespace Subwaj
         {
             CurrentRoom = StrHall14;
             Console.Clear();
+            if (BlnHall14Story == false)
+            {
+                //story
+                BlnHall14Story = true;
+            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall14.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
