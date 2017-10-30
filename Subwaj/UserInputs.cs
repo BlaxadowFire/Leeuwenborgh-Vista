@@ -124,17 +124,23 @@ namespace Subwaj
                             case "D2":
                             case "NumPad2":
                                 {
-                                    Program.MainMenuHelp();
+                                    Program.InGameMap();
                                     break;
                                 }
                             case "D3":
                             case "NumPad3":
                                 {
+                                    Program.MainMenuHelp();
+                                    break;
+                                }
+                            case "D4":
+                            case "NumPad4":
+                                {
                                     Program.MainMenuOptions();
                                     break;
                                 }
-                            case "D9":
-                            case "NumPad9":
+                            case "D5":
+                            case "NumPad5":
                                 {
                                     Program.MainMenu();
                                     break;

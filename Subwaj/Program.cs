@@ -387,6 +387,16 @@ namespace Subwaj
         {
             Environment.Exit(0);
         }
+        public static void InGameMap()
+        {
+            Console.Clear();
+            GetRandomConsoleColor();
+            string strFilename = "files/menu/map/map.txt";
+            Console.WriteLine(File.ReadAllText(strFilename));
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.ReadKey();
+            UserInputs.BackToCurrentRoom();
+        }
         //END OF MainMenu
 
         //BEGIN OF InGameMenu
@@ -405,6 +415,7 @@ namespace Subwaj
             Console.ForegroundColor = ConsoleColor.White;
 
         }
+
         //END OF InGameMenu
 
         //BEGIN OF HUD
@@ -597,7 +608,7 @@ namespace Subwaj
             {
                 //story
                 //story
-                string strFilename = StrTxtLocation + "Halls/Hall2.txt";
+                string strFilename = StrTxtLocation + "Halls/Hall2/Hall2.txt";
                 string[] IntroText = File.ReadAllLines(strFilename);
                 for (int i = 0; i < IntroText.Length; i++)
                 {
