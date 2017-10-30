@@ -64,8 +64,9 @@ namespace Subwaj
         public static string StrHall14 = "HALL14";
 
         //HUD STUFF
-        public static int IntTimer = 3600;
-        public static ThreadStart TsTimer = TimerFunction;
+        public static int IntTimerSeconds = 60;
+        public static int IntTimerMinutes = 60;
+        public static ThreadStart TsTimer = TimerFunction; 
         public static Thread TimerThread = new Thread(TsTimer);
         public static int IntCursorpositionLeft;
         public static int IntCursorpositionTop;
@@ -413,7 +414,7 @@ namespace Subwaj
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.SetCursorPosition(Console.CursorLeft = 54, Console.CursorTop = 0);
-                Console.WriteLine("║\t   TIME:  {0}\t  Current location:   {1}\t╠═╦╗:\t{2}", IntTimer, CurrentRoom, IntKey);
+                Console.WriteLine("║\t   TIME:  {3}:{0}\t  Current location:   {1}\t╠═╦╗:\t{2}", IntTimerSeconds, CurrentRoom, IntKey, IntTimerMinutes);
                 Console.SetCursorPosition(Console.CursorLeft = 54, Console.CursorTop = 1);
                 Console.WriteLine("╚═════════════════════════════════════════════════════════════════");
                 Console.ForegroundColor = ConsoleColor.White;
@@ -422,15 +423,22 @@ namespace Subwaj
 
         public static void TimerFunction()
         {
-            while (IntTimer > 0)
+            do
             {
-                IntTimer -= 1;
-                IntCursorpositionLeft = Console.CursorLeft;
-                IntCursorpositionTop = Console.CursorTop;
-                HUD();
-                Console.SetCursorPosition(IntCursorpositionLeft, IntCursorpositionTop);
-                Thread.Sleep(1000);
+                do
+                {
+                    IntTimerSeconds -= 1;
+                    IntCursorpositionLeft = Console.CursorLeft;
+                    IntCursorpositionTop = Console.CursorTop;
+                    HUD();
+                    Console.SetCursorPosition(IntCursorpositionLeft, IntCursorpositionTop);
+                    Thread.Sleep(1000);
+                } while (IntTimerSeconds > 0);
+                IntTimerSeconds = 60;
+                IntTimerMinutes -= 1;
             }
+            while (IntTimerMinutes > 0);
+
             GameOver();
 
         }
