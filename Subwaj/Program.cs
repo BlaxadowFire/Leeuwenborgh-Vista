@@ -589,7 +589,7 @@ namespace Subwaj
             {
                 //story
                 //story
-                string strFilename = StrTxtLocation + "Halls/Hall2.txt";
+                string strFilename = StrTxtLocation + "Halls/Hall2/Hall2.txt";
                 string[] IntroText = File.ReadAllLines(strFilename);
                 for (int i = 0; i < IntroText.Length; i++)
                 {
