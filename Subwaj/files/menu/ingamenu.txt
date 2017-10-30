@@ -5,7 +5,8 @@
                                ╚════════════╝
 
 1.)    back to Not game
-2.)    Help
-3.)    Options
-9.)    back to main menu
+2.)    show map
+3.)    Help
+4.)    Options
+5.)    back to main menu
 0.)    Exit Not game
