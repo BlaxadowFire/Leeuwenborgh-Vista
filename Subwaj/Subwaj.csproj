@@ -29,10 +29,10 @@
     <ProductName>Not A Game</ProductName>
     <PublisherName>Nando Kools</PublisherName>
     <SuiteName>Subwaj</SuiteName>
-    <MinimumRequiredVersion>0.0.1.6</MinimumRequiredVersion>
+    <MinimumRequiredVersion>0.0.1.8</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>7</ApplicationRevision>
+    <ApplicationRevision>9</ApplicationRevision>
     <ApplicationVersion>0.0.1.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -102,6 +102,10 @@
     <Compile Include="UserInputs.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="files\help.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\backgrounds.txt" />
     <Content Include="files\mainmenucodes\DebugDisabled.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -186,6 +190,18 @@
     <Content Include="files\Rooms\Room1\Room1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="files\story\Halls\Hall13\Hall13.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\story\Halls\Hall14\Hall14.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\story\Rooms\BossRoom\Boss1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\story\Rooms\BossRoom\Boss2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="files\story\Intro\exit.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -202,7 +218,13 @@
     <Content Include="files\mainmenucodes\BossEnabled.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\help.txt">
+    <Content Include="files\story\Rooms\Room5\Room5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\story\Rooms\Room6\Room6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\story\Walls\Wall2\Wall2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\menu\mainmenu.txt">
@@ -295,6 +317,9 @@
     <Content Include="files\story\TTS\ROOM1\room1-7.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="files\story\Walls\Wall1\spongebob.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="game.ico" />
     <Content Include="BGM subwaj\Duration.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -361,8 +386,6 @@
     <Folder Include="files\story\Halls\Hall10\" />
     <Folder Include="files\story\Halls\Hall11\" />
     <Folder Include="files\story\Halls\Hall12\" />
-    <Folder Include="files\story\Halls\Hall13\" />
-    <Folder Include="files\story\Halls\Hall14\" />
     <Folder Include="files\story\Halls\Hall1\" />
     <Folder Include="files\story\Halls\Hall3\" />
     <Folder Include="files\story\Halls\Hall4\" />
@@ -374,11 +397,7 @@
     <Folder Include="files\story\Rooms\Room2\" />
     <Folder Include="files\story\Rooms\Room3\" />
     <Folder Include="files\story\Rooms\Room4\" />
-    <Folder Include="files\story\Rooms\Room5\" />
-    <Folder Include="files\story\Rooms\Room6\" />
     <Folder Include="files\story\Rooms\Room7\" />
-    <Folder Include="files\story\Walls\Wall1\" />
-    <Folder Include="files\story\Walls\Wall2\" />
     <Folder Include="files\story\Walls\Wall3\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

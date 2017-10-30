@@ -1,0 +1,5 @@
+﻿you cant enter the Boss before you enabled it.
+
+(Go to code in the menu and type Boss.)
+
+Why have I told you that, oh well.
