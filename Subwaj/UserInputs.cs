@@ -214,10 +214,16 @@ namespace Subwaj
                                 }
                             case "NumPad1":
                             case "D1":
+                                if (Program.BlnPuzzle1Complete == false)
+                                {
+                                    Console.WriteLine("You must finish the puzzle first.");
+                                }
+                                else
                                 {
                                     Program.HALL2();
-                                    break;
                                 }
+                                break;
+                    
                             case "NumPad2":
                             case "D2":
                                 {
@@ -273,10 +279,15 @@ namespace Subwaj
                                 }
                             case "NumPad1":
                             case "D1":
+                                if (Program.BlnPuzzle2Complete == false)
+                                {
+                                    Console.WriteLine("You must finish the puzzle first.");
+                                }
+                                else
                                 {
                                     Program.HALL4();
-                                    break;
                                 }
+                                break;
                             case "NumPad2":
                             case "D2":
                                 {
@@ -382,10 +393,15 @@ namespace Subwaj
                                 }
                             case "NumPad1":
                             case "D1":
+                                if (Program.BlnPuzzle3Complete == false)
+                                {
+                                    Console.WriteLine("You must finish the puzzle first.");
+                                }
+                                else
                                 {
                                     Program.HALL7();
-                                    break;
                                 }
+                                break;
                             case "NumPad2":
                             case "D2":
                                 {
@@ -438,10 +454,15 @@ namespace Subwaj
                                 }
                             case "NumPad1":
                             case "D1":
+                                if (Program.BlnPuzzle4Complete == false)
+                                {
+                                    Console.WriteLine("You must finish the puzzle first.");
+                                }
+                                else
                                 {
                                     Program.HALL13();
-                                    break;
                                 }
+                                break;
                             case "NumPad2":
                             case "D2":
                                 {
