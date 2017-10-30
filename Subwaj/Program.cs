@@ -386,6 +386,16 @@ namespace Subwaj
         {
             Environment.Exit(0);
         }
+        public static void InGameMap()
+        {
+            Console.Clear();
+            GetRandomConsoleColor();
+            string strFilename = "files/menu/map/map.txt";
+            Console.WriteLine(File.ReadAllText(strFilename));
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.ReadKey();
+            UserInputs.BackToCurrentRoom();
+        }
         //END OF MainMenu
 
         //BEGIN OF InGameMenu
@@ -404,6 +414,7 @@ namespace Subwaj
             Console.ForegroundColor = ConsoleColor.White;
 
         }
+
         //END OF InGameMenu
 
         //BEGIN OF HUD
