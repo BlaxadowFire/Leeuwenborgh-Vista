@@ -183,7 +183,12 @@
     <Content Include="files\Rooms\Room1\Room1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall14\Hall14.txt" />
+    <Content Include="files\story\Halls\Hall13\Hall13.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\story\Halls\Hall14\Hall14.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="files\story\Rooms\BossRoom\Boss1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -210,6 +215,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\story\Rooms\Room6\Room6.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\story\Walls\Wall2\Wall2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\story\Walls\Wall3\help.txt">
@@ -374,7 +382,6 @@
     <Folder Include="files\story\Halls\Hall10\" />
     <Folder Include="files\story\Halls\Hall11\" />
     <Folder Include="files\story\Halls\Hall12\" />
-    <Folder Include="files\story\Halls\Hall13\" />
     <Folder Include="files\story\Halls\Hall1\" />
     <Folder Include="files\story\Halls\Hall3\" />
     <Folder Include="files\story\Halls\Hall4\" />
@@ -387,7 +394,6 @@
     <Folder Include="files\story\Rooms\Room3\" />
     <Folder Include="files\story\Rooms\Room4\" />
     <Folder Include="files\story\Rooms\Room7\" />
-    <Folder Include="files\story\Walls\Wall2\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
