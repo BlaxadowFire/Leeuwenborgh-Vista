@@ -111,7 +111,9 @@
     <Content Include="files\menu\ingamenu.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\menu\Map\map.txt" />
+    <Content Include="files\menu\Map\map.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="files\menu\Map\mapRoom1tm6.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
