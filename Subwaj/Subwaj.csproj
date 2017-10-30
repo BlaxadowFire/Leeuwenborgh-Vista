@@ -206,6 +206,9 @@
     <Content Include="files\mainmenucodes\BossEnabled.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="files\story\Rooms\Room5\Room5.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="files\story\Rooms\Room6\Room6.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -383,7 +386,6 @@
     <Folder Include="files\story\Rooms\Room2\" />
     <Folder Include="files\story\Rooms\Room3\" />
     <Folder Include="files\story\Rooms\Room4\" />
-    <Folder Include="files\story\Rooms\Room5\" />
     <Folder Include="files\story\Rooms\Room7\" />
     <Folder Include="files\story\Walls\Wall2\" />
     <Folder Include="files\story\Walls\Wall3\" />
