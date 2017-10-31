@@ -203,10 +203,7 @@
     <Content Include="files\story\Halls\Hall14\Hall14.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Rooms\BossRoom\Boss1.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="files\story\Rooms\BossRoom\Boss2.txt">
+    <Content Include="files\story\Rooms\BossRoom\Boss.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\story\Intro\exit.txt">
@@ -238,9 +235,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\mainmenucodes\ShopEnabled.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="files\story\Rooms\Room6\Room6  2.0.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\app.manifest" />
