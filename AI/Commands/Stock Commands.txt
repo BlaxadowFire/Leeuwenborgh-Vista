@@ -1,0 +1,7 @@
+﻿? - Help
+what is my name? - what is my name - my name
+what is your name? - who are you? - your name - name
+age - your age - current age - currentage
+date - time - current day - current time - datetime
+creation - creation date - creationdate
+change username - change my name - change my username - username - change name
