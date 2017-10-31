@@ -105,7 +105,9 @@
     <Content Include="files\help.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\backgrounds.txt" />
+    <Content Include="files\backgrounds.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="files\mainmenucodes\DebugDisabled.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

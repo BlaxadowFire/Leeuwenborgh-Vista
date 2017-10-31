@@ -113,6 +113,7 @@ namespace Subwaj
             //Loops the program
             Console.WindowWidth = 120;
             Console.WindowHeight = 30;
+            Console.CursorVisible = false;
             do
             {
                 Console.WriteLine("\t\t\t\tPlease turn on the volume for best user experience");
