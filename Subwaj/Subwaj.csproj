@@ -90,6 +90,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="files\story\Rooms\Room1\hint for BossRoom.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\story\Rooms\Room2\Room2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\story\Rooms\Room4\Room4.txt" />
     <Compile Include="puzzle4.cs" />
     <Compile Include="Debug.cs" />
     <Compile Include="Errors.cs" />
@@ -227,6 +234,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\mainmenucodes\ShopEnabled.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\story\Rooms\Room6\Room6  2.0.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\app.manifest" />
@@ -390,9 +400,7 @@
     <Folder Include="files\story\Halls\Hall7\" />
     <Folder Include="files\story\Halls\Hall8\" />
     <Folder Include="files\story\Halls\Hall9\" />
-    <Folder Include="files\story\Rooms\Room2\" />
     <Folder Include="files\story\Rooms\Room3\" />
-    <Folder Include="files\story\Rooms\Room4\" />
     <Folder Include="files\story\Rooms\Room7\" />
     <Folder Include="files\story\Walls\Wall3\" />
   </ItemGroup>
