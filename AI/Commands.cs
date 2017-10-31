@@ -60,8 +60,7 @@ namespace AI
                         }
                         Program.ResetCursor();
                         Console.WriteLine(Program.write);
-                        TTS.speech(Program.write);
-                        Thread.Sleep(2000);
+                        TTS.speechsync(Program.write);
                         break;
                     }
                 case "what is your name?":
@@ -169,6 +168,7 @@ namespace AI
                         {
                             Program.CreateCommand();
                         }
+                        Program.CommandExists = false;
                         break;
                     }
             }
