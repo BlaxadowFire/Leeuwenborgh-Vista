@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 using System.Threading;
-using System.Speech.Synthesis;
 
 namespace AI
 {
@@ -81,6 +76,11 @@ namespace AI
                 case "currentage":
                     {
                         var CurrentAge = Program.CurrentDate() - Program.CreationDate;
+                        Program.write = "My current age is: " + CurrentAge;
+                        //Program.write = "My current age is: " + CurrentAge.Days + " Days, "+ CurrentAge.Hours + " Hours, "+ CurrentAge.Minutes + " Minutes & " + CurrentAge.Seconds + " Seconds.";
+                        //Program.ResetCursor();
+                        //Console.WriteLine(Program.write);
+                        //TTS.speechsync(Program.write);
                         Program.write = "My current age is: " + CurrentAge;
                         Program.ResetCursor();
                         Console.WriteLine(Program.write);
