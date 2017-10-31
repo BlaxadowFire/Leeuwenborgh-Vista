@@ -57,8 +57,14 @@ namespace AI
             {
                 write = string.Empty;
                 Console.CursorVisible = true;
-                write = "Write Command, Write '?' to see a list of commands.";
                 ResetCursor();
+                write = "NANDO AI CREATED BY NANDO KOOLS";
+                MiddleLeft(write);
+                Console.CursorTop = 0;
+                Console.WriteLine(write);
+                MiddleTop();
+                MiddleLeft(write);
+                write = "Write Command, Write '?' to see a list of commands.";
                 Console.CursorTop -= 4;
                 Console.WriteLine(write);
                 TTS.speech("Write Command");
@@ -101,8 +107,7 @@ namespace AI
             write = RespondReader[CommandCounter];
             ResetCursor();
             Console.WriteLine(write);
-            TTS.speech(write);
-            Thread.Sleep(3000);
+            TTS.speechsync(write);
         }
         public static void EditCommand()
         {
