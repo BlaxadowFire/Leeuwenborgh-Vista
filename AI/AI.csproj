@@ -29,7 +29,7 @@
     <ProductName>Nando AI</ProductName>
     <PublisherName>Nando Kools</PublisherName>
     <SuiteName>BlaxadowFire</SuiteName>
-    <MinimumRequiredVersion>0.0.0.1</MinimumRequiredVersion>
+    <MinimumRequiredVersion>0.0.0.2</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <ApplicationRevision>3</ApplicationRevision>
