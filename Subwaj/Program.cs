@@ -391,7 +391,7 @@ namespace Subwaj
         {
             Console.Clear();
             GetRandomConsoleColor();
-            string strFilename = "files/menu/map/map.txt";
+            string strFilename = "files/menu/map/map2.txt";
             Console.WriteLine(File.ReadAllText(strFilename));
             Console.ForegroundColor = ConsoleColor.White;
             Console.ReadKey();
