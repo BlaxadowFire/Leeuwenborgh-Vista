@@ -8,9 +8,9 @@ namespace AI
 {
     class Program
     {
-        public static List<string> ListenReader = File.ReadAllLines("Commands/ListenToCommand.txt").ToList<string>();
-        public static List<string> RespondReader = File.ReadAllLines("Commands/RespondToCommand.txt").ToList<string>();
-        public static List<string> StockCommands = File.ReadAllLines("Commands/Stock Commands.txt").ToList<string>();
+        public static List<string> ListenReader = File.ReadAllLines("Commands/ListenToCommand.txt").ToList();
+        public static List<string> RespondReader = File.ReadAllLines("Commands/RespondToCommand.txt").ToList();
+        public static List<string> StockCommands = File.ReadAllLines("Commands/Stock Commands.txt").ToList();
         public static string ListenPath = "Commands/ListenToCommand.txt";
         public static string RespondPath = "Commands/RespondToCommand.txt";
         public static string StockCommandsPath = "Commands/Stock Commands.txt";
@@ -19,9 +19,9 @@ namespace AI
 
         public static int CommandCounter = 0;
 
-        public static List<string> Username = File.ReadAllLines("Commands/Username.txt").ToList<string>();
+        public static List<string> Username = File.ReadAllLines("Commands/Username.txt").ToList();
 
-        public static string write = string.Empty;
+        public static string Write = string.Empty;
 
         public static bool CommandExists = false;
 
@@ -31,50 +31,51 @@ namespace AI
 
         public static DateTime CurrentDate()
         {
-            DateTime CurrentDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
-            return CurrentDate;
+            DateTime currentDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+            return currentDate;
         }
 
-        static void Main(string[] args)
+        static void Main()
         {
-            if (Program.Username[0] == string.Empty || Program.Username[0] == "" || Program.Username[0] == "\\")
+            if (Username[0] == string.Empty || Username[0] == "" || Username[0] == "\\")
             {
-                Program.Username[0] = Environment.UserName;
-                File.WriteAllLines(Program.StockCommandsPath, Program.StockCommands.ToArray());
+                Username[0] = Environment.UserName;
+                File.WriteAllLines(StockCommandsPath, StockCommands.ToArray());
             }
 
 
             Console.Title = "Nando AI";
             //TTS.TextToSpeech();
-            start();
+            Start();
         }
-        public static void start()
+        public static void Start()
         {
             while (true)
             {
-                write = string.Empty;
+                Write = string.Empty;
                 Console.CursorVisible = true;
                 ResetCursor();
-                write = "NANDO AI CREATED BY NANDO KOOLS";
-                MiddleLeft(write);
+                Write = "NANDO AI CREATED BY NANDO KOOLS";
+                MiddleLeft(Write);
                 Console.CursorTop = 0;
-                Console.WriteLine(write);
+                Console.WriteLine(Write);
                 MiddleTop();
-                MiddleLeft(write);
-                write = "Write Command, Write '?' to see a list of commands.";
+                MiddleLeft(Write);
+                Write = "Write Command, Write '?' to see a list of commands.";
                 Console.CursorTop -= 4;
-                Console.WriteLine(write);
-                TTS.speech("Write Command");
+                Console.WriteLine(Write);
+                Tts.Speech("Write Command");
                 MiddleLeft("");
                 MiddleTop();
-                Input = Console.ReadLine().ToLower();
+                Input = Console.ReadLine()?.ToLower();
                 ListenToCommand();
             }
+            // ReSharper disable once FunctionNeverReturns
         }
         public static void ResetCursor()
         {
             Console.Clear();
-            MiddleLeft(write);
+            MiddleLeft(Write);
             MiddleTop();
         }
         public static void MiddleLeft(string i)
@@ -94,17 +95,17 @@ namespace AI
         }
         public static void ListenToCommand()
         {
-            //if Input == ? then write all the commands and reponds
+            //if Input == ? then Write all the commands and reponds
             ResetCursor();
             Console.CursorVisible = false;
             Commands.CommandList(Input);
         }
         public static void RespondToCommand()
         {
-            write = RespondReader[CommandCounter];
+            Write = RespondReader[CommandCounter];
             ResetCursor();
-            Console.WriteLine(write);
-            TTS.speechsync(write);
+            Console.WriteLine(Write);
+            Tts.Speechsync(Write);
         }
         public static void EditCommand()
         {
@@ -114,20 +115,20 @@ namespace AI
         {
             Console.CursorVisible = true;
             ResetCursor();
-            write = "How do you want me to respond to this command?";
-            Console.WriteLine(write);
-            TTS.speech(write);
-            MiddleLeft(write);
-            write = "Leave empty to cancel";
-            Console.WriteLine(write);
+            Write = "How do you want me to respond to this command?";
+            Console.WriteLine(Write);
+            Tts.Speech(Write);
+            MiddleLeft(Write);
+            Write = "Leave empty to cancel";
+            Console.WriteLine(Write);
             Thread.Sleep(2500);
-            TTS.speech(write);
-            string Respond = Console.ReadLine().ToLower();
-            if (Respond != "")
+            Tts.Speech(Write);
+            string respond = Console.ReadLine()?.ToLower();
+            if (respond != "")
             {
                 ListenReader.Add(Input);
                 File.WriteAllLines(ListenPath, ListenReader.ToArray());
-                RespondReader.Add(Respond);
+                RespondReader.Add(respond);
                 File.WriteAllLines(RespondPath, RespondReader.ToArray());
             }
         }

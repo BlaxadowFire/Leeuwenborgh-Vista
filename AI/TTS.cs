@@ -1,30 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.IO;
-using System.Threading;
 using System.Speech.Synthesis;
 
 namespace AI
 {
-    class TTS
+    class Tts
     {
-        public static SpeechSynthesizer _ss = new SpeechSynthesizer();
+        public static SpeechSynthesizer Ss = new SpeechSynthesizer();
         //public static List<string> voices;
         public static void TextToSpeech()
         {
-            _ss.Volume = 100;
-            _ss.Rate = 1;
+            Ss.Volume = 100;
+            Ss.Rate = 1;
             int i = 1;
             Console.WriteLine("Installed TTS voices\r\n");
 
             
 
-            foreach( object obj in _ss.GetInstalledVoices())
+            foreach( InstalledVoice voice in Ss.GetInstalledVoices())
             {
-                InstalledVoice voice = (InstalledVoice) obj;
                 Console.WriteLine(i + ".)\t" + voice.VoiceInfo.Name);
                 //voices.Add(voice.VoiceInfo.Name);
                 i++;
@@ -33,17 +26,17 @@ namespace AI
             //_ss.SelectVoice(voices[voicenumber]);
             Console.ReadKey();
         }
-        public static void speech(string i)
+        public static void Speech(string i)
         {
-            _ss.SpeakAsyncCancelAll();
-            _ss.SpeakAsync(i);
+            Ss.SpeakAsyncCancelAll();
+            Ss.SpeakAsync(i);
         }
-        public static void speechsync(string i)
+        public static void Speechsync(string i)
         {
-            _ss.Speak(i);
+            Ss.Speak(i);
         }
 
-        public static int input()
+        public static int Input()
         {
             int i = 0;
             switch (Console.ReadKey().Key.ToString())
@@ -70,10 +63,6 @@ namespace AI
                 case "D4":
                     {
                         i = 4;
-                        break;
-                    }
-                default:
-                    {
                         break;
                     }
             }

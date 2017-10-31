@@ -13,29 +13,29 @@ namespace AI
                 case "?":
                 case "help":
                     {
-                        Program.write = "These are all the available commands and actions, press any key to continue";
+                        Program.Write = "These are all the available commands and actions, press any key to continue";
                         Program.ResetCursor();
                         Console.CursorTop = 0;
-                        Console.WriteLine(Program.write);
-                        TTS.speech(Program.write);
+                        Console.WriteLine(Program.Write);
+                        Tts.Speech(Program.Write);
                         Console.SetCursorPosition(0, 2);
-                        for (int x = 0; x < Program.ListenReader.Count; x++)
+                        foreach (string str in Program.ListenReader)
                         {
                             Console.CursorLeft = 0;
-                            Console.Write(Program.ListenReader[x]);
+                            Console.Write(str);
                             Console.Write("\r\n");
                         }
                         Console.SetCursorPosition(Console.WindowWidth / 2 + 10, 2);
-                        for (int x = 0; x < Program.RespondReader.Count; x++)
+                        foreach (string str in Program.RespondReader)
                         {
                             Console.CursorLeft = Console.WindowWidth / 2;
-                            Console.Write(Program.RespondReader[x]);
+                            Console.Write(str);
                             Console.Write("\r\n");
                         }
                         Console.WriteLine("\r\n\r\n");
-                        for (int x = 0; x < Program.StockCommands.Count; x++)
-                        {;
-                            Console.Write(Program.StockCommands[x]);
+                        foreach (string str in Program.StockCommands)
+                        {
+                            Console.Write(str);
                             Console.Write("\r\n");
                         }
                         Console.ReadKey();
@@ -47,15 +47,15 @@ namespace AI
                     {
                         if (Program.Username[0] == string.Empty)
                         {
-                            Program.write = "Your name is " + Environment.UserName;
+                            Program.Write = "Your name is " + Environment.UserName;
                         }
                         else
                         {
-                            Program.write = "Your name is " + Program.Username[0];
+                            Program.Write = "Your name is " + Program.Username[0];
                         }
                         Program.ResetCursor();
-                        Console.WriteLine(Program.write);
-                        TTS.speechsync(Program.write);
+                        Console.WriteLine(Program.Write);
+                        Tts.Speechsync(Program.Write);
                         break;
                     }
                 case "what is your name?":
@@ -63,10 +63,10 @@ namespace AI
                 case "your name":
                 case "name":
                     {
-                        Program.write = "My name is, NANDOAI";
+                        Program.Write = "My name is, NANDOAI";
                         Program.ResetCursor();
-                        Console.WriteLine(Program.write);
-                        TTS.speechsync("My name is, Nando Artificial Intelligence");
+                        Console.WriteLine(Program.Write);
+                        Tts.Speechsync("My name is, Nando Artificial Intelligence");
                         Thread.Sleep(500);
                         break;
                     }
@@ -75,16 +75,16 @@ namespace AI
                 case "current age":
                 case "currentage":
                     {
-                        var CurrentAge = Program.CurrentDate() - Program.CreationDate;
-                        Program.write = "My current age is: " + CurrentAge;
-                        //Program.write = "My current age is: " + CurrentAge.Days + " Days, "+ CurrentAge.Hours + " Hours, "+ CurrentAge.Minutes + " Minutes & " + CurrentAge.Seconds + " Seconds.";
+                        var currentAge = Program.CurrentDate() - Program.CreationDate;
+                        Program.Write = "My current age is: " + currentAge;
+                        //Program.Write = "My current age is: " + CurrentAge.Days + " Days, "+ CurrentAge.Hours + " Hours, "+ CurrentAge.Minutes + " Minutes & " + CurrentAge.Seconds + " Seconds.";
                         //Program.ResetCursor();
-                        //Console.WriteLine(Program.write);
-                        //TTS.speechsync(Program.write);
-                        Program.write = "My current age is: " + CurrentAge;
+                        //Console.WriteLine(Program.Write);
+                        //TTS.speechsync(Program.Write);
+                        Program.Write = "My current age is: " + currentAge;
                         Program.ResetCursor();
-                        Console.WriteLine(Program.write);
-                        TTS.speechsync(Program.write);
+                        Console.WriteLine(Program.Write);
+                        Tts.Speechsync(Program.Write);
                         Thread.Sleep(500);
                         break;
                     }
@@ -92,10 +92,10 @@ namespace AI
                 case "creation date":
                 case "creationdate":
                     {
-                        Program.write = "I have been created on " + Program.CreationDate;
+                        Program.Write = "I have been created on " + Program.CreationDate;
                         Program.ResetCursor();
-                        Console.WriteLine(Program.write);
-                        TTS.speechsync(Program.write);
+                        Console.WriteLine(Program.Write);
+                        Tts.Speechsync(Program.Write);
                         Thread.Sleep(500);
                         break;
                     }
@@ -105,10 +105,10 @@ namespace AI
                 case "current time":
                 case "datetime":
                     {
-                        Program.write = "today is " + Program.CurrentDate();
+                        Program.Write = "today is " + Program.CurrentDate();
                         Program.ResetCursor();
-                        Console.WriteLine(Program.write);
-                        TTS.speechsync(Program.write);
+                        Console.WriteLine(Program.Write);
+                        Tts.Speechsync(Program.Write);
                         Thread.Sleep(500);
                         break;
                     }
@@ -124,11 +124,11 @@ namespace AI
                             Program.Username[0] = Environment.UserName;
                             File.WriteAllLines(Program.StockCommandsPath, Program.StockCommands.ToArray());
                         }
-                            Program.write = "Current username: " + Program.Username[0];
-                            Console.WriteLine(Program.write);
-                            TTS.speechsync(Program.write);
+                            Program.Write = "Current username: " + Program.Username[0];
+                            Console.WriteLine(Program.Write);
+                            Tts.Speechsync(Program.Write);
                         Console.Write("New username: ");
-                        TTS.speech("Enter your new username");
+                        Tts.Speech("Enter your new username");
                         Program.Username[0] = Console.ReadLine();
                         File.WriteAllLines(Program.StockCommandsPath, Program.StockCommands.ToArray());
                         break;
@@ -138,13 +138,13 @@ namespace AI
                 case "close":
                     {
                         Program.ResetCursor();
-                        Program.write = "See you later " + Program.Username[0];
-                        Console.WriteLine(Program.write);
-                        TTS.speechsync(Program.write);
-                        Program.MiddleLeft(Program.write);
-                        Program.write = "bye bye";
-                        Console.WriteLine(Program.write);
-                        TTS.speechsync(Program.write);
+                        Program.Write = "See you later " + Program.Username[0];
+                        Console.WriteLine(Program.Write);
+                        Tts.Speechsync(Program.Write);
+                        Program.MiddleLeft(Program.Write);
+                        Program.Write = "bye bye";
+                        Console.WriteLine(Program.Write);
+                        Tts.Speechsync(Program.Write);
                         Environment.Exit(0);
                         break;
                     }
