@@ -11,7 +11,6 @@ namespace Subwaj
         public static string StrAnswer = string.Empty;
         public static int IntCode;
 
-        public static SpeechSynthesizer _SS = new SpeechSynthesizer();
 
         public static int IntKey;
         //Here we will place the public static variables
@@ -78,6 +77,7 @@ namespace Subwaj
         public static System.Media.SoundPlayer Player = new System.Media.SoundPlayer();
         public static string StrTtsLocation = "files/story/TTS/";
         public static string StrTxtLocation = "files/story/";
+        public static SpeechSynthesizer _SS = new SpeechSynthesizer();
 
         //boolean's for code menu
         public static bool BlnBoss = false;
