@@ -515,6 +515,7 @@ namespace Subwaj
                 Console.Clear();
                 BlnRoom1Story = true;
             }
+            Console.WriteLine(File.ReadAllText("files/backgrounds.txt"));
             Console.WriteLine(File.ReadAllText("files/Rooms/Room1/Room1.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
