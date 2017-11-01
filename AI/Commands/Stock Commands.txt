@@ -5,3 +5,5 @@ age - your age - current age - currentage
 date - time - current day - current time - datetime
 creation - creation date - creationdate
 change username - change my name - change my username - username - change name
+bye - exit - close
+change voice - changevoice - voice

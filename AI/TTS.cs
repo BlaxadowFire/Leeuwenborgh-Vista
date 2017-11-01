@@ -1,4 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.IO;
+using System.Threading;
 using System.Speech.Synthesis;
 
 namespace AI
@@ -6,7 +12,7 @@ namespace AI
     class Tts
     {
         public static SpeechSynthesizer Ss = new SpeechSynthesizer();
-        //public static List<string> voices;
+        public static List<string> voices = new List<string>();
         public static void TextToSpeech()
         {
             Ss.Volume = 100;
@@ -19,11 +25,11 @@ namespace AI
             foreach( InstalledVoice voice in Ss.GetInstalledVoices())
             {
                 Console.WriteLine(i + ".)\t" + voice.VoiceInfo.Name);
-                //voices.Add(voice.VoiceInfo.Name);
+                voices.Add(voice.VoiceInfo.Name);
                 i++;
             }
-            //int voicenumber = input();
-            //_ss.SelectVoice(voices[voicenumber]);
+            int voicenumber = Input();
+            Ss.SelectVoice(voices[voicenumber]);
             Console.ReadKey();
         }
         public static void Speech(string i)
@@ -44,25 +50,19 @@ namespace AI
                 case "NumPad1":
                 case "D1":
                     {
-                        i = 1;
+                        i = 0;
                         break;
                     }
                 case "NumPad2":
                 case "D2":
                     {
-                        i = 2;
+                        i = 1;
                         break;
                     }
                 case "NumPad3":
                 case "D3":
                     {
-                        i = 3;
-                        break;
-                    }
-                case "NumPad4":
-                case "D4":
-                    {
-                        i = 4;
+                        i = 2;
                         break;
                     }
             }

@@ -1,4 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.IO;
 using System.Threading;
 
@@ -146,6 +150,13 @@ namespace AI
                         Console.WriteLine(Program.Write);
                         Tts.Speechsync(Program.Write);
                         Environment.Exit(0);
+                        break;
+                    }
+                case "change voice":
+                case "changevoice":
+                case "voice":
+                    {
+                        Tts.TextToSpeech();
                         break;
                     }
                 default:

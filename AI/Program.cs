@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.IO;
 using System.Threading;
 
@@ -45,7 +47,7 @@ namespace AI
 
 
             Console.Title = "Nando AI";
-            //TTS.TextToSpeech();
+            //Tts.TextToSpeech();
             Start();
         }
         public static void Start()
