@@ -216,7 +216,9 @@ namespace Subwaj
                             case "D1":
                                 if (Program.BlnPuzzle1Complete == false)
                                 {
+                                    Console.Clear();
                                     Console.WriteLine("You must finish the puzzle first.");
+                                    Thread.Sleep(1000);
                                 }
                                 else
                                 {
@@ -281,7 +283,9 @@ namespace Subwaj
                             case "D1":
                                 if (Program.BlnPuzzle2Complete == false)
                                 {
+                                    Console.Clear();
                                     Console.WriteLine("You must finish the puzzle first.");
+                                    Thread.Sleep(1000);
                                 }
                                 else
                                 {
@@ -395,7 +399,9 @@ namespace Subwaj
                             case "D1":
                                 if (Program.BlnPuzzle3Complete == false)
                                 {
+                                    Console.Clear();
                                     Console.WriteLine("You must finish the puzzle first.");
+                                    Thread.Sleep(1000);
                                 }
                                 else
                                 {
@@ -456,7 +462,9 @@ namespace Subwaj
                             case "D1":
                                 if (Program.BlnPuzzle4Complete == false)
                                 {
+                                    Console.Clear();
                                     Console.WriteLine("You must finish the puzzle first.");
+                                    Thread.Sleep(1000);
                                 }
                                 else
                                 {
@@ -709,9 +717,18 @@ namespace Subwaj
                             case "NumPad5":
                             case "D5":
                             {
-                                Program.HALL10();
-                                break;
-                            }
+                                    if (Program.IntKey == 1)
+                                    {
+                                        Program.HALL10();
+                                    }
+                                    else
+                                    {
+                                        Console.Clear();
+                                        Console.WriteLine("You need a key to open this door.");
+                                        Thread.Sleep(1000);
+                                    }
+                                    break;
+                                }
                             default:
                             {
                                 BackToCurrentRoom();
@@ -762,8 +779,17 @@ namespace Subwaj
                             case "NumPad6":
                             case "D6":
                             {
-                                Program.HALL8();
-                                break;
+                                    if (Program.IntKey == 1)
+                                    {
+                                        Program.HALL8();
+                                    }
+                                    else
+                                    {
+                                        Console.Clear();
+                                        Console.WriteLine("You need a key to open this door.");
+                                        Thread.Sleep(1000);
+                                    }
+                                    break;
                             }
                             default:
                             {

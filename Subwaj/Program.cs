@@ -698,6 +698,7 @@ namespace Subwaj
         }
         public static void HALL9()
         {
+            CurrentRoom = StrHall9;
             Console.Clear();
             if (BlnHall9Story == false)
             {
@@ -710,6 +711,7 @@ namespace Subwaj
         }
         public static void HALL10()
         {
+            CurrentRoom = StrHall10;
             Console.Clear();
             if (BlnHall10Story == false)
             {
@@ -722,6 +724,7 @@ namespace Subwaj
         }
         public static void HALL11()
         {
+            CurrentRoom = StrHall11;
             Console.Clear();
             if (BlnHall11Story == false)
             {
