@@ -814,6 +814,35 @@ namespace Subwaj
         }
         public static void HALL13()
         {
+            if (BlnHall13Story == false)
+            {
+                //story
+                //story
+                Console.Clear();
+                string strFilename = StrTxtLocation + "Halls/Hall13/Hall13.txt";
+                string[] IntroText = File.ReadAllLines(strFilename);
+                for (int x = 0; x < IntroText.Length; x++)
+                {
+                    string strIntroText = IntroText[x];
+                    _SS.SpeakAsync(strIntroText);
+                    for (int z = 0; z < strIntroText.Length; z++)
+                    {
+                        Console.Write(strIntroText[z]);
+                        if (strIntroText[z] == ',')
+                        {
+                            Thread.Sleep(IntSleep400); //400
+                        }
+                        Thread.Sleep(40); //40
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(IntSleep400); //400
+
+                }
+                Thread.Sleep(1000);
+                Console.Clear();
+                BlnHall13Story = true;
+            }
+
             CurrentRoom = StrHall13;
             Console.Clear();
             if (BlnHall13Story == false)
