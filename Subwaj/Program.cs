@@ -613,33 +613,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall2;
             Console.Clear();
-            if (BlnHall2Story == false)
-            {
-                //story
-                //story
-                string strFilename = StrTxtLocation + "Halls/Hall2/Hall2.txt";
-                string[] IntroText = File.ReadAllLines(strFilename);
-                for (int i = 0; i < IntroText.Length; i++)
-                {
-                    string strIntroText = IntroText[i];
-                    _SS.SpeakAsync(strIntroText);
-                    for (int x = 0; x < strIntroText.Length; x++)
-                    {
-                        Console.Write(strIntroText[x]);
-                        if (strIntroText[x] == ',')
-                        {
-                            Thread.Sleep(IntSleep400); //400
-                        }
-                        Thread.Sleep(40); //40
-                    }
-                    Console.Write("\r\n");
-                    Thread.Sleep(IntSleep400); //400
 
-                }
-                Thread.Sleep(1000);
-                Console.Clear();
-                BlnHall2Story = true;
-            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall2.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
+using System.Speech.Synthesis;
 
 
 /* Console.Write("Dit ");
@@ -19,6 +20,38 @@ namespace Subwaj
 {
     class Puzzle1
     {
+        //TTS
+        public static System.Media.SoundPlayer Player = new System.Media.SoundPlayer();
+        public static string StrTtsLocation = "files/story/TTS/";
+        public static string StrTxtLocation = "files/story/";
+
+        //Story read (so you don't get the story every time you go into the room)
+        public static bool BlnRoom1Story = false;
+        public static bool BlnRoom2Story = false;
+        public static bool BlnRoom3Story = false;
+        public static bool BlnRoom4Story = false;
+        public static bool BlnRoom5Story = false;
+        public static bool BlnRoom6Story = false;
+        public static bool BlnRoom7Story = false;
+        public static bool BlnHall1Story = false;
+        public static bool BlnHall2Story = false;
+        public static bool BlnHall3Story = false;
+        public static bool BlnHall4Story = false;
+        public static bool BlnHall5Story = false;
+        public static bool BlnHall6Story = false;
+        public static bool BlnHall7Story = false;
+        public static bool BlnHall8Story = false;
+        public static bool BlnHall9Story = false;
+        public static bool BlnHall10Story = false;
+        public static bool BlnHall11Story = false;
+        public static bool BlnHall12Story = false;
+        public static bool BlnHall13Story = false;
+        public static bool BlnHall14Story = false;
+
+        //sleep
+        public static int IntSleep400 = 500; //400
+
+
         public static string A = "1";
         public static string B = "2";
         public static string C = "3";
@@ -44,6 +77,36 @@ namespace Subwaj
 
         public static void StartPuzzle1()
         {
+            if (BlnHall2Story == false)
+            {
+                //story
+                //story
+                Console.Clear();
+                string strFilename = StrTxtLocation + "Halls/Hall2/Hall2.txt";
+                string[] IntroText = File.ReadAllLines(strFilename);
+                for (int i = 0; i < IntroText.Length; i++)
+                {
+                    string strIntroText = IntroText[i];
+                    Program._SS.SpeakAsync(strIntroText);
+                    for (int x = 0; x < strIntroText.Length; x++)
+                    {
+                        Console.Write(strIntroText[x]);
+                        if (strIntroText[x] == ',')
+                        {
+                            Thread.Sleep(IntSleep400); //400
+                        }
+                        Thread.Sleep(40); //40
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(IntSleep400); //400
+
+                }
+                Thread.Sleep(1000);
+                Console.Clear();
+                BlnHall2Story = true;
+            }
+
+
             do
             {
                 strPlayer1 = Environment.UserName;
