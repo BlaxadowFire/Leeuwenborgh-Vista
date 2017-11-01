@@ -5,16 +5,48 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
+using System.Speech.Synthesis;
 
 namespace Subwaj
 {
     class Puzzle2
     {
+
+
         public static string answer = string.Empty;
         public Puzzle2() {/*Start methode*/}
 
         public static void StartPuzzle2()
         {
+            if (Program.BlnPuzzle2 == false)
+            {
+                //story
+                //story
+                Console.Clear();
+                string strFilename = Program.StrTxtLocation + "Halls/Hall2/Hall2.txt";
+                string[] IntroText = File.ReadAllLines(strFilename);
+                for (int x = 0; x < IntroText.Length; x++)
+                {
+                    string strIntroText = IntroText[x];
+                    Program._SS.SpeakAsync(strIntroText);
+                    for (int z = 0; z < strIntroText.Length; z++)
+                    {
+                        Console.Write(strIntroText[z]);
+                        if (strIntroText[z] == ',')
+                        {
+                            Thread.Sleep(Program.IntSleep400); //400
+                        }
+                        Thread.Sleep(40); //40
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(Program.IntSleep400); //400
+
+                }
+                Thread.Sleep(1000);
+                Console.Clear();
+                Program.BlnPuzzle2 = true;
+            }
+
             Console.Clear();
             string[] strQuestionFile = File.ReadAllLines("files/Puzzles/Puzzle2/Questions.txt");
             string[] strAnserFile = File.ReadAllLines("files/Puzzles/Puzzle2/Answers.txt");
