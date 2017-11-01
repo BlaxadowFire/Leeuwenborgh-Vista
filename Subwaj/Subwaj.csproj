@@ -97,7 +97,9 @@
     <Content Include="files\story\Rooms\Room2\Room2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Rooms\Room4\Room4.txt" />
+    <Content Include="files\story\Rooms\Room4\Room4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Compile Include="puzzle4.cs" />
     <Compile Include="Debug.cs" />
     <Compile Include="Errors.cs" />

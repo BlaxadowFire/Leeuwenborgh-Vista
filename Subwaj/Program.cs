@@ -106,6 +106,11 @@ namespace Subwaj
         public static bool BlnHall12Story = false;
         public static bool BlnHall13Story = false;
         public static bool BlnHall14Story = false;
+        public static bool BlnPuzzle1     = false;
+        public static bool BlnPuzzle2     = false;
+        public static bool BlnPuzzle3     = false;
+        public static bool BlnPuzzle4     = false;
+
 
         //sleep
         public static int IntSleep400 = 500; //400
@@ -542,6 +547,35 @@ namespace Subwaj
         }
         public static void ROOM4()
         {
+            if (BlnRoom4Story == false)
+            {
+                //story
+                //story
+                Console.Clear();
+                string strFilename = StrTxtLocation + "Rooms/Room4/Room4.txt";
+                string[] IntroText = File.ReadAllLines(strFilename);
+                for (int x = 0; x < IntroText.Length; x++)
+                {
+                    string strIntroText = IntroText[x];
+                    _SS.SpeakAsync(strIntroText);
+                    for (int z = 0; z < strIntroText.Length; z++)
+                    {
+                        Console.Write(strIntroText[z]);
+                        if (strIntroText[z] == ',')
+                        {
+                            Thread.Sleep(IntSleep400); //400
+                        }
+                        Thread.Sleep(40); //40
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(IntSleep400); //400
+
+                }
+                Thread.Sleep(1000);
+                Console.Clear();
+                BlnRoom4Story = true;
+            }
+
             CurrentRoom = StrRoom4;
             Console.Clear();
             if (BlnRoom4Story == false)
@@ -581,6 +615,35 @@ namespace Subwaj
         }
         public static void ROOM7()
         {
+            if (BlnRoom7Story == false)
+            {
+                //story
+                //story
+                Console.Clear();
+                string strFilename = StrTxtLocation + "Rooms/BossRoom/Boss.txt";
+                string[] IntroText = File.ReadAllLines(strFilename);
+                for (int x = 0; x < IntroText.Length; x++)
+                {
+                    string strIntroText = IntroText[x];
+                    _SS.SpeakAsync(strIntroText);
+                    for (int z = 0; z < strIntroText.Length; z++)
+                    {
+                        Console.Write(strIntroText[z]);
+                        if (strIntroText[z] == ',')
+                        {
+                            Thread.Sleep(IntSleep400); //400
+                        }
+                        Thread.Sleep(40); //40
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(IntSleep400); //400
+
+                }
+                Thread.Sleep(1000);
+                Console.Clear();
+                BlnRoom7Story = true;
+            }
+
             CurrentRoom = StrRoom7;
             Console.Clear();
             if (BlnRoom7Story == false)
@@ -613,33 +676,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall2;
             Console.Clear();
-            if (BlnHall2Story == false)
-            {
-                //story
-                //story
-                string strFilename = StrTxtLocation + "Halls/Hall2/Hall2.txt";
-                string[] IntroText = File.ReadAllLines(strFilename);
-                for (int i = 0; i < IntroText.Length; i++)
-                {
-                    string strIntroText = IntroText[i];
-                    _SS.SpeakAsync(strIntroText);
-                    for (int x = 0; x < strIntroText.Length; x++)
-                    {
-                        Console.Write(strIntroText[x]);
-                        if (strIntroText[x] == ',')
-                        {
-                            Thread.Sleep(IntSleep400); //400
-                        }
-                        Thread.Sleep(40); //40
-                    }
-                    Console.Write("\r\n");
-                    Thread.Sleep(IntSleep400); //400
 
-                }
-                Thread.Sleep(1000);
-                Console.Clear();
-                BlnHall2Story = true;
-            }
             Console.WriteLine(File.ReadAllText("files/Halls/Hall2.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -724,6 +761,7 @@ namespace Subwaj
         }
         public static void HALL9()
         {
+            CurrentRoom = StrHall9;
             Console.Clear();
             if (BlnHall9Story == false)
             {
@@ -736,6 +774,7 @@ namespace Subwaj
         }
         public static void HALL10()
         {
+            CurrentRoom = StrHall10;
             Console.Clear();
             if (BlnHall10Story == false)
             {
@@ -748,6 +787,7 @@ namespace Subwaj
         }
         public static void HALL11()
         {
+            CurrentRoom = StrHall11;
             Console.Clear();
             if (BlnHall11Story == false)
             {
@@ -774,6 +814,35 @@ namespace Subwaj
         }
         public static void HALL13()
         {
+            if (BlnHall13Story == false)
+            {
+                //story
+                //story
+                Console.Clear();
+                string strFilename = StrTxtLocation + "Halls/Hall13/Hall13.txt";
+                string[] IntroText = File.ReadAllLines(strFilename);
+                for (int x = 0; x < IntroText.Length; x++)
+                {
+                    string strIntroText = IntroText[x];
+                    _SS.SpeakAsync(strIntroText);
+                    for (int z = 0; z < strIntroText.Length; z++)
+                    {
+                        Console.Write(strIntroText[z]);
+                        if (strIntroText[z] == ',')
+                        {
+                            Thread.Sleep(IntSleep400); //400
+                        }
+                        Thread.Sleep(40); //40
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(IntSleep400); //400
+
+                }
+                Thread.Sleep(1000);
+                Console.Clear();
+                BlnHall13Story = true;
+            }
+
             CurrentRoom = StrHall13;
             Console.Clear();
             if (BlnHall13Story == false)
