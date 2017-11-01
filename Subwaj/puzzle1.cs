@@ -385,7 +385,7 @@ namespace Subwaj
                 Puzzle1.FuncRestart();
             }
 
-            Console.WriteLine("Congratulations {0}, you Won!", strCurrentPlayer);
+            Console.WriteLine("Congratulations {0}, you Won!\r\nPress any key to continue!", strCurrentPlayer);
             
             Console.ReadKey().Key.ToString();
             Program.BlnPuzzle1Complete = true;

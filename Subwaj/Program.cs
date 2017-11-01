@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.IO;
+using System.Speech.Synthesis;
 
 namespace Subwaj
 {
@@ -9,6 +10,8 @@ namespace Subwaj
     {
         public static string StrAnswer = string.Empty;
         public static int IntCode;
+
+        public static SpeechSynthesizer _SS = new SpeechSynthesizer();
 
         public static int IntKey;
         //Here we will place the public static variables
@@ -64,7 +67,7 @@ namespace Subwaj
         public static string StrHall14 = "HALL14";
 
         //HUD STUFF
-        public static int IntTimerSeconds = 60;
+        public static int IntTimerSeconds = 59;
         public static int IntTimerMinutes = 60;
         public static ThreadStart TsTimer = TimerFunction; 
         public static Thread TimerThread = new Thread(TsTimer);
@@ -105,7 +108,7 @@ namespace Subwaj
         public static bool BlnHall14Story = false;
 
         //sleep
-        public static int IntSleep400 = 400; //400
+        public static int IntSleep400 = 500; //400
 
         public static void Main(string[] args)
         {
@@ -113,6 +116,11 @@ namespace Subwaj
             //Loops the program
             Console.WindowWidth = 120;
             Console.WindowHeight = 30;
+            Console.CursorVisible = false;
+
+            _SS.Rate = 1;
+            _SS.Volume = 100;
+
             do
             {
                 Console.WriteLine("\t\t\t\tPlease turn on the volume for best user experience");
@@ -614,6 +622,7 @@ namespace Subwaj
                 for (int i = 0; i < IntroText.Length; i++)
                 {
                     string strIntroText = IntroText[i];
+                    _SS.SpeakAsync(strIntroText);
                     for (int x = 0; x < strIntroText.Length; x++)
                     {
                         Console.Write(strIntroText[x]);
@@ -622,7 +631,6 @@ namespace Subwaj
                             Thread.Sleep(IntSleep400); //400
                         }
                         Thread.Sleep(40); //40
-
                     }
                     Console.Write("\r\n");
                     Thread.Sleep(IntSleep400); //400
