@@ -11,10 +11,10 @@ namespace Subwaj
 {
     class Puzzle3
     {
-        public static int Room1 = 5;
-        public static int Room2 = 7;
-        public static int Room3 = 2;
-        public static int Room4 = 9;
+        public static int Room1 = RandomNumber();
+        public static int Room2 = RandomNumber();
+        public static int Room3 = RandomNumber();
+        public static int Room4 = RandomNumber();
         public Puzzle3() {/*Start methode*/}
         public static string strcki = string.Empty;
         public static int intcki = 0;
@@ -23,6 +23,12 @@ namespace Subwaj
         public static string strRoom2 = string.Empty;
         public static string strRoom3 = string.Empty;
         public static string strRoom4 = string.Empty;
+
+        public static int RandomNumber()
+        {
+            Random random = new Random();
+            return random.Next(0, 10);
+        }
 
         public static void StartPuzzle3()
         {
@@ -69,7 +75,7 @@ namespace Subwaj
                 do
                 {
                     Console.Clear();
-                    Console.WriteLine("2 4 1 3");
+                    Console.WriteLine("1 2 3 4");
                     Console.WriteLine("{0} {1} {2} {3}", strRoom1, strRoom2, strRoom3, strRoom4);
                     Program.DrawBottom();
                     strcki = Console.ReadKey().Key.ToString();
@@ -213,7 +219,7 @@ namespace Subwaj
                     }
                 } while (counter <= 3);
                 Console.Clear();
-                Console.WriteLine("2 4 1 3");
+                Console.WriteLine("1 2 3 4");
                 Console.WriteLine("{0} {1} {2} {3}", strRoom1, strRoom2, strRoom3, strRoom4);
                 Thread.Sleep(250);
             } while (i <= 3);
