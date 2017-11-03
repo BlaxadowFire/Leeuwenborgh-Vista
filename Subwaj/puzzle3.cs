@@ -219,7 +219,7 @@ namespace Subwaj
                     }
                 } while (counter <= 3);
                 Console.Clear();
-                Console.WriteLine("2 4 1 3");
+                Console.WriteLine("1 2 3 4");
                 Console.WriteLine("{0} {1} {2} {3}", strRoom1, strRoom2, strRoom3, strRoom4);
                 Thread.Sleep(250);
             } while (i <= 3);
