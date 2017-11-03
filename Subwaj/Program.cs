@@ -66,8 +66,8 @@ namespace Subwaj
         public static string StrHall14 = "HALL14";
 
         //HUD STUFF
-        public static int IntTimerSeconds = 59;
-        public static int IntTimerMinutes = 60;
+        public static int IntTimerSeconds = 60;
+        public static int IntTimerMinutes = 59;
         public static ThreadStart TsTimer = TimerFunction; 
         public static Thread TimerThread = new Thread(TsTimer);
         public static int IntCursorpositionLeft;
