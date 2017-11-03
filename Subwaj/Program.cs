@@ -12,6 +12,7 @@ namespace Subwaj
         public static int IntCode;
 
 
+
         public static int IntKey;
         //Here we will place the public static variables
         public static Random RandomForeGround = new Random();  //Gets used for random foregroundcolor.
