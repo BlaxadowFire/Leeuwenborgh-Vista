@@ -18,8 +18,23 @@ namespace Subwaj
         public static bool Lever8;
         public static bool Lever9;
 
+        public static int intLever1;
+        public static int intLever2;
+        public static int intLever3;
+        public static int intLever4;
+        public static int intLever5;
+        public static int intLever6;
+        public static int intLever7;
+        public static int intLever8;
+        public static int intLever9;
+
+        public static int intAnswer = new Random().Next(50,511);
+
+        public static int intLeverAnswer;
+
         public static void StartPuzzle4()
         {
+            
             if (Program.BlnPuzzle4 == false)
             {
                 //story
@@ -48,7 +63,7 @@ namespace Subwaj
                 Console.Clear();
                 Program.BlnPuzzle4 = true;
             }
-
+            
             {
                 do
                 {
@@ -58,12 +73,107 @@ namespace Subwaj
                     Program.DrawBottom();
                     var cki = CheckInput();
                     CheckLever(cki);
-                } while (!(Lever1 && Lever3 && Lever5 && Lever6 && Lever2 == false && Lever4 == false &&
-                           Lever7 == false && Lever8 == false && Lever9 == false));
+                    Levercalculator();
+                } while (intLeverAnswer != intAnswer);
             }
             Console.Clear();
             Draw();
+            Console.WriteLine("You completed the puzzle!");
+            Thread.Sleep(2000);
             Program.BlnPuzzle4Complete = true;
+        }
+        public static void Levercalculator()
+        {
+            if(Lever1)
+            {
+                intLever1 = 256;
+
+            }
+            else
+            {
+                intLever1 = 0;
+            }
+            if (Lever2)
+            {
+                intLever2 = 128;
+
+            }
+            else
+            {
+                intLever2 = 0;
+            }
+        
+            if (Lever3)
+            {
+                intLever3 = 64;
+
+            }
+            else
+            {
+                intLever3 = 0;
+            }
+            
+            if (Lever4)
+            {
+                intLever4 = 32;
+
+            }
+            else
+            {
+                intLever4 = 0;
+            }
+                
+            if (Lever5)
+            {
+                intLever5 = 16;
+
+            }
+            else
+            {
+                intLever5 = 0;
+            }
+                
+            if (Lever6)
+            {
+                intLever6 = 8;
+
+            }
+            else
+            {
+                intLever6 = 0;
+            }
+                
+            if (Lever7)
+            {
+                intLever7 = 4;
+
+            }
+            else
+            {
+                intLever7 = 0;
+            }
+                
+            if (Lever8)
+            {
+                intLever8 = 2;
+
+            }
+            else
+            {
+                intLever8 = 0;
+            }
+                
+            if (Lever9)
+            {
+                intLever9 = 1;
+
+            }
+            else
+            {
+                intLever9 = 0;
+            }
+        intLeverAnswer = intLever1 + intLever2 + intLever3 + intLever4 + intLever5 + intLever6 + intLever7 + intLever8 + intLever9;
+            
         }
 
         public static void DrawNumberBorder(string i)
@@ -190,7 +300,7 @@ namespace Subwaj
 
         public static void Draw()
         {
-            Console.WriteLine("342");
+            Console.WriteLine(intAnswer);
             DrawNumbers();
             Console.SetCursorPosition(10, 10);
             CheckLeverOnOff(Lever1);
