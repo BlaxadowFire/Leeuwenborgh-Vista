@@ -79,6 +79,11 @@ namespace Subwaj
         public static string StrTtsLocation = "files/story/TTS/";
         public static string StrTxtLocation = "files/story/";
         public static SpeechSynthesizer _SS = new SpeechSynthesizer();
+        public static void voice()
+        {
+            
+
+        }
 
         //boolean's for code menu
         public static bool BlnBoss = false;
@@ -119,6 +124,7 @@ namespace Subwaj
         public static void Main(string[] args)
         {
             Console.Title = "NOT A GAME";
+            voice();
             //Loops the program
             Console.WindowWidth = 120;
             Console.WindowHeight = 30;
