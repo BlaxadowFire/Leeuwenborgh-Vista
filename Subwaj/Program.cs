@@ -392,9 +392,9 @@ namespace Subwaj
         {
             Console.Clear();
             Console.WriteLine("If you want the extra DLC options, you can donate any amount of money to:");
-            Console.BackgroundColor = ConsoleColor.DarkGreen;
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("paypal.me/NandoK");
+            Console.BackgroundColor = ConsoleColor.White;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("paypal.me/NandoK ");
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("The Current available dlc is: Gray Background \r\nPress any key to continue.");
