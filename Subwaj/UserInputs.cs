@@ -1160,9 +1160,21 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Program.ROOM7();
-                                break;
-                            }
+                                    if (Program.BlnBoss)
+                                    {
+                                       
+                                        Program.ROOM7();
+                                    }
+                                    else
+                                    {
+                                        Console.Clear();
+                                        string StrFileName = "files/story/Halls/Hall14/Hall14.txt";
+                                        Console.WriteLine(File.ReadAllText(StrFileName));
+                                        Thread.Sleep(1100);
+                                        BackToCurrentRoom();
+                                    }
+                                    break;
+                                }
                             case "NumPad2":
                             case "D2":
                             {
