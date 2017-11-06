@@ -99,12 +99,15 @@ namespace Subwaj
                 } while (blnGameOVer == false);
                 lblplayagain:
                 Console.Clear();
+                Program._SS.SpeakAsync("It's a tie!");
                 Console.WriteLine("It's a tie!");
+                Program._SS.SpeakAsync("Do you want to play again? y/n");
                 Console.WriteLine("Do you want to play again? y/n");
                 restart = Console.ReadKey().Key.ToString();
                 if (restart == "N")
                 {
                     Console.Clear();
+                    Program._SS.SpeakAsync("YOU HAVE NO CHOICE");
                     Console.WriteLine("YOU HAVE NO CHOICE");
                     Thread.Sleep(1500);
                 }
@@ -145,6 +148,7 @@ namespace Subwaj
                         }
                         else
                         {
+                            Program._SS.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
                             Console.ReadKey().Key.ToString();
                             Puzzle1.StartPuzzle1();
@@ -160,6 +164,7 @@ namespace Subwaj
                         }
                         else
                         {
+                            Program._SS.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
                             Console.ReadKey().Key.ToString();
                             Puzzle1.StartPuzzle1();
@@ -175,6 +180,7 @@ namespace Subwaj
                         }
                         else
                         {
+                            Program._SS.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
                             Console.ReadKey().Key.ToString();
                             Puzzle1.StartPuzzle1();
@@ -190,6 +196,7 @@ namespace Subwaj
                         }
                         else
                         {
+                            Program._SS.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
                             Console.ReadKey().Key.ToString();
                             Puzzle1.StartPuzzle1();
@@ -205,7 +212,7 @@ namespace Subwaj
                         }
                         else
                         {
-
+                            Program._SS.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
                             Console.ReadKey().Key.ToString();
                             Puzzle1.StartPuzzle1();
@@ -221,6 +228,7 @@ namespace Subwaj
                         }
                         else
                         {
+                            Program._SS.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
                             Console.ReadKey().Key.ToString();
                             Puzzle1.StartPuzzle1();
@@ -236,6 +244,7 @@ namespace Subwaj
                         }
                         else
                         {
+                            Program._SS.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
                             Console.ReadKey().Key.ToString();
                             Puzzle1.StartPuzzle1();
@@ -251,6 +260,7 @@ namespace Subwaj
                         }
                         else
                         {
+                            Program._SS.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
                             Console.ReadKey().Key.ToString();
                             Puzzle1.StartPuzzle1();
@@ -266,6 +276,7 @@ namespace Subwaj
                         }
                         else
                         {
+                            Program._SS.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
                             Console.ReadKey().Key.ToString();
                             Puzzle1.StartPuzzle1();
@@ -298,8 +309,9 @@ namespace Subwaj
                     }
                 default:
                     {
+                        Program._SS.SpeakAsync("Error, give valid input");
                         Console.WriteLine("Error, give valid input");
-                        Console.ReadKey().Key.ToString();
+                        Thread.Sleep(1500);
                         Puzzle1.StartPuzzle1();
                         break;
                     }
@@ -368,6 +380,7 @@ namespace Subwaj
         public static void DrawGrid()
         {
             Console.Clear();
+            Program._SS.SpeakAsync("Last turn: " + strUserInput);
             Console.WriteLine("Last turn:{0}", strUserInput);
             Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine("{0} Give input\r\n\r\n", strCurrentPlayer);
@@ -410,11 +423,13 @@ namespace Subwaj
             GridColor(); Console.Write(I); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
             if (strPlayer2 == "THE MOST AMAZING AI EVER CREATED" && strPlayer2 == strCurrentPlayer)
             {
+                Program._SS.SpeakAsync("YOU JUST LOST FROM " + strPlayer2);
                 Console.WriteLine("YOU JUST LOST FROM {0}", strPlayer2);
                 Thread.Sleep(1500);
                 Puzzle1.FuncRestart();
             }
 
+            Program._SS.SpeakAsync("Congratulations " + strCurrentPlayer + ", you Won!\r\nPress any key to continue!");
             Console.WriteLine("Congratulations {0}, you Won!\r\nPress any key to continue!", strCurrentPlayer);
             
             Console.ReadKey().Key.ToString();

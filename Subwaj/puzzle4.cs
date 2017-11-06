@@ -3,8 +3,10 @@ using System.Threading;
 using System.IO;
 using System.Speech.Synthesis;
 
+//Room6
+
 namespace Subwaj
-{
+{   
     internal class Puzzle4
     {
         public static string[] lever = File.ReadAllLines("files/Puzzles/Puzzle4/lever.txt");
@@ -178,6 +180,11 @@ namespace Subwaj
 
         public static void DrawNumberBorder(string i)
         {
+            if (Console.CursorLeft <= 4)
+            {
+                Console.CursorLeft = 4;
+            }
+
             Light(i);
             Console.CursorLeft = Console.CursorLeft - 1;
             Console.Write("╔═╗");
