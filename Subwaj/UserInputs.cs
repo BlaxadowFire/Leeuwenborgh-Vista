@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
 
@@ -27,12 +23,12 @@ namespace Subwaj
             Program.DrawBottom();
             Console.SetCursorPosition(Console.CursorLeft, 28);
             Program.Cki = Console.ReadKey();
-            string strCKI = Program.Cki.Key.ToString();
+            string strCki = Program.Cki.Key.ToString();
             switch (Program.CurrentRoom)
             {
                 case "MainMenu":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "NumPad1":
                             case "D1":
@@ -100,16 +96,16 @@ namespace Subwaj
                                     Console.Clear();
                                     Console.ForegroundColor = ConsoleColor.DarkGreen;
                                     Console.BackgroundColor = ConsoleColor.DarkRed;
-                                    Console.WriteLine("ControlKeyInfo output debug");
+                                    Console.WriteLine("ControlKeyInfo output DebugMode");
                                     Console.BackgroundColor = ConsoleColor.Black;
                                     Console.ForegroundColor = ConsoleColor.White;
                                     do
                                     {
 
                                         Program.Cki = Console.ReadKey();
-                                        strCKI = Program.Cki.Key.ToString();
+                                        strCki = Program.Cki.Key.ToString();
                                         Console.WriteLine("");
-                                        Console.WriteLine("OUTPUT:" + strCKI);
+                                        Console.WriteLine("OUTPUT:" + strCki);
                                     } while (true);
                                 }
 
@@ -118,7 +114,7 @@ namespace Subwaj
                     }
                 case "InGameMenu":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                             case "D1":
@@ -174,7 +170,7 @@ namespace Subwaj
                     }
                 case "ROOM1":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                                 {
@@ -184,7 +180,7 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                                 {
-                                    Program.HALL1();
+                                    Program.Hall1();
                                     break;
                                 }
                             case "NumPad2":
@@ -218,7 +214,7 @@ namespace Subwaj
                     }
                 case "ROOM2":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                                 {
@@ -235,14 +231,14 @@ namespace Subwaj
                                 }
                                 else
                                 {
-                                    Program.HALL2();
+                                    Program.Hall2();
                                 }
                                 break;
                     
                             case "NumPad2":
                             case "D2":
                                 {
-                                    Program.HALL1();
+                                    Program.Hall1();
                                     break;
                                 }
                             case "NumPad3":
@@ -285,7 +281,7 @@ namespace Subwaj
                     }
                 case "ROOM3":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                                 {
@@ -302,13 +298,13 @@ namespace Subwaj
                                 }
                                 else
                                 {
-                                    Program.HALL4();
+                                    Program.Hall4();
                                 }
                                 break;
                             case "NumPad2":
                             case "D2":
                                 {
-                                    Program.HALL2();
+                                    Program.Hall2();
                                     break;
                                 }
                             case "NumPad3":
@@ -357,7 +353,7 @@ namespace Subwaj
                     }
                 case "ROOM4":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                                 {
@@ -367,13 +363,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                                 {
-                                    Program.HALL6();
+                                    Program.Hall6();
                                     break;
                                 }
                             case "NumPad2":
                             case "D2":
                                 {
-                                    Program.HALL5();
+                                    Program.Hall5();
                                     break;
                                 }
                             case "NumPad3":
@@ -401,7 +397,7 @@ namespace Subwaj
                     }
                 case "ROOM5":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                                 {
@@ -418,13 +414,13 @@ namespace Subwaj
                                 }
                                 else
                                 {
-                                    Program.HALL7();
+                                    Program.Hall7();
                                 }
                                 break;
                             case "NumPad2":
                             case "D2":
                                 {
-                                    Program.HALL6();
+                                    Program.Hall6();
                                     break;
                                 }
                             case "NumPad3":
@@ -464,7 +460,7 @@ namespace Subwaj
                     }
                 case "ROOM6":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                                 {
@@ -481,13 +477,13 @@ namespace Subwaj
                                 }
                                 else
                                 {
-                                    Program.HALL13();
+                                    Program.Hall13();
                                 }
                                 break;
                             case "NumPad2":
                             case "D2":
                                 {
-                                    Program.HALL12();
+                                    Program.Hall12();
                                     break;
                                 }
                             case "NumPad3":
@@ -527,7 +523,7 @@ namespace Subwaj
                     }
                 case "ROOM7":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                                 {
@@ -548,7 +544,7 @@ namespace Subwaj
                             case "D2":
                             case "NumPad2":
                                 {
-                                    Program.HALL14();
+                                    Program.Hall14();
                                     break;
                                 }
                             case "NumPad3":
@@ -573,7 +569,7 @@ namespace Subwaj
                     }
                 case "HALL1":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                             {
@@ -583,13 +579,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Program.ROOM2();
+                                Program.Room2();
                                 break;
                             }
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.ROOM1();
+                                Program.Room1();
                                 break;
                             }
                             case "NumPad3":
@@ -614,7 +610,7 @@ namespace Subwaj
                     }
                 case "HALL2":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                             {
@@ -624,13 +620,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Program.ROOM3();
+                                Program.Room3();
                                 break;
                             }
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.ROOM2();
+                                Program.Room2();
                                 break;
                             }
                             case "NumPad3":
@@ -655,7 +651,7 @@ namespace Subwaj
                     }
                 case "HALL3":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                             {
@@ -671,7 +667,7 @@ namespace Subwaj
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.ROOM3();
+                                Program.Room3();
                                 break;
                             }
                             case "NumPad3":
@@ -696,7 +692,7 @@ namespace Subwaj
                     }
                 case "HALL4":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                             {
@@ -706,13 +702,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Program.HALL5();
+                                Program.Hall5();
                                 break;
                             }
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.ROOM3();
+                                Program.Room3();
                                 break;
                             }
                             case "NumPad3":
@@ -732,7 +728,7 @@ namespace Subwaj
                             {
                                     if (Program.IntKey == 1)
                                     {
-                                        Program.HALL10();
+                                        Program.Hall10();
                                     }
                                     else
                                     {
@@ -752,7 +748,7 @@ namespace Subwaj
                     }
                 case "HALL5":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                             {
@@ -762,13 +758,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Program.ROOM4();
+                                Program.Room4();
                                 break;
                             }
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.HALL4();
+                                Program.Hall4();
                                 break;
                             }
                             case "NumPad3":
@@ -786,7 +782,7 @@ namespace Subwaj
                             case "NumPad5":
                             case "D5":
                             {
-                                Program.HALL11();
+                                Program.Hall11();
                                 break;
                             }
                             case "NumPad6":
@@ -794,7 +790,7 @@ namespace Subwaj
                             {
                                     if (Program.IntKey == 1)
                                     {
-                                        Program.HALL8();
+                                        Program.Hall8();
                                     }
                                     else
                                     {
@@ -814,7 +810,7 @@ namespace Subwaj
                     }
                 case "HALL6":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                             {
@@ -824,13 +820,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Program.ROOM5();
+                                Program.Room5();
                                 break;
                             }
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.ROOM4();
+                                Program.Room4();
                                 break;
                             }
                             case "NumPad3":
@@ -855,7 +851,7 @@ namespace Subwaj
                     }
                 case "HALL7":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                             {
@@ -865,13 +861,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Program.HALL8();
+                                Program.Hall8();
                                 break;
                             }
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.ROOM5();
+                                Program.Room5();
                                 break;
                             }
                             case "NumPad3":
@@ -896,7 +892,7 @@ namespace Subwaj
                     }
                 case "HALL8":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                                 {
@@ -906,13 +902,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                                 {
-                                    Program.HALL12();
+                                    Program.Hall12();
                                     break;
                                 }
                             case "NumPad2":
                             case "D2":
                                 {
-                                    Program.HALL7();
+                                    Program.Hall7();
                                     break;
                                 }
                             case "NumPad3":
@@ -930,13 +926,13 @@ namespace Subwaj
                             case "NumPad5":
                             case "D5":
                                 {
-                                    Program.HALL9();
+                                    Program.Hall9();
                                     break;
                                 }
                             case "NumPad6":
                             case "D6":
                                 {
-                                    Program.HALL5();
+                                    Program.Hall5();
                                     break;
                                 }
                             default:
@@ -949,7 +945,7 @@ namespace Subwaj
                     }
                 case "HALL9":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                             {
@@ -959,13 +955,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Program.HALL10();
+                                Program.Hall10();
                                 break;
                             }
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.HALL8();
+                                Program.Hall8();
                                 break;
                             }
                             case "NumPad3":
@@ -990,7 +986,7 @@ namespace Subwaj
                     }
                 case "HALL10":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                             {
@@ -1000,13 +996,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Program.HALL4();
+                                Program.Hall4();
                                 break;
                             }
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.HALL9();
+                                Program.Hall9();
                                 break;
                             }
                             case "NumPad3":
@@ -1031,7 +1027,7 @@ namespace Subwaj
                     }
                 case "HALL11":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                             {
@@ -1047,7 +1043,7 @@ namespace Subwaj
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.HALL5();
+                                Program.Hall5();
                                 break;
                             }
                             case "NumPad3":
@@ -1072,7 +1068,7 @@ namespace Subwaj
                     }
                 case "HALL12":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                             {
@@ -1082,13 +1078,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Program.ROOM6();
+                                Program.Room6();
                                 break;
                             }
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.HALL8();
+                                Program.Hall8();
                                 break;
                             }
                             case "NumPad3":
@@ -1113,7 +1109,7 @@ namespace Subwaj
                     }
                 case "HALL13":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                             {
@@ -1123,13 +1119,13 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Program.HALL14();
+                                Program.Hall14();
                                 break;
                             }
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.ROOM6();
+                                Program.Room6();
                                 break;
                             }
                             case "NumPad3":
@@ -1154,7 +1150,7 @@ namespace Subwaj
                     }
                 case "HALL14":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                             {
@@ -1167,7 +1163,7 @@ namespace Subwaj
                                     if (Program.BlnBoss)
                                     {
                                        
-                                        Program.ROOM7();
+                                        Program.Room7();
                                     }
                                     else
                                     {
@@ -1182,7 +1178,7 @@ namespace Subwaj
                             case "NumPad2":
                             case "D2":
                             {
-                                Program.HALL13();
+                                Program.Hall13();
                                 break;
                             }
                             case "NumPad3":
@@ -1228,107 +1224,107 @@ namespace Subwaj
             {
                 case "ROOM1":
                     {
-                        Program.ROOM1();
+                        Program.Room1();
                         break;
                     }
                 case "ROOM2":
                     {
-                        Program.ROOM2();
+                        Program.Room2();
                         break;
                     }
                 case "ROOM3":
                     {
-                        Program.ROOM3();
+                        Program.Room3();
                         break;
                     }
                 case "ROOM4":
                     {
-                        Program.ROOM4();
+                        Program.Room4();
                         break;
                     }
                 case "ROOM5":
                     {
-                        Program.ROOM5();
+                        Program.Room5();
                         break;
                     }
                 case "ROOM6":
                     {
-                        Program.ROOM6();
+                        Program.Room6();
                         break;
                     }
                 case "ROOM7":
                     {
-                        Program.ROOM7();
+                        Program.Room7();
                         break;
                     }
                 case "HALL1":
                     {
-                        Program.HALL1();
+                        Program.Hall1();
                         break;
                     }
                 case "HALL2":
                     {
-                        Program.HALL2();
+                        Program.Hall2();
                         break;
                     }
                 case "HALL3":
                     {
-                        Program.HALL3();
+                        Program.Hall3();
                         break;
                     }
                 case "HALL4":
                     {
-                        Program.HALL4();
+                        Program.Hall4();
                         break;
                     }
                 case "HALL5":
                     {
-                        Program.HALL5();
+                        Program.Hall5();
                         break;
                     }
                 case "HALL6":
                     {
-                        Program.HALL6();
+                        Program.Hall6();
                         break;
                     }
                 case "HALL7":
                     {
-                        Program.HALL7();
+                        Program.Hall7();
                         break;
                     }
                 case "HALL8":
                     {
-                        Program.HALL8();
+                        Program.Hall8();
                         break;
                     }
                 case "HALL9":
                     {
-                        Program.HALL9();
+                        Program.Hall9();
                         break;
                     }
                 case "HALL10":
                     {
-                        Program.HALL10();
+                        Program.Hall10();
                         break;
                     }
                 case "HALL11":
                     {
-                        Program.HALL11();
+                        Program.Hall11();
                         break;
                     }
                 case "HALL12":
                     {
-                        Program.HALL12();
+                        Program.Hall12();
                         break;
                     }
                 case "HALL13":
                     {
-                        Program.HALL13();
+                        Program.Hall13();
                         break;
                     }
                 case "HALL14":
                     {
-                        Program.HALL14();
+                        Program.Hall14();
                         break;
                     }
                 case "InGameMenu":
