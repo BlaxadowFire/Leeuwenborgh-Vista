@@ -1,4 +1,10 @@
-﻿1.)    go to hall 14
+﻿  
+  
+   ╔════════════╗
+   ║   Hall 13  ║                   
+   ╚════════════╝
+
+1.)    go to hall 14
 2.)    go to room 6
 3.)    look at walls
 4.)    press red button
