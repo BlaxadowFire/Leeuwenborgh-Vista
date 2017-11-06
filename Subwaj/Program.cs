@@ -189,7 +189,7 @@ namespace Subwaj
         {
             Console.Clear();
             //story
-            string strUserStart;
+            string strUserStart = string.Empty;
             bool blnLoopQuestion = true;
             
 
@@ -243,29 +243,34 @@ namespace Subwaj
 
             }
             Console.WriteLine("\r\n");
-            if (TimerThread.IsAlive == false)
+            if (!TimerThread.IsAlive)
             {
                 TimerThread.Start();
             }
-            Console.Clear();
+            bool FirstRun = false;
             do
             {
                 Console.Clear();
-                Console.SetCursorPosition(0, 0);
-                Thread.Sleep(50);
-                Console.WriteLine("Ah, you're Finally here: " + Environment.UserName + "!\r\n");
-                Console.WriteLine(File.ReadAllText(StrTxtLocation + "intro/intro.txt"));
-                Thread.Sleep(50);
+                Console.CursorVisible = true;
+                Console.WriteLine("Ah, you're Finally here: " + Environment.UserName + "!");
+                string strIntroText = File.ReadAllText(StrTxtLocation + "intro/intro.txt");
+                Console.Write(strIntroText);
+                
+                if (FirstRun)
+                {
+                    DrawBottom();
+                    strUserStart = Console.ReadLine().ToLower();
+                }
+                else
+                {
+                    FirstRun = true;
+                }
 
-                DrawBottom();
-
-
-                strUserStart = Console.ReadLine().ToLower();
                 if (strUserStart == "start" || strUserStart == "exit")
                 {
                     blnLoopQuestion = false;
                 }
-            } while (blnLoopQuestion == true);
+            } while (blnLoopQuestion);
 
             if (strUserStart == "start")
             {
@@ -984,7 +989,7 @@ namespace Subwaj
         public static void DrawBottom()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.SetCursorPosition(Console.CursorLeft, 27);
+            Console.SetCursorPosition(0, 27);
             Console.WriteLine("════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════");
             Console.ForegroundColor = ConsoleColor.White;
             Console.SetCursorPosition(0, 28);

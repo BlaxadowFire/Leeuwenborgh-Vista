@@ -57,6 +57,7 @@ namespace Subwaj
             {
                 Console.Clear();
                 Console.WriteLine("\r\n\r\n");
+                Program._SS.SpeakAsync(strQuestionFile[i]);
                 Console.WriteLine(strQuestionFile[i] + "\r\n");
 
                 if (WrongAnswer >= 3)
