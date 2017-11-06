@@ -8,9 +8,10 @@ using System.IO;
 
 namespace Subwaj
 {
+    
     class UserInputs
     {
-
+       
         public static void Nothing()
         {
             Console.Clear();
@@ -19,7 +20,7 @@ namespace Subwaj
             Console.Clear();
             BackToCurrentRoom();
         }
-
+        public static bool FirstRun = true;
         //Checks UserInput
         public static void UserInput()
         {
@@ -36,7 +37,15 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                                 {
-                                    Program.MainMenuStart();
+                                    if (FirstRun)
+                                    {
+                                        FirstRun = false;
+                                        Program.MainMenuStart();
+                                    }
+                                    else
+                                    {
+                                        BackToCurrentRoom();
+                                    }
                                     break;
                                 }
 

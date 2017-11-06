@@ -171,10 +171,10 @@ namespace Subwaj
             //story
             string strUserStart;
             bool blnLoopQuestion = true;
-            Player.SoundLocation = StrTtsLocation + "Intro/intro1.wav";
-            Player.Play();
+            
 
             string strIntroTextName = "Ah, you're Finally here: " + Environment.UserName + "!\r\n";
+            _SS.SpeakAsync(strIntroTextName);
             for (int x = 0; x < strIntroTextName.Length; x++)
             {
                 Console.Write(strIntroTextName[x]);
@@ -198,8 +198,7 @@ namespace Subwaj
                 if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 11 || i == 13)
                 {
                     intIntroTts += 1;
-                    Player.SoundLocation = StrTtsLocation + "Intro/intro" + intIntroTts + ".wav";
-                    Player.Play();
+                    _SS.SpeakAsync(IntroText[i]);
                 }
 
 
@@ -263,8 +262,7 @@ namespace Subwaj
                     if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 11 || i == 13)
                     {
                         intIntroTts += 1;
-                        Player.SoundLocation = StrTtsLocation + "Intro/Exit/exit" + intIntroTts + ".wav";
-                        Player.Play();
+                        _SS.SpeakAsync(IntroText[i]);
                     }
 
                     string strIntroText = IntroText[i];
@@ -485,10 +483,14 @@ namespace Subwaj
                 for (int i = 0; i < IntroText.Length; i++)
                 {
 
-                    if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 13 || i == 17)
+                    if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 13 )
                     {
                         intIntroTts += 1;
-                        Player.SoundLocation = StrTtsLocation + "ROOM1/room1-" + intIntroTts + ".wav";
+                        _SS.SpeakAsync(IntroText[i]);
+                    }
+                    else if (i == 17)
+                    {
+                        Player.SoundLocation = StrTtsLocation + "ROOM1/room1-7.wav";
                         Player.Play();
                     }
                     if (i == 12 || i == 15)
