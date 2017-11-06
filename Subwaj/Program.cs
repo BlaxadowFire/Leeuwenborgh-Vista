@@ -670,15 +670,30 @@ namespace Subwaj
 
         public static void Backgroudposition()
         {
-            Console.SetCursorPosition(48, 3);
-            string[] background = File.ReadAllLines("files/backgrounds/backgrounds2.txt");
-            for (int i = 0; i < background.Length; i++)
+            if (CurrentRoom == StrRoom1 || CurrentRoom == StrRoom2 || CurrentRoom == StrRoom3 || CurrentRoom == StrRoom4 || CurrentRoom == StrRoom5 || CurrentRoom == StrRoom6)
             {
-                Console.CursorLeft = 48;
-                Console.Write(background[i]);
-                Console.WriteLine("");
+                Console.SetCursorPosition(48, 3);
+                string[] background = File.ReadAllLines("files/backgrounds/backgrounds2.txt");
+                for (int i = 0; i < background.Length; i++)
+                {
+                    Console.CursorLeft = 48;
+                    Console.Write(background[i]);
+                    Console.WriteLine("");
+                }
+                Console.SetCursorPosition(0, 0);
             }
-            Console.SetCursorPosition(0,0);
+            if (CurrentRoom == StrHall1 || CurrentRoom == StrHall2 || CurrentRoom == StrHall3 || CurrentRoom == StrHall4 || CurrentRoom == StrHall5 || CurrentRoom == StrHall6 || CurrentRoom == StrHall7 || CurrentRoom == StrHall8 || CurrentRoom == StrHall9 || CurrentRoom == StrHall10 || CurrentRoom == StrHall11 || CurrentRoom == StrHall12 || CurrentRoom == StrHall13 || CurrentRoom == StrHall14 )
+            {
+                Console.SetCursorPosition(48, 3);
+                string[] background = File.ReadAllLines("files/backgrounds/backgrounds1.txt");
+                for (int i = 0; i < background.Length; i++)
+                {
+                    Console.CursorLeft = 48;
+                    Console.Write(background[i]);
+                    Console.WriteLine("");
+                }
+                Console.SetCursorPosition(0, 0);
+            }
         }
 
         //BEGIN OF HALLS
