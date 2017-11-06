@@ -44,6 +44,7 @@ namespace Subwaj
         //Makes it easier to change rooms
         public static string StrMainMenu = "MainMenu";
         public static string StrInGameMenu = "InGameMenu";
+        public static string StrShop = "SHOP";
         public static string StrRoom1 = "ROOM1";
         public static string StrRoom2 = "ROOM2";
         public static string StrRoom3 = "ROOM3";
@@ -149,6 +150,12 @@ namespace Subwaj
             while (true);
         }
 
+        public static void Shop()
+        {
+            Console.Clear();
+            CurrentRoom = StrShop;
+            UserInputs.UserInput();
+        }
 
         // BEGIN OF MainMenu
         public static void MainMenu()
@@ -552,7 +559,8 @@ namespace Subwaj
                 //story
                 BlnRoom3Story = true;
             }
-            Console.WriteLine(File.ReadAllText("files/backgrounds/backgrounds2.txt"));
+            Backgroudposition();
+
             Console.WriteLine(File.ReadAllText("files/Rooms/Room3/Room3.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -667,10 +675,39 @@ namespace Subwaj
                 BlnRoom7Story = true;
             }
             Console.WriteLine("BOSSROOM");
+            Console.WriteLine(File.ReadAllText("files/story/walls/wall1/spongebob.txt"));
             Console.WriteLine(File.ReadAllText("files/Rooms/Room7/Room7.txt"));
             UserInputs.UserInput();
         }
         //END OF ROOMS
+
+        public static void Backgroudposition()
+        {
+            if (CurrentRoom == StrRoom1 || CurrentRoom == StrRoom2 || CurrentRoom == StrRoom3 || CurrentRoom == StrRoom4 || CurrentRoom == StrRoom5 || CurrentRoom == StrRoom6)
+            {
+                Console.SetCursorPosition(48, 3);
+                string[] background = File.ReadAllLines("files/backgrounds/backgrounds2.txt");
+                for (int i = 0; i < background.Length; i++)
+                {
+                    Console.CursorLeft = 48;
+                    Console.Write(background[i]);
+                    Console.WriteLine("");
+                }
+                Console.SetCursorPosition(0, 0);
+            }
+            if (CurrentRoom == StrHall1 || CurrentRoom == StrHall2 || CurrentRoom == StrHall3 || CurrentRoom == StrHall4 || CurrentRoom == StrHall5 || CurrentRoom == StrHall6 || CurrentRoom == StrHall7 || CurrentRoom == StrHall8 || CurrentRoom == StrHall9 || CurrentRoom == StrHall10 || CurrentRoom == StrHall11 || CurrentRoom == StrHall12 || CurrentRoom == StrHall13 || CurrentRoom == StrHall14 )
+            {
+                Console.SetCursorPosition(48, 3);
+                string[] background = File.ReadAllLines("files/backgrounds/backgrounds1.txt");
+                for (int i = 0; i < background.Length; i++)
+                {
+                    Console.CursorLeft = 48;
+                    Console.Write(background[i]);
+                    Console.WriteLine("");
+                }
+                Console.SetCursorPosition(0, 0);
+            }
+        }
 
         //BEGIN OF HALLS
         public static void HALL1()
