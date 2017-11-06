@@ -439,7 +439,7 @@ namespace Subwaj
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.SetCursorPosition(Console.CursorLeft = 54, Console.CursorTop = 0);
-                Console.WriteLine("║\t   TIME:  {3}:{0}\t  Current location:   {1}\t╠═╦╗:\t{2}", IntTimerSeconds, CurrentRoom, IntKey, IntTimerMinutes);
+                Console.WriteLine("║\t   TIME:  {3}:{0}\t  Current location:   {1}\tO═╦╗:\t{2}", IntTimerSeconds, CurrentRoom, IntKey, IntTimerMinutes);
                 Console.SetCursorPosition(Console.CursorLeft = 54, Console.CursorTop = 1);
                 Console.WriteLine("╚═════════════════════════════════════════════════════════════════");
                 Console.ForegroundColor = ConsoleColor.White;
