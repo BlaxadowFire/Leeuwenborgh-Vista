@@ -44,6 +44,7 @@ namespace Subwaj
         //Makes it easier to change rooms
         public static string StrMainMenu = "MainMenu";
         public static string StrInGameMenu = "InGameMenu";
+        public static string StrShop = "SHOP";
         public static string StrRoom1 = "ROOM1";
         public static string StrRoom2 = "ROOM2";
         public static string StrRoom3 = "ROOM3";
@@ -143,6 +144,12 @@ namespace Subwaj
             while (true);
         }
 
+        public static void Shop()
+        {
+            Console.Clear();
+            CurrentRoom = StrShop;
+            UserInputs.UserInput();
+        }
 
         // BEGIN OF MainMenu
         public static void MainMenu()
