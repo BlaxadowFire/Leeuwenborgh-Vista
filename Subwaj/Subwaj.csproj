@@ -94,6 +94,18 @@
     <Content Include="files\backgrounds\backgrounds2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="files\backgrounds\Base BG.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\backgrounds\BG Room1.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\backgrounds\BGNoTree.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\backgrounds\Shop.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="files\story\Rooms\Room1\hint for BossRoom.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
