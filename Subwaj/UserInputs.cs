@@ -290,7 +290,7 @@ namespace Subwaj
                                 }
                             case "NumPad1":
                             case "D1":
-                                if (Program.BlnPuzzle2Complete == false)
+                                if (!Program.BlnPuzzle2Complete)
                                 {
                                     Console.Clear();
                                     Console.WriteLine("You must finish the puzzle first.");
@@ -325,7 +325,7 @@ namespace Subwaj
                             case "NumPad5":
                             case "D5":
                                 {
-                                    if (Program.BlnPuzzle2Complete == false)
+                                    if (!Program.BlnPuzzle2Complete)
                                     {
                                         Puzzle2.StartPuzzle2();
                                     }
@@ -337,10 +337,19 @@ namespace Subwaj
                                     }
                                     break;
                                 }
-                            case "Numpad6":
+                            case "NumPad6":
                             case "D6":
                             {
-                                Errors.ErrorNotYetCreated();
+                                if (!Program.BlnPuzzle2Complete)
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("You must finish the puzzle first.");
+                                    Thread.Sleep(1000);
+                                }
+                                else
+                                {
+                                    Program.Hall3();
+                                }
                                 break;
                             }
                             default:
