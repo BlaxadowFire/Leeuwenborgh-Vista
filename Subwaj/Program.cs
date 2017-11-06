@@ -82,7 +82,14 @@ namespace Subwaj
         public static SpeechSynthesizer _SS = new SpeechSynthesizer();
         public static void voice()
         {
-            
+         try
+            {
+                _SS.SelectVoice("Microsoft David Desktop");
+            }
+            catch(Exception)
+            {
+
+            }
 
         }
 
