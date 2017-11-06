@@ -546,7 +546,8 @@ namespace Subwaj
                 //story
                 BlnRoom3Story = true;
             }
-            Console.WriteLine(File.ReadAllText("files/backgrounds/backgrounds2.txt"));
+            Backgroudposition();
+
             Console.WriteLine(File.ReadAllText("files/Rooms/Room3/Room3.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -665,6 +666,19 @@ namespace Subwaj
             UserInputs.UserInput();
         }
         //END OF ROOMS
+
+        public static void Backgroudposition()
+        {
+            Console.SetCursorPosition(48, 3);
+            string[] background = File.ReadAllLines("files/backgrounds/backgrounds2.txt");
+            for (int i = 0; i < background.Length; i++)
+            {
+                Console.CursorLeft = 48;
+                Console.Write(background[i]);
+                Console.WriteLine("");
+            }
+            Console.SetCursorPosition(0,0);
+        }
 
         //BEGIN OF HALLS
         public static void HALL1()
