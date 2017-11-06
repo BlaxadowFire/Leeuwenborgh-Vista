@@ -168,6 +168,10 @@ namespace Subwaj
                         }
                         break;
                     }
+                case "SHOP":
+                    {
+                        break;
+                    }
                 case "ROOM1":
                     {
                         switch (strCKI)
