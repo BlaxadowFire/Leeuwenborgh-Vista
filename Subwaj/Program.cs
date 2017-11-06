@@ -661,6 +661,7 @@ namespace Subwaj
                 BlnRoom7Story = true;
             }
             Console.WriteLine("BOSSROOM");
+            Console.WriteLine(File.ReadAllText("files/story/walls/wall1/spongebob.txt"));
             Console.WriteLine(File.ReadAllText("files/Rooms/Room7/Room7.txt"));
             UserInputs.UserInput();
         }
