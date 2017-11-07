@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
-using System.IO;
 
 namespace Subwaj
 {
@@ -36,10 +31,10 @@ namespace Subwaj
         //If code isn't created yet
         public static void ErrorNotYetCreated()
         {
-            Errors.ErrorHandlerStart();
+            ErrorHandlerStart();
             Console.WriteLine("ERROR: CODE DOESN'T EXIST");
             Console.WriteLine("ERROR ID: 0003");
-            Errors.ErrorFinisher();
+            ErrorFinisher();
             Console.WriteLine("Press any button to return to Main Menu");
             Console.ReadKey();
             Program.MainMenu();
@@ -48,10 +43,10 @@ namespace Subwaj
         //Error code out of bounds
         public static void ErrorOutOfBounds()
         {
-            Errors.ErrorHandlerStart();
+            ErrorHandlerStart();
             Console.WriteLine("ERROR: CODE OUT OF BOUNDS");
             Console.WriteLine("ERROR ID: 0004");
-            Errors.ErrorFinisher();
+            ErrorFinisher();
             Console.WriteLine("Press any button to return to Main Menu");
             Console.ReadKey();
             Program.MainMenu();

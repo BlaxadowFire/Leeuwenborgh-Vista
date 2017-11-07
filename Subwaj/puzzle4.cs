@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading;
 using System.IO;
-using System.Speech.Synthesis;
 
 //Room6
 
@@ -9,7 +8,7 @@ namespace Subwaj
 {   
     internal class Puzzle4
     {
-        public static string[] lever = File.ReadAllLines("files/Puzzles/Puzzle4/lever.txt");
+        public static string[] Lever = File.ReadAllLines("files/Puzzles/Puzzle4/lever.txt");
         public static bool Lever1;
         public static bool Lever2;
         public static bool Lever3;
@@ -20,19 +19,19 @@ namespace Subwaj
         public static bool Lever8;
         public static bool Lever9;
 
-        public static int intLever1;
-        public static int intLever2;
-        public static int intLever3;
-        public static int intLever4;
-        public static int intLever5;
-        public static int intLever6;
-        public static int intLever7;
-        public static int intLever8;
-        public static int intLever9;
+        public static int IntLever1;
+        public static int IntLever2;
+        public static int IntLever3;
+        public static int IntLever4;
+        public static int IntLever5;
+        public static int IntLever6;
+        public static int IntLever7;
+        public static int IntLever8;
+        public static int IntLever9;
 
-        public static int intAnswer = new Random().Next(50,511);
+        public static int IntAnswer = new Random().Next(50,511);
 
-        public static int intLeverAnswer;
+        public static int IntLeverAnswer;
 
         public static void StartPuzzle4()
         {
@@ -43,15 +42,14 @@ namespace Subwaj
                 //story
                 Console.Clear();
                 string strFilename = Program.StrTxtLocation + "Rooms/Room6/Room6.txt";
-                string[] IntroText = File.ReadAllLines(strFilename);
-                for (int x = 0; x < IntroText.Length; x++)
+                string[] introText = File.ReadAllLines(strFilename);
+                foreach (string strIntroText in introText)
                 {
-                    string strIntroText = IntroText[x];
-                    Program._SS.SpeakAsync(strIntroText);
-                    for (int z = 0; z < strIntroText.Length; z++)
+                    Program.Ss.SpeakAsync(strIntroText);
+                    foreach (char cha in strIntroText)
                     {
-                        Console.Write(strIntroText[z]);
-                        if (strIntroText[z] == ',')
+                        Console.Write(cha);
+                        if (cha == ',')
                         {
                             Thread.Sleep(Program.IntSleep400); //400
                         }
@@ -59,7 +57,6 @@ namespace Subwaj
                     }
                     Console.Write("\r\n");
                     Thread.Sleep(Program.IntSleep400); //400
-
                 }
                 Thread.Sleep(1000);
                 Console.Clear();
@@ -76,7 +73,7 @@ namespace Subwaj
                     var cki = CheckInput();
                     CheckLever(cki);
                     Levercalculator();
-                } while (intLeverAnswer != intAnswer);
+                } while (IntLeverAnswer != IntAnswer);
             }
             Console.Clear();
             Draw();
@@ -86,95 +83,16 @@ namespace Subwaj
         }
         public static void Levercalculator()
         {
-            if(Lever1)
-            {
-                intLever1 = 256;
-
-            }
-            else
-            {
-                intLever1 = 0;
-            }
-            if (Lever2)
-            {
-                intLever2 = 128;
-
-            }
-            else
-            {
-                intLever2 = 0;
-            }
-        
-            if (Lever3)
-            {
-                intLever3 = 64;
-
-            }
-            else
-            {
-                intLever3 = 0;
-            }
-            
-            if (Lever4)
-            {
-                intLever4 = 32;
-
-            }
-            else
-            {
-                intLever4 = 0;
-            }
-                
-            if (Lever5)
-            {
-                intLever5 = 16;
-
-            }
-            else
-            {
-                intLever5 = 0;
-            }
-                
-            if (Lever6)
-            {
-                intLever6 = 8;
-
-            }
-            else
-            {
-                intLever6 = 0;
-            }
-                
-            if (Lever7)
-            {
-                intLever7 = 4;
-
-            }
-            else
-            {
-                intLever7 = 0;
-            }
-                
-            if (Lever8)
-            {
-                intLever8 = 2;
-
-            }
-            else
-            {
-                intLever8 = 0;
-            }
-                
-            if (Lever9)
-            {
-                intLever9 = 1;
-
-            }
-            else
-            {
-                intLever9 = 0;
-            }
-        intLeverAnswer = intLever1 + intLever2 + intLever3 + intLever4 + intLever5 + intLever6 + intLever7 + intLever8 + intLever9;
+            IntLever1 = Lever1 ? 256 : 0;
+            IntLever2 = Lever2 ? 128 : 0;
+            IntLever3 = Lever3 ? 64 : 0;
+            IntLever4 = Lever4 ? 32 : 0;
+            IntLever5 = Lever5 ? 16 : 0;
+            IntLever6 = Lever6 ? 8 : 0;
+            IntLever7 = Lever7 ? 4 : 0;
+            IntLever8 = Lever8 ? 2 : 0;
+            IntLever9 = Lever9 ? 1 : 0;
+        IntLeverAnswer = IntLever1 + IntLever2 + IntLever3 + IntLever4 + IntLever5 + IntLever6 + IntLever7 + IntLever8 + IntLever9;
             
         }
 
@@ -307,7 +225,7 @@ namespace Subwaj
 
         public static void Draw()
         {
-            Console.WriteLine(intAnswer);
+            Console.WriteLine(IntAnswer);
             DrawNumbers();
             Console.SetCursorPosition(10, 10);
             CheckLeverOnOff(Lever1);
@@ -339,10 +257,10 @@ namespace Subwaj
         {
             for (int i = 0; i <= 7; i++)
             {
-                var CurLeft = Console.CursorLeft;
-                Console.Write(lever[i]);
+                var curLeft = Console.CursorLeft;
+                Console.Write(Lever[i]);
                 Console.CursorTop = Console.CursorTop + 1;
-                Console.CursorLeft = CurLeft;
+                Console.CursorLeft = curLeft;
             }
         }
 
@@ -350,19 +268,16 @@ namespace Subwaj
         {
             for (int i = 8; i <= 16; i++)
             {
-                var CurLeft = Console.CursorLeft;
-                Console.Write(lever[i]);
+                var curLeft = Console.CursorLeft;
+                Console.Write(Lever[i]);
                 Console.CursorTop = Console.CursorTop + 1;
-                Console.CursorLeft = CurLeft;
+                Console.CursorLeft = curLeft;
             }
         }
 
         public static bool SwitchLever(bool i)
         {
-            if (i)
-                i = false;
-            else
-                i = true;
+            i = !i;
             return i;
         }
 
@@ -431,10 +346,6 @@ namespace Subwaj
                 case "D9":
                 {
                     Lever9 = SwitchLever(Lever9);
-                    break;
-                }
-                default:
-                {
                     break;
                 }
             }

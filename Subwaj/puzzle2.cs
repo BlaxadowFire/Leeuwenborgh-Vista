@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
-using System.Speech.Synthesis;
 
 namespace Subwaj
 {
@@ -13,8 +8,7 @@ namespace Subwaj
     {
 
 
-        public static string answer = string.Empty;
-        public Puzzle2() {/*Start methode*/}
+        public static string Answer = string.Empty;
 
         public static void StartPuzzle2()
         {
@@ -24,15 +18,14 @@ namespace Subwaj
                 //story
                 Console.Clear();
                 string strFilename = Program.StrTxtLocation + "Halls/Hall2/Hall2.txt";
-                string[] IntroText = File.ReadAllLines(strFilename);
-                for (int x = 0; x < IntroText.Length; x++)
+                string[] introText = File.ReadAllLines(strFilename);
+                foreach (string strIntroText in introText)
                 {
-                    string strIntroText = IntroText[x];
-                    Program._SS.SpeakAsync(strIntroText);
-                    for (int z = 0; z < strIntroText.Length; z++)
+                    Program.Ss.SpeakAsync(strIntroText);
+                    foreach (char vha in strIntroText)
                     {
-                        Console.Write(strIntroText[z]);
-                        if (strIntroText[z] == ',')
+                        Console.Write(vha);
+                        if (vha == ',')
                         {
                             Thread.Sleep(Program.IntSleep400); //400
                         }
@@ -40,7 +33,6 @@ namespace Subwaj
                     }
                     Console.Write("\r\n");
                     Thread.Sleep(Program.IntSleep400); //400
-
                 }
                 Thread.Sleep(1000);
                 Console.Clear();
@@ -52,28 +44,29 @@ namespace Subwaj
             string[] strAnserFile = File.ReadAllLines("files/Puzzles/Puzzle2/Answers.txt");
             string[] strLettersFile = File.ReadAllLines("files/Puzzles/Puzzle2/Letters.txt");
             int i = 0;
-            int WrongAnswer = 0;
+            int wrongAnswer = 0;
             do
             {
                 Console.Clear();
                 Console.WriteLine("\r\n\r\n");
+                Program.Ss.SpeakAsync(strQuestionFile[i]);
                 Console.WriteLine(strQuestionFile[i] + "\r\n");
 
-                if (WrongAnswer >= 3)
+                if (wrongAnswer >= 3)
                 {
                     Console.WriteLine("The length of the answer is:" + strAnserFile[i].Length + "\r\n");
                     Console.WriteLine("Use the following letters to solve the puzzle.\r\n" + strLettersFile[i] + "\r\n");
                 }
                 Program.DrawBottom();
-                answer = Console.ReadLine().ToLower();
-                if (answer == strAnserFile[i])
+                Answer = Console.ReadLine().ToLower();
+                if (Answer == strAnserFile[i])
                 {
                     i++;
-                    WrongAnswer = 0;
+                    wrongAnswer = 0;
                 }
                 else
                 {
-                    WrongAnswer++;
+                    wrongAnswer++;
                 }
 
             } while (i < 6);
