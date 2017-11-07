@@ -770,6 +770,7 @@ namespace Subwaj
         public static void WallPosition(string x)
         {
             Console.Clear();
+            Console.WriteLine("\r\n\r\n\r\n  Press any key to go back");
             x = x == "" ? "Nothing" : x;
             Console.SetCursorPosition(48, 3);
             string[] background = File.ReadAllLines("files/story/Walls/Wall1/Wall1.txt");
