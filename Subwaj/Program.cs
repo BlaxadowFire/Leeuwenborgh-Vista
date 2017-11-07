@@ -769,7 +769,7 @@ namespace Subwaj
             Console.Write(x);
 
             Console.SetCursorPosition(0, 0);
-            Thread.Sleep(4000);
+            Console.ReadKey();
         }
 
         //BEGIN OF HALLS
