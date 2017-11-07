@@ -700,7 +700,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("This is an Wall");
+                                Program.WallPosition("This is a Wall");
                                 break;
                             }
                             case "NumPad4":
@@ -982,7 +982,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("Here wa something");
+                                Program.WallPosition("Here was something");
                                 break;
                             }
                             case "NumPad4":
@@ -1076,7 +1076,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("HAHA I'm gone win");
+                                Program.WallPosition("HAHA, I'm gone win");
                                 break;
                             }
                             case "NumPad4":
@@ -1158,7 +1158,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("He watch it!!!");
+                                Program.WallPosition("Hey watch it!!!");
                                 break;
                             }
                             case "NumPad4":
