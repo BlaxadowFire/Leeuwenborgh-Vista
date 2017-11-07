@@ -253,7 +253,7 @@ namespace Subwaj
             do
             {
                 Console.Clear();
-                Console.CursorVisible = true;
+                Console.CursorVisible = false;
                 Console.WriteLine("Ah, you're Finally here: " + Environment.UserName + "!");
                 string strIntroText = File.ReadAllText(StrTxtLocation + "intro/intro.txt");
                 Console.Write(strIntroText);
@@ -670,6 +670,7 @@ namespace Subwaj
         }
         //END OF ROOMS
 
+        //Background
         public static void Backgroudposition()
         {
             if (CurrentRoom == StrRoom1)
@@ -732,6 +733,24 @@ namespace Subwaj
                 }
                 Console.SetCursorPosition(0, 0);
             }
+        }
+
+        //Walls
+        public static void WallPosition(string x)
+        {
+            Console.SetCursorPosition(48, 3);
+            string[] background = File.ReadAllLines("files/story/Walls/Wall1/Wall1.txt");
+            for (int i = 0; i < background.Length; i++)
+            {
+                Console.CursorLeft = 48;
+                Console.Write(background[i]);
+                Console.WriteLine("");
+            }
+            Console.SetCursorPosition(80,12);
+            Console.Write(x);
+
+            Console.SetCursorPosition(0, 0);
+            Thread.Sleep(4000);
         }
 
         //BEGIN OF HALLS
