@@ -891,7 +891,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("A there you are ");
+                                Program.WallPosition("Ah, there you are");
                                 break;
                             }
                             default:
@@ -926,7 +926,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("Here was something");
+                                Program.WallPosition("Something was here");
                                 break;
                             }
                             default:
@@ -1008,7 +1008,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("HAHA, I'm gone win");
+                                Program.WallPosition("HAHA, I'm gonna win");
                                 break;
                             }
                             default:
@@ -1113,7 +1113,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("it's still no game");
+                                Program.WallPosition("it's still not a game");
                                 break;
                             }
                             default:
@@ -1195,7 +1195,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                 Program.WallPosition("");
+                                 Program.WallPosition("Just quit already");
                                  break;
                             }
                             default:

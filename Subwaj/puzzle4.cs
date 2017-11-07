@@ -77,7 +77,7 @@ namespace Subwaj
             }
             Console.Clear();
             Draw();
-            Console.WriteLine("You completed the puzzle!");
+            Console.WriteLine("\r\n\r\n\r\n\t\t\t\tYou completed the puzzle!");
             Thread.Sleep(2000);
             Program.BlnPuzzle4Complete = true;
         }
