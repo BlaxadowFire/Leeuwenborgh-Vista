@@ -1086,6 +1086,14 @@ namespace Subwaj
                                 Program.InGameMenu();
                                 break;
                             }
+                            case "NumPad0":
+                            case "D0":
+                                {
+
+                                    Program.BlnRoom1Story = false;
+                                    BackToCurrentRoom();
+                                    break;
+                                }
                             case "NumPad1":
                             case "D1":
                             {
