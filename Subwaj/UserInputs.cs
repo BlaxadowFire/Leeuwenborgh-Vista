@@ -170,6 +170,49 @@ namespace Subwaj
                     }
                 case "SHOP":
                     {
+                        switch (strCKI)
+                        {
+                            case "Escape":
+                                {
+                                    Program.InGameMenu();
+                                    break;
+                                }
+                            case "D1":
+                            case "NumPad1":
+                                {
+                                    UserInput();
+                                    break;
+                                }
+                            case "D2":
+                            case "NumPad2":
+                                {
+                                    UserInput();
+                                    break;
+                                }
+                            case "D3":
+                            case "NumPad3":
+                                {
+                                    UserInput();
+                                    break;
+                                }
+                            case "D4":
+                            case "NumPad4":
+                                {
+                                    UserInput();
+                                    break;
+                                }
+                            case "D5":
+                            case "NumPad5":
+                                {
+                                    UserInput();
+                                    break;
+                                }
+                            default:
+                                {
+                                    UserInput();
+                                    break;
+                                }
+                        }
                         break;
                     }
                 case "ROOM1":
@@ -341,12 +384,13 @@ namespace Subwaj
                                     }
                                     break;
                                 }
-                            case "Numpad6":
+                            case "NumPad6":
                             case "D6":
-                            {
-                                Errors.ErrorNotYetCreated();
-                                break;
-                            }
+                                {
+                                    Program.HALL3();
+                                    break;
+                                }
+
                             default:
                                 {
                                     BackToCurrentRoom();
