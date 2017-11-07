@@ -112,6 +112,9 @@
     <Content Include="files\help2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="files\story\Halls\nothing.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="files\story\Rooms\Room1\hint for BossRoom.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
