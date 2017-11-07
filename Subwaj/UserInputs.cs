@@ -627,10 +627,17 @@ namespace Subwaj
                             case "NumPad1":
                                 {
                                     // is tijdelijk
-                                   
-                                    Console.Clear();
-                                    Console.WriteLine("Congrats you killed the boss GG");
-                                    Console.ReadLine();
+                                    if (Program.Sword)
+                                    {
+                                        Console.Clear();
+                                        Console.WriteLine("Congrats you killed the boss GG");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("You need the sword to defeat the boss");
+                                        BackToCurrentRoom();
+                                    }
+                                    Console.ReadKey();
                                     Environment.Exit(0);
                                     break;
                                 }
@@ -640,18 +647,6 @@ namespace Subwaj
                                     Program.Hall14();
                                     break;
                                 }
-                            case "NumPad3":
-                            case "D3":
-                            {
-                                    Program.WallPosition("");
-                                    break;
-                            }
-                            case "NumPad4":
-                            case "D4":
-                            {
-                                Nothing();
-                                break;
-                            }
                             default:
                                 {
                                     BackToCurrentRoom();

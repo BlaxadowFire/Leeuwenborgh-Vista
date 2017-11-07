@@ -4,7 +4,6 @@
    ║   Room 7   ║
    ╚════════════╝
 
+0.)    replay story
 1.)    kill the boss
 2.)    go to hall 14
-3.)    look at walls
-4.)    press big button
