@@ -971,7 +971,7 @@ namespace Subwaj
             {
                 //story
                 Console.Clear();
-                string strFilename = StrTxtLocation + "Halls/story/Hall13/Hall13.txt";
+                string strFilename = StrTxtLocation + "Halls/Hall13/Hall13.txt";
                 string[] introText = File.ReadAllLines(strFilename);
                 foreach (string strIntroText in introText)
                 {

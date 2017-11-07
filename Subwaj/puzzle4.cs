@@ -106,8 +106,16 @@ namespace Subwaj
             Light(i);
             Console.CursorLeft = Console.CursorLeft - 1;
             Console.Write("╔═╗");
+            if (Console.CursorLeft <= 4)
+            {
+                Console.CursorLeft = 4;
+            }
             Console.SetCursorPosition(Console.CursorLeft - 3, Console.CursorTop + 1);
             Console.Write("║{0}║", i);
+            if (Console.CursorLeft <= 4)
+            {
+                Console.CursorLeft = 4;
+            }
             Console.SetCursorPosition(Console.CursorLeft - 3, Console.CursorTop + 1);
             Console.Write("╚═╝");
             Console.BackgroundColor = ConsoleColor.Black;
@@ -204,7 +212,7 @@ namespace Subwaj
         public static void DrawBytes()
         {
             Console.SetCursorPosition(12, 19);
-            Console.Write("254");
+            Console.Write("256");
             Console.SetCursorPosition(21, 19);
             Console.Write("128");
             Console.SetCursorPosition(32, 19);
