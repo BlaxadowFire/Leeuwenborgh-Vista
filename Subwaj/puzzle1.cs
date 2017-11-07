@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
-using System.Speech.Synthesis;
 
 
 /* Console.Write("Dit ");
@@ -30,18 +25,18 @@ namespace Subwaj
         public static string H = "8";
         public static string I = "9";
 
-        public static bool blnAiTurn = true;
+        public static bool BlnAiTurn = true;
 
-        public static string strPlayer1;
-        public static string strPlayer2;
-        public static string strCurrentPlayer;
-        public static bool blnGameOVer = false;
-        public static string strCPChoice;
-        public static string strUserInput = string.Empty;
+        public static string StrPlayer1;
+        public static string StrPlayer2;
+        public static string StrCurrentPlayer;
+        public static bool BlnGameOVer;
+        public static string StrCpChoice;
+        public static string StrUserInput = string.Empty;
 
-        public static string restart = "y";
+        public static string Restart = "y";
 
-        public static bool firstrun = true;
+        public static bool Firstrun = true;
 
         public static void StartPuzzle1()
         {
@@ -51,15 +46,14 @@ namespace Subwaj
                 //story
                 Console.Clear();
                 string strFilename = Program.StrTxtLocation + "Rooms/Room2/Room2.txt";
-                string[] IntroText = File.ReadAllLines(strFilename);
-                for (int x = 0; x < IntroText.Length; x++)
+                string[] introText = File.ReadAllLines(strFilename);
+                foreach (string strIntroText in introText)
                 {
-                    string strIntroText = IntroText[x];
-                    Program._SS.SpeakAsync(strIntroText);
-                    for (int z = 0; z < strIntroText.Length; z++)
+                    Program.Ss.SpeakAsync(strIntroText);
+                    foreach (char cha in strIntroText)
                     {
-                        Console.Write(strIntroText[z]);
-                        if (strIntroText[z] == ',')
+                        Console.Write(cha);
+                        if (cha == ',')
                         {
                             Thread.Sleep(Program.IntSleep400); //400
                         }
@@ -67,57 +61,52 @@ namespace Subwaj
                     }
                     Console.Write("\r\n");
                     Thread.Sleep(Program.IntSleep400); //400
-
                 }
                 Thread.Sleep(1000);
                 Console.Clear();
                 Program.BlnPuzzle1 = true;
             }
 
-            do
-            {
-                strPlayer1 = Environment.UserName;
-                strPlayer2 = "THE MOST AMAZING AI EVER CREATED";
-                strCurrentPlayer = strPlayer1;
+                StrPlayer1 = Environment.UserName;
+                StrPlayer2 = "THE MOST AMAZING AI EVER CREATED";
+                StrCurrentPlayer = StrPlayer1;
                 do
                 {
-                    if (strCurrentPlayer == "THE MOST AMAZING AI EVER CREATED")
+                    if (StrCurrentPlayer == "THE MOST AMAZING AI EVER CREATED")
                     {
-                        blnAiTurn = true;
-                        Puzzle1.FuncBot();
+                        BlnAiTurn = true;
+                        FuncBot();
                     }
                     else
                     {
-                        Puzzle1.DrawGrid();
-                        strUserInput = Console.ReadKey().Key.ToString();
+                        DrawGrid();
+                        StrUserInput = Console.ReadKey().Key.ToString();
 
-                        Puzzle1.TurnCheck();
-                        Puzzle1.Turn();
+                        TurnCheck();
+                        Turn();
                     }
-                    Puzzle1.CheckIfWon();
-                    Puzzle1.SwitchTurn();
-                } while (blnGameOVer == false);
+                    CheckIfWon();
+                    SwitchTurn();
+                } while (BlnGameOVer == false);
                 lblplayagain:
                 Console.Clear();
-                Program._SS.SpeakAsync("It's a tie!");
+                Program.Ss.SpeakAsync("It's a tie!");
                 Console.WriteLine("It's a tie!");
-                Program._SS.SpeakAsync("Do you want to play again? y/n");
+                Program.Ss.SpeakAsync("Do you want to play again? y/n");
                 Console.WriteLine("Do you want to play again? y/n");
-                restart = Console.ReadKey().Key.ToString();
-                if (restart == "N")
+                Restart = Console.ReadKey().Key.ToString();
+                if (Restart == "N")
                 {
                     Console.Clear();
-                    Program._SS.SpeakAsync("YOU HAVE NO CHOICE");
+                    Program.Ss.SpeakAsync("YOU HAVE NO CHOICE");
                     Console.WriteLine("YOU HAVE NO CHOICE");
                     Thread.Sleep(1500);
                 }
-                else if (restart != "Y")
+                else if (Restart != "Y")
                 {
                     goto lblplayagain;
                 }
-                Puzzle1.FuncRestart();
-            }
-            while (true);
+                FuncRestart();
 
 
         }
@@ -125,33 +114,36 @@ namespace Subwaj
 
         public static void TurnCheck()
         {
-            if (strCurrentPlayer == strPlayer1)
+            StrCpChoice = StrCurrentPlayer == StrPlayer1 ? "X" : "O";
+            /* This does the same as above
+            if (StrCurrentPlayer == StrPlayer1)
             {
-                strCPChoice = "X";
+                StrCpChoice = "X";
             }
             else
             {
-                strCPChoice = "O";
+                StrCpChoice = "O";
             }
+            */
         }
         public static void Turn()
         {
             Console.Clear();
-            switch (strUserInput)
+            switch (StrUserInput)
             {
                 case "D1":
                 case "NumPad1":
                     {
                         if (A == "1")
                         {
-                            A = strCPChoice;
+                            A = StrCpChoice;
                         }
                         else
                         {
-                            Program._SS.SpeakAsync("Error, this one is already taken");
+                            Program.Ss.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
-                            Console.ReadKey().Key.ToString();
-                            Puzzle1.StartPuzzle1();
+                            Thread.Sleep(1000);
+                            StartPuzzle1();
                         }
                         break;
                     }
@@ -160,14 +152,14 @@ namespace Subwaj
                     {
                         if (B == "2")
                         {
-                            B = strCPChoice;
+                            B = StrCpChoice;
                         }
                         else
                         {
-                            Program._SS.SpeakAsync("Error, this one is already taken");
+                            Program.Ss.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
-                            Console.ReadKey().Key.ToString();
-                            Puzzle1.StartPuzzle1();
+                            Thread.Sleep(1000);
+                            StartPuzzle1();
                         }
                         break;
                     }
@@ -176,14 +168,14 @@ namespace Subwaj
                     {
                         if (C == "3")
                         {
-                            C = strCPChoice;
+                            C = StrCpChoice;
                         }
                         else
                         {
-                            Program._SS.SpeakAsync("Error, this one is already taken");
+                            Program.Ss.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
-                            Console.ReadKey().Key.ToString();
-                            Puzzle1.StartPuzzle1();
+                            Thread.Sleep(1000);
+                            StartPuzzle1();
                         }
                         break;
                     }
@@ -192,14 +184,14 @@ namespace Subwaj
                     {
                         if (D == "4")
                         {
-                            D = strCPChoice;
+                            D = StrCpChoice;
                         }
                         else
                         {
-                            Program._SS.SpeakAsync("Error, this one is already taken");
+                            Program.Ss.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
-                            Console.ReadKey().Key.ToString();
-                            Puzzle1.StartPuzzle1();
+                            Thread.Sleep(1000);
+                            StartPuzzle1();
                         }
                         break;
                     }
@@ -208,14 +200,14 @@ namespace Subwaj
                     {
                         if (E == "5")
                         {
-                            E = strCPChoice;
+                            E = StrCpChoice;
                         }
                         else
                         {
-                            Program._SS.SpeakAsync("Error, this one is already taken");
+                            Program.Ss.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
-                            Console.ReadKey().Key.ToString();
-                            Puzzle1.StartPuzzle1();
+                            Thread.Sleep(1000);
+                            StartPuzzle1();
                         }
                         break;
                     }
@@ -224,14 +216,14 @@ namespace Subwaj
                     {
                         if (F == "6")
                         {
-                            F = strCPChoice;
+                            F = StrCpChoice;
                         }
                         else
                         {
-                            Program._SS.SpeakAsync("Error, this one is already taken");
+                            Program.Ss.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
-                            Console.ReadKey().Key.ToString();
-                            Puzzle1.StartPuzzle1();
+                            Thread.Sleep(1000);
+                            StartPuzzle1();
                         }
                         break;
                     }
@@ -240,14 +232,14 @@ namespace Subwaj
                     {
                         if (G == "7")
                         {
-                            G = strCPChoice;
+                            G = StrCpChoice;
                         }
                         else
                         {
-                            Program._SS.SpeakAsync("Error, this one is already taken");
+                            Program.Ss.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
-                            Console.ReadKey().Key.ToString();
-                            Puzzle1.StartPuzzle1();
+                            Thread.Sleep(1000);
+                            StartPuzzle1();
                         }
                         break;
                     }
@@ -256,14 +248,14 @@ namespace Subwaj
                     {
                         if (H == "8")
                         {
-                            H = strCPChoice;
+                            H = StrCpChoice;
                         }
                         else
                         {
-                            Program._SS.SpeakAsync("Error, this one is already taken");
+                            Program.Ss.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
-                            Console.ReadKey().Key.ToString();
-                            Puzzle1.StartPuzzle1();
+                            Thread.Sleep(1000);
+                            StartPuzzle1();
                         }
                         break;
                     }
@@ -272,33 +264,33 @@ namespace Subwaj
                     {
                         if (I == "9")
                         {
-                            I = strCPChoice;
+                            I = StrCpChoice;
                         }
                         else
                         {
-                            Program._SS.SpeakAsync("Error, this one is already taken");
+                            Program.Ss.SpeakAsync("Error, this one is already taken");
                             Console.WriteLine("Error, this one is already taken");
-                            Console.ReadKey().Key.ToString();
-                            Puzzle1.StartPuzzle1();
+                            Thread.Sleep(1000);
+                            StartPuzzle1();
                         }
                         break;
                     }
                 case "E":
                     {
-                        if (Program.BlnDebug == true)
+                        if (Program.BlnDebug)
                         {
-                            A = strCPChoice;
-                            B = strCPChoice;
-                            C = strCPChoice;
-                            D = strCPChoice;
-                            E = strCPChoice;
-                            F = strCPChoice;
-                            G = strCPChoice;
-                            H = strCPChoice;
-                            I = strCPChoice;
+                            A = StrCpChoice;
+                            B = StrCpChoice;
+                            C = StrCpChoice;
+                            D = StrCpChoice;
+                            E = StrCpChoice;
+                            F = StrCpChoice;
+                            G = StrCpChoice;
+                            H = StrCpChoice;
+                            I = StrCpChoice;
                             Console.Clear();
-                            Puzzle1.DrawGrid();
-                            Console.ReadKey().Key.ToString();
+                            DrawGrid();
+                            Thread.Sleep(1000);
                         }
                         break;
                     }
@@ -309,62 +301,55 @@ namespace Subwaj
                     }
                 default:
                     {
-                        Program._SS.SpeakAsync("Error, give valid input");
+                        Program.Ss.SpeakAsync("Error, give valid input");
                         Console.WriteLine("Error, give valid input");
                         Thread.Sleep(1500);
-                        Puzzle1.StartPuzzle1();
+                        StartPuzzle1();
                         break;
                     }
             }
         }
         public static void SwitchTurn()
         {
-            if (strCurrentPlayer == strPlayer1)
-            {
-                strCurrentPlayer = strPlayer2;
-            }
-            else
-            {
-                strCurrentPlayer = strPlayer1;
-            }
+            StrCurrentPlayer = StrCurrentPlayer == StrPlayer1 ? StrPlayer2 : StrPlayer1;
         }
         public static void CheckIfWon()
         {
             if (A == B && B == C)
             {
-                Puzzle1.Won();
+                Won();
             }
             else if (D == E && E == F)
             {
-                Puzzle1.Won();
+                Won();
             }
             else if (G == H && H == I)
             {
-                Puzzle1.Won();
+                Won();
             }
             else if (A == D && D == G)
             {
-                Puzzle1.Won();
+                Won();
             }
             else if (B == E && E == H)
             {
-                Puzzle1.Won();
+                Won();
             }
             else if (C == F && F == I)
             {
-                Puzzle1.Won();
+                Won();
             }
             else if (A == E && E == I)
             {
-                Puzzle1.Won();
+                Won();
             }
             else if (C == E && E == G)
             {
-                Puzzle1.Won();
+                Won();
             }
             if (A != "1" && B != "2" && C != "3" && D != "4" && E != "5" && F != "6" && G != "7" && H != "8" && I != "9")
             {
-                blnGameOVer = true;
+                BlnGameOVer = true;
             }
         }
 
@@ -380,10 +365,10 @@ namespace Subwaj
         public static void DrawGrid()
         {
             Console.Clear();
-            Program._SS.SpeakAsync("Last turn: " + strUserInput);
-            Console.WriteLine("Last turn:{0}", strUserInput);
+            Program.Ss.SpeakAsync("Last turn: " + StrUserInput);
+            Console.WriteLine("Last turn:{0}", StrUserInput);
             Console.BackgroundColor = ConsoleColor.Red;
-            Console.WriteLine("{0} Give input\r\n\r\n", strCurrentPlayer);
+            Console.WriteLine("{0} Give input\r\n\r\n", StrCurrentPlayer);
             Console.BackgroundColor = ConsoleColor.Black;
 
             GridColor(); Console.Write(A); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
@@ -421,20 +406,20 @@ namespace Subwaj
             GridColor(); Console.Write(G); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
             GridColor(); Console.Write(H); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
             GridColor(); Console.Write(I); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
-            if (strPlayer2 == "THE MOST AMAZING AI EVER CREATED" && strPlayer2 == strCurrentPlayer)
+            if (StrPlayer2 == "THE MOST AMAZING AI EVER CREATED" && StrPlayer2 == StrCurrentPlayer)
             {
-                Program._SS.SpeakAsync("YOU JUST LOST FROM " + strPlayer2);
-                Console.WriteLine("YOU JUST LOST FROM {0}", strPlayer2);
+                Program.Ss.SpeakAsync("YOU JUST LOST FROM " + StrPlayer2);
+                Console.WriteLine("YOU JUST LOST FROM {0}", StrPlayer2);
                 Thread.Sleep(1500);
-                Puzzle1.FuncRestart();
+                FuncRestart();
             }
 
-            Program._SS.SpeakAsync("Congratulations " + strCurrentPlayer + ", you Won!\r\nPress any key to continue!");
-            Console.WriteLine("Congratulations {0}, you Won!\r\nPress any key to continue!", strCurrentPlayer);
+            Program.Ss.SpeakAsync("Congratulations " + StrCurrentPlayer + ", you Won!\r\nPress any key to continue!");
+            Console.WriteLine("Congratulations {0}, you Won!\r\nPress any key to continue!", StrCurrentPlayer);
             
-            Console.ReadKey().Key.ToString();
+            Console.ReadKey();
             Program.BlnPuzzle1Complete = true;
-            Program.ROOM2();
+            Program.Room2();
             
         }
         public static void FuncRestart()
@@ -449,14 +434,14 @@ namespace Subwaj
             H = "8";
             I = "9";
 
-            Puzzle1.SwitchTurn();
-            blnGameOVer = false;
-            strCPChoice = string.Empty;
-            strUserInput = string.Empty;
+            SwitchTurn();
+            BlnGameOVer = false;
+            StrCpChoice = string.Empty;
+            StrUserInput = string.Empty;
 
             Console.Clear();
 
-            Puzzle1.StartPuzzle1();
+            StartPuzzle1();
         }
         public static void FuncBot()
         {
@@ -467,26 +452,26 @@ namespace Subwaj
             * 4|O|O
             * O|8|O
             */
-            if (C == "3" && blnAiTurn == true)
+            if (C == "3" && BlnAiTurn)
             {
                 if (A == "O" && B == "O" || G == "O" && E == "O" || F == "O" && I == "O")
                 {
-                    strUserInput = "3";
+                    StrUserInput = "3";
                     C = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
             /* @|O|O
              * O|O|6
              * O|8|O
              */
-            if (A == "1" && blnAiTurn == true)
+            if (A == "1" && BlnAiTurn)
             {
                 if (C == "O" && B == "O" || I == "O" && E == "O" || D == "O" && G == "O")
                 {
-                    strUserInput = "1";
+                    StrUserInput = "1";
                     A = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
 
@@ -494,13 +479,13 @@ namespace Subwaj
             * 4|O|6
             * 7|O|9
             */
-            if (B == "2" && blnAiTurn == true)
+            if (B == "2" && BlnAiTurn)
             {
                 if (A == "O" && C == "O" || E == "O" && H == "O")
                 {
-                    strUserInput = "2";
+                    StrUserInput = "2";
                     B = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
 
@@ -508,13 +493,13 @@ namespace Subwaj
             * O|O|@
             * 7|8|O
             */
-            if (F == "6" && blnAiTurn == true)
+            if (F == "6" && BlnAiTurn)
             {
                 if (D == "O" && E == "O" || C == "O" && I == "O")
                 {
-                    strUserInput = "6";
+                    StrUserInput = "6";
                     F = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
 
@@ -522,13 +507,13 @@ namespace Subwaj
             * @|O|O
             * O|8|9
             */
-            if (D == "4" && blnAiTurn == true)
+            if (D == "4" && BlnAiTurn)
             {
                 if (F == "O" && E == "O" || A == "O" && G == "O")
                 {
-                    strUserInput = "4";
+                    StrUserInput = "4";
                     D = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
 
@@ -536,13 +521,13 @@ namespace Subwaj
             * O|@|O
             * O|O|O
             */
-            if (E == "5" && blnAiTurn == true)
+            if (E == "5" && BlnAiTurn)
             {
                 if (D == "O" && F == "O" || A == "O" && I == "O" || B == "O" && H == "O" || C == "O" && G == "O")
                 {
-                    strUserInput = "5";
+                    StrUserInput = "5";
                     E = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
 
@@ -550,13 +535,13 @@ namespace Subwaj
             * 4|O|O
             * O|O|@
             */
-            if (I == "9" && blnAiTurn == true)
+            if (I == "9" && BlnAiTurn)
             {
                 if (G == "O" && H == "O" || C == "O" && F == "O" || A == "O" && E == "O")
                 {
-                    strUserInput = "9";
+                    StrUserInput = "9";
                     I = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
 
@@ -564,13 +549,13 @@ namespace Subwaj
             * O|O|6
             * @|O|O
             */
-            if (G == "7" && blnAiTurn == true)
+            if (G == "7" && BlnAiTurn)
             {
                 if (I == "O" && H == "O" || A == "O" && D == "O" || C == "O" && E == "O")
                 {
-                    strUserInput = "7";
+                    StrUserInput = "7";
                     G = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
 
@@ -578,13 +563,13 @@ namespace Subwaj
             * 4|O|6
             * O|@|O
             */
-            if (H == "8" && blnAiTurn == true)
+            if (H == "8" && BlnAiTurn)
             {
                 if (G == "O" && I == "O" || B == "O" && E == "O")
                 {
-                    strUserInput = "8";
+                    StrUserInput = "8";
                     H = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
 
@@ -596,26 +581,26 @@ namespace Subwaj
             * 4|X|X
             * X|8|X
             */
-            if (C == "3" && blnAiTurn == true)
+            if (C == "3" && BlnAiTurn)
             {
                 if (A == "X" && B == "X" || G == "X" && E == "X" || F == "X" && I == "X")
                 {
-                    strUserInput = "3";
+                    StrUserInput = "3";
                     C = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
             /* @|X|X
              * X|X|6
              * X|8|X
              */
-            if (A == "1" && blnAiTurn == true)
+            if (A == "1" && BlnAiTurn)
             {
                 if (C == "X" && B == "X" || I == "X" && E == "X" || D == "X" && G == "X")
                 {
-                    strUserInput = "1";
+                    StrUserInput = "1";
                     A = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
 
@@ -623,13 +608,13 @@ namespace Subwaj
             * 4|X|6
             * 7|X|9
             */
-            if (B == "2" && blnAiTurn == true)
+            if (B == "2" && BlnAiTurn)
             {
                 if (A == "X" && C == "X" || E == "X" && H == "X")
                 {
-                    strUserInput = "2";
+                    StrUserInput = "2";
                     B = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
 
@@ -637,13 +622,13 @@ namespace Subwaj
             * X|X|@
             * 7|8|X
             */
-            if (F == "6" && blnAiTurn == true)
+            if (F == "6" && BlnAiTurn)
             {
                 if (D == "X" && E == "X" || C == "X" && I == "X")
                 {
-                    strUserInput = "6";
+                    StrUserInput = "6";
                     F = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
 
@@ -651,13 +636,13 @@ namespace Subwaj
             * @|X|X
             * X|8|9
             */
-            if (D == "4" && blnAiTurn == true)
+            if (D == "4" && BlnAiTurn)
             {
                 if (F == "X" && E == "X" || A == "X" && G == "X")
                 {
-                    strUserInput = "4";
+                    StrUserInput = "4";
                     D = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
 
@@ -665,13 +650,13 @@ namespace Subwaj
             * X|@|X
             * X|X|X
             */
-            if (E == "5" && blnAiTurn == true)
+            if (E == "5" && BlnAiTurn)
             {
                 if (D == "X" && F == "X" || A == "X" && I == "X" || B == "X" && H == "X" || C == "X" && G == "X")
                 {
-                    strUserInput = "5";
+                    StrUserInput = "5";
                     E = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
 
@@ -679,13 +664,13 @@ namespace Subwaj
             * 4|X|X
             * X|X|@
             */
-            if (I == "9" && blnAiTurn == true)
+            if (I == "9" && BlnAiTurn)
             {
                 if (G == "X" && H == "X" || C == "X" && F == "X" || A == "X" && E == "X")
                 {
-                    strUserInput = "9";
+                    StrUserInput = "9";
                     I = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
 
@@ -693,13 +678,13 @@ namespace Subwaj
             * X|X|6
             * @|X|X
             */
-            if (G == "7" && blnAiTurn == true)
+            if (G == "7" && BlnAiTurn)
             {
                 if (I == "X" && H == "X" || A == "X" && D == "X" || C == "X" && E == "X")
                 {
-                    strUserInput = "7";
+                    StrUserInput = "7";
                     G = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
 
@@ -707,13 +692,13 @@ namespace Subwaj
             * 4|X|6
             * X|@|X
             */
-            if (H == "8" && blnAiTurn == true)
+            if (H == "8" && BlnAiTurn)
             {
                 if (G == "X" && I == "X" || B == "X" && E == "X")
                 {
-                    strUserInput = "8";
+                    StrUserInput = "8";
                     H = "O";
-                    blnAiTurn = false;
+                    BlnAiTurn = false;
                 }
             }
             /*
@@ -734,99 +719,99 @@ namespace Subwaj
             * 4|@|6
             * 7|8|9
             */
-            if (E == "5" && blnAiTurn == true)
+            if (E == "5" && BlnAiTurn)
             {
-                strUserInput = "5";
+                StrUserInput = "5";
                 E = "O";
-                blnAiTurn = false;
+                BlnAiTurn = false;
             }
 
             /*1|2|3
             * 4|5|6
             * 7|8|@
             */
-            if (I == "9" && blnAiTurn == true)
+            if (I == "9" && BlnAiTurn)
             {
-                strUserInput = "9";
+                StrUserInput = "9";
                 I = "O";
-                blnAiTurn = false;
+                BlnAiTurn = false;
             }
 
             /*1|2|3
             * 4|5|6
             * @|8|9
             */
-            if (G == "7" && blnAiTurn == true)
+            if (G == "7" && BlnAiTurn)
             {
-                strUserInput = "7";
+                StrUserInput = "7";
                 G = "O";
-                blnAiTurn = false;
+                BlnAiTurn = false;
             }
 
             /*@|2|3
             * 4|5|6
             * 7|8|9
             */
-            if (A == "1" && blnAiTurn == true)
+            if (A == "1" && BlnAiTurn)
             {
-                strUserInput = "1";
+                StrUserInput = "1";
                 A = "O";
-                blnAiTurn = false;
+                BlnAiTurn = false;
             }
 
             /*1|2|@
             * 4|5|6
             * 7|8|9
             */
-            if (C == "3" && blnAiTurn == true)
+            if (C == "3" && BlnAiTurn)
             {
-                strUserInput = "3";
+                StrUserInput = "3";
                 C = "O";
-                blnAiTurn = false;
+                BlnAiTurn = false;
             }
 
             /*1|@|3
             * 4|5|6
             * 7|8|9
             */
-            if (B == "2" && blnAiTurn == true)
+            if (B == "2" && BlnAiTurn)
             {
-                strUserInput = "2";
+                StrUserInput = "2";
                 B = "O";
-                blnAiTurn = false;
+                BlnAiTurn = false;
             }
 
             /*1|2|3
             * 4|5|@
             * 7|8|9
             */
-            if (F == "6" && blnAiTurn == true)
+            if (F == "6" && BlnAiTurn)
             {
-                strUserInput = "6";
+                StrUserInput = "6";
                 F = "O";
-                blnAiTurn = false;
+                BlnAiTurn = false;
             }
 
             /*1|2|3
             * 4|5|6
             * 7|@|9
             */
-            if (H == "8" && blnAiTurn == true)
+            if (H == "8" && BlnAiTurn)
             {
-                strUserInput = "8";
+                StrUserInput = "8";
                 H = "O";
-                blnAiTurn = false;
+                BlnAiTurn = false;
             }
 
             /*1|2|3
             * @|5|6
             * 7|8|9
             */
-            if (D == "4" && blnAiTurn == true)
+            if (D == "4" && BlnAiTurn)
             {
-                strUserInput = "4";
+                StrUserInput = "4";
                 D = "O";
-                blnAiTurn = false;
+                BlnAiTurn = false;
             }
         }
     }
