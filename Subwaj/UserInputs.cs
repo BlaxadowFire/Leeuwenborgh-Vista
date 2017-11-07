@@ -1119,7 +1119,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("");
+                                Program.WallPosition("it's still no game");
                                 break;
                             }
                             default:
@@ -1154,7 +1154,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("");
+                                Program.WallPosition("nice wall");
                                 break;
                             }
                             default:
