@@ -11,7 +11,11 @@ namespace Subwaj
         public static void Nothing()
         {
             Console.Clear();
-            Console.WriteLine("Nothing happened");
+            string nothing = File.ReadAllText("files/story/Halls/nothing.txt");
+            Program.Ss.SpeakAsync(nothing);
+            Console.Clear();
+            File.ReadAllText("files/story/Halls/nothing.txt");
+            Console.Write(nothing);
             Thread.Sleep(1000);
             Console.Clear();
             BackToCurrentRoom();
@@ -232,7 +236,6 @@ namespace Subwaj
                                     Console.Clear();
                                     Console.WriteLine("Note This");
                                     Program.WallPosition(Puzzle3.Room1.ToString());
-                                    Thread.Sleep(2500);
                                     break;
                                 }
                             case "NumPad4":
@@ -292,7 +295,6 @@ namespace Subwaj
                                     Console.Clear();
                                     Console.WriteLine("Note This");
                                     Program.WallPosition(Puzzle3.Room2.ToString());
-                                    Thread.Sleep(1000);
                                     break;
                                 }
                             case "NumPad4":
@@ -366,7 +368,6 @@ namespace Subwaj
                                     Console.Clear();
                                     Console.WriteLine("Note This");
                                     Program.WallPosition(Puzzle3.Room3.ToString());
-                                    Thread.Sleep(1000);
                                     break;
                                 }
                             case "NumPad4":
@@ -448,7 +449,6 @@ namespace Subwaj
                                     Console.Clear();
                                     Console.WriteLine("Note This");
                                     Program.WallPosition(Puzzle3.Room4.ToString());
-                                    Thread.Sleep(1000);
                                     break;
                                 }
                             case "NumPad4":
