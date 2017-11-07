@@ -115,7 +115,7 @@ namespace Subwaj
         public static bool BlnRoom6Story;
         public static bool BlnRoom7Story;
         public static bool BlnHall1Story;
-        public static bool BlnHall2Story = false;
+        public static bool BlnHall2Story;
         public static bool BlnHall3Story;
         public static bool BlnHall4Story;
         public static bool BlnHall5Story;
@@ -203,6 +203,24 @@ namespace Subwaj
             string strUserStart = string.Empty;
             bool blnLoopQuestion = true;
 
+            //control help
+
+            string strHelp2TextName = File.ReadAllText("files/Help2.txt");
+            Ss.SpeakAsync(strHelp2TextName);
+            foreach (char cha in strHelp2TextName)
+            {
+                Console.Write(cha);
+                if (cha == ',' || cha == ':' || cha == '.')
+                {
+                    Thread.Sleep(IntSleep400); //400
+                }
+                Thread.Sleep(40); //40
+            }
+            string strHelp2Textname = StrTxtLocation + "files/help2.txt";
+            Thread.Sleep(4000);
+            Console.Clear();
+
+            //Begin of game
 
             string strIntroTextName = "Ah, you're Finally here: " + Environment.UserName + "!\r\n";
             Ss.SpeakAsync(strIntroTextName);
@@ -675,6 +693,7 @@ namespace Subwaj
         }
         //END OF ROOMS
 
+        //Background
         public static void Backgroudposition()
         {
             if (CurrentRoom == StrRoom1)
@@ -713,10 +732,23 @@ namespace Subwaj
                 }
                 Console.SetCursorPosition(0, 0);
             }
-            else if (CurrentRoom == StrHall1 || CurrentRoom == StrHall2 || CurrentRoom == StrHall3 || CurrentRoom == StrHall4 || CurrentRoom == StrHall5 || CurrentRoom == StrHall6 || CurrentRoom == StrHall7 || CurrentRoom == StrHall8 || CurrentRoom == StrHall9 || CurrentRoom == StrHall10 || CurrentRoom == StrHall11 || CurrentRoom == StrHall12 || CurrentRoom == StrHall13 || CurrentRoom == StrHall14 )
+            else if (CurrentRoom == StrHall1 || CurrentRoom == StrHall2 || CurrentRoom == StrHall3 || CurrentRoom == StrHall4 || CurrentRoom == StrHall5 || CurrentRoom == StrHall6 || CurrentRoom == StrHall7 || 
+                CurrentRoom == StrHall8 || CurrentRoom == StrHall9 || CurrentRoom == StrHall10 || CurrentRoom == StrHall12 || CurrentRoom == StrHall13 || CurrentRoom == StrHall14 )
             {
                 Console.SetCursorPosition(48, 3);
                 string[] background = File.ReadAllLines("files/backgrounds/backgrounds1.txt");
+                foreach (string bg in background)
+                {
+                    Console.CursorLeft = 48;
+                    Console.Write(bg);
+                    Console.WriteLine("");
+                }
+                Console.SetCursorPosition(0, 0);
+            }
+            else if (CurrentRoom == StrHall11)
+            {
+                Console.SetCursorPosition(48, 3);
+                string[] background = File.ReadAllLines("files/backgrounds/Base BG.txt");
                 foreach (string bg in background)
                 {
                     Console.CursorLeft = 48;
@@ -737,6 +769,28 @@ namespace Subwaj
                 }
                 Console.SetCursorPosition(0, 0);
             }
+        }
+
+        //Walls
+        public static void WallPosition(string x)
+        {
+            Console.Clear();
+            Console.WriteLine("\r\n\r\n\r\n  Press any key to go back");
+            x = x == "" ? "Nothing" : x;
+            Console.SetCursorPosition(48, 3);
+            string[] background = File.ReadAllLines("files/story/Walls/Wall1/Wall1.txt");
+            for (int i = 0; i < background.Length; i++)
+            {
+                Console.CursorLeft = 48;
+                Console.Write(background[i]);
+                Console.WriteLine("");
+            }
+            Console.SetCursorPosition(48 + 34 - x.Length/2, 12);
+            Console.Write(x);
+
+            Console.SetCursorPosition(0, 0);
+            Console.ReadKey();
+            return;
         }
 
         //BEGIN OF HALLS
