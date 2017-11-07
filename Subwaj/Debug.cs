@@ -10,7 +10,7 @@ namespace Subwaj
         {
 
 
-            if (Program.StrAnswer == "DebugMode" || Program.StrAnswer == "DEBUG" || Program.StrAnswer == "Debug")
+            if (Program.StrAnswer == "debug")
             {
                 if (Program.BlnDebug == false)
                 {

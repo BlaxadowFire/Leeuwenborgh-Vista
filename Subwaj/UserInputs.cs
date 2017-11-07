@@ -166,7 +166,7 @@ namespace Subwaj
                     }
                 case "SHOP":
                     {
-                        switch (strCKI)
+                        switch (strCki)
                         {
                             case "Escape":
                                 {
