@@ -1226,7 +1226,7 @@ namespace Subwaj
                                         BackToCurrentRoom();
                                     }
                                     break;
-                                }
+                            }
                             case "NumPad2":
                             case "D2":
                             {
