@@ -176,31 +176,17 @@ namespace Subwaj
                             case "D1":
                             case "NumPad1":
                                 {
-                                    UserInput();
+                                    Console.Clear();
+                                    Console.WriteLine("Congratulations you found a Fancy sword.");
+                                    Program.Sword = true;
+                                    Thread.Sleep(1000);
+                                    BackToCurrentRoom();
                                     break;
                                 }
                             case "D2":
                             case "NumPad2":
                                 {
-                                    UserInput();
-                                    break;
-                                }
-                            case "D3":
-                            case "NumPad3":
-                                {
-                                    UserInput();
-                                    break;
-                                }
-                            case "D4":
-                            case "NumPad4":
-                                {
-                                    UserInput();
-                                    break;
-                                }
-                            case "D5":
-                            case "NumPad5":
-                                {
-                                    UserInput();
+                                    Program.Hall3();
                                     break;
                                 }
                             default:
@@ -700,13 +686,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("This is an Wall");
-                                break;
-                            }
-                            case "NumPad4":
-                            case "D4":
-                            {
-                                Nothing();
+                                Program.WallPosition("This is a Wall");
                                 break;
                             }
                             default:
@@ -744,12 +724,6 @@ namespace Subwaj
                                 Program.WallPosition("Nothing here!");
                                 break;
                             }
-                            case "NumPad4":
-                            case "D4":
-                            {
-                                Nothing();
-                                break;
-                            }
                             default:
                             {
                                 BackToCurrentRoom();
@@ -770,7 +744,7 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Errors.ErrorNotYetCreated();
+                                    Program.Shop();
                                 break;
                             }
                             case "NumPad2":
@@ -783,12 +757,6 @@ namespace Subwaj
                             case "D3":
                             {
                                 Program.WallPosition("Another wall");
-                                break;
-                            }
-                            case "NumPad4":
-                            case "D4":
-                            {
-                                Nothing();
                                 break;
                             }
                             default:
@@ -825,15 +793,9 @@ namespace Subwaj
                             {
                                 Program.WallPosition("Go away!!!");
                                 break;
-                            }
+                            }  
                             case "NumPad4":
                             case "D4":
-                            {
-                                Nothing();
-                                break;
-                            }
-                            case "NumPad5":
-                            case "D5":
                             {
                                     if (Program.IntKey == 1)
                                     {
@@ -885,17 +847,11 @@ namespace Subwaj
                             case "NumPad4":
                             case "D4":
                             {
-                                Nothing();
+                                Program.Hall11();
                                 break;
                             }
                             case "NumPad5":
                             case "D5":
-                            {
-                                Program.Hall11();
-                                break;
-                            }
-                            case "NumPad6":
-                            case "D6":
                             {
                                     if (Program.IntKey == 1)
                                     {
@@ -944,12 +900,6 @@ namespace Subwaj
                                 Program.WallPosition("A there you are ");
                                 break;
                             }
-                            case "NumPad4":
-                            case "D4":
-                            {
-                                Nothing();
-                                break;
-                            }
                             default:
                             {
                                 BackToCurrentRoom();
@@ -982,13 +932,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("Here wa something");
-                                break;
-                            }
-                            case "NumPad4":
-                            case "D4":
-                            {
-                                Nothing();
+                                Program.WallPosition("Here was something");
                                 break;
                             }
                             default:
@@ -1029,17 +973,11 @@ namespace Subwaj
                             case "NumPad4":
                             case "D4":
                                 {
-                                    Nothing();
+                                    Program.Hall9();
                                     break;
                                 }
                             case "NumPad5":
                             case "D5":
-                                {
-                                    Program.Hall9();
-                                    break;
-                                }
-                            case "NumPad6":
-                            case "D6":
                                 {
                                     Program.Hall5();
                                     break;
@@ -1076,13 +1014,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("HAHA I'm gone win");
-                                break;
-                            }
-                            case "NumPad4":
-                            case "D4":
-                            {
-                                Nothing();
+                                Program.WallPosition("HAHA, I'm gone win");
                                 break;
                             }
                             default:
@@ -1120,12 +1052,6 @@ namespace Subwaj
                                 Program.WallPosition("Good luck");
                                 break;
                             }
-                            case "NumPad4":
-                            case "D4":
-                            {
-                                Nothing();
-                                break;
-                            }
                             default:
                             {
                                 BackToCurrentRoom();
@@ -1158,13 +1084,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("He watch it!!!");
-                                break;
-                            }
-                            case "NumPad4":
-                            case "D4":
-                            {
-                                Nothing();
+                                Program.WallPosition("Hey watch it!!!");
                                 break;
                             }
                             default:
@@ -1202,12 +1122,6 @@ namespace Subwaj
                                 Program.WallPosition("");
                                 break;
                             }
-                            case "NumPad4":
-                            case "D4":
-                            {
-                                Nothing();
-                                break;
-                            }
                             default:
                             {
                                 BackToCurrentRoom();
@@ -1241,12 +1155,6 @@ namespace Subwaj
                             case "D3":
                             {
                                 Program.WallPosition("");
-                                break;
-                            }
-                            case "NumPad4":
-                            case "D4":
-                            {
-                                Nothing();
                                 break;
                             }
                             default:
@@ -1295,12 +1203,6 @@ namespace Subwaj
                             {
                                  Program.WallPosition("");
                                  break;
-                            }
-                            case "NumPad4":
-                            case "D4":
-                            {
-                                Nothing();
-                                break;
                             }
                             default:
                             {
@@ -1434,6 +1336,11 @@ namespace Subwaj
                 case "HALL14":
                     {
                         Program.Hall14();
+                        break;
+                    }
+                case "SHOP":
+                    {
+                        Program.Shop();
                         break;
                     }
                 case "InGameMenu":
