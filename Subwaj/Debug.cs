@@ -131,6 +131,11 @@ namespace Subwaj
                                     Program.Hall14();
                                     break;
                                 }
+                            case "shop":
+                                {
+                                    Program.Shop();
+                                    break;
+                                }
                             case "exit":
                             case "":
                             case "mainmenu":
