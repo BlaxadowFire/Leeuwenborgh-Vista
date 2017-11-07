@@ -216,7 +216,6 @@ namespace Subwaj
                 }
                 Thread.Sleep(40); //40
             }
-            string strHelp2Textname = StrTxtLocation + "files/help2.txt";
             Thread.Sleep(4000);
             Console.Clear();
 
@@ -779,10 +778,10 @@ namespace Subwaj
             x = x == "" ? "Nothing" : x;
             Console.SetCursorPosition(48, 3);
             string[] background = File.ReadAllLines("files/story/Walls/Wall1/Wall1.txt");
-            for (int i = 0; i < background.Length; i++)
+            foreach (string t in background)
             {
                 Console.CursorLeft = 48;
-                Console.Write(background[i]);
+                Console.Write(t);
                 Console.WriteLine("");
             }
             Console.SetCursorPosition(48 + 34 - x.Length/2, 12);
@@ -790,7 +789,6 @@ namespace Subwaj
 
             Console.SetCursorPosition(0, 0);
             Console.ReadKey();
-            return;
         }
 
         //BEGIN OF HALLS
