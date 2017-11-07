@@ -198,6 +198,24 @@ namespace Subwaj
             string strUserStart = string.Empty;
             bool blnLoopQuestion = true;
 
+            //control help
+
+            string strHelp2TextName = File.ReadAllText("files/Help2.txt");
+            Ss.SpeakAsync(strHelp2TextName);
+            foreach (char cha in strHelp2TextName)
+            {
+                Console.Write(cha);
+                if (cha == ',' || cha == ':' || cha == '.')
+                {
+                    Thread.Sleep(IntSleep400); //400
+                }
+                Thread.Sleep(40); //40
+            }
+            string strHelp2Textname = StrTxtLocation + "files/help2.txt";
+            Thread.Sleep(4000);
+            Console.Clear();
+
+            //Begin of game
 
             string strIntroTextName = "Ah, you're Finally here: " + Environment.UserName + "!\r\n";
             Ss.SpeakAsync(strIntroTextName);

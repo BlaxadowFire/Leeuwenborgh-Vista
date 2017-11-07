@@ -49,6 +49,7 @@ namespace Subwaj
             {
                 Console.Clear();
                 Console.WriteLine("\r\n\r\n");
+                Program.Ss.SpeakAsyncCancelAll();
                 Program.Ss.SpeakAsync(strQuestionFile[i]);
                 Console.WriteLine(strQuestionFile[i] + "\r\n");
 

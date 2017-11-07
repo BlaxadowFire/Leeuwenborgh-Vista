@@ -214,8 +214,10 @@ namespace Subwaj
                 Thread.Sleep(250);
             } while (i <= 3);
             Console.WriteLine("Correct!");
+            Console.WriteLine("congratulations, you earned the key");
+            Program.Ss.Speak("congratulations, you earned the key");
             Program.DrawBottom();
-            Thread.Sleep(400);
+            Thread.Sleep(1000);
             Console.Clear();
             Program.BlnPuzzle3Complete = true;
             Program.IntKey += 1;
