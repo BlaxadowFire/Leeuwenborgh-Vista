@@ -220,6 +220,14 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
+                            case "NumPad0":
+                            case "D0":
+                                {
+
+                                    Program.BlnRoom1Story = false;
+                                    BackToCurrentRoom();
+                                    break;
+                                }
                             case "NumPad1":
                             case "D1":
                                 {
@@ -262,6 +270,14 @@ namespace Subwaj
                             case "Escape":
                                 {
                                     Program.InGameMenu();
+                                    break;
+                                }
+                            case "NumPad0":
+                            case "D0":
+                                {
+
+                                    Program.BlnRoom2Story = false;
+                                    BackToCurrentRoom();
                                     break;
                                 }
                             case "NumPad1":
@@ -329,6 +345,14 @@ namespace Subwaj
                             case "Escape":
                                 {
                                     Program.InGameMenu();
+                                    break;
+                                }
+                            case "NumPad0":
+                            case "D0":
+                                {
+
+                                    Program.BlnRoom3Story = false;
+                                    BackToCurrentRoom();
                                     break;
                                 }
                             case "NumPad1":
@@ -412,6 +436,14 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
+                            case "NumPad0":
+                            case "D0":
+                                {
+
+                                    Program.BlnRoom4Story = false;
+                                    BackToCurrentRoom();
+                                    break;
+                                }
                             case "NumPad1":
                             case "D1":
                                 {
@@ -454,6 +486,14 @@ namespace Subwaj
                             case "Escape":
                                 {
                                     Program.InGameMenu();
+                                    break;
+                                }
+                            case "NumPad0":
+                            case "D0":
+                                {
+
+                                    Program.BlnRoom5Story = false;
+                                    BackToCurrentRoom();
                                     break;
                                 }
                             case "NumPad1":
@@ -519,6 +559,14 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
+                            case "NumPad0":
+                            case "D0":
+                                {
+
+                                    Program.BlnRoom6Story = false;
+                                    BackToCurrentRoom();
+                                    break;
+                                }
                             case "NumPad1":
                             case "D1":
                                 if (Program.BlnPuzzle4Complete == false)
@@ -582,6 +630,14 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
+                            case "NumPad0":
+                            case "D0":
+                                {
+
+                                    Program.BlnRoom7Story = false;
+                                    BackToCurrentRoom();
+                                    break;
+                                }
                             case "D1":
                             case "NumPad1":
                                 {
@@ -628,6 +684,7 @@ namespace Subwaj
                                 Program.InGameMenu();
                                 break;
                             }
+
                             case "NumPad1":
                             case "D1":
                             {
@@ -1086,14 +1143,6 @@ namespace Subwaj
                                 Program.InGameMenu();
                                 break;
                             }
-                            case "NumPad0":
-                            case "D0":
-                                {
-
-                                    Program.BlnRoom1Story = false;
-                                    BackToCurrentRoom();
-                                    break;
-                                }
                             case "NumPad1":
                             case "D1":
                             {
