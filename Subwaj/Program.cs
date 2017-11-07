@@ -1091,15 +1091,15 @@ namespace Subwaj
         public static void Wallrun()
         {
             Console.Clear();
-            Console.Write(".");
-            Thread.Sleep(500);
-            Console.Write("..");
-            Thread.Sleep(500);
-            Console.Write("...");
-            Thread.Sleep(500);
-            Console.WriteLine("you were uncoises for 5 minuts becaus you bang your head into a wall and that is unpossible");
-
-            IntTimerMinutes =-5;
+            Console.Write(".\r\n");
+            Thread.Sleep(1000);
+            Console.Write("..\r\n");
+            Thread.Sleep(1000);
+            Console.Write("...\r\n");
+            Thread.Sleep(1000);
+            IntTimerMinutes = -5;
+            Console.WriteLine("you where unconscious for 5 minutes because tried to break a wall with your head. What where you even thinking?");
+            Thread.Sleep(1000);
         }
 
         

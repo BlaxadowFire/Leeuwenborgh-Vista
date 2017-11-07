@@ -226,7 +226,7 @@ namespace Subwaj
                             case "NumPad2":
                             case "D2":
                                 {
-                                    Nothing();
+                                    Program.Wallrun();
                                     break;
                                 }
                             case "NumPad3":
@@ -1066,7 +1066,7 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Nothing();
+                                Program.Wallrun();
                                 break;
                             }
                             case "NumPad2":
@@ -1149,6 +1149,12 @@ namespace Subwaj
                             case "D3":
                             {
                                 Program.WallPosition("nice wall");
+                                break;
+                            }
+                            case "NumPad4":
+                            case "D4":
+                            {
+                                Program.Wallrun();
                                 break;
                             }
                             default:
