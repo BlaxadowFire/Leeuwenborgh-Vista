@@ -677,7 +677,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Nothing();
+                                Program.WallPosition("bla");
                                 break;
                             }
                             case "NumPad4":
