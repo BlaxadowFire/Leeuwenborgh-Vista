@@ -113,7 +113,7 @@ namespace Subwaj
         public static bool BlnRoom6Story;
         public static bool BlnRoom7Story;
         public static bool BlnHall1Story;
-        public static bool BlnHall2Story = false;
+        public static bool BlnHall2Story;
         public static bool BlnHall3Story;
         public static bool BlnHall4Story;
         public static bool BlnHall5Story;
