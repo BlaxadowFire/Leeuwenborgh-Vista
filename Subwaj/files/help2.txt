@@ -1,5 +1,5 @@
-﻿You can't use the you're mouse to nevigate in the game.
-If you you use you're mouse then just press enter to continue.
+﻿You can't use you're mouse to nevigate in the game.
+If you use you're mouse then just press enter to continue.
 
 You can press escape any time to open an in game menu.
 
