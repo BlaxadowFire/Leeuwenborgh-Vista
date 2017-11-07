@@ -266,9 +266,6 @@
     <Content Include="files\story\Rooms\Shop\Shop1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Walls\Wall2\Wall2.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="files\menu\mainmenu.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -381,7 +378,6 @@
     <Folder Include="files\story\Halls\Hall9\" />
     <Folder Include="files\story\Rooms\Room3\" />
     <Folder Include="files\story\Rooms\Room7\" />
-    <Folder Include="files\story\Walls\Wall3\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
