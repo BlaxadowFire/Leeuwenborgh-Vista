@@ -1,0 +1,3 @@
+﻿you can press escape any time to open an in game menu.
+
+use the numbers 0-9 to nevegate 
