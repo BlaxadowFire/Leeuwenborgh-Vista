@@ -1067,6 +1067,21 @@ namespace Subwaj
             OriginalForeGroundColor = Console.ForegroundColor;
         }
 
+        public static void Wallrun()
+        {
+            Console.Clear();
+            Console.Write(".");
+            Thread.Sleep(500);
+            Console.Write("..");
+            Thread.Sleep(500);
+            Console.Write("...");
+            Thread.Sleep(500);
+            Console.WriteLine("you were uncoises for 5 minuts becaus you bang your head into a wall and that is unpossible");
+
+            IntTimerMinutes =-5;
+        }
+
+        
         //BGM
         public static void Bgm()
         {
