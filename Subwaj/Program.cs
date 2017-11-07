@@ -8,6 +8,8 @@ namespace Subwaj
 
     class Program
     {
+        public static bool Sword = false;
+
         public static string StrAnswer = string.Empty;
 
         public static int IntKey;
@@ -166,7 +168,10 @@ namespace Subwaj
         {
             Console.Clear();
             CurrentRoom = StrShop;
+            Backgroudposition();
+            Console.WriteLine(File.ReadAllText("files/Rooms/Shop/Shop.txt"));
             UserInputs.UserInput();
+            Errors.ErrorOutOfBounds();
         }
 
         // BEGIN OF MainMenu

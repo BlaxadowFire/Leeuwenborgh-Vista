@@ -7,5 +7,4 @@
 1.)    go to hall 5
 2.)    go to room 3
 3.)    look at walls
-4.)    press big button
-5.)    go to hall 10
+4.)    go to hall 10

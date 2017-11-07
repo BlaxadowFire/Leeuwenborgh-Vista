@@ -365,7 +365,8 @@ namespace Subwaj
         public static void DrawGrid()
         {
             Console.Clear();
-            Program.Ss.SpeakAsync("Last turn: " + StrUserInput);
+            Program.Ss.SpeakAsyncCancelAll();
+            Program.Ss.Speak("Last turn: " + StrUserInput);
             Console.WriteLine("Last turn:{0}", StrUserInput);
             Console.BackgroundColor = ConsoleColor.Red;
             Console.WriteLine("{0} Give input\r\n\r\n", StrCurrentPlayer);
