@@ -756,6 +756,7 @@ namespace Subwaj
         //Walls
         public static void WallPosition(string x)
         {
+            Console.Clear();
             x = x == "" ? "Nothing" : x;
             Console.SetCursorPosition(48, 3);
             string[] background = File.ReadAllLines("files/story/Walls/Wall1/Wall1.txt");
@@ -770,6 +771,7 @@ namespace Subwaj
 
             Console.SetCursorPosition(0, 0);
             Console.ReadKey();
+            return;
         }
 
         //BEGIN OF HALLS
