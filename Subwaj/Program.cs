@@ -495,7 +495,7 @@ namespace Subwaj
 
             CurrentRoom = StrRoom1;
             Console.Clear();
-            if (BlnRoom1Story == false)
+            if (!BlnRoom1Story)
             {
                 //story
                 string strFilename = StrTxtLocation + "Rooms/Room1/Room1.txt";
@@ -551,7 +551,7 @@ namespace Subwaj
         {
             CurrentRoom = StrRoom2;
             Console.Clear();
-            if (BlnRoom2Story == false)
+            if (!BlnRoom2Story)
             {
                 //story
                 BlnRoom2Story = true;
@@ -565,7 +565,7 @@ namespace Subwaj
         {
             CurrentRoom = StrRoom3;
             Console.Clear();
-            if (BlnRoom3Story == false)
+            if (!BlnRoom3Story)
             {
                 //story
                 BlnRoom3Story = true;
@@ -578,7 +578,7 @@ namespace Subwaj
         }
         public static void Room4()
         {
-            if (BlnRoom4Story == false)
+            if (!BlnRoom4Story)
             {
                 //story
                 //story
@@ -607,7 +607,7 @@ namespace Subwaj
 
             CurrentRoom = StrRoom4;
             Console.Clear();
-            if (BlnRoom4Story == false)
+            if (!BlnRoom4Story)
             {
                 //story
                 BlnRoom4Story = true;
@@ -621,7 +621,7 @@ namespace Subwaj
         {
             CurrentRoom = StrRoom5;
             Console.Clear();
-            if (BlnRoom5Story == false)
+            if (!BlnRoom5Story)
             {
                 //story
                 BlnRoom5Story = true;
@@ -635,7 +635,7 @@ namespace Subwaj
         {
             CurrentRoom = StrRoom6;
             Console.Clear();
-            if (BlnRoom6Story == false)
+            if (!BlnRoom6Story)
             {
                 //story
                 BlnRoom6Story = true;
@@ -647,7 +647,7 @@ namespace Subwaj
         }
         public static void Room7()
         {
-            if (BlnRoom7Story == false)
+            if (!BlnRoom7Story)
             {
                 //story
                 //story
@@ -676,7 +676,7 @@ namespace Subwaj
 
             CurrentRoom = StrRoom7;
             Console.Clear();
-            if (BlnRoom7Story == false)
+            if (!BlnRoom7Story)
             {
                 //story
                 BlnRoom7Story = true;
@@ -793,7 +793,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall1;
             Console.Clear();
-            if (BlnHall1Story == false)
+            if (!BlnHall1Story)
             {
                 //story
                 BlnHall1Story = true;
@@ -808,7 +808,11 @@ namespace Subwaj
         {
             CurrentRoom = StrHall2;
             Console.Clear();
-
+            if (!BlnHall2Story)
+            {
+                //story
+                BlnHall2Story = true;
+            }
             Backgroudposition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall2.txt"));
             UserInputs.UserInput();
@@ -818,7 +822,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall3;
             Console.Clear();
-            if (BlnHall3Story == false)
+            if (!BlnHall3Story)
             {
                 //story
                 BlnHall3Story = true;
@@ -832,7 +836,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall4;
             Console.Clear();
-            if (BlnHall4Story == false)
+            if (!BlnHall4Story)
             {
                 //story
                 BlnHall4Story = true;
@@ -846,7 +850,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall5;
             Console.Clear();
-            if (BlnHall5Story == false)
+            if (!BlnHall5Story)
             {
                 //story
                 BlnHall5Story = true;
@@ -860,7 +864,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall6;
             Console.Clear();
-            if (BlnHall6Story == false)
+            if (!BlnHall6Story)
             {
                 //story
                 BlnHall6Story = true;
@@ -874,7 +878,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall7;
             Console.Clear();
-            if (BlnHall7Story == false)
+            if (!BlnHall7Story)
             {
                 //story
                 BlnHall7Story = true;
@@ -888,7 +892,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall8;
             Console.Clear();
-            if (BlnHall8Story == false)
+            if (!BlnHall8Story)
             {
                 //story
                 BlnHall8Story = true;
@@ -902,7 +906,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall9;
             Console.Clear();
-            if (BlnHall9Story == false)
+            if (!BlnHall9Story)
             {
                 //story
 
@@ -917,7 +921,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall10;
             Console.Clear();
-            if (BlnHall10Story == false)
+            if (!BlnHall10Story)
             {
                 //story
                 BlnHall10Story = true;
@@ -931,7 +935,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall11;
             Console.Clear();
-            if (BlnHall11Story == false)
+            if (!BlnHall11Story)
             {
                 //story
                 BlnHall11Story = true;
@@ -945,7 +949,7 @@ namespace Subwaj
         {
             CurrentRoom = StrHall12;
             Console.Clear();
-            if (BlnHall12Story == false)
+            if (!BlnHall12Story)
             {
                 //story
                 BlnHall12Story = true;
@@ -958,12 +962,11 @@ namespace Subwaj
         }
         public static void Hall13()
         {
-            if (BlnHall13Story == false)
+            if (!BlnHall13Story)
             {
                 //story
-                //story
                 Console.Clear();
-                string strFilename = StrTxtLocation + "Halls/Hall13/Hall13.txt";
+                string strFilename = StrTxtLocation + "Halls/story/Hall13/Hall13.txt";
                 string[] introText = File.ReadAllLines(strFilename);
                 foreach (string strIntroText in introText)
                 {
@@ -987,7 +990,7 @@ namespace Subwaj
 
             CurrentRoom = StrHall13;
             Console.Clear();
-            if (BlnHall13Story == false)
+            if (BlnHall13Story)
             {
                 //story
                 BlnHall13Story = true;
@@ -999,7 +1002,7 @@ namespace Subwaj
         }
         public static void Hall14()
         {
-            if (BlnHall14Story == false)
+            if (BlnHall14Story)
             {
                 //story
                 //story
@@ -1028,7 +1031,7 @@ namespace Subwaj
 
             CurrentRoom = StrHall14;
             Console.Clear();
-            if (BlnHall14Story == false)
+            if (BlnHall14Story)
             {
                 //story
                 BlnHall14Story = true;
