@@ -14,7 +14,6 @@ namespace Subwaj
             string nothing = File.ReadAllText("files/story/Halls/nothing.txt");
             Program.Ss.SpeakAsync(nothing);
             Console.Clear();
-            File.ReadAllText("files/story/Halls/nothing.txt");
             Console.Write(nothing);
             Thread.Sleep(1000);
             Console.Clear();
