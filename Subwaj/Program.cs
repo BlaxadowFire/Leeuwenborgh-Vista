@@ -227,7 +227,7 @@ namespace Subwaj
             foreach (char cha in strIntroTextName)
             {
                 Console.Write(cha);
-                if (cha == ',' || cha == ':')
+                if (cha == ',' || cha == ':' || cha == '?')
                 {
                     Thread.Sleep(IntSleep400); //400
                 }
@@ -251,7 +251,7 @@ namespace Subwaj
                 for (int x = 0; x < strIntroText.Length; x++)
                 {
                     Console.Write(strIntroText[x]);
-                    if (strIntroText[x] == ',')
+                    if (strIntroText[x] == ',' || strIntroText[x] == '.' || strIntroText[x] == '?')
                     {
                         Thread.Sleep(IntSleep400); //400
                     }
@@ -317,7 +317,7 @@ namespace Subwaj
                     foreach (char cha in strIntroText)
                     {
                         Console.Write(cha);
-                        if (cha == ',')
+                        if (cha == ',' || cha == '.' || cha == '?')
                         {
                             Thread.Sleep(IntSleep400);
                         }
@@ -533,7 +533,7 @@ namespace Subwaj
                     foreach (char cha in strIntroText)
                     {
                         Console.Write(cha);
-                        if (cha == ',')
+                        if (cha == ',' || cha == '.' || cha == '?')
                         {
                             Thread.Sleep(IntSleep400); //400
                         }

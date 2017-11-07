@@ -1,6 +1,9 @@
-﻿You can't use you're mouse to nevigate in the game.
-If you use you're mouse then just press enter to continue.
+﻿You can't use the mouse in the game.
+
+If you accidentally used your mouse, just press enter to fix it.
 
 You can press escape any time to open an in game menu.
 
-Use the numbers 0-9 to nevegate in the game.
+Use the numbers 0-9 to navigate in the game.
+
+If the game looks a bit awkward or odd, you can refresh the current page by pressing enter.
