@@ -7,6 +7,5 @@
 1.)    go to room 4
 2.)    go to hall 4
 3.)    look at walls
-4.)    press big button
-5.)    go to hall 11
-6.)    go to hall 8
+4.)    go to hall 11
+5.)    go to hall 8
