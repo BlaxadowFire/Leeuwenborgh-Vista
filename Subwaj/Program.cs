@@ -738,6 +738,7 @@ namespace Subwaj
         //Walls
         public static void WallPosition(string x)
         {
+            x = x == "" ? "Nothing" : x;
             Console.SetCursorPosition(48, 3);
             string[] background = File.ReadAllLines("files/story/Walls/Wall1/Wall1.txt");
             for (int i = 0; i < background.Length; i++)
@@ -746,7 +747,7 @@ namespace Subwaj
                 Console.Write(background[i]);
                 Console.WriteLine("");
             }
-            Console.SetCursorPosition(80,12);
+            Console.SetCursorPosition(48 + 34 - x.Length/2, 12);
             Console.Write(x);
 
             Console.SetCursorPosition(0, 0);
