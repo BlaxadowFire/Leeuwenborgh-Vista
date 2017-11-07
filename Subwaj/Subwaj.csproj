@@ -299,7 +299,7 @@
     <Content Include="files\story\TTS\ROOM1\room1-7.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Walls\Wall1\spongebob.txt">
+    <Content Include="files\backgrounds\spongebob.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="game.ico" />

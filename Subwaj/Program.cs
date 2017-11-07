@@ -168,7 +168,7 @@ namespace Subwaj
         {
             Console.Clear();
             CurrentRoom = StrShop;
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Shop/Shop.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -546,7 +546,7 @@ namespace Subwaj
                 Console.Clear();
                 BlnRoom1Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Room1/Room1.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -560,7 +560,7 @@ namespace Subwaj
                 //story
                 BlnRoom2Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Room2/Room2.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -574,7 +574,7 @@ namespace Subwaj
                 //story
                 BlnRoom3Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
 
             Console.WriteLine(File.ReadAllText("files/Rooms/Room3/Room3.txt"));
             UserInputs.UserInput();
@@ -616,7 +616,7 @@ namespace Subwaj
                 //story
                 BlnRoom4Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Room4/Room4.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -630,7 +630,7 @@ namespace Subwaj
                 //story
                 BlnRoom5Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Room5/Room5.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -644,7 +644,7 @@ namespace Subwaj
                 //story
                 BlnRoom6Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Room6/Room6.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -686,14 +686,14 @@ namespace Subwaj
                 BlnRoom7Story = true;
             }
             Console.WriteLine("BOSSROOM");
-            Console.WriteLine(File.ReadAllText("files/story/walls/wall1/spongebob.txt"));
+            Program.BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Room7/Room7.txt"));
             UserInputs.UserInput();
         }
         //END OF ROOMS
 
         //Background
-        public static void Backgroudposition()
+        public static void BackGroundPosition()
         {
             if (CurrentRoom == StrRoom1)
             {
@@ -723,6 +723,18 @@ namespace Subwaj
             {
                 Console.SetCursorPosition(48, 3);
                 string[] background = File.ReadAllLines("files/backgrounds/BGNoTree.txt");
+                foreach (string bg in background)
+                {
+                    Console.CursorLeft = 48;
+                    Console.Write(bg);
+                    Console.WriteLine("");
+                }
+                Console.SetCursorPosition(0, 0);
+            }
+            else if (CurrentRoom == StrRoom7)
+            {
+                Console.SetCursorPosition(48, 3);
+                string[] background = File.ReadAllLines("files/backgrounds/spongebob.txt");
                 foreach (string bg in background)
                 {
                     Console.CursorLeft = 48;
@@ -801,7 +813,7 @@ namespace Subwaj
                 //story
                 BlnHall1Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall1.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -816,7 +828,7 @@ namespace Subwaj
                 //story
                 BlnHall2Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall2.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -830,7 +842,7 @@ namespace Subwaj
                 //story
                 BlnHall3Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall3.txt"));
             UserInputs.UserInput();
             Errors.ErrorNotYetCreated();
@@ -844,7 +856,7 @@ namespace Subwaj
                 //story
                 BlnHall4Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall4.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -858,7 +870,7 @@ namespace Subwaj
                 //story
                 BlnHall5Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall5.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -872,7 +884,7 @@ namespace Subwaj
                 //story
                 BlnHall6Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall6.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -886,7 +898,7 @@ namespace Subwaj
                 //story
                 BlnHall7Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall7.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -900,7 +912,7 @@ namespace Subwaj
                 //story
                 BlnHall8Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall8.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -915,7 +927,7 @@ namespace Subwaj
 
                 BlnHall9Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall9.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -929,7 +941,7 @@ namespace Subwaj
                 //story
                 BlnHall10Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall10.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -943,7 +955,7 @@ namespace Subwaj
                 //story
                 BlnHall11Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall11.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -957,7 +969,7 @@ namespace Subwaj
                 //story
                 BlnHall12Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall12.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -998,7 +1010,7 @@ namespace Subwaj
                 //story
                 BlnHall13Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall13.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -1039,7 +1051,7 @@ namespace Subwaj
                 //story
                 BlnHall14Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall14.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
