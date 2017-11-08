@@ -28,10 +28,7 @@ namespace Subwaj
                         {
                             case "puzzle3":
                                 {
-                                    Console.WriteLine(Puzzle3.Room1);
-                                    Console.WriteLine(Puzzle3.Room2);
-                                    Console.WriteLine(Puzzle3.Room3);
-                                    Console.WriteLine(Puzzle3.Room4);
+                                    Console.Write(Puzzle3.Room2 + Puzzle3.Room4 + Puzzle3.Room1 + Puzzle3.Room3);
                                     Console.ReadKey();
                                     break;
                                 }
