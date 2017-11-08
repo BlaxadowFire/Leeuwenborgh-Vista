@@ -991,6 +991,26 @@ namespace Subwaj
             if (!BlnHall12Story)
             {
                 //story
+                Console.Clear();
+                string strFilename = StrTxtLocation + "Halls/Hall12/ShopHint.txt";
+                string[] introText = File.ReadAllLines(strFilename);
+                foreach (string strIntroText in introText)
+                {
+                    Ss.SpeakAsync(strIntroText);
+                    foreach (char cha in strIntroText)
+                    {
+                        Console.Write(cha);
+                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
+                        {
+                            Thread.Sleep(IntSleep400); //400
+                        }
+                        Thread.Sleep(40); //40
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(IntSleep400); //400
+                }
+                Thread.Sleep(1000);
+                Console.Clear();
                 BlnHall12Story = true;
             }
             BackGroundPosition();
