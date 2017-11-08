@@ -107,7 +107,6 @@ namespace Subwaj
 
         //Story read (so you don't get the story every time you go into the room)
         public static bool BlnRoom1Story;
-
         public static bool BlnRoom2Story;
         public static bool BlnRoom3Story;
         public static bool BlnRoom4Story;
@@ -132,6 +131,7 @@ namespace Subwaj
         public static bool BlnPuzzle2 = false;
         public static bool BlnPuzzle3 = false;
         public static bool BlnPuzzle4 = false;
+        public static bool BlnShopStory;
 
 
         //sleep
@@ -168,6 +168,30 @@ namespace Subwaj
         {
             Console.Clear();
             CurrentRoom = StrShop;
+            if (!BlnShopStory)
+            {
+                string strFilename = "files/story/Rooms/Shop/Shop.txt";
+                string[] introText = File.ReadAllLines(strFilename);
+                foreach (string strIntroText in introText)
+                {
+                    Ss.SpeakAsync(strIntroText);
+                    foreach (char cha in strIntroText)
+                    {
+                        Console.Write(cha);
+                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
+                        {
+                            Thread.Sleep(IntSleep400); //400
+                        }
+                        Thread.Sleep(40); //40
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(IntSleep400); //400
+                    BlnShopStory = true;
+                }
+                Thread.Sleep(1000);
+                Console.Clear();
+            }
+
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Shop/Shop.txt"));
             UserInputs.UserInput();
@@ -210,7 +234,7 @@ namespace Subwaj
             foreach (char cha in strHelp2TextName)
             {
                 Console.Write(cha);
-                if (cha == ',' || cha == ':' || cha == '.')
+                if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
                 {
                     Thread.Sleep(IntSleep400); //400
                 }
@@ -595,7 +619,7 @@ namespace Subwaj
                     foreach (char cha in strIntroText)
                     {
                         Console.Write(cha);
-                        if (cha == ',')
+                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
                         {
                             Thread.Sleep(IntSleep400); //400
                         }
@@ -664,7 +688,7 @@ namespace Subwaj
                     foreach (char cha in strIntroText)
                     {
                         Console.Write(cha);
-                        if (cha == ',')
+                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
                         {
                             Thread.Sleep(IntSleep400); //400
                         }
@@ -989,7 +1013,7 @@ namespace Subwaj
                     foreach (char cha in strIntroText)
                     {
                         Console.Write(cha);
-                        if (cha == ',')
+                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
                         {
                             Thread.Sleep(IntSleep400); //400
                         }
@@ -1030,7 +1054,7 @@ namespace Subwaj
                     foreach (char cha in strIntroText)
                     {
                         Console.Write(cha);
-                        if (cha == ',')
+                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
                         {
                             Thread.Sleep(IntSleep400); //400
                         }

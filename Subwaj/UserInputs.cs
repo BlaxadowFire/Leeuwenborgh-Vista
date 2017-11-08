@@ -176,13 +176,49 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
+                            case "NumPad0":
+                            case "D0":
+                            {
+
+                                Program.BlnShopStory = false;
+                                BackToCurrentRoom();
+                                break;
+                            }
                             case "D1":
                             case "NumPad1":
                                 {
-                                    Console.Clear();
-                                    Console.WriteLine("Congratulations you found a Fancy sword.");
-                                    Program.Sword = true;
-                                    Thread.Sleep(1000);
+                                    if (!Program.Sword)
+                                    {
+                                        Console.Clear();
+                                        Console.WriteLine("Congratulations you found a Fancy sword.");
+                                        Program.Sword = true;
+                                        Thread.Sleep(1000);
+                                        string strFilename = "files/story/Rooms/Shop/Shop.txt";
+                                        string[] introText = File.ReadAllLines(strFilename);
+                                        foreach (string strIntroText in introText)
+                                        {
+                                            Program.Ss.SpeakAsync(strIntroText);
+                                            foreach (char cha in strIntroText)
+                                            {
+                                                Console.Write(cha);
+                                                if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
+                                                {
+                                                    Thread.Sleep(Program.IntSleep400); //400
+                                                }
+                                                Thread.Sleep(40); //40
+                                            }
+                                            Console.Write("\r\n");
+                                            Thread.Sleep(Program.IntSleep400); //400
+                                        }
+                                        Thread.Sleep(1000);
+                                        Console.Clear();
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("You already own a sword");
+                                        Thread.Sleep(1000);
+                                    }
                                     BackToCurrentRoom();
                                     break;
                                 }
