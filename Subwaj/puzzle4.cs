@@ -98,32 +98,36 @@ namespace Subwaj
 
         public static void DrawNumberBorder(string i)
         {
-            if (Console.CursorLeft <= 4 && Program.TimerThread.ThreadState != ThreadState.Running)
+            try
             {
-                Console.CursorLeft = 4;
-            }
+                if (Console.CursorLeft <= 4 && Program.TimerThread.ThreadState != ThreadState.Running)
+                {
+                    Console.CursorLeft = 4;
+                }
 
-            Light(i);
-            if (Console.CursorLeft <= 4 && Program.TimerThread.ThreadState != ThreadState.Running)
-            {
-                Console.CursorLeft = 4;
+                Light(i);
+                if (Console.CursorLeft <= 4 && Program.TimerThread.ThreadState != ThreadState.Running)
+                {
+                    Console.CursorLeft = 4;
+                }
+                Console.CursorLeft--;
+                Console.Write("╔═╗");
+                if (Console.CursorLeft <= 4 && Program.TimerThread.ThreadState != ThreadState.Running)
+                {
+                    Console.CursorLeft = 4;
+                }
+                Console.SetCursorPosition(Console.CursorLeft - 3, Console.CursorTop + 1);
+                Console.Write("║{0}║", i);
+                if (Console.CursorLeft <= 4 && Program.TimerThread.ThreadState != ThreadState.Running)
+                {
+                    Console.CursorLeft = 4;
+                }
+                Console.SetCursorPosition(Console.CursorLeft - 3, Console.CursorTop + 1);
+                Console.Write("╚═╝");
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.ForegroundColor = ConsoleColor.White;
             }
-            Console.CursorLeft--;
-            Console.Write("╔═╗");
-            if (Console.CursorLeft <= 4 && Program.TimerThread.ThreadState != ThreadState.Running)
-            {
-                Console.CursorLeft = 4;
-            }
-            Console.SetCursorPosition(Console.CursorLeft - 3, Console.CursorTop + 1);
-            Console.Write("║{0}║", i);
-            if (Console.CursorLeft <= 4 && Program.TimerThread.ThreadState != ThreadState.Running)
-            {
-                Console.CursorLeft = 4;
-            }
-            Console.SetCursorPosition(Console.CursorLeft - 3, Console.CursorTop + 1);
-            Console.Write("╚═╝");
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.White;
+            catch (Exception) { DrawNumberBorder(i); }
         }
         public static void DrawNumbers()
         {
