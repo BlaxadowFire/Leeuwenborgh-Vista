@@ -106,6 +106,7 @@
     <Content Include="files\backgrounds\Shop.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="files\Rooms\Room7\KilledTheBoss.txt" />
     <Content Include="files\Rooms\Shop\Shop.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
