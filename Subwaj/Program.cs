@@ -1065,7 +1065,18 @@ namespace Subwaj
             Console.Write("...\r\n");
             Thread.Sleep(1000);
             IntTimerMinutes -= 5;
-            Console.WriteLine("you where unconscious for 5 minutes because tried to break a wall with your head. What where you even thinking?");
+            Ss.SpeakAsync("you where unconscious for 5 minutes because tried to break a wall with your head. What where you even thinking?");
+
+            foreach (char cha in "you where unconscious for 5 minutes because tried to break a wall with your head. What where you even thinking?")
+            {
+                Console.Write(cha);
+                if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
+                {
+                    Thread.Sleep(IntSleep400); //400
+                }
+                Thread.Sleep(40); //40
+            }
+
             Thread.Sleep(1000);
         }
 
@@ -1089,6 +1100,7 @@ namespace Subwaj
                 Thread.Sleep(IntSleep400); //400
             }
         }
+
 
         //BGM
         public static void Bgm()
@@ -1152,23 +1164,7 @@ namespace Subwaj
         public static void GameOver()
         {
             Console.Clear();
-            string strFilename = StrTxtLocation + "Rooms/Timer/Timer.txt";
-            string[] introText = File.ReadAllLines(strFilename);
-            foreach (string strIntroText in introText)
-            {
-                Ss.SpeakAsync(strIntroText);
-                foreach (char cha in strIntroText)
-                {
-                    Console.Write(cha);
-                    if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
-                    {
-                        Thread.Sleep(IntSleep400); //400
-                    }
-                    Thread.Sleep(40); //40
-                }
-                Console.Write("\r\n");
-                Thread.Sleep(IntSleep400); //400
-            }
+            SpeakFile("Rooms/Timer/Timer.txt");
             Console.ReadKey();
             Environment.Exit(0);
         }
