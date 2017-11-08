@@ -29,7 +29,7 @@
     <ProductName>Not A Game</ProductName>
     <PublisherName>Nando Kools</PublisherName>
     <SuiteName>Subwaj</SuiteName>
-    <MinimumRequiredVersion>0.0.1.15</MinimumRequiredVersion>
+    <MinimumRequiredVersion>0.0.1.16</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <ApplicationRevision>17</ApplicationRevision>
