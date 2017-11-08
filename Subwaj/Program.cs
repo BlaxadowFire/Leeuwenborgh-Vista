@@ -250,7 +250,7 @@ namespace Subwaj
             foreach (char cha in strIntroTextName)
             {
                 Console.Write(cha);
-                if (cha == ',' || cha == ':' || cha == '?')
+                if (cha == ',' || cha == ':' || cha == '!' || cha == '?')
                 {
                     Thread.Sleep(IntSleep400); //400
                 }
