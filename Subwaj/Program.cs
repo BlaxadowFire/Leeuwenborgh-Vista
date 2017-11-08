@@ -1121,7 +1121,7 @@ namespace Subwaj
             Thread.Sleep(1000);
             Console.Write("...\r\n");
             Thread.Sleep(1000);
-            IntTimerMinutes = -5;
+            IntTimerMinutes -= 5;
             Console.WriteLine("you where unconscious for 5 minutes because tried to break a wall with your head. What where you even thinking?");
             Thread.Sleep(1000);
         }
