@@ -26,6 +26,15 @@ namespace Subwaj
                         string strDebugInput = x;
                         switch (strDebugInput)
                         {
+                            case "puzzle3":
+                                {
+                                    Console.WriteLine(Puzzle3.Room1);
+                                    Console.WriteLine(Puzzle3.Room2);
+                                    Console.WriteLine(Puzzle3.Room3);
+                                    Console.WriteLine(Puzzle3.Room4);
+                                    Console.ReadKey();
+                                    break;
+                                }
                             case "room1":
                                 {
                                     Program.TimerThread.Start();
