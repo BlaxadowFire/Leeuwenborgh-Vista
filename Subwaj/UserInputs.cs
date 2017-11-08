@@ -698,7 +698,7 @@ namespace Subwaj
                         }
                         break;
                     }
-                    case "HALL1":
+                case "HALL1":
                     {
                         switch (strCki)
                         {
