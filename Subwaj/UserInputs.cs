@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading;
 using System.IO;
-using System.Threading;
 
 namespace Subwaj
 {
@@ -18,7 +17,7 @@ namespace Subwaj
             Console.Clear();
             BackToCurrentRoom();
         }
-        public static void hall14text()
+        public static void Hall14Text()
         {
             Console.Clear();
             Program.SpeakFile("Halls/Hall14/Hall14.txt");
@@ -1240,7 +1239,7 @@ namespace Subwaj
                                     }
                                     else
                                     {
-                                        hall14text();
+                                        Hall14Text();
                                     }
                                     break;
                             }
