@@ -20,8 +20,7 @@ namespace Subwaj
         public static void hall14text()
         {
             Console.Clear();
-            string hall14text = File.ReadAllText("Halls/Hall14/Hall14.txt");
-            Program.SpeakFile(hall14text);
+            Program.SpeakFile("Halls/Hall14/Hall14.txt");
             Thread.Sleep(13000);
             Console.Clear();
             BackToCurrentRoom();
