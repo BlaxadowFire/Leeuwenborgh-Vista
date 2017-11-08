@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading;
 using System.IO;
+using System.Threading;
 
 namespace Subwaj
 {
@@ -661,7 +662,9 @@ namespace Subwaj
                                     }
                                     else
                                     {
-                                        Console.WriteLine("You need the sword to defeat the boss");
+                                        Console.Clear();
+                                        Console.WriteLine("\r\nYou need the sword to defeat the boss");
+                                        Thread.Sleep(2000);
                                         BackToCurrentRoom();
                                     }
                                     Console.ReadKey();
