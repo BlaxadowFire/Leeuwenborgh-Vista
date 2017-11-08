@@ -1186,7 +1186,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("it's still not a game");
+                                Program.WallPosition("Still not a game!");
                                 break;
                             }
                             default:
