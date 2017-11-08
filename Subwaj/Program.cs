@@ -1189,7 +1189,23 @@ namespace Subwaj
         public static void GameOver()
         {
             Console.Clear();
-            Console.WriteLine("How did you even manage to lose? this isn't even a game.\r\nPress any key to exit");
+            string strFilename = StrTxtLocation + "Rooms/Timer/Timer.txt";
+            string[] introText = File.ReadAllLines(strFilename);
+            foreach (string strIntroText in introText)
+            {
+                Ss.SpeakAsync(strIntroText);
+                foreach (char cha in strIntroText)
+                {
+                    Console.Write(cha);
+                    if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
+                    {
+                        Thread.Sleep(IntSleep400); //400
+                    }
+                    Thread.Sleep(40); //40
+                }
+                Console.Write("\r\n");
+                Thread.Sleep(IntSleep400); //400
+            }
             Console.ReadKey();
             Environment.Exit(0);
         }
