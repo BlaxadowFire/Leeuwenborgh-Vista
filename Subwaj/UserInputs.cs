@@ -776,15 +776,33 @@ namespace Subwaj
                             {
                                 if (!Program.BlnShop)
                                 {
-                                       
+                                        Console.Clear();
+                                        string strFilename = Program.StrTxtLocation + "Rooms/Shop/ShopClosed.txt";
+                                        string[] introText = File.ReadAllLines(strFilename);
+                                        foreach (string strIntroText in introText)
+                                        {
+                                            Program.Ss.SpeakAsync(strIntroText);
+                                            foreach (char cha in strIntroText)
+                                            {
+                                                Console.Write(cha);
+                                                if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
+                                                {
+                                                    Thread.Sleep(Program.IntSleep400); //400
+                                                }
+                                                Thread.Sleep(40); //40
+                                            }
+                                            Console.Write("\r\n");
+                                            Thread.Sleep(Program.IntSleep400); //400
+                                        }
+                                        Thread.Sleep(4000);
+                                        Console.Clear();
                                 }
                                 if (Program.BlnShop)
                                 {
-                                        Program.Shop();
-
+                                     Program.Shop();
                                 }
                                     break;
-                                }
+                            }
                             case "NumPad2":
                             case "D2":
                             {
