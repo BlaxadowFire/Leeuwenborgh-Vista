@@ -170,28 +170,11 @@ namespace Subwaj
             CurrentRoom = StrShop;
             if (!BlnShopStory)
             {
-                string strFilename = "files/story/Rooms/Shop/Shop.txt";
-                string[] introText = File.ReadAllLines(strFilename);
-                foreach (string strIntroText in introText)
-                {
-                    Ss.SpeakAsync(strIntroText);
-                    foreach (char cha in strIntroText)
-                    {
-                        Console.Write(cha);
-                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
-                        {
-                            Thread.Sleep(IntSleep400); //400
-                        }
-                        Thread.Sleep(40); //40
-                    }
-                    Console.Write("\r\n");
-                    Thread.Sleep(IntSleep400); //400
-                    BlnShopStory = true;
-                }
+                Program.SpeakFile("Rooms/Shop/Shop.txt");
+                BlnShopStory = true;
                 Thread.Sleep(1000);
                 Console.Clear();
             }
-
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Shop/Shop.txt"));
             UserInputs.UserInput();

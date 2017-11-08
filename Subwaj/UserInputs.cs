@@ -204,29 +204,14 @@ namespace Subwaj
                                         Console.WriteLine("Congratulations you found a Fancy sword.");
                                         Program.Sword = true;
                                         Thread.Sleep(1000);
-                                        string strFilename = "files/story/Rooms/Shop/Shop.txt";
-                                        string[] introText = File.ReadAllLines(strFilename);
-                                        foreach (string strIntroText in introText)
-                                        {
-                                            Program.Ss.SpeakAsync(strIntroText);
-                                            foreach (char cha in strIntroText)
-                                            {
-                                                Console.Write(cha);
-                                                if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
-                                                {
-                                                    Thread.Sleep(Program.IntSleep400); //400
-                                                }
-                                                Thread.Sleep(40); //40
-                                            }
-                                            Console.Write("\r\n");
-                                            Thread.Sleep(Program.IntSleep400); //400
-                                        }
+                                        Program.SpeakFile("Rooms/Shop/Shop2.txt");
                                         Thread.Sleep(1000);
                                         Console.Clear();
 
                                     }
                                     else
                                     {
+                                        Console.Clear();
                                         Console.WriteLine("You already own a sword");
                                         Thread.Sleep(1000);
                                     }
