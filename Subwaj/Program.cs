@@ -710,7 +710,7 @@ namespace Subwaj
                 BlnRoom7Story = true;
             }
             Console.WriteLine("BOSSROOM");
-            Program.BackGroundPosition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Room7/Room7.txt"));
             UserInputs.UserInput();
         }
