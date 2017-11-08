@@ -485,9 +485,12 @@ namespace Subwaj
         public static void Hud()
         {
             if (CurrentRoom == StrMainMenu || CurrentRoom == StrInGameMenu) return;
+
+            string strZeroSpace = "";
+            strZeroSpace = IntTimerSeconds < 10 ? "0" : "";
             Console.ForegroundColor = ConsoleColor.Red;
             Console.SetCursorPosition(Console.CursorLeft = 54, Console.CursorTop = 0);
-            Console.WriteLine("║\t   TIME:  {3}:{0}\t  Current location:   {1}\tO═╦╗:\t{2}", IntTimerSeconds, CurrentRoom, IntKey, IntTimerMinutes);
+            Console.WriteLine("║\t   TIME:  {3}:{4}{0}\t  Current location:   {1}\tO═╦╗:\t{2}", IntTimerSeconds, CurrentRoom, IntKey, IntTimerMinutes, strZeroSpace);
             Console.SetCursorPosition(Console.CursorLeft = 54, Console.CursorTop = 1);
             Console.WriteLine("╚═════════════════════════════════════════════════════════════════");
             Console.ForegroundColor = ConsoleColor.White;
@@ -611,23 +614,7 @@ namespace Subwaj
                 //story
                 //story
                 Console.Clear();
-                string strFilename = StrTxtLocation + "Rooms/Room4/Room4.txt";
-                string[] introText = File.ReadAllLines(strFilename);
-                foreach (string strIntroText in introText)
-                {
-                    Ss.SpeakAsync(strIntroText);
-                    foreach (char cha in strIntroText)
-                    {
-                        Console.Write(cha);
-                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
-                        {
-                            Thread.Sleep(IntSleep400); //400
-                        }
-                        Thread.Sleep(40); //40
-                    }
-                    Console.Write("\r\n");
-                    Thread.Sleep(IntSleep400); //400
-                }
+                SpeakFile("Rooms/Room4/Room4.txt");
                 Thread.Sleep(1000);
                 Console.Clear();
                 BlnRoom4Story = true;
@@ -645,6 +632,7 @@ namespace Subwaj
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
+
         public static void Room5()
         {
             CurrentRoom = StrRoom5;
@@ -680,23 +668,7 @@ namespace Subwaj
                 //story
                 //story
                 Console.Clear();
-                string strFilename = StrTxtLocation + "Rooms/BossRoom/Boss.txt";
-                string[] introText = File.ReadAllLines(strFilename);
-                foreach (string strIntroText in introText)
-                {
-                    Ss.SpeakAsync(strIntroText);
-                    foreach (char cha in strIntroText)
-                    {
-                        Console.Write(cha);
-                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
-                        {
-                            Thread.Sleep(IntSleep400); //400
-                        }
-                        Thread.Sleep(40); //40
-                    }
-                    Console.Write("\r\n");
-                    Thread.Sleep(IntSleep400); //400
-                }
+                SpeakFile("Rooms/BossRoom/Boss.txt");
                 Thread.Sleep(1000);
                 Console.Clear();
                 BlnRoom7Story = true;
@@ -1005,23 +977,7 @@ namespace Subwaj
             {
                 //story
                 Console.Clear();
-                string strFilename = StrTxtLocation + "Halls/Hall13/Hall13.txt";
-                string[] introText = File.ReadAllLines(strFilename);
-                foreach (string strIntroText in introText)
-                {
-                    Ss.SpeakAsync(strIntroText);
-                    foreach (char cha in strIntroText)
-                    {
-                        Console.Write(cha);
-                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
-                        {
-                            Thread.Sleep(IntSleep400); //400
-                        }
-                        Thread.Sleep(40); //40
-                    }
-                    Console.Write("\r\n");
-                    Thread.Sleep(IntSleep400); //400
-                }
+                SpeakFile("Halls/Hall13/Hall13.txt");
                 Thread.Sleep(1000);
                 Console.Clear();
                 BlnHall13Story = true;
@@ -1046,23 +1002,7 @@ namespace Subwaj
                 //story
                 //story
                 Console.Clear();
-                string strFilename = StrTxtLocation + "Halls/Hall14/Hall14.txt";
-                string[] introText = File.ReadAllLines(strFilename);
-                foreach (string strIntroText in introText)
-                {
-                    Ss.SpeakAsync(strIntroText);
-                    foreach (char cha in strIntroText)
-                    {
-                        Console.Write(cha);
-                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
-                        {
-                            Thread.Sleep(IntSleep400); //400
-                        }
-                        Thread.Sleep(40); //40
-                    }
-                    Console.Write("\r\n");
-                    Thread.Sleep(IntSleep400); //400
-                }
+                SpeakFile("Halls/Hall13/Hall13.txt");
                 Thread.Sleep(4000);
                 Console.Clear();
                 BlnHall14Story = true;
@@ -1126,7 +1066,27 @@ namespace Subwaj
             Thread.Sleep(1000);
         }
 
-        
+        public static void SpeakFile(string i)
+        {
+            string strFilename = StrTxtLocation + i;
+            string[] introText = File.ReadAllLines(strFilename);
+            foreach (string strIntroText in introText)
+            {
+                Ss.SpeakAsync(strIntroText);
+                foreach (char cha in strIntroText)
+                {
+                    Console.Write(cha);
+                    if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
+                    {
+                        Thread.Sleep(IntSleep400); //400
+                    }
+                    Thread.Sleep(40); //40
+                }
+                Console.Write("\r\n");
+                Thread.Sleep(IntSleep400); //400
+            }
+        }
+
         //BGM
         public static void Bgm()
         {
