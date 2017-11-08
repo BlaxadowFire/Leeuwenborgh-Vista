@@ -777,7 +777,7 @@ namespace Subwaj
                                 if (!Program.BlnShop)
                                 {
                                         Console.Clear();
-                                        string strFilename = Program.StrTxtLocation + "Halls/Hall14/Hall14.txt";
+                                        string strFilename = Program.StrTxtLocation + "Rooms/Shop/ShopClosed.txt";
                                         string[] introText = File.ReadAllLines(strFilename);
                                         foreach (string strIntroText in introText)
                                         {
@@ -800,10 +800,9 @@ namespace Subwaj
                                 if (Program.BlnShop)
                                 {
                                      Program.Shop();
-
                                 }
                                     break;
-                                }
+                            }
                             case "NumPad2":
                             case "D2":
                             {
