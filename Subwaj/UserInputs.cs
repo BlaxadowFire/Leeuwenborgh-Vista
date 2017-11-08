@@ -774,8 +774,15 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                    Program.Shop();
-                                break;
+                                if (Program.BlnShop == false) ;
+                                {
+                                       
+                                }
+                                if (Program.BlnShop == true) ;
+                                {
+                                        Program.Shop();
+                                        break;
+                                }
                             }
                             case "NumPad2":
                             case "D2":
