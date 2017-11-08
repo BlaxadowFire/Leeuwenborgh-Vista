@@ -98,7 +98,7 @@ namespace Subwaj
 
         public static void DrawNumberBorder(string i)
         {
-            if (Console.CursorLeft <= 4)
+            if (Console.CursorLeft <= 4 && Program.TimerThread.ThreadState != ThreadState.Running)
             {
                 Console.CursorLeft = 4;
             }
@@ -106,13 +106,13 @@ namespace Subwaj
             Light(i);
             Console.CursorLeft = Console.CursorLeft - 1;
             Console.Write("╔═╗");
-            if (Console.CursorLeft <= 4)
+            if (Console.CursorLeft <= 4 && Program.TimerThread.ThreadState != ThreadState.Running)
             {
                 Console.CursorLeft = 4;
             }
             Console.SetCursorPosition(Console.CursorLeft - 3, Console.CursorTop + 1);
             Console.Write("║{0}║", i);
-            if (Console.CursorLeft <= 4)
+            if (Console.CursorLeft <= 4 && Program.TimerThread.ThreadState != ThreadState.Running)
             {
                 Console.CursorLeft = 4;
             }
