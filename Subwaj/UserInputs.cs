@@ -19,6 +19,17 @@ namespace Subwaj
             Console.Clear();
             BackToCurrentRoom();
         }
+        public static void hall14text()
+        {
+            Console.Clear();
+            string hall14text = File.ReadAllText("files/story/Halls/Hall14/Hall14.txt");
+            Program.Ss.SpeakAsync(hall14text);
+            Console.Clear();
+            Console.Write(hall14text);
+            Thread.Sleep(13000);
+            Console.Clear();
+            BackToCurrentRoom();
+        }
         public static bool FirstRun = true;
         //Checks UserInput
         public static void UserInput()
@@ -1246,11 +1257,7 @@ namespace Subwaj
                                     }
                                     else
                                     {
-                                        Console.Clear();
-                                        string StrFileName = "files/story/Halls/Hall14/Hall14.txt";
-                                        Console.WriteLine(File.ReadAllText(StrFileName));
-                                        Thread.Sleep(1100);
-                                        BackToCurrentRoom();
+                                        hall14text();
                                     }
                                     break;
                             }
