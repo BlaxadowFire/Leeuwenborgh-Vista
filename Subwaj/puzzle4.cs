@@ -104,7 +104,11 @@ namespace Subwaj
             }
 
             Light(i);
-            Console.CursorLeft = Console.CursorLeft - 1;
+            if (Console.CursorLeft <= 4 && Program.TimerThread.ThreadState != ThreadState.Running)
+            {
+                Console.CursorLeft = 4;
+            }
+            Console.CursorLeft--;
             Console.Write("╔═╗");
             if (Console.CursorLeft <= 4 && Program.TimerThread.ThreadState != ThreadState.Running)
             {
