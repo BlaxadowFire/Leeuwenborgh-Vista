@@ -68,11 +68,11 @@ namespace Subwaj
             }
 
                 StrPlayer1 = Environment.UserName;
-                StrPlayer2 = "THE MOST AMAZING AI EVER CREATED";
+                StrPlayer2 = "ME";
                 StrCurrentPlayer = StrPlayer1;
                 do
                 {
-                    if (StrCurrentPlayer == "THE MOST AMAZING AI EVER CREATED")
+                    if (StrCurrentPlayer == "ME")
                     {
                         BlnAiTurn = true;
                         FuncBot();
@@ -407,7 +407,7 @@ namespace Subwaj
             GridColor(); Console.Write(G); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
             GridColor(); Console.Write(H); Console.ForegroundColor = ConsoleColor.White; Console.Write(" | ");
             GridColor(); Console.Write(I); Console.ForegroundColor = ConsoleColor.White; Console.Write("\r\n");
-            if (StrPlayer2 == "THE MOST AMAZING AI EVER CREATED" && StrPlayer2 == StrCurrentPlayer)
+            if (StrPlayer2 == "ME" && StrPlayer2 == StrCurrentPlayer)
             {
                 Program.Ss.SpeakAsync("YOU JUST LOST FROM " + StrPlayer2);
                 Console.WriteLine("YOU JUST LOST FROM {0}", StrPlayer2);
