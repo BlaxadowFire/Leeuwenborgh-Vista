@@ -49,7 +49,7 @@ namespace Subwaj
                     foreach (char cha in strIntroText)
                     {
                         Console.Write(cha);
-                        if (cha == ',')
+                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
                         {
                             Thread.Sleep(Program.IntSleep400); //400
                         }
@@ -77,7 +77,7 @@ namespace Subwaj
             }
             Console.Clear();
             Draw();
-            Console.WriteLine("You completed the puzzle!");
+            Console.WriteLine("\r\n\r\n\r\n\t\t\t\tYou completed the puzzle!");
             Thread.Sleep(2000);
             Program.BlnPuzzle4Complete = true;
         }

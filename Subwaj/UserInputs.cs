@@ -11,7 +11,10 @@ namespace Subwaj
         public static void Nothing()
         {
             Console.Clear();
-            Console.WriteLine("Nothing happened");
+            string nothing = File.ReadAllText("files/story/Halls/nothing.txt");
+            Program.Ss.SpeakAsync(nothing);
+            Console.Clear();
+            Console.Write(nothing);
             Thread.Sleep(1000);
             Console.Clear();
             BackToCurrentRoom();
@@ -173,13 +176,49 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
+                            case "NumPad0":
+                            case "D0":
+                            {
+
+                                Program.BlnShopStory = false;
+                                BackToCurrentRoom();
+                                break;
+                            }
                             case "D1":
                             case "NumPad1":
                                 {
-                                    Console.Clear();
-                                    Console.WriteLine("Congratulations you found a Fancy sword.");
-                                    Program.Sword = true;
-                                    Thread.Sleep(1000);
+                                    if (!Program.Sword)
+                                    {
+                                        Console.Clear();
+                                        Console.WriteLine("Congratulations you found a Fancy sword.");
+                                        Program.Sword = true;
+                                        Thread.Sleep(1000);
+                                        string strFilename = "files/story/Rooms/Shop/Shop.txt";
+                                        string[] introText = File.ReadAllLines(strFilename);
+                                        foreach (string strIntroText in introText)
+                                        {
+                                            Program.Ss.SpeakAsync(strIntroText);
+                                            foreach (char cha in strIntroText)
+                                            {
+                                                Console.Write(cha);
+                                                if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
+                                                {
+                                                    Thread.Sleep(Program.IntSleep400); //400
+                                                }
+                                                Thread.Sleep(40); //40
+                                            }
+                                            Console.Write("\r\n");
+                                            Thread.Sleep(Program.IntSleep400); //400
+                                        }
+                                        Thread.Sleep(1000);
+                                        Console.Clear();
+
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("You already own a sword");
+                                        Thread.Sleep(1000);
+                                    }
                                     BackToCurrentRoom();
                                     break;
                                 }
@@ -223,7 +262,7 @@ namespace Subwaj
                             case "NumPad2":
                             case "D2":
                                 {
-                                    Nothing();
+                                    Program.Wallrun();
                                     break;
                                 }
                             case "NumPad3":
@@ -232,7 +271,6 @@ namespace Subwaj
                                     Console.Clear();
                                     Console.WriteLine("Note This");
                                     Program.WallPosition(Puzzle3.Room1.ToString());
-                                    Thread.Sleep(2500);
                                     break;
                                 }
                             case "NumPad4":
@@ -292,7 +330,6 @@ namespace Subwaj
                                     Console.Clear();
                                     Console.WriteLine("Note This");
                                     Program.WallPosition(Puzzle3.Room2.ToString());
-                                    Thread.Sleep(1000);
                                     break;
                                 }
                             case "NumPad4":
@@ -366,7 +403,6 @@ namespace Subwaj
                                     Console.Clear();
                                     Console.WriteLine("Note This");
                                     Program.WallPosition(Puzzle3.Room3.ToString());
-                                    Thread.Sleep(1000);
                                     break;
                                 }
                             case "NumPad4":
@@ -448,7 +484,6 @@ namespace Subwaj
                                     Console.Clear();
                                     Console.WriteLine("Note This");
                                     Program.WallPosition(Puzzle3.Room4.ToString());
-                                    Thread.Sleep(1000);
                                     break;
                                 }
                             case "NumPad4":
@@ -628,10 +663,17 @@ namespace Subwaj
                             case "NumPad1":
                                 {
                                     // is tijdelijk
-                                   
-                                    Console.Clear();
-                                    Console.WriteLine("Congrats you killed the boss GG");
-                                    Console.ReadLine();
+                                    if (Program.Sword)
+                                    {
+                                        Console.Clear();
+                                        Console.WriteLine("Congrats you killed the boss GG");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine("You need the sword to defeat the boss");
+                                        BackToCurrentRoom();
+                                    }
+                                    Console.ReadKey();
                                     Environment.Exit(0);
                                     break;
                                 }
@@ -641,18 +683,6 @@ namespace Subwaj
                                     Program.Hall14();
                                     break;
                                 }
-                            case "NumPad3":
-                            case "D3":
-                            {
-                                    Program.WallPosition("");
-                                    break;
-                            }
-                            case "NumPad4":
-                            case "D4":
-                            {
-                                Nothing();
-                                break;
-                            }
                             default:
                                 {
                                     BackToCurrentRoom();
@@ -897,7 +927,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("A there you are ");
+                                Program.WallPosition("Ah, there you are");
                                 break;
                             }
                             default:
@@ -932,7 +962,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("Here was something");
+                                Program.WallPosition("Something was here");
                                 break;
                             }
                             default:
@@ -1014,7 +1044,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("HAHA, I'm gone win");
+                                Program.WallPosition("HAHA, I'm gonna win");
                                 break;
                             }
                             default:
@@ -1072,7 +1102,7 @@ namespace Subwaj
                             case "NumPad1":
                             case "D1":
                             {
-                                Nothing();
+                                Program.Wallrun();
                                 break;
                             }
                             case "NumPad2":
@@ -1119,7 +1149,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                Program.WallPosition("it's still no game");
+                                Program.WallPosition("it's still not a game");
                                 break;
                             }
                             default:
@@ -1155,6 +1185,12 @@ namespace Subwaj
                             case "D3":
                             {
                                 Program.WallPosition("nice wall");
+                                break;
+                            }
+                            case "NumPad4":
+                            case "D4":
+                            {
+                                Program.Wallrun();
                                 break;
                             }
                             default:
@@ -1201,7 +1237,7 @@ namespace Subwaj
                             case "NumPad3":
                             case "D3":
                             {
-                                 Program.WallPosition("");
+                                 Program.WallPosition("Just quit already");
                                  break;
                             }
                             default:

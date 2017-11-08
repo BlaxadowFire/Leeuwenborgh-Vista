@@ -107,7 +107,6 @@ namespace Subwaj
 
         //Story read (so you don't get the story every time you go into the room)
         public static bool BlnRoom1Story;
-
         public static bool BlnRoom2Story;
         public static bool BlnRoom3Story;
         public static bool BlnRoom4Story;
@@ -132,6 +131,7 @@ namespace Subwaj
         public static bool BlnPuzzle2 = false;
         public static bool BlnPuzzle3 = false;
         public static bool BlnPuzzle4 = false;
+        public static bool BlnShopStory;
 
 
         //sleep
@@ -168,7 +168,31 @@ namespace Subwaj
         {
             Console.Clear();
             CurrentRoom = StrShop;
-            Backgroudposition();
+            if (!BlnShopStory)
+            {
+                string strFilename = "files/story/Rooms/Shop/Shop.txt";
+                string[] introText = File.ReadAllLines(strFilename);
+                foreach (string strIntroText in introText)
+                {
+                    Ss.SpeakAsync(strIntroText);
+                    foreach (char cha in strIntroText)
+                    {
+                        Console.Write(cha);
+                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
+                        {
+                            Thread.Sleep(IntSleep400); //400
+                        }
+                        Thread.Sleep(40); //40
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(IntSleep400); //400
+                    BlnShopStory = true;
+                }
+                Thread.Sleep(1000);
+                Console.Clear();
+            }
+
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Shop/Shop.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -210,13 +234,12 @@ namespace Subwaj
             foreach (char cha in strHelp2TextName)
             {
                 Console.Write(cha);
-                if (cha == ',' || cha == ':' || cha == '.')
+                if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
                 {
                     Thread.Sleep(IntSleep400); //400
                 }
                 Thread.Sleep(40); //40
             }
-            string strHelp2Textname = StrTxtLocation + "files/help2.txt";
             Thread.Sleep(4000);
             Console.Clear();
 
@@ -227,7 +250,7 @@ namespace Subwaj
             foreach (char cha in strIntroTextName)
             {
                 Console.Write(cha);
-                if (cha == ',' || cha == ':')
+                if (cha == ',' || cha == ':' || cha == '?')
                 {
                     Thread.Sleep(IntSleep400); //400
                 }
@@ -251,7 +274,7 @@ namespace Subwaj
                 for (int x = 0; x < strIntroText.Length; x++)
                 {
                     Console.Write(strIntroText[x]);
-                    if (strIntroText[x] == ',')
+                    if (strIntroText[x] == ',' || strIntroText[x] == '.' || strIntroText[x] == '?')
                     {
                         Thread.Sleep(IntSleep400); //400
                     }
@@ -317,7 +340,7 @@ namespace Subwaj
                     foreach (char cha in strIntroText)
                     {
                         Console.Write(cha);
-                        if (cha == ',')
+                        if (cha == ',' || cha == '.' || cha == '?')
                         {
                             Thread.Sleep(IntSleep400);
                         }
@@ -533,7 +556,7 @@ namespace Subwaj
                     foreach (char cha in strIntroText)
                     {
                         Console.Write(cha);
-                        if (cha == ',')
+                        if (cha == ',' || cha == '.' || cha == '?')
                         {
                             Thread.Sleep(IntSleep400); //400
                         }
@@ -547,7 +570,7 @@ namespace Subwaj
                 Console.Clear();
                 BlnRoom1Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Room1/Room1.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -561,7 +584,7 @@ namespace Subwaj
                 //story
                 BlnRoom2Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Room2/Room2.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -575,7 +598,7 @@ namespace Subwaj
                 //story
                 BlnRoom3Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
 
             Console.WriteLine(File.ReadAllText("files/Rooms/Room3/Room3.txt"));
             UserInputs.UserInput();
@@ -596,7 +619,7 @@ namespace Subwaj
                     foreach (char cha in strIntroText)
                     {
                         Console.Write(cha);
-                        if (cha == ',')
+                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
                         {
                             Thread.Sleep(IntSleep400); //400
                         }
@@ -617,7 +640,7 @@ namespace Subwaj
                 //story
                 BlnRoom4Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Room4/Room4.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -631,7 +654,7 @@ namespace Subwaj
                 //story
                 BlnRoom5Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Room5/Room5.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -645,7 +668,7 @@ namespace Subwaj
                 //story
                 BlnRoom6Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Room6/Room6.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -665,7 +688,7 @@ namespace Subwaj
                     foreach (char cha in strIntroText)
                     {
                         Console.Write(cha);
-                        if (cha == ',')
+                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
                         {
                             Thread.Sleep(IntSleep400); //400
                         }
@@ -687,14 +710,14 @@ namespace Subwaj
                 BlnRoom7Story = true;
             }
             Console.WriteLine("BOSSROOM");
-            Console.WriteLine(File.ReadAllText("files/story/walls/wall1/spongebob.txt"));
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Rooms/Room7/Room7.txt"));
             UserInputs.UserInput();
         }
         //END OF ROOMS
 
         //Background
-        public static void Backgroudposition()
+        public static void BackGroundPosition()
         {
             if (CurrentRoom == StrRoom1)
             {
@@ -724,6 +747,18 @@ namespace Subwaj
             {
                 Console.SetCursorPosition(48, 3);
                 string[] background = File.ReadAllLines("files/backgrounds/BGNoTree.txt");
+                foreach (string bg in background)
+                {
+                    Console.CursorLeft = 48;
+                    Console.Write(bg);
+                    Console.WriteLine("");
+                }
+                Console.SetCursorPosition(0, 0);
+            }
+            else if (CurrentRoom == StrRoom7)
+            {
+                Console.SetCursorPosition(48, 3);
+                string[] background = File.ReadAllLines("files/backgrounds/spongebob.txt");
                 foreach (string bg in background)
                 {
                     Console.CursorLeft = 48;
@@ -779,10 +814,10 @@ namespace Subwaj
             x = x == "" ? "Nothing" : x;
             Console.SetCursorPosition(48, 3);
             string[] background = File.ReadAllLines("files/story/Walls/Wall1/Wall1.txt");
-            for (int i = 0; i < background.Length; i++)
+            foreach (string t in background)
             {
                 Console.CursorLeft = 48;
-                Console.Write(background[i]);
+                Console.Write(t);
                 Console.WriteLine("");
             }
             Console.SetCursorPosition(48 + 34 - x.Length/2, 12);
@@ -790,7 +825,6 @@ namespace Subwaj
 
             Console.SetCursorPosition(0, 0);
             Console.ReadKey();
-            return;
         }
 
         //BEGIN OF HALLS
@@ -803,7 +837,7 @@ namespace Subwaj
                 //story
                 BlnHall1Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall1.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -818,7 +852,7 @@ namespace Subwaj
                 //story
                 BlnHall2Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall2.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -832,7 +866,7 @@ namespace Subwaj
                 //story
                 BlnHall3Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall3.txt"));
             UserInputs.UserInput();
             Errors.ErrorNotYetCreated();
@@ -846,7 +880,7 @@ namespace Subwaj
                 //story
                 BlnHall4Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall4.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -860,7 +894,7 @@ namespace Subwaj
                 //story
                 BlnHall5Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall5.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -874,7 +908,7 @@ namespace Subwaj
                 //story
                 BlnHall6Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall6.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -888,7 +922,7 @@ namespace Subwaj
                 //story
                 BlnHall7Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall7.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -902,7 +936,7 @@ namespace Subwaj
                 //story
                 BlnHall8Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall8.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -917,7 +951,7 @@ namespace Subwaj
 
                 BlnHall9Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall9.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -931,7 +965,7 @@ namespace Subwaj
                 //story
                 BlnHall10Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall10.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -945,7 +979,7 @@ namespace Subwaj
                 //story
                 BlnHall11Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall11.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -959,7 +993,7 @@ namespace Subwaj
                 //story
                 BlnHall12Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall12.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -979,7 +1013,7 @@ namespace Subwaj
                     foreach (char cha in strIntroText)
                     {
                         Console.Write(cha);
-                        if (cha == ',')
+                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
                         {
                             Thread.Sleep(IntSleep400); //400
                         }
@@ -1000,7 +1034,7 @@ namespace Subwaj
                 //story
                 BlnHall13Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall13.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -1020,7 +1054,7 @@ namespace Subwaj
                     foreach (char cha in strIntroText)
                     {
                         Console.Write(cha);
-                        if (cha == ',')
+                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
                         {
                             Thread.Sleep(IntSleep400); //400
                         }
@@ -1041,7 +1075,7 @@ namespace Subwaj
                 //story
                 BlnHall14Story = true;
             }
-            Backgroudposition();
+            BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall14.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
@@ -1081,15 +1115,15 @@ namespace Subwaj
         public static void Wallrun()
         {
             Console.Clear();
-            Console.Write(".");
-            Thread.Sleep(500);
-            Console.Write("..");
-            Thread.Sleep(500);
-            Console.Write("...");
-            Thread.Sleep(500);
-            Console.WriteLine("you were uncoises for 5 minuts becaus you bang your head into a wall and that is unpossible");
-
-            IntTimerMinutes =-5;
+            Console.Write(".\r\n");
+            Thread.Sleep(1000);
+            Console.Write("..\r\n");
+            Thread.Sleep(1000);
+            Console.Write("...\r\n");
+            Thread.Sleep(1000);
+            IntTimerMinutes = -5;
+            Console.WriteLine("you where unconscious for 5 minutes because tried to break a wall with your head. What where you even thinking?");
+            Thread.Sleep(1000);
         }
 
         

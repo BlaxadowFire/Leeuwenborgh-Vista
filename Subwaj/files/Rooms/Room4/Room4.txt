@@ -4,6 +4,7 @@
    ║   Room 4   ║
    ╚════════════╝
 
+0.)    replay story
 1.)    go to hall 6
 2.)    go to hall 5
 3.)    look at walls

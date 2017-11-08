@@ -53,7 +53,7 @@ namespace Subwaj
                     foreach (char cha in strIntroText)
                     {
                         Console.Write(cha);
-                        if (cha == ',')
+                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
                         {
                             Thread.Sleep(Program.IntSleep400); //400
                         }
