@@ -11,10 +11,8 @@ namespace Subwaj
         public static void Nothing()
         {
             Console.Clear();
-            string nothing = File.ReadAllText("files/story/Halls/nothing.txt");
-            Program.Ss.SpeakAsync(nothing);
-            Console.Clear();
-            Console.Write(nothing);
+            string nothing = File.ReadAllText("Halls/nothing.txt");
+            Program.SpeakFile(nothing);
             Thread.Sleep(1000);
             Console.Clear();
             BackToCurrentRoom();
@@ -22,10 +20,8 @@ namespace Subwaj
         public static void hall14text()
         {
             Console.Clear();
-            string hall14text = File.ReadAllText("files/story/Halls/Hall14/Hall14.txt");
-            Program.Ss.SpeakAsync(hall14text);
-            Console.Clear();
-            Console.Write(hall14text);
+            string hall14text = File.ReadAllText("Halls/Hall14/Hall14.txt");
+            Program.SpeakFile(hall14text);
             Thread.Sleep(13000);
             Console.Clear();
             BackToCurrentRoom();
