@@ -261,6 +261,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\story\Rooms\Shop\Shop2.txt" />
+    <Content Include="files\story\shop.txt" />
     <Content Include="files\story\Walls\Wall1\Wall1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
