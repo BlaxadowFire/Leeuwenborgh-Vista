@@ -102,7 +102,7 @@ namespace Subwaj
         //boolean's for code menu
         public static bool BlnBoss;
 
-        public static bool BlnShop = false;
+        public static bool BlnShop;
         public static bool BlnDebug = false;
 
         //Story read (so you don't get the story every time you go into the room)
