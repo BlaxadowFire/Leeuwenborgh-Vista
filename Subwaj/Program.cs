@@ -940,7 +940,7 @@ namespace Subwaj
             if (!BlnHall12Story)
             {
                 //story
-                Console.Clear();
+                BlnHall12Story = true;
             }
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall12.txt"));
