@@ -1397,6 +1397,12 @@ namespace Subwaj
                         Program.InGameMenu();
                         break;
                     }
+                case "MainMenuCode":
+                    {
+                        
+                        Program.MainMenuCode();
+                        break;
+                    }
                 case "MainMenu":
                     {
                         //moet value uit ingametemproom pakken.

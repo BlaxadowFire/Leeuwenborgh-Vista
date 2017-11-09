@@ -72,7 +72,7 @@ namespace Subwaj
         public static string StrHall12 = "HALL12";
         public static string StrHall13 = "HALL13";
         public static string StrHall14 = "HALL14";
-
+        public static string StrMainMenuCode = "MainMenuCode";
         //HUD STUFF
         public static int IntTimerSeconds = 60;
 
@@ -415,7 +415,8 @@ namespace Subwaj
                         KonamiCode.CheckKonami_Code();
                         break;
                     }
-                }
+                
+            }
         }
         public static void MainMenuDlc()
         {

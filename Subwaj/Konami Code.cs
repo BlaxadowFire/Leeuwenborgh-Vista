@@ -100,7 +100,7 @@ namespace Subwaj
                             }
                             else
                             {
-                                konamicode = 0;
+                                konamicode = 1;
                             }
                             break;
                         }
