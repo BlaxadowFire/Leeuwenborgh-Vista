@@ -106,7 +106,9 @@
     <Content Include="files\backgrounds\Shop.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\Rooms\Room7\KilledTheBoss.txt" />
+    <Content Include="files\story\Rooms\Room7\KilledTheBoss.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="files\Rooms\Shop\Shop.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -386,7 +388,6 @@
     <Folder Include="files\story\Halls\Hall8\" />
     <Folder Include="files\story\Halls\Hall9\" />
     <Folder Include="files\story\Rooms\Room3\" />
-    <Folder Include="files\story\Rooms\Room7\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

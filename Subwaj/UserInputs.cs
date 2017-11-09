@@ -656,7 +656,9 @@ namespace Subwaj
                                     if (Program.Sword)
                                     {
                                         Console.Clear();
-                                        Console.WriteLine("Congrats you killed the boss GG");
+                                        Program.SpeakFile("Rooms/Room7/KilledTheBoss.txt");
+                                        Thread.Sleep(1000);
+                                        Console.Clear();
                                     }
                                     else
                                     {
