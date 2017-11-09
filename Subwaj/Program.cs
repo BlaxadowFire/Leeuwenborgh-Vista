@@ -72,7 +72,6 @@ namespace Subwaj
         public static string StrHall12 = "HALL12";
         public static string StrHall13 = "HALL13";
         public static string StrHall14 = "HALL14";
-        public static string StrMainMenuCode = "MainMenuCode";
         //HUD STUFF
         public static int IntTimerSeconds = 60;
 
@@ -378,8 +377,8 @@ namespace Subwaj
         public static void MainMenuCode()
         {
             Console.Clear();
-            Console.WriteLine("Type the code here./r/nLeave empty and press Enter to go back to Main Menu");
-                StrAnswer = Console.ReadLine().ToLower();
+            Console.WriteLine("Press Enter to go back to Main Menu");
+            StrAnswer = Console.ReadLine().ToLower();
                 Debug.DebugMode();
                 switch (StrAnswer)
                 {
