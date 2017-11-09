@@ -663,7 +663,7 @@ namespace Subwaj
                                     else
                                     {
                                         Console.Clear();
-                                        Console.WriteLine("\r\nYou need the sword to defeat the boss");
+                                        Program.SpeakFile("Rooms/Room7/ShopHint.txt");
                                         Thread.Sleep(2000);
                                         BackToCurrentRoom();
                                     }

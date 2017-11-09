@@ -115,7 +115,7 @@
     <Content Include="files\help2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="files\story\Halls\Hall12\ShopHint.txt">
+    <Content Include="files\story\Rooms\Room7\ShopHint.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\story\Halls\nothing.txt">
@@ -379,6 +379,7 @@
     <Folder Include="files\Halls\Halls\" />
     <Folder Include="files\story\Halls\Hall10\" />
     <Folder Include="files\story\Halls\Hall11\" />
+    <Folder Include="files\story\Halls\Hall12\" />
     <Folder Include="files\story\Halls\Hall1\" />
     <Folder Include="files\story\Halls\Hall3\" />
     <Folder Include="files\story\Halls\Hall4\" />
