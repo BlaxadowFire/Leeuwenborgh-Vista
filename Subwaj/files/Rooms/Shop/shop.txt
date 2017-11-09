@@ -5,5 +5,5 @@
    ╚══════════╝
 
 0.)    replay story
-1.)    Open the chest
+1.)    look in the chest
 2.)    go to hall 3

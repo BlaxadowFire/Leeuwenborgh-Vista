@@ -11,13 +11,12 @@ namespace Subwaj
         public static void Nothing()
         {
             Console.Clear();
-            string nothing = File.ReadAllText("Halls/nothing.txt");
-            Program.SpeakFile(nothing);
+            Program.SpeakFile("Halls/nothing.txt");
             Thread.Sleep(1000);
             Console.Clear();
             BackToCurrentRoom();
         }
-        public static void hall14text()
+        public static void Hall14Text()
         {
             Console.Clear();
             Program.SpeakFile("Halls/Hall14/Hall14.txt");
@@ -657,11 +656,15 @@ namespace Subwaj
                                     if (Program.Sword)
                                     {
                                         Console.Clear();
-                                        Console.WriteLine("Congrats you killed the boss GG");
+                                        Program.SpeakFile("Rooms/Room7/KilledTheBoss.txt");
+                                        Thread.Sleep(1000);
+                                        Console.Clear();
                                     }
                                     else
                                     {
-                                        Console.WriteLine("You need the sword to defeat the boss");
+                                        Console.Clear();
+                                        Program.SpeakFile("Rooms/Room7/ShopHint.txt");
+                                        Thread.Sleep(2000);
                                         BackToCurrentRoom();
                                     }
                                     Console.ReadKey();
@@ -1237,7 +1240,7 @@ namespace Subwaj
                                     }
                                     else
                                     {
-                                        hall14text();
+                                        Hall14Text();
                                     }
                                     break;
                             }

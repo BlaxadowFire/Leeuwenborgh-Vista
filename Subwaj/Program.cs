@@ -170,7 +170,7 @@ namespace Subwaj
             CurrentRoom = StrShop;
             if (!BlnShopStory)
             {
-                Program.SpeakFile("Rooms/Shop/Shop.txt");
+                SpeakFile("Rooms/Shop/Shop.txt");
                 BlnShopStory = true;
                 Thread.Sleep(1000);
                 Console.Clear();
@@ -378,7 +378,7 @@ namespace Subwaj
         public static void MainMenuCode()
         {
             Console.Clear();
-            Console.WriteLine("Press Enter to go back to Main Menu");
+            Console.WriteLine("Type the code here./r/nLeave empty and press Enter to go back to Main Menu");
                 StrAnswer = Console.ReadLine().ToLower();
                 Debug.DebugMode();
                 switch (StrAnswer)
@@ -647,6 +647,8 @@ namespace Subwaj
         }
         public static void Room7()
         {
+            CurrentRoom = StrRoom7;
+            Console.Clear();
             if (!BlnRoom7Story)
             {
                 //story
@@ -655,14 +657,6 @@ namespace Subwaj
                 SpeakFile("Rooms/BossRoom/Boss.txt");
                 Thread.Sleep(1000);
                 Console.Clear();
-                BlnRoom7Story = true;
-            }
-
-            CurrentRoom = StrRoom7;
-            Console.Clear();
-            if (!BlnRoom7Story)
-            {
-                //story
                 BlnRoom7Story = true;
             }
             Console.WriteLine("BOSSROOM");
@@ -947,36 +941,17 @@ namespace Subwaj
             if (!BlnHall12Story)
             {
                 //story
-                Console.Clear();
-                string strFilename = StrTxtLocation + "Halls/Hall12/ShopHint.txt";
-                string[] introText = File.ReadAllLines(strFilename);
-                foreach (string strIntroText in introText)
-                {
-                    Ss.SpeakAsync(strIntroText);
-                    foreach (char cha in strIntroText)
-                    {
-                        Console.Write(cha);
-                        if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
-                        {
-                            Thread.Sleep(IntSleep400); //400
-                        }
-                        Thread.Sleep(40); //40
-                    }
-                    Console.Write("\r\n");
-                    Thread.Sleep(IntSleep400); //400
-                }
-                Thread.Sleep(1000);
-                Console.Clear();
                 BlnHall12Story = true;
             }
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall12.txt"));
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
-            Errors.ErrorOutOfBounds();
         }
         public static void Hall13()
         {
+            CurrentRoom = StrHall13;
+            Console.Clear();
             if (!BlnHall13Story)
             {
                 //story
@@ -986,14 +961,6 @@ namespace Subwaj
                 Console.Clear();
                 BlnHall13Story = true;
             }
-
-            CurrentRoom = StrHall13;
-            Console.Clear();
-            if (BlnHall13Story)
-            {
-                //story
-                BlnHall13Story = true;
-            }
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall13.txt"));
             UserInputs.UserInput();
@@ -1001,22 +968,15 @@ namespace Subwaj
         }
         public static void Hall14()
         {
-            if (BlnHall14Story)
-            {
-                //story
-                //story
-                Console.Clear();
-                SpeakFile("Halls/Hall13/Hall13.txt");
-                Thread.Sleep(4000);
-                Console.Clear();
-                BlnHall14Story = true;
-            }
-
             CurrentRoom = StrHall14;
             Console.Clear();
-            if (BlnHall14Story)
+            if (!BlnHall14Story)
             {
                 //story
+                Console.Clear();
+                SpeakFile("Halls/Hall14/Hall14.txt");
+                Thread.Sleep(4000);
+                Console.Clear();
                 BlnHall14Story = true;
             }
             BackGroundPosition();
