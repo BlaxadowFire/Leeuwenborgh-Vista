@@ -377,7 +377,7 @@ namespace Subwaj
         public static void MainMenuCode()
         {
             Console.Clear();
-            Console.WriteLine("Press Enter to go back to Main Menu");
+            Console.WriteLine("Type the code here.\r\nLeave empty and press Enter to go back to Main Menu");
             StrAnswer = Console.ReadLine().ToLower();
                 Debug.DebugMode();
                 switch (StrAnswer)
@@ -430,8 +430,21 @@ namespace Subwaj
             Console.ReadKey();
         }
         public static void MainMenuExit()
-        {
-            Environment.Exit(0);
+        { exit:
+            Console.WriteLine("Are you sure you want to exit.");
+            Console.WriteLine("Type yes or no");
+            if (Console.ReadLine().ToLower()== "yes")
+            {
+                Environment.Exit(0);
+            }
+            else if (Console.ReadLine().ToLower() == "no")
+            {
+                UserInputs.BackToCurrentRoom();
+            }
+            else
+            {
+                goto exit;
+            }
         }
         public static void InGameMap()
         {
