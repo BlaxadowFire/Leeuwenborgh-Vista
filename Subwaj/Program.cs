@@ -309,30 +309,7 @@ namespace Subwaj
             else
             {
                 Console.Clear();
-                strFilename = StrTxtLocation + "intro/exit.txt";
-                introText = File.ReadAllLines(strFilename);
-                for (int i = 0; i < introText.Length; i++)
-                {
-                    if (i == 1 || i == 3 || i == 5 || i == 7 || i == 9 || i == 11 || i == 13)
-                    {
-                        Ss.SpeakAsync(introText[i]);
-                    }
-
-                    string strIntroText = introText[i];
-                    foreach (char cha in strIntroText)
-                    {
-                        Console.Write(cha);
-                        if (cha == ',' || cha == '.' || cha == '?')
-                        {
-                            Thread.Sleep(IntSleep400);
-                        }
-                        Thread.Sleep(40);
-                    }
-                    Console.Write("\r\n");
-                    Thread.Sleep(500);
-
-                }
-                Thread.Sleep(2000);
+                SpeakFile("intro/exit.txt");
                 Environment.Exit(0);
             }
         }
@@ -432,7 +409,6 @@ namespace Subwaj
         public static void MainMenuExit()
         { exit:
             Console.WriteLine("Are you sure you want to exit.");
-            Console.WriteLine("Type yes or no");
             if (Console.ReadLine().ToLower()== "yes")
             {
                 Environment.Exit(0);
