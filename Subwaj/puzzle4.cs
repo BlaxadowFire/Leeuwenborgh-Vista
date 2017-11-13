@@ -127,7 +127,10 @@ namespace Subwaj
                 Console.BackgroundColor = ConsoleColor.Black;
                 Console.ForegroundColor = ConsoleColor.White;
             }
-            catch (Exception) { DrawNumberBorder(i); }
+            catch (Exception)
+            {
+                DrawNumberBorder(i);
+            }
         }
         public static void DrawNumbers()
         {
