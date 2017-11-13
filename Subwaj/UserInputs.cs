@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading;
-using System.IO;
 
 namespace Subwaj
 {
@@ -739,22 +738,23 @@ namespace Subwaj
                                 {
                                     if (!Program.BlnShop)
                                     {
-                                        if (Program.BlnBoss == false)
+                                        if (!Program.BlnBoss)
                                         {
                                             Console.Clear();
                                             Program.SpeakFile("Rooms/Shop/ShopClosed.txt");
                                         }
-                                        if (Program.BlnBoss == true)
+                                        else
                                         {
                                             Console.Clear();
                                             Program.SpeakFile("Rooms/Shop/ShopClosed2.0.txt");
                                         }
-                                        if (Program.BlnShop)
-                                        {
-                                            Program.Shop();
-                                        }
+                                    }
+                                    else
+                                    {
+                                        Program.Shop();
                                     }
                                     break;
+
                                 }
                             case "NumPad2":
                             case "D2":

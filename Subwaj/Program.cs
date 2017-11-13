@@ -397,17 +397,22 @@ namespace Subwaj
             Console.Clear();
             Console.WriteLine("Are you sure you want to exit.\r\n ");
             string exit = Console.ReadLine().ToLower();
-            if (exit == "yes")
+            switch (exit)
             {
-                Environment.Exit(0);
-            }
-            else if (exit == "no")
-            {
-                UserInputs.BackToCurrentRoom();
-            }
-            else
-            {
-                goto exit;
+                case "yes":
+                {
+                    Environment.Exit(0);
+                    break;
+                }
+                case "no":
+                {
+                    UserInputs.BackToCurrentRoom();
+                    break;
+                }
+                default:
+                {
+                    goto exit;
+                }
             }
         }
         public static void InGameMap()
@@ -445,7 +450,7 @@ namespace Subwaj
         {
             if (CurrentRoom == StrMainMenu || CurrentRoom == StrInGameMenu) return;
 
-            string strZeroSpace = "";
+            string strZeroSpace;
             strZeroSpace = IntTimerSeconds < 10 ? "0" : "";
             Console.ForegroundColor = ConsoleColor.Red;
             Console.SetCursorPosition(Console.CursorLeft = 54, Console.CursorTop = 0);
