@@ -59,7 +59,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>game.ico</ApplicationIcon>
+    <ApplicationIcon>NotaGameLogo2.0.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>337D6484031371394373CD490BE4987D13E5CED6</ManifestCertificateThumbprint>
@@ -149,6 +149,7 @@
     <Compile Include="puzzle2.cs" />
     <Compile Include="puzzle3.cs" />
     <Compile Include="UserInputs.cs" />
+    <Content Include="NotaGameLogo2.0.ico" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="files\help.txt">
@@ -323,7 +324,6 @@
     <Content Include="files\backgrounds\spongebob.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="game.ico" />
     <Content Include="BGM subwaj\Duration.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
