@@ -438,7 +438,6 @@ namespace Subwaj
             Console.ForegroundColor = ConsoleColor.White;
 
         }
-
         //END OF InGameMenu
 
         //BEGIN OF HUD
@@ -455,6 +454,7 @@ namespace Subwaj
             Console.WriteLine("╚═════════════════════════════════════════════════════════════════");
             Console.ForegroundColor = ConsoleColor.White;
         }
+        //END OF HUD
 
         //Timer
         public static void TimerFunction()
@@ -479,51 +479,6 @@ namespace Subwaj
 
         }
         //END OF HUD
-
-
-        public static void Credits()
-        {
-            Console.Clear();
-            CurrentRoom = StrCredits;
-            Console.CursorTop = 30;
-            string[] credits = File.ReadAllLines("files/Credits.txt");
-            int ccounter1 = 0;
-            for (; ccounter1 < credits.Length; ccounter1++)
-            {
-                if (ccounter1 <= 56)
-                {
-                    foreach (char cha in credits[ccounter1])
-                    {
-                        if (cha == ' ')
-                        {
-                            Console.Write(cha);
-                            Thread.Sleep(4); //40
-                        }
-                        else
-                        {
-                            Console.Write(cha);
-                            Thread.Sleep(40); //40
-                        }
-                    }
-                    Console.Write("\r\n");
-                    Thread.Sleep(100); //400
-                }
-                else
-                {
-                    foreach (char cha in credits[ccounter1])
-                    {
-                            Console.Write(cha);
-                            Thread.Sleep(1); //40
-                    }
-                    Console.Write("\r\n");
-                    Thread.Sleep(10); //400
-                }
-            }
-            Thread.Sleep(5000);
-
-        }
-
-
         //BEGIN OF ROOMS
         public static void Room1()
         {
@@ -636,7 +591,6 @@ namespace Subwaj
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
-
         public static void Room5()
         {
             CurrentRoom = StrRoom5;
@@ -1019,6 +973,48 @@ namespace Subwaj
                 Console.Write("\r\n");
                 Thread.Sleep(IntSleep400); //400
             }
+        }
+
+        public static void Credits()
+        {
+            Console.Clear();
+            CurrentRoom = StrCredits;
+            Console.CursorTop = 30;
+            string[] credits = File.ReadAllLines("files/Credits.txt");
+            int ccounter1 = 0;
+            for (; ccounter1 < credits.Length; ccounter1++)
+            {
+                if (ccounter1 <= 56)
+                {
+                    foreach (char cha in credits[ccounter1])
+                    {
+                        if (cha == ' ')
+                        {
+                            Console.Write(cha);
+                            Thread.Sleep(4); //40
+                        }
+                        else
+                        {
+                            Console.Write(cha);
+                            Thread.Sleep(40); //40
+                        }
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(100); //400
+                }
+                else
+                {
+                    foreach (char cha in credits[ccounter1])
+                    {
+                        Console.Write(cha);
+                        Thread.Sleep(1); //40
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(10); //400
+                }
+            }
+            Thread.Sleep(5000);
+
         }
 
         //BGM
