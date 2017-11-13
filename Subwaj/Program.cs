@@ -48,7 +48,7 @@ namespace Subwaj
 
         //Makes it easier to change rooms
         public static string StrMainMenu = "MainMenu";
-
+        public static string StrCredits = "CREDITS";
         public static string StrInGameMenu = "InGameMenu";
         public static string StrShop = "SHOP";
         public static string StrRoom1 = "ROOM1";
@@ -491,6 +491,29 @@ namespace Subwaj
 
         }
         //END OF HUD
+
+
+        public static void Credits()
+        {
+            Console.Clear();
+            CurrentRoom = StrCredits;
+            Console.CursorTop = 30;
+            string[] credits = File.ReadAllLines("files/Credits.txt");
+            int ccounter1 = 0;
+            for (; ccounter1 < credits.Length; ccounter1++)
+            {
+                foreach (char cha in credits[ccounter1])
+                {
+                    Console.Write(cha);
+                    Thread.Sleep(40); //40
+                }
+                Console.Write("\r\n");
+                Thread.Sleep(100); //400
+            }
+            Console.ReadLine();
+
+        }
+
 
         //BEGIN OF ROOMS
         public static void Room1()
@@ -1106,6 +1129,30 @@ namespace Subwaj
                         IntSongCounter = 0;
                     } while (CurrentRoom == StrMainMenu && BlnPlayMusic /*&& blnBGMCancel == false*/);
                 }
+                else if (CurrentRoom != string.Empty && CurrentRoom == StrCredits)
+                {
+                    do
+                    {
+                    string[] strReadSong = File.ReadAllLines(BgmFolder + "Credits/" + BgmFileTone);
+                    string[] strReadDuration = File.ReadAllLines(BgmFolder + "Credits/" + BgmFileDuration);
+                    IntSongCounter = 0;
+                    do
+                    {
+                        IntReadSong = Convert.ToInt32(strReadSong[IntSongCounter]);
+                        IntReadDuration = Convert.ToInt32(strReadDuration[IntSongCounter]);
+                        IntSongCounter++;
+                        if (IntReadSong != 0)
+                        {
+                            Console.Beep(IntReadSong, IntReadDuration);
+                        }
+                        else
+                        {
+                            Thread.Sleep(IntReadDuration);
+                        }
+                    } while (IntSongCounter < strReadSong.Length && CurrentRoom == StrCredits /*&& blnBGMCancel == false*/);
+                    IntSongCounter = 0;
+                } while (CurrentRoom == StrCredits /*&& blnBGMCancel == false*/) ;
+            }
             } while (true);
         }
 
@@ -1115,6 +1162,7 @@ namespace Subwaj
             Console.Clear();
             SpeakFile("Rooms/Timer/Timer.txt");
             Console.ReadKey();
+            Credits();
             Environment.Exit(0);
         }
 

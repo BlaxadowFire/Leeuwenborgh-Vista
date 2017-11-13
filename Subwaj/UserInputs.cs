@@ -657,8 +657,9 @@ namespace Subwaj
                                     {
                                         Console.Clear();
                                         Program.SpeakFile("Rooms/Room7/KilledTheBoss.txt");
-                                        Thread.Sleep(1000);
-                                        Console.Clear();
+                                        Program.Credits();
+                                        Thread.Sleep(3000);
+                                        Environment.Exit(0);
                                     }
                                     else
                                     {
