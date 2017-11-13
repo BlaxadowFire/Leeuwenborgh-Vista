@@ -286,14 +286,6 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
-                            case "NumPad0":
-                            case "D0":
-                                {
-
-                                    Program.BlnRoom2Story = false;
-                                    BackToCurrentRoom();
-                                    break;
-                                }
                             case "NumPad1":
                             case "D1":
                                 if (Program.BlnPuzzle1Complete == false)
@@ -358,14 +350,6 @@ namespace Subwaj
                             case "Escape":
                                 {
                                     Program.InGameMenu();
-                                    break;
-                                }
-                            case "NumPad0":
-                            case "D0":
-                                {
-
-                                    Program.BlnRoom3Story = false;
-                                    BackToCurrentRoom();
                                     break;
                                 }
                             case "NumPad1":
@@ -499,14 +483,6 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
-                            case "NumPad0":
-                            case "D0":
-                                {
-
-                                    Program.BlnRoom5Story = false;
-                                    BackToCurrentRoom();
-                                    break;
-                                }
                             case "NumPad1":
                             case "D1":
                                 if (Program.BlnPuzzle3Complete == false)
@@ -568,14 +544,6 @@ namespace Subwaj
                             case "Escape":
                                 {
                                     Program.InGameMenu();
-                                    break;
-                                }
-                            case "NumPad0":
-                            case "D0":
-                                {
-
-                                    Program.BlnRoom6Story = false;
-                                    BackToCurrentRoom();
                                     break;
                                 }
                             case "NumPad1":
