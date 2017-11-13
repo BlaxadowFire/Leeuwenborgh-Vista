@@ -157,6 +157,12 @@ namespace Subwaj
                                     Program.MainMenu();
                                     break;
                                 }
+                            case "D6":
+                            case "NumPad6":
+                            {
+                                Program.MainMenuCode();
+                                break;
+                            }
                             case "D0":
                             case "NumPad0":
                                 {

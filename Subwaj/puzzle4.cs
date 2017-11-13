@@ -244,7 +244,8 @@ namespace Subwaj
 
         public static void Draw()
         {
-            Console.WriteLine(IntAnswer);
+            Console.WriteLine("The answer is: " + IntAnswer);
+            Console.WriteLine("Your current ammount is: " + IntLeverAnswer);
             DrawNumbers();
             Console.SetCursorPosition(10, 10);
             CheckLeverOnOff(Lever1);
@@ -313,6 +314,11 @@ namespace Subwaj
         {
             switch (cki)
             {
+                case "Escape":
+                {
+                    Program.InGameMenu();
+                    break;
+                }
                 case "NumPad1":
                 case "D1":
                 {

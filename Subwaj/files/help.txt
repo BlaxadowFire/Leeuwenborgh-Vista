@@ -5,13 +5,13 @@
                                   
                                           CONTROLS
 
-Your main controls will be the told by the options on the screen (1 to 9) (or by typing some text)
-  You can always use the ESC key to open you in game menu. Except when a cutscene is in progress.
+Your main controls will be told by the options on the screen (1 to 9) (or by typing some text)
+You can always use the ESC key to open the in game menu. Except when a cutscene is in progress.
                                  
 
                                       INGAME MENU = ESC
 
-                        You can acces the map within the INGAME MENU
+                        You can access the map within the INGAME MENU
 
 
                                         THE NOT GAME
