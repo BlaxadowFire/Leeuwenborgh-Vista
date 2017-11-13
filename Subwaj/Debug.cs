@@ -33,7 +33,7 @@ namespace Subwaj
                                 }
                             case "puzzle3":
                                 {
-                                    Console.Write(Puzzle3.Room2 + Puzzle3.Room4 + Puzzle3.Room1 + Puzzle3.Room3);
+                                    Console.Write("{0}{1}{2}{3}", Puzzle3.Room2, Puzzle3.Room4, Puzzle3.Room1, Puzzle3.Room3);
                                     Console.ReadKey();
                                     break;
                                 }
