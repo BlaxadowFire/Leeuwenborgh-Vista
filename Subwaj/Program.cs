@@ -408,12 +408,14 @@ namespace Subwaj
         }
         public static void MainMenuExit()
         { exit:
-            Console.WriteLine("Are you sure you want to exit.");
-            if (Console.ReadLine().ToLower()== "yes")
+            Console.Clear();
+            Console.WriteLine("Are you sure you want to exit.\r\n ");
+            string exit = Console.ReadLine().ToLower();
+            if (exit == "yes")
             {
                 Environment.Exit(0);
             }
-            else if (Console.ReadLine().ToLower() == "no")
+            else if (exit == "no")
             {
                 UserInputs.BackToCurrentRoom();
             }
