@@ -377,6 +377,22 @@ namespace Subwaj
                         KonamiCode.CheckKonami_Code();
                         break;
                     }
+                    case "":
+                    case "exit":
+                    case "home":
+                    case "main":
+                    case "menu":
+                    case "back":
+                    {
+                        break;
+                    }
+                    default:
+                    {
+                        Console.WriteLine("Please enter a valid code.");
+                        Thread.Sleep(750);
+                        MainMenuCode();
+                        break;
+                    }
                 
             }
         }
@@ -450,8 +466,7 @@ namespace Subwaj
         {
             if (CurrentRoom == StrMainMenu || CurrentRoom == StrInGameMenu) return;
 
-            string strZeroSpace;
-            strZeroSpace = IntTimerSeconds < 10 ? "0" : "";
+            string strZeroSpace = IntTimerSeconds < 10 ? "0" : "";
             Console.ForegroundColor = ConsoleColor.Red;
             Console.SetCursorPosition(Console.CursorLeft = 54, Console.CursorTop = 0);
             Console.WriteLine("║\t   TIME:  {3}:{4}{0}\t  Current location:   {1}\tO═╦╗:\t{2}", IntTimerSeconds, CurrentRoom, IntKey, IntTimerMinutes, strZeroSpace);
