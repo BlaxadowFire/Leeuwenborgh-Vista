@@ -395,7 +395,7 @@ namespace Subwaj
         public static void MainMenuExit()
         { exit:
             Console.Clear();
-            Console.WriteLine("Are you sure you want to exit.\r\n ");
+            Console.WriteLine("Are you sure you want to exit.\r\nType YES to exit, type NO to stay in the not game.");
             string exit = Console.ReadLine().ToLower();
             switch (exit)
             {
