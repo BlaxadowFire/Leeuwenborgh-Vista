@@ -149,7 +149,9 @@
     <Compile Include="puzzle2.cs" />
     <Compile Include="puzzle3.cs" />
     <Compile Include="UserInputs.cs" />
-    <Content Include="files\story\Rooms\Shop\ShopClosed2.0.txt" />
+    <Content Include="files\story\Rooms\Shop\ShopClosed2.0.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="NotaGameLogo2.0.ico" />
   </ItemGroup>
   <ItemGroup>
