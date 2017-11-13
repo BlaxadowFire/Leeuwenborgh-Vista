@@ -29,11 +29,11 @@
     <ProductName>Not A Game</ProductName>
     <PublisherName>Nando Kools</PublisherName>
     <SuiteName>Subwaj</SuiteName>
-    <MinimumRequiredVersion>0.1.0.8</MinimumRequiredVersion>
+    <MinimumRequiredVersion>0.9.0.0</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>9</ApplicationRevision>
-    <ApplicationVersion>0.1.0.%2a</ApplicationVersion>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>0.9.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -59,7 +59,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>game.ico</ApplicationIcon>
+    <ApplicationIcon>NotaGameLogo2.0.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>337D6484031371394373CD490BE4987D13E5CED6</ManifestCertificateThumbprint>
@@ -91,6 +91,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="BGM subwaj\Credits\Duration.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BGM subwaj\Credits\Tone.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="files\backgrounds\backgrounds2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -104,6 +110,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\backgrounds\Shop.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="files\Credits.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="files\story\Rooms\Room7\KilledTheBoss.txt">
@@ -140,6 +149,7 @@
     <Compile Include="puzzle2.cs" />
     <Compile Include="puzzle3.cs" />
     <Compile Include="UserInputs.cs" />
+    <Content Include="NotaGameLogo2.0.ico" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="files\help.txt">
@@ -314,7 +324,6 @@
     <Content Include="files\backgrounds\spongebob.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="game.ico" />
     <Content Include="BGM subwaj\Duration.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

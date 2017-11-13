@@ -26,6 +26,11 @@ namespace Subwaj
                         string strDebugInput = x;
                         switch (strDebugInput)
                         {
+                            case "credits":
+                                {
+                                    Program.Credits();
+                                    break;
+                                }
                             case "puzzle3":
                                 {
                                     Console.Write(Puzzle3.Room2 + Puzzle3.Room4 + Puzzle3.Room1 + Puzzle3.Room3);
