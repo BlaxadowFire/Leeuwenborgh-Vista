@@ -281,7 +281,12 @@ namespace Subwaj
                 {
                     firstRun = true;
                 }
-
+                if (strUserStart == "nogame" || strUserStart == "no game" || strUserStart == "not a game" || strUserStart == "notagame")
+                {
+                    Ss.SpeakAsync("This isn't an easter egg");
+                    Console.WriteLine("This isn't an easter egg");
+                    Thread.Sleep(500);
+                }
                 if (strUserStart == "start" || strUserStart == "exit")
                 {
                     blnLoopQuestion = false;
@@ -384,6 +389,13 @@ namespace Subwaj
                     case "menu":
                     case "back":
                     {
+                        break;
+                    }
+                    case "no game":
+                    {
+                        Console.WriteLine("Nice try");
+                        Thread.Sleep(1000);
+                        MainMenuCode();
                         break;
                     }
                     default:
