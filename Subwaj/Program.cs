@@ -134,7 +134,7 @@ namespace Subwaj
 
 
         //sleep
-        public static int IntSleep400 = 500; //400
+        public static int IntSleep400 = 600; //400
 
         public static void Main(string[] args)
         {
