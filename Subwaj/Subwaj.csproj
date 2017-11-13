@@ -91,8 +91,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BGM subwaj\Credits\Duration.txt" />
-    <Content Include="BGM subwaj\Credits\Tone.txt" />
+    <Content Include="BGM subwaj\Credits\Duration.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BGM subwaj\Credits\Tone.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="files\backgrounds\backgrounds2.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

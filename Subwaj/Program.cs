@@ -502,15 +502,36 @@ namespace Subwaj
             int ccounter1 = 0;
             for (; ccounter1 < credits.Length; ccounter1++)
             {
-                foreach (char cha in credits[ccounter1])
+                if (ccounter1 <= 56)
                 {
-                    Console.Write(cha);
-                    Thread.Sleep(40); //40
+                    foreach (char cha in credits[ccounter1])
+                    {
+                        if (cha == ' ')
+                        {
+                            Console.Write(cha);
+                            Thread.Sleep(4); //40
+                        }
+                        else
+                        {
+                            Console.Write(cha);
+                            Thread.Sleep(40); //40
+                        }
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(100); //400
                 }
-                Console.Write("\r\n");
-                Thread.Sleep(100); //400
+                else
+                {
+                    foreach (char cha in credits[ccounter1])
+                    {
+                            Console.Write(cha);
+                            Thread.Sleep(1); //40
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(10); //400
+                }
             }
-            Console.ReadLine();
+            Thread.Sleep(5000);
 
         }
 
@@ -1079,7 +1100,7 @@ namespace Subwaj
         {
             do
             {
-                if (CurrentRoom != StrMainMenu && CurrentRoom != string.Empty && BlnPlayMusic /*&& blnBGMCancel ==false*/) //BGM In Game
+                if (CurrentRoom != StrMainMenu && CurrentRoom != string.Empty && CurrentRoom != StrCredits && BlnPlayMusic /*&& blnBGMCancel ==false*/) //BGM In Game
                 {
                     do
                     {

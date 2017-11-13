@@ -1,37 +1,61 @@
-﻿      
-	  Not a game by:
+﻿
+                                       Not a game by:
 
-Nando, Tom, Shunhui and Julean
-
-
-        Programed by:
-
-Nando, Tom, Shunhui and Julean
+                              Nando, Tom, Shunhui and Julean
 
 
-          Ascii by:
+                                        Programed by:
 
-Nando, Tom, Shunhui and Julean
-
-
-		   Story by:
-
-        Tom and Julean
+                              Nando, Tom, Shunhui and Julean
 
 
-	       Testers:
+                                      Lead programmer:
 
-Collin B, Cranky-Pants, Nick kleijnen, 
- scaevus25, Damian Caelen, ZE_DENZEL 
-        and UKHedgehogNL
+                                           Nando
 
+                                          Ascii by:
 
-		  Idea from:
-
-	  There is no game!!!
+                              Nando, Tom, Shunhui and Julean
 
 
-	                                                                                                      
+                                          Story by:
+
+                                       Tom and Julean
+
+
+                                          Testers:
+
+                           Collin B, Cranky-Pants, Nick kleijnen, 
+                            scaevus25, Damian Caelen, ZE_DENZEL 
+                                     and UKHedgehogNL
+
+
+                                Best tester award: (own quote)
+
+                                       ZE_DENZEL
+
+                                         ,-.            __________________
+                                     ,--' ~.).         |                  |
+                                   ,'         `.       |    Cyka Blyat    |
+                                  ; (((__   __)))      |__________________|
+                                  ;  ( (#) ( (#)       /
+                                  |   \_/___\_/|      /
+                                 ,"  ,-'    `__".    /
+                                (   ( ._   ____`.)--._        _
+                                 `._ `-.`-' \(`-'  _  `-. _,-' `-/`.
+                                  ,')   `.`._))  ,' `.   `.  ,','  ;
+                                .'  .     `--'  /     ).   `.      ;
+                               ;     `-        /     '  )         ;
+                               \                       ')       ,'
+                                \                     ,'       ;
+                                 \               `~~~'       ,'
+                                  `.                      _,'
+                                    `.                ,--'
+                                     `-._________,--'
+
+
+
+
              mNNNd.       .NNNN`                                                          
              NMMMMm:      -MMMN`                       -hNMm                                      
              NMMMMMN+     -MMMN`                       +MMMm                        
