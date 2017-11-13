@@ -1158,6 +1158,14 @@ namespace Subwaj
                                 Program.InGameMenu();
                                 break;
                             }
+                            case "NumPad0":
+                            case "D0":
+                                {
+
+                                    Program.BlnHall13Story = false;
+                                    BackToCurrentRoom();
+                                    break;
+                                }
                             case "NumPad1":
                             case "D1":
                             {
@@ -1199,6 +1207,14 @@ namespace Subwaj
                                 Program.InGameMenu();
                                 break;
                             }
+                            case "NumPad0":
+                            case "D0":
+                                {
+
+                                    Program.BlnHall14Story = false;
+                                    BackToCurrentRoom();
+                                    break;
+                                }
                             case "NumPad1":
                             case "D1":
                             {
