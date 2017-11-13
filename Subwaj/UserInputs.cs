@@ -286,14 +286,6 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
-                            case "NumPad0":
-                            case "D0":
-                                {
-
-                                    Program.BlnRoom2Story = false;
-                                    BackToCurrentRoom();
-                                    break;
-                                }
                             case "NumPad1":
                             case "D1":
                                 if (Program.BlnPuzzle1Complete == false)
@@ -358,14 +350,6 @@ namespace Subwaj
                             case "Escape":
                                 {
                                     Program.InGameMenu();
-                                    break;
-                                }
-                            case "NumPad0":
-                            case "D0":
-                                {
-
-                                    Program.BlnRoom3Story = false;
-                                    BackToCurrentRoom();
                                     break;
                                 }
                             case "NumPad1":
@@ -499,14 +483,6 @@ namespace Subwaj
                                     Program.InGameMenu();
                                     break;
                                 }
-                            case "NumPad0":
-                            case "D0":
-                                {
-
-                                    Program.BlnRoom5Story = false;
-                                    BackToCurrentRoom();
-                                    break;
-                                }
                             case "NumPad1":
                             case "D1":
                                 if (Program.BlnPuzzle3Complete == false)
@@ -568,14 +544,6 @@ namespace Subwaj
                             case "Escape":
                                 {
                                     Program.InGameMenu();
-                                    break;
-                                }
-                            case "NumPad0":
-                            case "D0":
-                                {
-
-                                    Program.BlnRoom6Story = false;
-                                    BackToCurrentRoom();
                                     break;
                                 }
                             case "NumPad1":
@@ -767,37 +735,27 @@ namespace Subwaj
                                 break;
                             }
                             case "NumPad1":
-                            case "D1":
-                            {
-                                if (!Program.BlnShop)
+                                case "D1":
                                 {
-                                        Console.Clear();
-                                        string strFilename = Program.StrTxtLocation + "Rooms/Shop/ShopClosed.txt";
-                                        string[] introText = File.ReadAllLines(strFilename);
-                                        foreach (string strIntroText in introText)
+                                    if (!Program.BlnShop)
+                                    {
+                                        if (Program.BlnBoss == false)
                                         {
-                                            Program.Ss.SpeakAsync(strIntroText);
-                                            foreach (char cha in strIntroText)
-                                            {
-                                                Console.Write(cha);
-                                                if (cha == ',' || cha == ':' || cha == '.' || cha == '!' || cha == '?')
-                                                {
-                                                    Thread.Sleep(Program.IntSleep400); //400
-                                                }
-                                                Thread.Sleep(40); //40
-                                            }
-                                            Console.Write("\r\n");
-                                            Thread.Sleep(Program.IntSleep400); //400
+                                            Console.Clear();
+                                            Program.SpeakFile("Rooms/Shop/ShopClosed.txt");
                                         }
-                                        Thread.Sleep(4000);
-                                        Console.Clear();
-                                }
-                                if (Program.BlnShop)
-                                {
-                                     Program.Shop();
-                                }
+                                        if (Program.BlnBoss == true)
+                                        {
+                                            Console.Clear();
+                                            Program.SpeakFile("Rooms/Shop/ShopClosed2.0.txt");
+                                        }
+                                        if (Program.BlnShop)
+                                        {
+                                            Program.Shop();
+                                        }
+                                    }
                                     break;
-                            }
+                                }
                             case "NumPad2":
                             case "D2":
                             {
@@ -1190,6 +1148,14 @@ namespace Subwaj
                                 Program.InGameMenu();
                                 break;
                             }
+                            case "NumPad0":
+                            case "D0":
+                                {
+
+                                    Program.BlnHall13Story = false;
+                                    BackToCurrentRoom();
+                                    break;
+                                }
                             case "NumPad1":
                             case "D1":
                             {
@@ -1231,6 +1197,14 @@ namespace Subwaj
                                 Program.InGameMenu();
                                 break;
                             }
+                            case "NumPad0":
+                            case "D0":
+                                {
+
+                                    Program.BlnHall14Story = false;
+                                    BackToCurrentRoom();
+                                    break;
+                                }
                             case "NumPad1":
                             case "D1":
                             {

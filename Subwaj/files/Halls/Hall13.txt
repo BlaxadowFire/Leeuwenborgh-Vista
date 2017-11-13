@@ -3,7 +3,7 @@
    ╔════════════╗
    ║   Hall 13  ║                   
    ╚════════════╝
-
+0.)    replay story
 1.)    go to hall 14
 2.)    go to room 6
 3.)    look at walls

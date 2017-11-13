@@ -17,8 +17,7 @@ namespace Subwaj
         //Here we will place the public static variables
         public static Random RandomForeGround = new Random(); //Gets used for random foregroundcolor.
 
-        public static ConsoleColor OriginalForeGroundColor
-            ; //Sets the old foreground to a variable to make sure it isn't the same.
+        public static ConsoleColor OriginalForeGroundColor; //Sets the old foreground to a variable to make sure it isn't the same.
 
         public static ConsoleKeyInfo Cki; //uses Cki to use readkey.
 
@@ -100,7 +99,6 @@ namespace Subwaj
 
         //boolean's for code menu
         public static bool BlnBoss;
-
         public static bool BlnShop;
         public static bool BlnDebug = false;
 
@@ -112,18 +110,6 @@ namespace Subwaj
         public static bool BlnRoom5Story;
         public static bool BlnRoom6Story;
         public static bool BlnRoom7Story;
-        public static bool BlnHall1Story;
-        public static bool BlnHall2Story;
-        public static bool BlnHall3Story;
-        public static bool BlnHall4Story;
-        public static bool BlnHall5Story;
-        public static bool BlnHall6Story;
-        public static bool BlnHall7Story;
-        public static bool BlnHall8Story;
-        public static bool BlnHall9Story;
-        public static bool BlnHall10Story;
-        public static bool BlnHall11Story;
-        public static bool BlnHall12Story;
         public static bool BlnHall13Story;
         public static bool BlnHall14Story;
         public static bool BlnPuzzle1 = false;
@@ -452,7 +438,6 @@ namespace Subwaj
             Console.ForegroundColor = ConsoleColor.White;
 
         }
-
         //END OF InGameMenu
 
         //BEGIN OF HUD
@@ -469,6 +454,7 @@ namespace Subwaj
             Console.WriteLine("╚═════════════════════════════════════════════════════════════════");
             Console.ForegroundColor = ConsoleColor.White;
         }
+        //END OF HUD
 
         //Timer
         public static void TimerFunction()
@@ -493,51 +479,6 @@ namespace Subwaj
 
         }
         //END OF HUD
-
-
-        public static void Credits()
-        {
-            Console.Clear();
-            CurrentRoom = StrCredits;
-            Console.CursorTop = 30;
-            string[] credits = File.ReadAllLines("files/Credits.txt");
-            int ccounter1 = 0;
-            for (; ccounter1 < credits.Length; ccounter1++)
-            {
-                if (ccounter1 <= 56)
-                {
-                    foreach (char cha in credits[ccounter1])
-                    {
-                        if (cha == ' ')
-                        {
-                            Console.Write(cha);
-                            Thread.Sleep(4); //40
-                        }
-                        else
-                        {
-                            Console.Write(cha);
-                            Thread.Sleep(40); //40
-                        }
-                    }
-                    Console.Write("\r\n");
-                    Thread.Sleep(100); //400
-                }
-                else
-                {
-                    foreach (char cha in credits[ccounter1])
-                    {
-                            Console.Write(cha);
-                            Thread.Sleep(1); //40
-                    }
-                    Console.Write("\r\n");
-                    Thread.Sleep(10); //400
-                }
-            }
-            Thread.Sleep(5000);
-
-        }
-
-
         //BEGIN OF ROOMS
         public static void Room1()
         {
@@ -650,7 +591,6 @@ namespace Subwaj
             UserInputs.UserInput();
             Errors.ErrorOutOfBounds();
         }
-
         public static void Room5()
         {
             CurrentRoom = StrRoom5;
@@ -816,11 +756,6 @@ namespace Subwaj
         {
             CurrentRoom = StrHall1;
             Console.Clear();
-            if (!BlnHall1Story)
-            {
-                //story
-                BlnHall1Story = true;
-            }
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall1.txt"));
             UserInputs.UserInput();
@@ -831,11 +766,6 @@ namespace Subwaj
         {
             CurrentRoom = StrHall2;
             Console.Clear();
-            if (!BlnHall2Story)
-            {
-                //story
-                BlnHall2Story = true;
-            }
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall2.txt"));
             UserInputs.UserInput();
@@ -845,11 +775,6 @@ namespace Subwaj
         {
             CurrentRoom = StrHall3;
             Console.Clear();
-            if (!BlnHall3Story)
-            {
-                //story
-                BlnHall3Story = true;
-            }
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall3.txt"));
             UserInputs.UserInput();
@@ -859,11 +784,6 @@ namespace Subwaj
         {
             CurrentRoom = StrHall4;
             Console.Clear();
-            if (!BlnHall4Story)
-            {
-                //story
-                BlnHall4Story = true;
-            }
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall4.txt"));
             UserInputs.UserInput();
@@ -873,11 +793,6 @@ namespace Subwaj
         {
             CurrentRoom = StrHall5;
             Console.Clear();
-            if (!BlnHall5Story)
-            {
-                //story
-                BlnHall5Story = true;
-            }
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall5.txt"));
             UserInputs.UserInput();
@@ -887,11 +802,6 @@ namespace Subwaj
         {
             CurrentRoom = StrHall6;
             Console.Clear();
-            if (!BlnHall6Story)
-            {
-                //story
-                BlnHall6Story = true;
-            }
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall6.txt"));
             UserInputs.UserInput();
@@ -901,11 +811,6 @@ namespace Subwaj
         {
             CurrentRoom = StrHall7;
             Console.Clear();
-            if (!BlnHall7Story)
-            {
-                //story
-                BlnHall7Story = true;
-            }
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall7.txt"));
             UserInputs.UserInput();
@@ -915,11 +820,6 @@ namespace Subwaj
         {
             CurrentRoom = StrHall8;
             Console.Clear();
-            if (!BlnHall8Story)
-            {
-                //story
-                BlnHall8Story = true;
-            }
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall8.txt"));
             UserInputs.UserInput();
@@ -929,12 +829,6 @@ namespace Subwaj
         {
             CurrentRoom = StrHall9;
             Console.Clear();
-            if (!BlnHall9Story)
-            {
-                //story
-
-                BlnHall9Story = true;
-            }
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall9.txt"));
             UserInputs.UserInput();
@@ -944,11 +838,6 @@ namespace Subwaj
         {
             CurrentRoom = StrHall10;
             Console.Clear();
-            if (!BlnHall10Story)
-            {
-                //story
-                BlnHall10Story = true;
-            }
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall10.txt"));
             UserInputs.UserInput();
@@ -958,11 +847,6 @@ namespace Subwaj
         {
             CurrentRoom = StrHall11;
             Console.Clear();
-            if (!BlnHall11Story)
-            {
-                //story
-                BlnHall11Story = true;
-            }
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall11.txt"));
             UserInputs.UserInput();
@@ -972,11 +856,6 @@ namespace Subwaj
         {
             CurrentRoom = StrHall12;
             Console.Clear();
-            if (!BlnHall12Story)
-            {
-                //story
-                BlnHall12Story = true;
-            }
             BackGroundPosition();
             Console.WriteLine(File.ReadAllText("files/Halls/Hall12.txt"));
             UserInputs.UserInput();
@@ -1096,6 +975,47 @@ namespace Subwaj
             }
         }
 
+        public static void Credits()
+        {
+            Console.Clear();
+            CurrentRoom = StrCredits;
+            Console.CursorTop = 30;
+            string[] credits = File.ReadAllLines("files/Credits.txt");
+            int ccounter1 = 0;
+            for (; ccounter1 < credits.Length; ccounter1++)
+            {
+                if (ccounter1 <= 56)
+                {
+                    foreach (char cha in credits[ccounter1])
+                    {
+                        if (cha == ' ')
+                        {
+                            Console.Write(cha);
+                            Thread.Sleep(4); //40
+                        }
+                        else
+                        {
+                            Console.Write(cha);
+                            Thread.Sleep(40); //40
+                        }
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(100); //400
+                }
+                else
+                {
+                    foreach (char cha in credits[ccounter1])
+                    {
+                        Console.Write(cha);
+                        Thread.Sleep(1); //40
+                    }
+                    Console.Write("\r\n");
+                    Thread.Sleep(10); //400
+                }
+            }
+            Thread.Sleep(5000);
+
+        }
 
         //BGM
         public static void Bgm()

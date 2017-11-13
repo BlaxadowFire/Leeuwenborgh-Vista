@@ -149,6 +149,9 @@
     <Compile Include="puzzle2.cs" />
     <Compile Include="puzzle3.cs" />
     <Compile Include="UserInputs.cs" />
+    <Content Include="files\story\Rooms\Shop\ShopClosed2.0.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="NotaGameLogo2.0.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -397,7 +400,6 @@
     <Folder Include="files\story\Halls\Hall7\" />
     <Folder Include="files\story\Halls\Hall8\" />
     <Folder Include="files\story\Halls\Hall9\" />
-    <Folder Include="files\story\NewFolder1\" />
     <Folder Include="files\story\Rooms\Room3\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
