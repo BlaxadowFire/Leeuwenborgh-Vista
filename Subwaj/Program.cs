@@ -281,7 +281,12 @@ namespace Subwaj
                 {
                     firstRun = true;
                 }
-
+                if (strUserStart == "nogame" || strUserStart == "no game" || strUserStart == "not a game" || strUserStart == "notagame")
+                {
+                    Ss.SpeakAsync("This isn't an easter egg");
+                    Console.WriteLine("This isn't an easter egg");
+                    Thread.Sleep(500);
+                }
                 if (strUserStart == "start" || strUserStart == "exit")
                 {
                     blnLoopQuestion = false;
@@ -377,6 +382,29 @@ namespace Subwaj
                         KonamiCode.CheckKonami_Code();
                         break;
                     }
+                    case "":
+                    case "exit":
+                    case "home":
+                    case "main":
+                    case "menu":
+                    case "back":
+                    {
+                        break;
+                    }
+                    case "no game":
+                    {
+                        Console.WriteLine("Nice try");
+                        Thread.Sleep(1000);
+                        MainMenuCode();
+                        break;
+                    }
+                    default:
+                    {
+                        Console.WriteLine("Please enter a valid code.");
+                        Thread.Sleep(750);
+                        MainMenuCode();
+                        break;
+                    }
                 
             }
         }
@@ -395,7 +423,7 @@ namespace Subwaj
         public static void MainMenuExit()
         { exit:
             Console.Clear();
-            Console.WriteLine("Are you sure you want to exit.\r\n ");
+            Console.WriteLine("Are you sure you want to exit.\r\nType YES to exit, type NO to stay in the not game.");
             string exit = Console.ReadLine().ToLower();
             switch (exit)
             {
@@ -450,8 +478,7 @@ namespace Subwaj
         {
             if (CurrentRoom == StrMainMenu || CurrentRoom == StrInGameMenu) return;
 
-            string strZeroSpace;
-            strZeroSpace = IntTimerSeconds < 10 ? "0" : "";
+            string strZeroSpace = IntTimerSeconds < 10 ? "0" : "";
             Console.ForegroundColor = ConsoleColor.Red;
             Console.SetCursorPosition(Console.CursorLeft = 54, Console.CursorTop = 0);
             Console.WriteLine("║\t   TIME:  {3}:{4}{0}\t  Current location:   {1}\tO═╦╗:\t{2}", IntTimerSeconds, CurrentRoom, IntKey, IntTimerMinutes, strZeroSpace);

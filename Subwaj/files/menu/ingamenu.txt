@@ -9,4 +9,5 @@
 3.)    Help
 4.)    Options
 5.)    back to main menu
+6.)    code
 0.)    Exit Not game
