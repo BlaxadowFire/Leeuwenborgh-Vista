@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <Label Content="Click the Shunhui" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" MouseLeftButtonDown="Label_MouseLeftButtonDown"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="117,54,0,0" VerticalAlignment="Top" Width="80" Source="pack://siteoforigin:,,,/Resources/11108671_465014147009503_3814363971795144671_n.jpg" MouseEnter="imagejump"/>
+
     </Grid>
 </Window>
