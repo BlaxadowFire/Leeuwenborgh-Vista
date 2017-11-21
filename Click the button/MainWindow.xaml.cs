@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Speech.Synthesis;
 using System.IO;
+using System.Threading;
 
 namespace Click_the_button
 {
@@ -32,13 +33,14 @@ namespace Click_the_button
         private void imagejump(object sender, MouseEventArgs e)
         {
             Random randomlocation = new Random();
-            double dblRandomLocationH = randomlocation.Next(0, Convert.ToInt32(Height));
-            double dblRandomLocationW = randomlocation.Next(0, Convert.ToInt32(Width));
+            double dblRandomLocationH = randomlocation.Next(0, Convert.ToInt32(Main.Height));
+            double dblRandomLocationW = randomlocation.Next(0, Convert.ToInt32(Main.Width));
             image.Margin = new Thickness(dblRandomLocationW, dblRandomLocationH, 0, 0);
-            if (image.Margin.Left >= (this.Width - 50) || image.Margin.Top >= (this.Height - 50) || image.Margin.Left <= 10 || image.Margin.Top <= 10)
+            if (image.Margin.Left >= (Main.Width - 50) || image.Margin.Top >= (Main.Height - 50) || image.Margin.Left <= 10 || image.Margin.Top <= 10)
             {
                 image.Margin = new Thickness(40, 68, 0, 0);
             }
+            this.Background = Brushes.White;
             Ss.SpeakAsyncCancelAll();
             Ss.SpeakAsync("HAHA, can't catch me");
         }
@@ -47,6 +49,13 @@ namespace Click_the_button
         {
             Ss.SpeakAsyncCancelAll();
             Ss.SpeakAsync(File.ReadAllText("items/TextFile1.txt"));
+        }
+
+        private void image_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Ss.SpeakAsyncCancelAll();
+            this.Background = Brushes.Red;
+            Ss.Speak("You got me!");
         }
     }
 }
