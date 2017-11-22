@@ -7,13 +7,13 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TicTacToewpf")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Comrad or Pigdog")]
+[assembly: AssemblyDescription("A small game of tictactoe")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TicTacToewpf")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("BlaxadowFire")]
+[assembly: AssemblyProduct("Comrad or Pigdog")]
+[assembly: AssemblyCopyright("Copyright © BlaxadowFire 2017")]
+[assembly: AssemblyTrademark("Nando Kools")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
