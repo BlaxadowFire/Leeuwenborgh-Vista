@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Media;
 
 namespace TicTacToewpf
 {
@@ -24,6 +25,7 @@ namespace TicTacToewpf
         public string P1 = "Soviet";
         public string P2 = "America";
         public bool win = false;
+        public SoundPlayer myPlayer = new SoundPlayer();
         public int[] turns = {0,0,0,0,0,0,0,0,0};
 
         public MainWindow()
@@ -106,7 +108,13 @@ namespace TicTacToewpf
                 turns[0] == turns[3] && turns[3] == turns[6] && turns[0] != 0 || turns[1] == turns[4] && turns[4] == turns[7] && turns[1] != 0 || turns[2] == turns[5] && turns[5] == turns[8] && turns[2] != 0 ||
                 turns[0] == turns[4] && turns[4] == turns[8] && turns[0] != 0 || turns[2] == turns[4] && turns[4] == turns[6] && turns[2] != 0)
             {
+                if (lblPlayerTurn.Content == P1)
+                {
+                    myPlayer.SoundLocation = "Assets/soviet.wav";
+                    myPlayer.Play();
+                }
                 MessageBox.Show(lblPlayerTurn.Content + " Won");
+                myPlayer.Stop();
                 ResetClick(sender, e);
             }
             else
