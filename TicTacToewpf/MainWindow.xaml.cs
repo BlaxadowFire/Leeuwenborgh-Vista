@@ -54,6 +54,10 @@ namespace TicTacToewpf
             {
                 ((Image)sender).MouseDown -= UserInput;
             }
+            else
+            {
+                lblPlayerTurn.Content = P1;
+            }
             Win = false;
         }
 
