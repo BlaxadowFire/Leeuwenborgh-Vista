@@ -23,8 +23,8 @@ namespace TicTacToewpf
 
         public string P1 = "Soviet";
         public string P2 = "America";
-        public bool win = false;
-        public int[] turns = {0,0,0,0,0,0,0,0,0};
+        public bool Win;
+        public int[] Turns = {0,0,0,0,0,0,0,0,0};
 
         public MainWindow()
         {
@@ -34,25 +34,25 @@ namespace TicTacToewpf
 
         public void UserInput(object sender, RoutedEventArgs e)
         {
-            if (lblPlayerTurn.Content == P1)
+            if ((string) lblPlayerTurn.Content == P1)
             {
                 ((Image)sender).Source = new BitmapImage(new Uri("Assets/p1.png", UriKind.Relative));
-                turns[Convertname(sender)] = 1;
+                Turns[Convertname(sender)] = 1;
                 CheckWin(sender, e);
                 lblPlayerTurn.Content = P2;
             }
             else
             {
                 ((Image)sender).Source = new BitmapImage(new Uri("Assets/p2.png", UriKind.Relative));
-                turns[Convertname(sender)] = 2;
+                Turns[Convertname(sender)] = 2;
                 CheckWin(sender, e);
                 lblPlayerTurn.Content = P1;
             }
-            if (!win)
+            if (!Win)
             {
                 ((Image)sender).MouseDown -= UserInput;
             }
-            win = false;
+            Win = false;
         }
 
         public void ResetClick(object sender, RoutedEventArgs e)
@@ -91,34 +91,27 @@ namespace TicTacToewpf
                 turns[turn] = 0;
             }
             */
-            for (int i = 0; i < turns.Length; i++)
+            for (int i = 0; i < Turns.Length; i++)
             {
-                turns[i] = 0;
+                Turns[i] = 0;
             }
 
             lblPlayerTurn.Content = P1;
-            win = true;
+            Win = true;
         }
 
         public void CheckWin(object sender, RoutedEventArgs e)
         {
-            if (turns[0] == turns[1] && turns[1] == turns[2] && turns[0] != 0 || turns[3] == turns[4] && turns[4] == turns[5] && turns[3] != 0 || turns[6] == turns[7] && turns[7] == turns[8] && turns[6] != 0 ||
-                turns[0] == turns[3] && turns[3] == turns[6] && turns[0] != 0 || turns[1] == turns[4] && turns[4] == turns[7] && turns[1] != 0 || turns[2] == turns[5] && turns[5] == turns[8] && turns[2] != 0 ||
-                turns[0] == turns[4] && turns[4] == turns[8] && turns[0] != 0 || turns[2] == turns[4] && turns[4] == turns[6] && turns[2] != 0)
+            if (Turns[0] == Turns[1] && Turns[1] == Turns[2] && Turns[0] != 0 || Turns[3] == Turns[4] && Turns[4] == Turns[5] && Turns[3] != 0 || Turns[6] == Turns[7] && Turns[7] == Turns[8] && Turns[6] != 0 ||
+                Turns[0] == Turns[3] && Turns[3] == Turns[6] && Turns[0] != 0 || Turns[1] == Turns[4] && Turns[4] == Turns[7] && Turns[1] != 0 || Turns[2] == Turns[5] && Turns[5] == Turns[8] && Turns[2] != 0 ||
+                Turns[0] == Turns[4] && Turns[4] == Turns[8] && Turns[0] != 0 || Turns[2] == Turns[4] && Turns[4] == Turns[6] && Turns[2] != 0)
             {
                 MessageBox.Show(lblPlayerTurn.Content + " Won");
                 ResetClick(sender, e);
             }
             else
             {
-                if (lblPlayerTurn.Content == P1)
-                {
-                    lblPlayerTurn.Content = P2;
-                }
-                else
-                {
-                    lblPlayerTurn.Content = P1;
-                }
+                lblPlayerTurn.Content = (string) lblPlayerTurn.Content == P1 ? P2 : P1;
             }
         }
 
