@@ -8,6 +8,6 @@ namespace FPS4InaRow
 {
     class PlayGround
     {
-        // 7x7 multidimential array
+        public int[,] ArrFieldGrid = new int[7, 6];
     }
 }
