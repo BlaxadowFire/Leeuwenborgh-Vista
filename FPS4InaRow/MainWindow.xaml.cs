@@ -20,6 +20,8 @@ namespace FPS4InaRow
     /// </summary>
     public partial class MainWindow : Window
     {
+        public int[,] ArrFieldGrid = new int[7, 6];
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,7 +29,120 @@ namespace FPS4InaRow
 
         public void SwitchColor(object sender, RoutedEventArgs e)
         {
-            ((Button)sender).Background = Brushes.Red;
+            //Converterthingy(sender);
+            Sandbox(sender);
+        }
+
+        public void Sandbox(object sender)
+        {
+            Name = ((Button)sender).Name.ToString();
+                int y = Name[1];
+                int x = Name[3];
+            string stry = y.ToString();
+            string strx = x.ToString();
+            MessageBox.Show(strx + ", " + stry);
+        }
+
+        public string backroundbuttons(int x, int y)
+        {
+            return "R" + y + "C" + x;
+
+        }
+        public void Converterthingy(object sender)
+        {
+            switch(((Button)sender).Name.ToString())
+            {
+                case "R0C0":
+                    {
+                        for(int i = 5; i >= 0; i--)
+                        {
+                            if (ArrFieldGrid[0, i] == 0)
+                            {
+                                ArrFieldGrid[0, i] = 1;
+                                backroundbuttons(0,i);
+                            }
+                        }
+                        break;
+                    }
+                case "R0C1":
+                    {
+
+                        if (ArrFieldGrid[0, 1] == 0)
+                        {
+                            for (int i = 5; i >= 0; i--)
+                            {
+                                ArrFieldGrid[0, i] = 1;
+
+                            }
+                        }
+                        break;
+                    }
+                case "R0C2":
+                    {
+
+                        if (ArrFieldGrid[0, 2] == 0)
+                        {
+                            for (int i = 5; i >= 0; i--)
+                            {
+                                ArrFieldGrid[0, i] = 1;
+
+                            }
+                        }
+                        break;
+                    }
+                case "R0C3":
+                    {
+
+                        if (ArrFieldGrid[0, 3] == 0)
+                        {
+                            for (int i = 5; i >= 0; i--)
+                            {
+                                ArrFieldGrid[0, i] = 1;
+
+                            }
+                        }
+                        break;
+                    }
+                case "R0C4":
+                    {
+
+                        if (ArrFieldGrid[0, 4] == 0)
+                        {
+                            for (int i = 5; i >= 0; i--)
+                            {
+                                ArrFieldGrid[0, i] = 1;
+
+                            }
+                        }
+                        break;
+                    }
+                case "R0C5":
+                    {
+
+                        if (ArrFieldGrid[0, 5] == 0)
+                        {
+                            for (int i = 5; i >= 0; i--)
+                            {
+                                ArrFieldGrid[0, i] = 1;
+
+                            }
+                        }
+                        break;
+                    }
+                case "R0C6":
+                    {
+
+                        if (ArrFieldGrid[0, 6] == 0)
+                        {
+                            for (int i = 5; i >= 0; i--)
+                            {
+                                ArrFieldGrid[0, i] = 1;
+
+                            }
+                        }
+                        break;
+                    }
+            }
         }
     }
 }

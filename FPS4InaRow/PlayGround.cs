@@ -9,5 +9,6 @@ namespace FPS4InaRow
     class PlayGround
     {
         public int[,] ArrFieldGrid = new int[7, 6];
+
     }
 }
