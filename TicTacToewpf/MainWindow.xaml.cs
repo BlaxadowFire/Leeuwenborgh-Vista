@@ -94,7 +94,11 @@ namespace TicTacToewpf
             if (AiEnabled)
             {
                 //checks if it can match win or lose condition
-                
+                AiAttack();
+                if (!AiMadeMove)
+                {
+                    AiDefend();
+                }
                 if (!AiMadeMove)
                 {
                     //make use of switchcase to see what last move was.
@@ -374,16 +378,73 @@ namespace TicTacToewpf
             BtnSwitchAi.Background = AiEnabled ? Brushes.Green : Brushes.Red;
         }
 
-        public void AiAttack()
-        {
-            if (Turns[0] == Turns[1])
-            {
-                UserInput(BtnI, null);
-            }
-        }
         public void AiDefend()
         {
+            MessageBox.Show("aaaaaaaaaaaaaaaah");
+            if ((Turns[0] == Turns[1] && Turns[0] != PlayerAi && Turns[0] != 0 || Turns[4] == Turns[6] && Turns[4] != PlayerAi && Turns[4] != 0 || Turns[5] == Turns[8] && Turns[5] != PlayerAi && Turns[5] != 0) && Turns[2] != PlayerAi)
+            {
+                UserInput(BtnC, null);
+                AiMadeMove = true;
+                return;
+            }//2C
+            if ((Turns[1] == Turns[2] && Turns[1] != PlayerAi && Turns[1] != 0 || Turns[4] == Turns[8] && Turns[4] != PlayerAi && Turns[4] != 0 || Turns[3] == Turns[6] && Turns[3] != PlayerAi && Turns[3] != 0) && Turns[0] != PlayerAi)
+            {
+                UserInput(BtnA, null);
+                AiMadeMove = true;
+                return;
+            }//0A
+            if ((Turns[0] == Turns[2] && Turns[0] != PlayerAi && Turns[0] != 0 || Turns[4] == Turns[7] && Turns[4] != PlayerAi && Turns[4] != 0) && Turns[1] != PlayerAi)
+            {
+                UserInput(BtnB, null);
+                AiMadeMove = true;
+                return;
+            }//1B
+            //end of top row
+            if ((Turns[3] == Turns[4] && Turns[3] != PlayerAi && Turns[3] != 0 || Turns[2] == Turns[8] && Turns[2] != PlayerAi && Turns[2] != 0) && Turns[5] != PlayerAi)
+            {
+                UserInput(BtnF, null);
+                AiMadeMove = true;
+                return;
+            }//5F
+            if ((Turns[4] == Turns[5] && Turns[4] != PlayerAi && Turns[4] != 0 || Turns[0] == Turns[6] && Turns[0] != PlayerAi && Turns[0] != 0) && Turns[3] != PlayerAi)
+            {
+                UserInput(BtnD, null);
+                AiMadeMove = true;
+                return;
+            }//3D
+            if (Turns[3] == Turns[5] && Turns[3] != PlayerAi && Turns[3] != 0 || Turns[1] == Turns[7] && Turns[1] != PlayerAi && Turns[1] != 0)
+            {
+                UserInput(BtnE, null);
+                AiMadeMove = true;
+                return;
+            }//4E
+            //end of mid row
+            if ((Turns[6] == Turns[7] && Turns[6] != PlayerAi && Turns[6] != 0 || Turns[2] == Turns[5] && Turns[2] != PlayerAi && Turns[2] != 0 || Turns[0] == Turns[4] && Turns[0] != PlayerAi && Turns[0] != 0) && Turns[8] != PlayerAi)
+            {
+                UserInput(BtnI, null);
+                AiMadeMove = true;
+                return;
+            }//8I
+            if ((Turns[0] == Turns[3] && Turns[0] != PlayerAi && Turns[0] != 0 || Turns[7] == Turns[8] && Turns[7] != PlayerAi && Turns[7] != 0 || Turns[2] == Turns[4] && Turns[2] != PlayerAi && Turns[2] != 0) && Turns[6] != PlayerAi)
+            {
+                UserInput(BtnG, null);
+                AiMadeMove = true;
+                return;
+            }//6G
+            if ((Turns[6] == Turns[8] && Turns[6] != PlayerAi && Turns[6] != 0 || Turns[4] == Turns[1] && Turns[4] != PlayerAi && Turns[4] != 0) && Turns[7] != PlayerAi)
+            {
+                UserInput(BtnH, null);
+                AiMadeMove = true;
+                return;
+            }//7H
+            //end of bot row
+            MessageBox.Show("beeeeeeeeeeeeeeeeeeeeh");
 
+            // needs to have a check if the button is already owned by ai (if yes, ignore)
+        }
+        public void AiAttack()
+        {
+            MessageBox.Show("ceeeeeeeeeeeeeeeeeeee");
         }
     }
 }
