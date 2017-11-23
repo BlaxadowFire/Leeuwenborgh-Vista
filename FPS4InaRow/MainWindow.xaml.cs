@@ -35,7 +35,7 @@ namespace FPS4InaRow
 
         public void Sandbox(object sender)
         {
-            Name = ((Button)sender).Name.ToString();
+            Name = ((Button)sender).Name;
                 int y = Name[1];
                 int x = Name[3];
             string stry = y.ToString();
@@ -43,14 +43,14 @@ namespace FPS4InaRow
             MessageBox.Show(strx + ", " + stry);
         }
 
-        public string backroundbuttons(int x, int y)
+        public string Backroundbuttons(int x, int y)
         {
             return "R" + y + "C" + x;
 
         }
         public void Converterthingy(object sender)
         {
-            switch(((Button)sender).Name.ToString())
+            switch(((Button)sender).Name)
             {
                 case "R0C0":
                     {
@@ -59,7 +59,7 @@ namespace FPS4InaRow
                             if (ArrFieldGrid[0, i] == 0)
                             {
                                 ArrFieldGrid[0, i] = 1;
-                                backroundbuttons(0,i);
+                                Backroundbuttons(0,i);
                             }
                         }
                         break;

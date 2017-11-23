@@ -33,7 +33,7 @@
         <Button Name="R4C0" Click="SwitchColor" Grid.Row="4" Grid.Column="0"></Button>
         <Button Name="R5C0" Click="SwitchColor" Grid.Row="5" Grid.Column="0"></Button>
         <Button Name="R0C1" Click="SwitchColor" Grid.Row="0" Grid.Column="1"></Button>
-        <Button Name="R1C1" Click="SwitchColor" Grid.Column="1" Grid.Row="1"/>
+        <Button Name="R1C1" Click="SwitchColor" Grid.Row="1" Grid.Column="1"></Button>
         <Button Name="R2C1" Click="SwitchColor" Grid.Row="2" Grid.Column="1"></Button>
         <Button Name="R3C1" Click="SwitchColor" Grid.Row="3" Grid.Column="1"></Button>
         <Button Name="R4C1" Click="SwitchColor" Grid.Row="4" Grid.Column="1"></Button>
