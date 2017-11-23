@@ -6,8 +6,10 @@
         xmlns:local="clr-namespace:FPS4InaRow"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="500">
-    <Grid>
+    
+    <Grid Margin="100,100,100,100" Name="PlayField">
         
         
     </Grid>
+    
 </Window>
