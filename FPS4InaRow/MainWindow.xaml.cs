@@ -24,5 +24,10 @@ namespace FPS4InaRow
         {
             InitializeComponent();
         }
+
+        public void SwitchColor(object sender, RoutedEventArgs e)
+        {
+            ((Button)sender).Background = Brushes.Red;
+        }
     }
 }
