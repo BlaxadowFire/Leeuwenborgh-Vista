@@ -30,10 +30,10 @@
     <ProductName>Comrad or Pigdog</ProductName>
     <PublisherName>Nando Kools</PublisherName>
     <SuiteName>BlaxadowFire</SuiteName>
-    <MinimumRequiredVersion>1.0.0.2</MinimumRequiredVersion>
+    <MinimumRequiredVersion>1.0.0.3</MinimumRequiredVersion>
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
-    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationRevision>4</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
