@@ -24,6 +24,7 @@ namespace TicTacToewpf
 
         public string P1 = "Soviet";
         public string P2 = "America";
+        public int PlayerAi = 0;
         public bool AiEnabled;
         public bool AiMadeMove;
         public SoundPlayer MyPlayer = new SoundPlayer();
@@ -32,7 +33,7 @@ namespace TicTacToewpf
         public MainWindow()
         {
             InitializeComponent();
-            ListBox.Items.Add("Highscore");
+            ListBox.Items.Add("Wins");
             ListBox.Items.Add("____________________\r\n");
             LblPlayerTurn.Content = P1;
         }
@@ -40,21 +41,51 @@ namespace TicTacToewpf
         public void UserInput(object sender, RoutedEventArgs e)
         {
             ((Button)sender).Visibility = Visibility.Hidden;
-            if ((string)LblPlayerTurn.Content == P1)
+            if ((string)LblPlayerTurn.Content == P1 && PlayerAi != 1)
             {
-                ConvertButton(sender);
-                Turns[ConvertImage(sender)] = 1;
-                CheckWin(sender, e);
-                LblPlayerTurn.Content = P2;
-                CheckAi(sender);
+                int i = ConvertImage(sender);
+                if (i != -1 && Turns[i] == 0)
+                {
+                    ConvertButton(sender);
+                    Turns[i] = 1;
+                    CheckWin(sender, e);
+                    LblPlayerTurn.Content = P2;
+                    CheckAi(sender);
+                }
             }
-            else
+            else if ((string)LblPlayerTurn.Content == P2 && PlayerAi != 2)
             {
-                ConvertButton(sender);
-                Turns[ConvertImage(sender)] = 2;
-                CheckWin(sender, e);
-                LblPlayerTurn.Content = P1;
-                CheckAi(sender);
+                int i = ConvertImage(sender);
+                if (i != -1 && Turns[i] == 0)
+                {
+                    ConvertButton(sender);
+                    Turns[i] = 2;
+                    CheckWin(sender, e);
+                    LblPlayerTurn.Content = P1;
+                    CheckAi(sender);
+                }
+            }
+            else if ((string)LblPlayerTurn.Content == P1 && PlayerAi == 1)
+            {
+                int i = ConvertImage(sender);
+                if (i != -1 && Turns[i] == 0)
+                {
+                    ConvertButton(sender);
+                    Turns[i] = 1;
+                    CheckWin(sender, e);
+                    LblPlayerTurn.Content = P1;
+                }
+            }
+            else if ((string)LblPlayerTurn.Content == P2 && PlayerAi == 2)
+            {
+                int i = ConvertImage(sender);
+                if (i != -1 && Turns[i] == 0)
+                {
+                    ConvertButton(sender);
+                    Turns[i] = 2;
+                    CheckWin(sender, e);
+                    LblPlayerTurn.Content = P2;
+                }
             }
         }
 
@@ -63,7 +94,7 @@ namespace TicTacToewpf
             if (AiEnabled)
             {
                 //checks if it can match win or lose condition
-
+                
                 if (!AiMadeMove)
                 {
                     //make use of switchcase to see what last move was.
@@ -241,7 +272,7 @@ namespace TicTacToewpf
             }
             else
             {
-                switch (((Button) sender).Name)
+                switch (((Button)sender).Name)
                 {
                     case "BtnA":
                     {
@@ -299,12 +330,12 @@ namespace TicTacToewpf
                 case 0:
                 case 4:
                 {
-                    //8
+                    UserInput(BtnI, null);
                     break;
                 }
                 case 2:
                 {
-                        //6
+                    UserInput(BtnG, null);
                     break;
                 }
                 case 1:
@@ -312,29 +343,45 @@ namespace TicTacToewpf
                 case 5:
                 case 7:
                 {
-                        //5
+                    UserInput(BtnE, null);
                     break;
                 }
                 case 6:
                 {
-                        //2
+                    UserInput(BtnC, null);
                     break;
                 }
 
                 case 8:
                 {
-                        //0
+                    UserInput(BtnA, null);
                     break;
                 }
             }
+            AiMadeMove = true;
         }
         public void SwitchAi(object sender, RoutedEventArgs e)
         {
             AiEnabled = !AiEnabled;
+            if (AiEnabled)
+            {
+                PlayerAi = (string)LblPlayerTurn.Content == P1 ? 2 : 1;
+            }
+            else
+            {
+                PlayerAi = 0;
+            }
             BtnSwitchAi.Background = AiEnabled ? Brushes.Green : Brushes.Red;
         }
 
-        public void Ai()
+        public void AiAttack()
+        {
+            if (Turns[0] == Turns[1])
+            {
+                UserInput(BtnI, null);
+            }
+        }
+        public void AiDefend()
         {
 
         }
