@@ -8,8 +8,23 @@
         Title="MainWindow" Height="500" Width="500">
     
     <Grid Margin="100,100,100,100" Name="PlayField">
-        
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="42"/>
+            <ColumnDefinition Width="42"/>
+            <ColumnDefinition Width="42"/>
+            <ColumnDefinition Width="42"/>
+            <ColumnDefinition Width="42"/>
+            <ColumnDefinition Width="42"/>
+            <ColumnDefinition Width="42"/>
+        </Grid.ColumnDefinitions>
     </Grid>
     
 </Window>
