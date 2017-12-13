@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <WrapPanel Grid.Column="0">
+            <DataGrid x:Name="myDataGrid" Margin="10,10,0,0" Height="Auto" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+        </WrapPanel>
+
+        <StackPanel Orientation="Vertical" Grid.Column="1">
+            <Button Name="btnSave" Content="Save"/>
+        </StackPanel>
         
     </Grid>
 </Window>
