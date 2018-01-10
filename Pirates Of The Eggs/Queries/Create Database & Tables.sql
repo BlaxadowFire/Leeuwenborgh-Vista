@@ -1,37 +1,34 @@
-create database [Pirates of the eggs];
+CREATE DATABASE [Pirates of the eggs];
 
-use [Pirates of the eggs];
+USE [Pirates of the eggs];
 
-create table Gerechten(
+CREATE TABLE Gerechten(
 GerechtID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
 GerechtNaam varchar(50) NOT NULL,
 GerechtPrijs money NOT NULL,
 GerechtSoort int NOT NULL
 );
 
-create table Tafels(
-TafelID int NOT NULL,
-TafelGebruik binary NOT NULL,
-primary key (TafelID)
+CREATE TABLE Tafels(
+TafelID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+TafelGebruik int NOT NULL,
 );
 
-create table Orders(
-OrderID int NOT NULL,
-primary key (OrderID)
+CREATE TABLE Orders(
+OrderID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
 );
 
 CREATE TABLE GerechtSoort(
-GerechtID int NOT NULL,
+GerechtID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
 SoortNaam varchar(50) NOT NULL,
-Primary key (GerechtID)
 );
 
 INSERT INTO Gerechtsoort
-VALUES(1,'Voorgerecht'),
-(2,'Soepen'),
-(3,'Hoofdgerechten'),
-(4,'Deserts'),
-(5,'Dranken');
+VALUES('Voorgerecht'),
+('Soepen'),
+('Hoofdgerechten'),
+('Deserts'),
+('Dranken');
 
 INSERT INTO Gerechten
 VALUES ('Stokbrood',0,1),
@@ -63,3 +60,25 @@ VALUES ('Stokbrood',0,1),
 ('Bier',0,5),
 ('Witte wijn',0,5),
 ('Rode wijn',0,5);
+
+INSERT INTO Tafels
+VALUES (0),
+(0),
+(0),
+(0),
+(0),
+(0),
+(0),
+(0),
+(0),
+(0),
+(0),
+(0),
+(0),
+(0),
+(0),
+(0),
+(0),
+(0),
+(0),
+(0);

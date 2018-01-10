@@ -94,7 +94,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Queries\Create Database _ Tables.sql" />
+    <Content Include="Queries\Create Database &amp; Tables.sql" />
     <Content Include="Queries\Drop Tables.sql" />
     <Content Include="Queries\Select Tables.sql" />
   </ItemGroup>
