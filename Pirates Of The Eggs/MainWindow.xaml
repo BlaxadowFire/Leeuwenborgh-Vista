@@ -10,7 +10,7 @@
         <Button Content="Startpagina" HorizontalAlignment="Left" Margin="24,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF4388CC"/>
         <Button Content="Vaste klanten" HorizontalAlignment="Left" Margin="178,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF4388CC"/>
         <Button Content="Bonnen" HorizontalAlignment="Left" Margin="333,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF4388CC"/>
-        <Button Content="1" HorizontalAlignment="Left" Margin="43,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Click="Button_Click" Background="#FF4388CC"/>
+        <Button Content="1" HorizontalAlignment="Left" Margin="43,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC"/>
         <Button Content="2" HorizontalAlignment="Left" Margin="199,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC"/>
         <Button Content="3" HorizontalAlignment="Left" Margin="356,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC"/>
         <Button Content="4" HorizontalAlignment="Left" Margin="512,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC"/>

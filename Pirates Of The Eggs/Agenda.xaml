@@ -1,0 +1,14 @@
+﻿<Window x:Class="Pirates_Of_The_Eggs.Agenda"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pirates_Of_The_Eggs"
+        mc:Ignorable="d"
+        Title="Agenda" Height="500" Width="850">
+    <Grid>
+        <Calendar HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="195" Margin="0,10,0,0"/>
+        <TextBox HorizontalAlignment="Left" Height="433" Margin="425,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="417"/>
+        <Button Content="Terug" HorizontalAlignment="Left" Margin="757,439,0,0" VerticalAlignment="Top" Width="75"/>
+    </Grid>
+</Window>
