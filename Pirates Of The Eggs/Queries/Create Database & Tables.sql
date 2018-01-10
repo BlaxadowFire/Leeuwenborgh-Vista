@@ -11,16 +11,18 @@ GerechtSoort int NOT NULL
 
 CREATE TABLE Tafels(
 TafelID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
-TafelGebruik int NOT NULL,
+TafelGebruik int NOT NULL
 );
 
 CREATE TABLE Orders(
 OrderID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+TafelID int NOT NULL,
+Betaald int NOT NULL
 );
 
 CREATE TABLE GerechtSoort(
 GerechtID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
-SoortNaam varchar(50) NOT NULL,
+SoortNaam varchar(50) NOT NULL
 );
 
 INSERT INTO Gerechtsoort
