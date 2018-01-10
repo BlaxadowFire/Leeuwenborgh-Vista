@@ -93,5 +93,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Queries\Create Database &amp; Tables.sql" />
+    <Content Include="Queries\Drop Tables.sql" />
+    <Content Include="Queries\Select Tables.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
