@@ -45,7 +45,7 @@
             <Button Content="Opslaan" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="2,-1,0,0" Background="#FF4388CC"/>
             <Button Content="Betalen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="162,-1,-5,0" Background="#FF4388CC"/>
             <Button Content="Terug" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="2,59,0,0" Background="#FF4388CC"/>
-            <Button Content="Tafel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="162,59,-5,0" Background="#FF4388CC"/>
+            <Button Content="Opsplitsen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="162,59,-5,0" Background="#FF4388CC"/>
         </Grid>
         <ScrollBar HorizontalAlignment="Left" Margin="508,0,0,0" VerticalAlignment="Top" Height="190" BorderBrush="White" Foreground="Black" Background="White" ValueChanged="ScrollBar_ValueChanged"/>
         <ScrollBar HorizontalAlignment="Left" Margin="825,0,0,0" VerticalAlignment="Top" Height="190" BorderBrush="White" Foreground="Black" Background="White" ValueChanged="ScrollBar_ValueChanged"/>
