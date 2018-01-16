@@ -12,18 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Pirates_Of_The_Eggs
+namespace Pirates_Of_The_Eggs.Windows
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for Bonnen.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Bonnen : Window
     {
-        public Window1()
+        public Bonnen()
         {
             InitializeComponent();
         }
 
-       
     }
 }

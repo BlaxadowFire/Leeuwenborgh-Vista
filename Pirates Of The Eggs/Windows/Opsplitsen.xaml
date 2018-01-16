@@ -21,9 +21,6 @@
             <Button Content="0" HorizontalAlignment="Left" Margin="70,180,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
             <Button Content="&lt;" HorizontalAlignment="Left" Margin="140,180,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
         </Grid>
-        <TextBox HorizontalAlignment="Left" Height="408" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="315"/>
-        <TextBox HorizontalAlignment="Left" Height="408" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="317" Margin="525,0,0,0"/>
-        <TextBox HorizontalAlignment="Left" Height="60" Margin="525,408,0,0" TextWrapping="Wrap" Text="Totaal bedrag" VerticalAlignment="Top" Width="317" TextChanged="TextBox_TextChanged"/>
         <Button Content="Terug" HorizontalAlignment="Left" Margin="0,448,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Splitsen" HorizontalAlignment="Left" Margin="315,0,0,0" VerticalAlignment="Top" Width="210" Height="50"/>
         <Button Content="Betalen" HorizontalAlignment="Left" Margin="315,134,0,0" VerticalAlignment="Top" Width="210" Height="50"/>
