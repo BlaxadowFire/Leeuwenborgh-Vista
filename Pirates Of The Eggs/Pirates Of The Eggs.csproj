@@ -141,6 +141,8 @@
     <Content Include="Queries\Create Database &amp; Tables.sql" />
     <Content Include="Queries\Drop Tables.sql" />
     <Content Include="Queries\Select Tables.sql" />
+    <Content Include="Queries\Updates\Update in gebruik.sql" />
+    <Content Include="Queries\Updates\Update niet in gebruik.sql" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
