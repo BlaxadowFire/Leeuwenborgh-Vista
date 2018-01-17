@@ -27,7 +27,28 @@ namespace Pirates_Of_The_Eggs
         {
             InitializeComponent();
         }
-        
-       
+
+        private void Tafel_Click(object sender, RoutedEventArgs e)
+        {
+            int x = Convert.ToInt16(((Button)sender).Content);
+            MenuKaart menuKaart = new MenuKaart();
+            menuKaart.Show();
+            this.Close();
+        }
+
+        private void ShowMenuKaart_Click(object sender, RoutedEventArgs e)
+        {
+            MenuKaart menuKaart = new MenuKaart();
+            menuKaart.Show();
+            this.Close();
+            
+        }
+
+        private void ShowBonnen_Click_1(object sender, RoutedEventArgs e)
+        {
+            Bonnen bonnen = new Bonnen();
+            bonnen.Show();
+            this.Close();
+        }
     }
 }

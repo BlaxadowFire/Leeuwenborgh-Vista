@@ -21,7 +21,6 @@
             <Button Content="0" HorizontalAlignment="Left" Margin="70,180,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
             <Button Content="&lt;" HorizontalAlignment="Left" Margin="140,180,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
         </Grid>
-        <Button Content="Terug" HorizontalAlignment="Left" Margin="0,448,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Content="Splitsen" HorizontalAlignment="Left" Margin="315,0,0,0" VerticalAlignment="Top" Width="210" Height="50"/>
         <Button Content="Betalen" HorizontalAlignment="Left" Margin="315,134,0,0" VerticalAlignment="Top" Width="210" Height="50"/>
         <TextBlock HorizontalAlignment="Left" Margin="315,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="39" Width="210" Foreground="#FF040404">
@@ -32,5 +31,8 @@
                 </LinearGradientBrush>
             </TextBlock.Background>
         </TextBlock>
+        <Grid HorizontalAlignment="Left" Height="100" Margin="10,359,0,0" VerticalAlignment="Top" Width="100">
+            <Button Content="Terug" HorizontalAlignment="Left" Margin="0,80,0,0" VerticalAlignment="Top" Width="75" Click="ShowMenuKaart_Click"/>
+        </Grid>
     </Grid>
 </Window>

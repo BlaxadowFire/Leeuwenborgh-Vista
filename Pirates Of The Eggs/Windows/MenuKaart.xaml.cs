@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace Pirates_Of_The_Eggs
 {
     /// <summary>
-    /// Interaction logic for Bonnen.xaml
+    /// Interaction logic for MenuKaart.xaml
     /// </summary>
-    public partial class Bonnen : Window
+    public partial class MenuKaart : Window
     {
-        public Bonnen()
+        public MenuKaart()
         {
             InitializeComponent();
         }
@@ -28,6 +28,13 @@ namespace Pirates_Of_The_Eggs
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
+            this.Close();
+        }
+
+        private void ShowOpsplitsen_Click(object sender, RoutedEventArgs e)
+        {
+            Opsplitsen opsplitsen = new Opsplitsen();
+            opsplitsen.Show();
             this.Close();
         }
     }

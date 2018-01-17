@@ -24,5 +24,11 @@ namespace Pirates_Of_The_Eggs
             InitializeComponent();
         }
 
+        private void ShowMenuKaart_Click(object sender, RoutedEventArgs e)
+        {
+            MenuKaart menuKaart = new MenuKaart();
+            menuKaart.Show();
+            this.Close();
+        }
     }
 }

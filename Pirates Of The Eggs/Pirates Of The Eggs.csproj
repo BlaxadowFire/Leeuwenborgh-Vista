@@ -70,17 +70,24 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Windows\Agenda.xaml.cs">
-      <DependentUpon>Agenda.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\Bonnen.xaml.cs">
       <DependentUpon>Bonnen.xaml</DependentUpon>
     </Compile>
-    <Page Include="Windows\Agenda.xaml">
+    <Compile Include="Windows\MenuKaart.xaml.cs">
+      <DependentUpon>MenuKaart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Agenda.xaml.cs">
+      <DependentUpon>Agenda.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Windows\Bonnen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Windows\Bonnen.xaml">
+    <Page Include="Windows\MenuKaart.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Agenda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -96,19 +103,12 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Windows\MenuWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Windows\Opsplitsen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Windows\MenuWindow.xaml.cs">
-      <DependentUpon>MenuWindow.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Windows\Opsplitsen.xaml.cs">
       <DependentUpon>Opsplitsen.xaml</DependentUpon>
     </Compile>
