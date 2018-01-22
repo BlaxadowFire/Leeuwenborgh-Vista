@@ -15,17 +15,18 @@ TafelGebruik int NOT NULL
 );
 
 CREATE TABLE Orders(
-OrderID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+ID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+OrderID int NOT NULL,
 TafelID int NOT NULL,
 Betaald int NOT NULL
 );
 
-CREATE TABLE GerechtSoort(
+CREATE TABLE GerechtCategorie(
 GerechtID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
 SoortNaam varchar(50) NOT NULL
 );
 
-INSERT INTO Gerechtsoort
+INSERT INTO GerechtCategorie
 VALUES('Voorgerecht'),
 ('Soepen'),
 ('Hoofdgerechten'),

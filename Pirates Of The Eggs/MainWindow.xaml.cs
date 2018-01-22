@@ -18,7 +18,7 @@ using System.Data.SqlClient;
 namespace Pirates_Of_The_Eggs
 {
     /// <summary>
-    /// Interaction logic for Window.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
