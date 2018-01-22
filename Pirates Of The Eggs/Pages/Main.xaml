@@ -33,7 +33,7 @@
         <Button Content="18" HorizontalAlignment="Left" Margin="356,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
         <Button Content="19" HorizontalAlignment="Left" Margin="512,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
         <Button Content="20" HorizontalAlignment="Left" Margin="668,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <TextBlock HorizontalAlignment="Left" Margin="433,0,0,0" TextWrapping="Wrap" Text="Tijd" VerticalAlignment="Top" Width="409" Foreground="Black" Background="#FFCDCDCD"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Datum" VerticalAlignment="Top" Width="433" Foreground="Black" Background="#FFCDCDCD"/>
+        <TextBlock HorizontalAlignment="Left" Margin="433,0,0,0" TextWrapping="Wrap" Text="Tijd" VerticalAlignment="Top" Width="414" Foreground="Black" Background="#FFCDCDCD" Height="24"/>
+        <Button Content="Agenda" HorizontalAlignment="Left" VerticalAlignment="Top" Width="433" Height="24" Click="Button_Click"/>
     </Grid>
 </Page>

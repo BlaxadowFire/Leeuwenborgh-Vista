@@ -24,5 +24,10 @@ namespace Pirates_Of_The_Eggs
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MainFrame.Navigate(new Main());
+        }
     }
 }

@@ -40,5 +40,10 @@ namespace Pirates_Of_The_Eggs
         {
             MainWindow.MainFrame.Navigate(new Bonnen());
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MainFrame.Navigate(new Agenda()); 
+        }
     }
 }
