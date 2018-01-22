@@ -10,25 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Pirates_Of_The_Eggs
 {
     /// <summary>
-    /// Interaction logic for Opsplitsen.xaml
+    /// Interaction logic for Agenda.xaml
     /// </summary>
-    public partial class Opsplitsen : Window
+    public partial class Agenda : Page
     {
-        public Opsplitsen()
+        public Agenda()
         {
             InitializeComponent();
-        }
-
-        private void ShowMenuKaart_Click(object sender, RoutedEventArgs e)
-        {
-            MenuKaart menuKaart = new MenuKaart();
-            menuKaart.Show();
-            this.Close();
         }
     }
 }

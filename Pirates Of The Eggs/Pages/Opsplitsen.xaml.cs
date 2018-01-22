@@ -10,32 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Pirates_Of_The_Eggs
 {
     /// <summary>
-    /// Interaction logic for MenuKaart.xaml
+    /// Interaction logic for Opsplitsen.xaml
     /// </summary>
-    public partial class MenuKaart : Window
+    public partial class Opsplitsen : Page
     {
-        public MenuKaart()
+        public Opsplitsen()
         {
             InitializeComponent();
         }
 
-        private void ShowTerug_Click(object sender, RoutedEventArgs e)
+        private void ShowMenuKaart_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
-        }
-
-        private void ShowOpsplitsen_Click(object sender, RoutedEventArgs e)
-        {
-            Opsplitsen opsplitsen = new Opsplitsen();
-            opsplitsen.Show();
-            this.Close();
+            MainWindow.MainFrame.Navigate(new MenuKaart());
         }
     }
 }

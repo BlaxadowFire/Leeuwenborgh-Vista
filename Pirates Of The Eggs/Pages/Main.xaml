@@ -1,15 +1,17 @@
-﻿<Window x:Class="Pirates_Of_The_Eggs.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Pirates_Of_The_Eggs"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="850">
+﻿<Page x:Class="Pirates_Of_The_Eggs.Main"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Pirates_Of_The_Eggs"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="850"
+      Title="Main">
+
     <Grid>
-        <Button Content="Menu" HorizontalAlignment="Left" Margin="24,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF4388CC" Click="ShowMenuKaart_Click" />
+        <Button Content="Menukaart" HorizontalAlignment="Left" Margin="24,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF4388CC" Click="ShowMenuKaart_Click" />
         <Button Content="Vaste klanten" HorizontalAlignment="Left" Margin="178,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF4388CC" />
-        <Button Content="Bonnen" HorizontalAlignment="Left" Margin="333,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF4388CC" Click="ShowBonnen_Click_1" />
+        <Button Content="Bonnen" HorizontalAlignment="Left" Margin="333,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF4388CC" Click="ShowBonnen_Click" />
         <Button Content="1" HorizontalAlignment="Left" Margin="43,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
         <Button Content="2" HorizontalAlignment="Left" Margin="199,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
         <Button Content="3" HorizontalAlignment="Left" Margin="356,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
@@ -34,4 +36,4 @@
         <TextBlock HorizontalAlignment="Left" Margin="433,0,0,0" TextWrapping="Wrap" Text="Tijd" VerticalAlignment="Top" Width="409" Foreground="Black" Background="#FFCDCDCD"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Datum" VerticalAlignment="Top" Width="433" Foreground="Black" Background="#FFCDCDCD"/>
     </Grid>
-</Window>
+</Page>

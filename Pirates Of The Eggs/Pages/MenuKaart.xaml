@@ -1,11 +1,13 @@
-﻿<Window x:Class="Pirates_Of_The_Eggs.MenuKaart"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Pirates_Of_The_Eggs"
-        mc:Ignorable="d"
-        Title="MenuKaart" Height="500" Width="850">
+﻿<Page x:Class="Pirates_Of_The_Eggs.MenuKaart"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Pirates_Of_The_Eggs"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="850"
+      Title="MenuKaart">
+
     <Grid>
         <TextBlock HorizontalAlignment="Left" Margin="0,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="39" Width="210" Foreground="#FF040404">
             <TextBlock.Background>
@@ -48,4 +50,4 @@
         </Grid>
 
     </Grid>
-</Window>
+</Page>

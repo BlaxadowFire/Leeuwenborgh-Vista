@@ -12,18 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
 
 namespace Pirates_Of_The_Eggs
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Main.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Main : Page
     {
-        public MainWindow()
+        public Main()
         {
             InitializeComponent();
         }
@@ -31,24 +28,17 @@ namespace Pirates_Of_The_Eggs
         private void Tafel_Click(object sender, RoutedEventArgs e)
         {
             int x = Convert.ToInt16(((Button)sender).Content);
-            MenuKaart menuKaart = new MenuKaart();
-            menuKaart.Show();
-            this.Close();
+            MainWindow.MainFrame.Navigate(new MenuKaart());
         }
 
         private void ShowMenuKaart_Click(object sender, RoutedEventArgs e)
         {
-            MenuKaart menuKaart = new MenuKaart();
-            menuKaart.Show();
-            this.Close();
-            
+            MainWindow.MainFrame.Navigate(new MenuKaart());
         }
 
-        private void ShowBonnen_Click_1(object sender, RoutedEventArgs e)
+        private void ShowBonnen_Click(object sender, RoutedEventArgs e)
         {
-            Bonnen bonnen = new Bonnen();
-            bonnen.Show();
-            this.Close();
+            MainWindow.MainFrame.Navigate(new Bonnen());
         }
     }
 }
