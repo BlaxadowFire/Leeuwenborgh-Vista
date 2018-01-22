@@ -31,13 +31,14 @@
             <Button Content="0" HorizontalAlignment="Left" Margin="70,180,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
             <Button Content="&lt;" HorizontalAlignment="Left" Margin="140,180,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
         </Grid>
-        <DataGrid HorizontalAlignment="Left" Height="190" VerticalAlignment="Top" Width="525"/>
+        <DataGrid Name="MyDataGrid" HorizontalAlignment="Left" Height="190" VerticalAlignment="Top" Width="525"/>
         <Grid HorizontalAlignment="Left" Height="180" Margin="215,190,0,0" VerticalAlignment="Top" Width="310">
             <Button Content="Drank" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="60" Background="#FF4388CC"/>
             <Button Content="Soep" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="60" Margin="155,0,0,0" Background="#FF4388CC"/>
             <Button Content="Voorgerecht" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="60" Margin="0,60,0,0" Background="#FF4388CC"/>
             <Button Content="Hoofdgerecht" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="60" Margin="155,60,0,0" Background="#FF4388CC"/>
             <Button Content="Dessert" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="60" Margin="0,120,0,0" Background="#FF4388CC"/>
+            <Button Content="Alle" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="60" Margin="155,120,0,0" Background="#FF4388CC" Click="Button_Click"/>
         </Grid>
         <TextBox HorizontalAlignment="Left" Height="190" Margin="525,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="317"/>
         <TextBox HorizontalAlignment="Left" Height="61" Margin="525,190,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="317"/>

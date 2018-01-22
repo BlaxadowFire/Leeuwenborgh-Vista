@@ -28,10 +28,10 @@ SoortNaam varchar(50) NOT NULL
 
 INSERT INTO GerechtCategorie
 VALUES('Voorgerecht'),
-('Soepen'),
-('Hoofdgerechten'),
-('Deserts'),
-('Dranken');
+('Soep'),
+('Hoofdgerecht'),
+('Dessert'),
+('Drank');
 
 INSERT INTO Gerechten
 VALUES ('Stokbrood',0,1),
