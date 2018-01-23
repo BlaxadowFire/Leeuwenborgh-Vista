@@ -55,14 +55,19 @@ namespace Pirates_Of_The_Eggs
                     //CmdString = CmdString + " where GerechtCategorie.SoortNaam = '" + ((Button)sender).Content + "'";
                 }
                 //MyDataGrid.AutoGenerateColumns = false;
-                
+
                 SqlCommand cmd = new SqlCommand(CmdString, sqlConnection);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                //DataGridBoundColumn naam =
+                
                 DataTable dt = datasource.Tables["Gerechten"];
+
                 
                 sda.Fill(dt);
                 MyDataGrid.ItemsSource = dt.DefaultView;
+                MyDataGrid.Columns[0].Visibility = Visibility.Hidden;
+                MyDataGrid.Columns[3].Visibility = Visibility.Hidden;
+                MyDataGrid.Columns[4].Visibility = Visibility.Hidden;
+                MyDataGrid.Columns[5].Visibility = Visibility.Hidden;
             }
         }
     }
