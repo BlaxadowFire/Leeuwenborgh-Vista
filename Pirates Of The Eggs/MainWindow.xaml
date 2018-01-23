@@ -6,5 +6,6 @@
         xmlns:local="clr-namespace:Pirates_Of_The_Eggs"
         mc:Ignorable="d"
         Title="Window" Height="500" Width="850" ResizeMode="NoResize">
-    <Grid Name="MainGrid"/>
+    <Grid Name="MainGrid">
+    </Grid>
 </Window>

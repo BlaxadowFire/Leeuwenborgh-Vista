@@ -42,15 +42,25 @@ namespace Pirates_Of_The_Eggs
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            datasource.Clear();
             string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
             string CmdString = string.Empty;
 
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
-                CmdString = @"select * from Gerechten inner join GerechtCategorie ON GerechtSoort = GerechtCategorie.GerechtID where GerechtCategorie.SoortNaam = '" + ((Button)sender).Content + "'";
+                CmdString = @"select * from Gerechten inner join GerechtCategorie ON GerechtSoort = GerechtCategorie.GerechtID";
+                if (((Button)sender).Content.ToString() != "Alle")
+                {
+                    CmdString = CmdString + $" where GerechtCategorie.SoortNaam = '{((Button)sender).Content.ToString()}'";
+                    //CmdString = CmdString + " where GerechtCategorie.SoortNaam = '" + ((Button)sender).Content + "'";
+                }
+                //MyDataGrid.AutoGenerateColumns = false;
+                
                 SqlCommand cmd = new SqlCommand(CmdString, sqlConnection);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                //DataGridBoundColumn naam =
                 DataTable dt = datasource.Tables["Gerechten"];
+                
                 sda.Fill(dt);
                 MyDataGrid.ItemsSource = dt.DefaultView;
             }
