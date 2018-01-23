@@ -47,11 +47,10 @@ namespace Pirates_Of_The_Eggs
 
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
-                CmdString = @"
-                select Gerechten.GerechtNaam, Gerechten.GerechtPrijs from Gerechten,GerechtCategorie where Gerechten.GerechtSoort = 1 order by Gerechten.GerechtID; ";
+                CmdString = @"select * from Gerechten inner join GerechtCategorie ON GerechtSoort = GerechtCategorie.GerechtID where GerechtCategorie.SoortNaam = '" + ((Button)sender).Content + "'";
                 SqlCommand cmd = new SqlCommand(CmdString, sqlConnection);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                DataTable dt = datasource.Tables["Gerechten, GerechtCategorie"];
+                DataTable dt = datasource.Tables["Gerechten"];
                 sda.Fill(dt);
                 MyDataGrid.ItemsSource = dt.DefaultView;
             }
