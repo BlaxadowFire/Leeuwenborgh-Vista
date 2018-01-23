@@ -48,20 +48,18 @@ namespace Pirates_Of_The_Eggs
 
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
-                CmdString = @"select * from Gerechten inner join GerechtCategorie ON GerechtSoort = GerechtCategorie.GerechtID";
+                CmdString = @"SELECT * FROM Gerechten INNER JOIN GerechtCategorie ON GerechtSoort = GerechtCategorie.GerechtID";
                 if (((Button)sender).Content.ToString() != "Alle")
                 {
                     CmdString = CmdString + $" where GerechtCategorie.SoortNaam = '{((Button)sender).Content.ToString()}'";
                     //CmdString = CmdString + " where GerechtCategorie.SoortNaam = '" + ((Button)sender).Content + "'";
                 }
-                //MyDataGrid.AutoGenerateColumns = false;
 
                 SqlCommand cmd = new SqlCommand(CmdString, sqlConnection);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 
                 DataTable dt = datasource.Tables["Gerechten"];
 
-                
                 sda.Fill(dt);
                 MyDataGrid.ItemsSource = dt.DefaultView;
                 MyDataGrid.Columns[0].Visibility = Visibility.Hidden;
