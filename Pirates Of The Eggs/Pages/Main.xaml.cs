@@ -20,14 +20,16 @@ namespace Pirates_Of_The_Eggs
     /// </summary>
     public partial class Main : Page
     {
+        public static int TableChoice;
         public Main()
         {
             InitializeComponent();
+            TableChoice = 0;
         }
 
         private void Tafel_Click(object sender, RoutedEventArgs e)
         {
-            int x = Convert.ToInt16(((Button)sender).Content);
+            TableChoice = Convert.ToInt16(((Button)sender).Content);
             MainWindow.MainFrame.Navigate(new MenuKaart());
         }
 
