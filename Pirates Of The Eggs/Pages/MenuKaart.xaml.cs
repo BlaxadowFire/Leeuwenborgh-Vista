@@ -29,6 +29,8 @@ namespace Pirates_Of_The_Eggs
         {
             InitializeComponent();
             SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + "Order No. ";
+            SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + "\r\n";
+            AantalProduct.Text = AantalProduct.Text + "\r\n";
         }
 
         private void ShowTerug_Click(object sender, RoutedEventArgs e)
@@ -73,12 +75,20 @@ namespace Pirates_Of_The_Eggs
         private void GerechtClick(object sender, SelectionChangedEventArgs e)
         {
             string Order;
+            string Price =string.Empty;
+            int AantalProduct;
             DataRowView drv = (DataRowView)MyDataGrid.SelectedItem;
             if (drv != null)
                 Order = (drv[1].ToString());
             else
                 return;
             SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + Order;
+            if (drv != null)
+                Price = (drv[2].ToString());
+            else
+                return;
+                SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + "\r\n" + Price;
+   
         }
     }
 }

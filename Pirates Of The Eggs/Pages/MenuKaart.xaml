@@ -40,7 +40,7 @@
             <Button Content="Dessert" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="60" Margin="0,120,0,0" Background="#FF4388CC" Click="GerechtenFilter"/>
             <Button Content="Alle" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="60" Margin="155,120,0,0" Background="#FF4388CC" Click="GerechtenFilter"/>
         </Grid>
-        <TextBox Name="SelectedGerechten" HorizontalAlignment="Left" Height="190" Margin="525,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317" Text="Tafel: " IsEnabled="False"/>
+        <TextBox Name="SelectedGerechten" HorizontalAlignment="Left" Height="190" Margin="525,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Text="Tafel: " IsEnabled="False"/>
         <TextBox HorizontalAlignment="Left" Height="61" Margin="525,190,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="317"/>
         <Grid HorizontalAlignment="Left" Height="119" Margin="525,251,0,0" VerticalAlignment="Top" Width="312">
             <Button Content="Opslaan" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="2,-1,0,0" Background="#FF4388CC"/>
@@ -48,6 +48,8 @@
             <Button Content="Terug" HorizontalAlignment="Left" Width="160" Margin="2,59,0,0" Background="#FF4388CC" Click="ShowTerug_Click"/>
             <Button Content="Opsplitsen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="162,59,-5,0" Background="#FF4388CC" Click="ShowOpsplitsen_Click"/>
         </Grid>
+        <TextBox x:Name="SelectedGerechtenPrice" HorizontalAlignment="Left" Height="190" Margin="681,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="122"  IsEnabled="False"/>
+        <TextBox Name="AantalProduct" HorizontalAlignment="Left" Height="190" Margin="803,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="37" IsEnabled="False"/>
 
     </Grid>
 </Page>
