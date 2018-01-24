@@ -29,8 +29,8 @@ namespace Pirates_Of_The_Eggs
         {
             InitializeComponent();
             SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + "Order No. ";
-            SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + "\r\n";
-            AantalProduct.Text = AantalProduct.Text + "\r\n";
+            SelectedGerechtenPrice.Text = Main.TableChoice + "\r\n";
+            AantalProduct.Text = AantalProduct.Text + "\r\n\r\n";
         }
 
         private void ShowTerug_Click(object sender, RoutedEventArgs e)
