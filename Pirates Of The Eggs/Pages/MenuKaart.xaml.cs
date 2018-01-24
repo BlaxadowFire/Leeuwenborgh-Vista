@@ -88,6 +88,7 @@ namespace Pirates_Of_The_Eggs
             else
                 return;
                 SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + "\r\n" + Price;
+            Btn_ClickClear(sender, e);
    
         }
 
@@ -98,7 +99,10 @@ namespace Pirates_Of_The_Eggs
 
         private void Btn_ClickBackspace(object sender, RoutedEventArgs e)
         {
-
+            if (TxtBlockNumber.Text.Length > 0)
+            {
+                TxtBlockNumber.Text = TxtBlockNumber.Text.Remove(TxtBlockNumber.Text.Length - 1);
+            }
         }
 
         private void Btn_ClickClear(object sender, RoutedEventArgs e)
