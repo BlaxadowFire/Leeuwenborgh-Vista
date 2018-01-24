@@ -90,5 +90,20 @@ namespace Pirates_Of_The_Eggs
                 SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + "\r\n" + Price;
    
         }
+
+        private void Btn_ClickNumber(object sender, RoutedEventArgs e)
+        {
+            TxtBlockNumber.Text = TxtBlockNumber.Text + ((Button)sender).Content;
+        }
+
+        private void Btn_ClickBackspace(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Btn_ClickClear(object sender, RoutedEventArgs e)
+        {
+            TxtBlockNumber.Text = String.Empty;
+        }
     }
 }

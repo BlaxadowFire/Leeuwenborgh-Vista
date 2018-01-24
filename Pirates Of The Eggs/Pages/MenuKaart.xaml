@@ -9,7 +9,7 @@
       Title="MenuKaart">
 
     <Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="0,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="39" Width="210" Foreground="#FF040404">
+        <TextBlock Name="TxtBlockNumber" HorizontalAlignment="Left" Margin="0,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="39" Width="210" Foreground="#FF040404">
             <TextBlock.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
                     <GradientStop Color="#FF898181" Offset="0.98"/>
@@ -18,18 +18,18 @@
             </TextBlock.Background>
         </TextBlock>
         <Grid HorizontalAlignment="Left" Height="240" Margin="0,190,0,0" VerticalAlignment="Top" Width="210">
-            <Button Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
-            <Button Content="2" HorizontalAlignment="Left" Margin="70,0,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
-            <Button Content="3" HorizontalAlignment="Left" Margin="140,0,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
-            <Button Content="4" HorizontalAlignment="Left" Margin="0,60,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
-            <Button Content="5" HorizontalAlignment="Left" Margin="70,60,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
-            <Button Content="6" HorizontalAlignment="Left" Margin="140,60,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
-            <Button Content="7" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
-            <Button Content="8" HorizontalAlignment="Left" Margin="70,120,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
-            <Button Content="9" HorizontalAlignment="Left" Margin="140,120,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
-            <Button Content="C" HorizontalAlignment="Left" Margin="0,180,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
-            <Button Content="0" HorizontalAlignment="Left" Margin="70,180,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
-            <Button Content="&lt;" HorizontalAlignment="Left" Margin="140,180,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
+            <Button Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="70" Height="60" Background="White" Click="Btn_ClickNumber"/>
+            <Button Content="2" HorizontalAlignment="Left" Margin="70,0,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White" Click="Btn_ClickNumber"/>
+            <Button Content="3" HorizontalAlignment="Left" Margin="140,0,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White" Click="Btn_ClickNumber"/>
+            <Button Content="4" HorizontalAlignment="Left" Margin="0,60,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White" Click="Btn_ClickNumber"/>
+            <Button Content="5" HorizontalAlignment="Left" Margin="70,60,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White" Click="Btn_ClickNumber"/>
+            <Button Content="6" HorizontalAlignment="Left" Margin="140,60,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White" Click="Btn_ClickNumber"/>
+            <Button Content="7" HorizontalAlignment="Left" Margin="0,120,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White" Click="Btn_ClickNumber"/>
+            <Button Content="8" HorizontalAlignment="Left" Margin="70,120,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White" Click="Btn_ClickNumber"/>
+            <Button Content="9" HorizontalAlignment="Left" Margin="140,120,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White" Click="Btn_ClickNumber"/>
+            <Button Content="C" HorizontalAlignment="Left" Margin="0,180,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White" Click="Btn_ClickClear"/>
+            <Button Content="0" HorizontalAlignment="Left" Margin="70,180,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White" Click="Btn_ClickNumber"/>
+            <Button Content="&lt;" HorizontalAlignment="Left" Margin="140,180,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White" Click="Btn_ClickBackspace"/>
         </Grid>
         <DataGrid Name="MyDataGrid" HorizontalAlignment="Left" Height="190" VerticalAlignment="Top" Width="525" CanUserResizeRows="False" CanUserAddRows="False" SelectionChanged="GerechtClick"/>
         <Grid HorizontalAlignment="Left" Height="180" Margin="215,190,0,0" VerticalAlignment="Top" Width="310">
