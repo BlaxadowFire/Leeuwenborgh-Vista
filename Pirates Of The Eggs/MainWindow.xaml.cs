@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Configuration;
 using System.Data;
@@ -28,7 +29,7 @@ namespace Pirates_Of_The_Eggs
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.NavigationUIVisibility = System.Windows.Navigation.NavigationUIVisibility.Hidden;
+            MainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
             MainGrid.Children.Add(MainFrame);
             MainFrame.VerticalAlignment = VerticalAlignment.Stretch;
             MainFrame.HorizontalAlignment = HorizontalAlignment.Stretch;

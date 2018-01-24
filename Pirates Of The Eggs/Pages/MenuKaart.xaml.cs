@@ -28,7 +28,7 @@ namespace Pirates_Of_The_Eggs
         public MenuKaart()
         {
             InitializeComponent();
-            SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + "Order No. ";
+            SelectedGerechten.Text = SelectedGerechten.Text + "\r\n Order No. \r\n\r\n";
         }
 
         private void ShowTerug_Click(object sender, RoutedEventArgs e)
