@@ -28,6 +28,7 @@ namespace Pirates_Of_The_Eggs
         public MenuKaart()
         {
             InitializeComponent();
+            SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + "Order No. ";
         }
 
         private void ShowTerug_Click(object sender, RoutedEventArgs e)
@@ -40,7 +41,7 @@ namespace Pirates_Of_The_Eggs
             MainWindow.MainFrame.Navigate(new Opsplitsen());
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void GerechtenFilter(object sender, RoutedEventArgs e)
         {
             datasource.Clear();
             string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
@@ -67,6 +68,17 @@ namespace Pirates_Of_The_Eggs
                 MyDataGrid.Columns[4].Visibility = Visibility.Hidden;
                 MyDataGrid.Columns[5].Visibility = Visibility.Hidden;
             }
+        }
+
+        private void GerechtClick(object sender, SelectionChangedEventArgs e)
+        {
+            string Order;
+            DataRowView drv = (DataRowView)MyDataGrid.SelectedItem;
+            if (drv != null)
+                Order = (drv[1].ToString());
+            else
+                return;
+            SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + Order;
         }
     }
 }
