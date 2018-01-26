@@ -30,7 +30,7 @@ namespace Pirates_Of_The_Eggs
             InitializeComponent();
             SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + "Order No. ";
             SelectedGerechtenPrice.Text = Main.TableChoice + "\r\n";
-            AantalProduct.Text = AantalProduct.Text + "\r\n\r\n";
+            AantalProduct.Text = AantalProduct.Text + "\r\n";
         }
 
         private void ShowTerug_Click(object sender, RoutedEventArgs e)
@@ -107,6 +107,14 @@ namespace Pirates_Of_The_Eggs
 
         private void Btn_ClickClear(object sender, RoutedEventArgs e)
         {
+            TxtBlockNumber.Text = String.Empty;
+        }
+
+        private void Btn_SendAantal(object sender, RoutedEventArgs e)
+        {
+            int aantal;
+            aantal = Convert.ToInt32(TxtBlockNumber.Text);
+            AantalProduct.Text = AantalProduct.Text + "\r\n" + aantal;
             TxtBlockNumber.Text = String.Empty;
         }
     }

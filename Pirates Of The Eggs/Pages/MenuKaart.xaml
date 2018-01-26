@@ -43,13 +43,13 @@
         <TextBox Name="SelectedGerechten" Height="190" Margin="564,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" Text="Tafel: " IsEnabled="False" AllowDrop="False" HorizontalAlignment="Left"/>
         <TextBox HorizontalAlignment="Left" Height="61" Margin="525,190,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="317"/>
         <Grid HorizontalAlignment="Left" Height="119" Margin="525,251,0,0" VerticalAlignment="Top" Width="312">
-            <Button Content="Opslaan" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="2,-1,0,0" Background="#FF4388CC"/>
+            <Button Content="Opslaan" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="2,-1,0,0" Background="#FF4388CC" Click="Btn_SendAantal"/>
             <Button Content="Betalen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="162,-1,-5,0" Background="#FF4388CC"/>
             <Button Content="Terug" HorizontalAlignment="Left" Width="160" Margin="2,59,0,0" Background="#FF4388CC" Click="ShowTerug_Click"/>
             <Button Content="Opsplitsen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="162,59,-5,0" Background="#FF4388CC" Click="ShowOpsplitsen_Click"/>
         </Grid>
         <TextBox x:Name="SelectedGerechtenPrice" HorizontalAlignment="Left" Height="190" Margin="654,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188"  IsEnabled="False"/>
-        <TextBox Name="AantalProduct" HorizontalAlignment="Left" Height="190" Margin="525,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" IsEnabled="False"/>
+        <TextBox Name="AantalProduct" HorizontalAlignment="Left" Text="Aant." Height="190" Margin="525,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="39" IsEnabled="False"/>
 
     </Grid>
 </Page>
