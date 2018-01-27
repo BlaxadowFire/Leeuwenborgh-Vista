@@ -30,7 +30,7 @@ namespace Pirates_Of_The_Eggs
             InitializeComponent();
             SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + "Order No. ";
             SelectedGerechtenPrice.Text = Main.TableChoice + "\r\n";
-            AantalProduct.Text = AantalProduct.Text + "\r\n\r\n";
+            Amount.Text = "\r\n";
         }
 
         private void ShowTerug_Click(object sender, RoutedEventArgs e)
@@ -76,20 +76,22 @@ namespace Pirates_Of_The_Eggs
         {
             string Order;
             string Price =string.Empty;
-            int AantalProduct;
+            int Amount;
             DataRowView drv = (DataRowView)MyDataGrid.SelectedItem;
             if (drv != null)
-                Order = (drv[1].ToString());
-            else
-                return;
-            SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + Order;
-            if (drv != null)
-                Price = (drv[2].ToString());
-            else
-                return;
+            {
+                Order = drv[1].ToString();
+                Price = drv[2].ToString();
+                if (TxtBlockNumber.Text == string.Empty)
+                {
+                    TxtBlockNumber.Text = "1";
+                }
+                Amount = Convert.ToInt32(TxtBlockNumber.Text);
+                this.Amount.Text = this.Amount.Text + "\r\n" + Amount;
+                SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + Order;
                 SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + "\r\n" + Price;
-            Btn_ClickClear(sender, e);
-   
+                Btn_ClickClear(sender, e);
+            } 
         }
 
         private void Btn_ClickNumber(object sender, RoutedEventArgs e)
