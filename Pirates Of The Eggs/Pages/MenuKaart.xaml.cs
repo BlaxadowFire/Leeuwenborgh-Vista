@@ -111,5 +111,13 @@ namespace Pirates_Of_The_Eggs
         {
             TxtBlockNumber.Text = String.Empty;
         }
+
+        private void Btn_SendAantal(object sender, RoutedEventArgs e)
+        {
+            int aantal;
+            aantal = Convert.ToInt32(TxtBlockNumber.Text);
+            AantalProduct.Text = AantalProduct.Text + "\r\n" + aantal;
+            TxtBlockNumber.Text = String.Empty;
+        }
     }
 }
