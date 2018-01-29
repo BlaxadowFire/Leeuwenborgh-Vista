@@ -54,6 +54,7 @@ namespace Pirates_Of_The_Eggs
                     //{
                     //((Button)obj).Background = Brushes.Red;
                     ((Button)TableButtons.Children[DataReader-1]).Background = Brushes.Red;
+                    TableInfo.DynamicTable(DataReader);
                     //}
                 }
                 sqlConnection.Close();
@@ -94,6 +95,11 @@ namespace Pirates_Of_The_Eggs
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.MainFrame.Navigate(new Agenda()); 
+        }
+
+        private void BTNCheck_Click(object sender, RoutedEventArgs e)
+        {
+            LBLCheck.Content = TableInfo.DynamicTableRead(Convert.ToInt16(TXTCheck.Text));
         }
     }
 }

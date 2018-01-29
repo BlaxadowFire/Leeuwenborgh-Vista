@@ -120,7 +120,7 @@ namespace Pirates_Of_The_Eggs
 
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
-                Opslaan = @"Insert into Orders Values ID GerechtID OrderID TafelID Betaald";
+                Opslaan = @"Insert into Orders Values GerechtID OrderID TafelID Betaald";
 
 
                 SqlCommand cmd = new SqlCommand(Opslaan, sqlConnection);
@@ -137,7 +137,7 @@ namespace Pirates_Of_The_Eggs
             {
                 sqlConnection.Open();
                 cmdString = $@"UPDATE Tafels SET TafelGebruik=0 WHERE TafelID= {Main.TableChoice}";
-
+                TableInfo.DynamicTable(Main.TableChoice);
 
                 SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
                 SqlDataReader sqlDataReader = cmd.ExecuteReader();
@@ -176,6 +176,10 @@ namespace Pirates_Of_The_Eggs
             int DataReader = 0;
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
+                if (TableInfo.DynamicTableRead(Main.TableChoice) == 1)
+                {
+                    
+                }
                 cmdString = $@"select MAX(OrderID) as MaxID from Orders where TafelID = {Main.TableChoice}";
 
 
@@ -186,6 +190,9 @@ namespace Pirates_Of_The_Eggs
                     DataReader = sqlDataReader.GetInt32(sqlDataReader.GetOrdinal("MaxID"));
                 }
                 ;
+
+
+
                 SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + DataReader.ToString();
                 sqlConnection.Close();
             }
