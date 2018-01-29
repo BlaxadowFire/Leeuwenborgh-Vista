@@ -35,7 +35,7 @@ namespace Pirates_Of_The_Eggs
         {
         
             string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
-            string cmdString = string.Empty;
+            string cmdString;
             int DataReader;
 
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
@@ -53,7 +53,7 @@ namespace Pirates_Of_The_Eggs
                     //((Button)obj).Background = Brushes.Red;
                     ((Button)TableButtons.Children[DataReader-1]).Background = Brushes.Red;
                     //}
-                };
+                }
                 sqlConnection.Close();
             }
         }
@@ -63,18 +63,18 @@ namespace Pirates_Of_The_Eggs
             TableChoice = Convert.ToInt16(((Button)sender).Content);
 
                 string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
-                string cmdString = string.Empty;
+                string cmdString;
 
                 using (SqlConnection sqlConnection = new SqlConnection(strConnection))
                 {
                     sqlConnection.Open();
-                    cmdString = $@"UPDATE Tafels SET TafelGebruik=1 WHERE TafelID= {Main.TableChoice}";
+                    cmdString = $@"UPDATE Tafels SET TafelGebruik=1 WHERE TafelID= {TableChoice}";
 
 
                     SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
                     SqlDataReader sqlDataReader = cmd.ExecuteReader();
-                    while (sqlDataReader.Read()){};
-                sqlConnection.Close();
+                    while (sqlDataReader.Read()){}
+                    sqlConnection.Close();
                 }
             MainWindow.MainFrame.Navigate(new MenuKaart());
         }
