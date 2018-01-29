@@ -114,10 +114,17 @@ namespace Pirates_Of_The_Eggs
 
         private void Btn_SendAantal(object sender, RoutedEventArgs e)
         {
-            int aantal;
-            aantal = Convert.ToInt32(TxtBlockNumber.Text);
-            Amount.Text = Amount.Text + "\r\n" + aantal;
-            TxtBlockNumber.Text = String.Empty;
+            string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+            string Opslaan = string.Empty;
+
+            using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+            {
+                Opslaan = @"Insert into Orders Values ID GerechtID OrderID TafelID Betaald";
+
+
+                SqlCommand cmd = new SqlCommand(Opslaan, sqlConnection);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            }
         }
     }
 }
