@@ -24,11 +24,13 @@ namespace Pirates_Of_The_Eggs
     public partial class Main : Page
     {
         public static int TableChoice;
+        
         public Main()
         {
             InitializeComponent();
             CheckTableFree(null, null);
             TableChoice = 0;
+            
         }
 
         private void CheckTableFree(object sender, RoutedEventArgs e)
