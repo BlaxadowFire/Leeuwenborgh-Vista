@@ -150,13 +150,25 @@ namespace Pirates_Of_The_Eggs
 
         private void LoadOrderNumber(object sender, RoutedEventArgs e)
         {
+            
             string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
             string cmdString = string.Empty;
             int DataReader = 0;
-
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
                 sqlConnection.Open();
+                SqlCommand cmd1 = new SqlCommand("INSERT INTO [Orders]([TafelID])", sqlConnection);
+                {
+                    //cmd1.Connection = sqlConnection;
+                    //cmd1.Parameters.AddWithValue("@TafelID", SelectedGerechten.Text);
+                    SqlDataReader sqlDataReader1 = cmd1.ExecuteReader();
+                    while (sqlDataReader1.Read())
+                    {
+
+                    };
+                    
+                }
+                
                 cmdString = $@"select MAX(OrderID) as MaxID from Orders where TafelID = {Main.TableChoice}";
 
 

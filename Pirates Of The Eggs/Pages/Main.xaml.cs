@@ -24,11 +24,13 @@ namespace Pirates_Of_The_Eggs
     public partial class Main : Page
     {
         public static int TableChoice;
+        
         public Main()
         {
             InitializeComponent();
             CheckTableFree(null, null);
             TableChoice = 0;
+            
         }
 
         private void CheckTableFree(object sender, RoutedEventArgs e)
@@ -49,7 +51,8 @@ namespace Pirates_Of_The_Eggs
                     //foreach (object obj in TableButtons.Children)
                     //{
                     //((Button)obj).Background = Brushes.Red;
-                    ((Button)TableButtons.Children[0]).Background = Brushes.Red;
+                    
+                    ((Button)TableButtons.Children[TableChoice]).Background = Brushes.Red;
                     //}
                 };
                     sqlConnection.Close();
