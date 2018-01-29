@@ -29,6 +29,7 @@ namespace Pirates_Of_The_Eggs
         public MainWindow()
         {
             InitializeComponent();
+
             MainFrame.NavigationUIVisibility = NavigationUIVisibility.Hidden;
             MainGrid.Children.Add(MainFrame);
             MainFrame.VerticalAlignment = VerticalAlignment.Stretch;

@@ -65,14 +65,14 @@ namespace Pirates_Of_The_Eggs
 
                 sda.Fill(dt);
                 MyDataGrid.ItemsSource = dt.DefaultView;
-                MyDataGrid.Columns[0].Visibility = Visibility.Hidden;
-                MyDataGrid.Columns[3].Visibility = Visibility.Hidden;
+                MyDataGrid.Columns[1].Visibility = Visibility.Hidden;
                 MyDataGrid.Columns[4].Visibility = Visibility.Hidden;
                 MyDataGrid.Columns[5].Visibility = Visibility.Hidden;
+                MyDataGrid.Columns[6].Visibility = Visibility.Hidden;
             }
         }
 
-        private void GerechtClick(object sender, SelectionChangedEventArgs e)
+        private void GerechtClick(object sender, RoutedEventArgs e)
         {
             string Order;
             string Price =string.Empty;
@@ -116,7 +116,7 @@ namespace Pirates_Of_The_Eggs
         {
             int aantal;
             aantal = Convert.ToInt32(TxtBlockNumber.Text);
-            AantalProduct.Text = AantalProduct.Text + "\r\n" + aantal;
+            Amount.Text = Amount.Text + "\r\n" + aantal;
             TxtBlockNumber.Text = String.Empty;
         }
     }
