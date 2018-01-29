@@ -16,6 +16,7 @@ TafelGebruik int NOT NULL
 
 CREATE TABLE Orders(
 ID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+GerechtID int NOT NULL,
 OrderID int NOT NULL,
 TafelID int NOT NULL,
 Betaald int NOT NULL
