@@ -153,22 +153,29 @@ namespace Pirates_Of_The_Eggs
             
             string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
             string cmdString = string.Empty;
-            int DataReader = 0;
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
                 sqlConnection.Open();
-                SqlCommand cmd1 = new SqlCommand("INSERT INTO [Orders]([TafelID])", sqlConnection);
-                {
+                cmdString = $"INSERT INTO [Orders] values ({/*GerechtID*/1}, {/*OrderID*/21}, {/*TafelID*/Main.TableChoice}, {/*Betaald*/0})";
                     //cmd1.Connection = sqlConnection;
                     //cmd1.Parameters.AddWithValue("@TafelID", SelectedGerechten.Text);
-                    SqlDataReader sqlDataReader1 = cmd1.ExecuteReader();
+                    SqlCommand cmdCommand = new SqlCommand(cmdString, sqlConnection);
+                    SqlDataReader sqlDataReader1 = cmdCommand.ExecuteReader();
                     while (sqlDataReader1.Read())
                     {
 
                     };
-                    
-                }
-                
+                    sqlDataReader1.Close();
+               }
+        }
+
+        private void OrderIDCheck(object sender, RoutedEventArgs e)
+        {
+            string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+            string cmdString = string.Empty;
+            int DataReader = 0;
+            using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+            {
                 cmdString = $@"select MAX(OrderID) as MaxID from Orders where TafelID = {Main.TableChoice}";
 
 
@@ -177,7 +184,8 @@ namespace Pirates_Of_The_Eggs
                 while (sqlDataReader.Read())
                 {
                     DataReader = sqlDataReader.GetInt32(sqlDataReader.GetOrdinal("MaxID"));
-                };
+                }
+                ;
                 SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + DataReader.ToString();
                 sqlConnection.Close();
             }
