@@ -165,6 +165,7 @@
     <Content Include="Queries\Drop Tables.sql" />
     <Content Include="Queries\Gerechtenfilter.sql" />
     <Content Include="Queries\Select Tables.sql" />
+    <Content Include="Queries\Dummydata Orders.sql" />
     <Content Include="Queries\Updates\Update in gebruik.sql" />
     <Content Include="Queries\Updates\Update niet in gebruik.sql" />
   </ItemGroup>
