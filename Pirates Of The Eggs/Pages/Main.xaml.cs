@@ -35,28 +35,29 @@ namespace Pirates_Of_The_Eggs
 
         private void CheckTableFree(object sender, RoutedEventArgs e)
         {
+        
+            string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+            string cmdString = string.Empty;
+            int DataReader;
 
-                string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
-                string cmdString = string.Empty;
+            using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+            {
+                sqlConnection.Open();
+                cmdString = @"select TafelID as TafelID from Tafels where TafelGebruik = 1";
 
-                using (SqlConnection sqlConnection = new SqlConnection(strConnection))
-                {
-                    sqlConnection.Open();
-                    cmdString = @"select TafelID from Tafels where TafelGebruik = 1";
-
-                    SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
-                    SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
+                SqlDataReader sqlDataReader = cmd.ExecuteReader();
                 while (sqlDataReader.Read())
                 {
+                    DataReader = sqlDataReader.GetInt32(sqlDataReader.GetOrdinal("TafelID"));
                     //foreach (object obj in TableButtons.Children)
                     //{
                     //((Button)obj).Background = Brushes.Red;
-                    
-                    ((Button)TableButtons.Children[TableChoice]).Background = Brushes.Red;
+                    ((Button)TableButtons.Children[DataReader-1]).Background = Brushes.Red;
                     //}
                 };
-                    sqlConnection.Close();
-                }
+                sqlConnection.Close();
+            }
         }
 
         private void Tafel_Click(object sender, RoutedEventArgs e)
