@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Pirates_Of_The_Eggs
 {
@@ -24,12 +27,53 @@ namespace Pirates_Of_The_Eggs
         public Main()
         {
             InitializeComponent();
+            CheckTableFree(null, null);
             TableChoice = 0;
+        }
+
+        private void CheckTableFree(object sender, RoutedEventArgs e)
+        {
+
+                string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+                string cmdString = string.Empty;
+
+                using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+                {
+                    sqlConnection.Open();
+                    cmdString = @"select TafelID from Tafels where TafelGebruik = 1";
+
+                    SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
+                    SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    //foreach (object obj in TableButtons.Children)
+                    //{
+                    //((Button)obj).Background = Brushes.Red;
+                    ((Button)TableButtons.Children[0]).Background = Brushes.Red;
+                    //}
+                };
+                    sqlConnection.Close();
+                }
         }
 
         private void Tafel_Click(object sender, RoutedEventArgs e)
         {
             TableChoice = Convert.ToInt16(((Button)sender).Content);
+
+                string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+                string cmdString = string.Empty;
+
+                using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+                {
+                    sqlConnection.Open();
+                    cmdString = $@"UPDATE Tafels SET TafelGebruik=1 WHERE TafelID= {Main.TableChoice}";
+
+
+                    SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
+                    SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                    while (sqlDataReader.Read()){};
+                sqlConnection.Close();
+                }
             MainWindow.MainFrame.Navigate(new MenuKaart());
         }
 

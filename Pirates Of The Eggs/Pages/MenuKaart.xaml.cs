@@ -30,6 +30,7 @@ namespace Pirates_Of_The_Eggs
             InitializeComponent();
             SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + "Order No. ";
             SelectedGerechtenPrice.Text = Main.TableChoice + "\r\n";
+            LoadOrderNumber(null, null);
             Amount.Text = "\r\n";
         }
 
@@ -124,6 +125,49 @@ namespace Pirates_Of_The_Eggs
 
                 SqlCommand cmd = new SqlCommand(Opslaan, sqlConnection);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            }
+        }
+
+        private void BetalenButton(object sender, RoutedEventArgs e)
+        {
+            string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+            string cmdString = string.Empty;
+
+            using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+            {
+                sqlConnection.Open();
+                cmdString = $@"UPDATE Tafels SET TafelGebruik=0 WHERE TafelID= {Main.TableChoice}";
+
+
+                SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
+                SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                };
+                sqlConnection.Close();
+            }
+        }
+
+        private void LoadOrderNumber(object sender, RoutedEventArgs e)
+        {
+            string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+            string cmdString = string.Empty;
+            int DataReader = 0;
+
+            using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+            {
+                sqlConnection.Open();
+                cmdString = $@"select MAX(OrderID) as MaxID from Orders where TafelID = {Main.TableChoice}";
+
+
+                SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
+                SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    DataReader = sqlDataReader.GetInt32(sqlDataReader.GetOrdinal("MaxID"));
+                };
+                SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + DataReader.ToString();
+                sqlConnection.Close();
             }
         }
     }

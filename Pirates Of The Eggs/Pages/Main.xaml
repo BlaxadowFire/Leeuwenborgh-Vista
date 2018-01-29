@@ -12,27 +12,28 @@
         <Button Content="Menukaart" HorizontalAlignment="Left" Margin="24,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF4388CC" Click="ShowMenuKaart_Click" />
         <Button Content="Vaste klanten" HorizontalAlignment="Left" Margin="178,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF4388CC" />
         <Button Content="Bonnen" HorizontalAlignment="Left" Margin="333,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF4388CC" Click="ShowBonnen_Click" />
-        <Button Content="1" HorizontalAlignment="Left" Margin="43,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="2" HorizontalAlignment="Left" Margin="199,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="3" HorizontalAlignment="Left" Margin="356,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="4" HorizontalAlignment="Left" Margin="512,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="5" HorizontalAlignment="Left" Margin="668,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="6" HorizontalAlignment="Left" Margin="43,128,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="7" HorizontalAlignment="Left" Margin="199,128,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="8" HorizontalAlignment="Left" Margin="356,128,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="9" HorizontalAlignment="Left" Margin="512,128,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="14" HorizontalAlignment="Left" Margin="512,202,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="10" HorizontalAlignment="Left" Margin="668,128,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="11" HorizontalAlignment="Left" Margin="43,202,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="12" HorizontalAlignment="Left" Margin="199,202,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="13" HorizontalAlignment="Left" Margin="356,202,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="14" HorizontalAlignment="Left" Margin="512,202,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="15" HorizontalAlignment="Left" Margin="668,202,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="16" HorizontalAlignment="Left" Margin="43,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="17" HorizontalAlignment="Left" Margin="199,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="18" HorizontalAlignment="Left" Margin="356,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="19" HorizontalAlignment="Left" Margin="512,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
-        <Button Content="20" HorizontalAlignment="Left" Margin="668,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+        <Grid Name="TableButtons">
+            <Button Content="1" HorizontalAlignment="Left" Margin="43,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="2" HorizontalAlignment="Left" Margin="199,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="3" HorizontalAlignment="Left" Margin="356,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="4" HorizontalAlignment="Left" Margin="512,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="5" HorizontalAlignment="Left" Margin="668,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="6" HorizontalAlignment="Left" Margin="43,128,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="7" HorizontalAlignment="Left" Margin="199,128,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="8" HorizontalAlignment="Left" Margin="356,128,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="9" HorizontalAlignment="Left" Margin="512,128,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="10" HorizontalAlignment="Left" Margin="668,128,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="11" HorizontalAlignment="Left" Margin="43,202,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="12" HorizontalAlignment="Left" Margin="199,202,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="13" HorizontalAlignment="Left" Margin="356,202,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="14" HorizontalAlignment="Left" Margin="512,202,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="15" HorizontalAlignment="Left" Margin="668,202,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="16" HorizontalAlignment="Left" Margin="43,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="17" HorizontalAlignment="Left" Margin="199,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="18" HorizontalAlignment="Left" Margin="356,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="19" HorizontalAlignment="Left" Margin="512,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+            <Button Content="20" HorizontalAlignment="Left" Margin="668,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
+        </Grid>
         <TextBlock HorizontalAlignment="Left" Margin="433,0,0,0" TextWrapping="Wrap" Text="Tijd" VerticalAlignment="Top" Width="414" Foreground="Black" Background="#FFCDCDCD" Height="24"/>
         <Button Content="Agenda" HorizontalAlignment="Left" VerticalAlignment="Top" Width="433" Height="24" Click="Button_Click"/>
     </Grid>
