@@ -63,6 +63,7 @@ namespace Pirates_Of_The_Eggs
 
         private void Tafel_Click(object sender, RoutedEventArgs e)
         {
+            CheckTableFree(sender, e);
             TableChoice = Convert.ToInt16(((Button)sender).Content);
 
             if (TableInfo.DynamicTableRead(TableChoice) == 1)
@@ -108,6 +109,11 @@ namespace Pirates_Of_The_Eggs
         private void BTNCheck_Click(object sender, RoutedEventArgs e)
         {
             BTNCheck.Content = TableInfo.DynamicTableRead(Convert.ToInt16(TXTCheck.Text));
+        }
+
+        private void Btn_ClickRefresh(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MainFrame.Navigate(new Main());
         }
     }
 }

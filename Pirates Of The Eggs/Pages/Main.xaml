@@ -37,6 +37,7 @@
             <Grid Name="CheckGrid">
                 <TextBox Name="TXTCheck" HorizontalAlignment="Left" Height="23" Margin="720,406,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
             <Button Name="BTNCheck" Content="Button" HorizontalAlignment="Left" Margin="748,435,0,0" VerticalAlignment="Top" Width="75" Click="BTNCheck_Click"/>
+                <Button Content="Refresh" HorizontalAlignment="Left" Margin="748,391,0,0" VerticalAlignment="Top" Width="75" Click="Btn_ClickRefresh"/>
             </Grid>
             
         </Grid>
