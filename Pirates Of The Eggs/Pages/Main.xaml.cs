@@ -107,7 +107,7 @@ namespace Pirates_Of_The_Eggs
 
         private void BTNCheck_Click(object sender, RoutedEventArgs e)
         {
-            LBLCheck.Content = TableInfo.DynamicTableRead(Convert.ToInt16(TXTCheck.Text));
+            BTNCheck.Content = TableInfo.DynamicTableRead(Convert.ToInt16(TXTCheck.Text));
         }
     }
 }
