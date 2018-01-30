@@ -33,7 +33,6 @@ namespace Pirates_Of_The_Eggs
             SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + "Order No. ";
             SelectedGerechtenPrice.Text = Main.TableChoice + "\r\n";
             OrderIDCheck(null,null);
-            LoadOrderNumber(null, null);
             Amount.Text = "\r\n";
         }
 
@@ -82,6 +81,7 @@ namespace Pirates_Of_The_Eggs
             string Price =string.Empty;
             int Amount;
             DataRowView drv = (DataRowView)MyDataGrid.SelectedItem;
+
             if (drv != null)
             {
                 Order = drv[1].ToString();
@@ -92,6 +92,11 @@ namespace Pirates_Of_The_Eggs
                 }
                 Amount = Convert.ToInt32(TxtBlockNumber.Text);
                 this.Amount.Text = this.Amount.Text + "\r\n" + Amount;
+                for (int i = 0; i < Amount; i++)
+                {
+                    LoadOrderNumber(sender, e, Convert.ToInt32(drv[0]));
+                }
+
                 SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + Order;
                 SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + "\r\n" + Price;
                 Btn_ClickClear(sender, e);
@@ -172,7 +177,7 @@ namespace Pirates_Of_The_Eggs
             }
         }
 
-        private void LoadOrderNumber(object sender, RoutedEventArgs e)
+        private void LoadOrderNumber(object sender, RoutedEventArgs e, int x)
         {
             
             string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
@@ -180,7 +185,7 @@ namespace Pirates_Of_The_Eggs
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
                 sqlConnection.Open();
-                cmdString = $"INSERT INTO [Orders] values ({/*GerechtID*/1}, {/*OrderID*/TableInfo.CurrentOrderNo}, {/*TafelID*/Main.TableChoice}, {/*Betaald*/0})";
+                cmdString = $"INSERT INTO [Orders] values ({/*GerechtID*/x}, {/*OrderID*/TableInfo.CurrentOrderNo}, {/*TafelID*/Main.TableChoice}, {/*Betaald*/0})";
                     //cmd1.Connection = sqlConnection;
                     //cmd1.Parameters.AddWithValue("@TafelID", SelectedGerechten.Text);
                     SqlCommand cmdCommand = new SqlCommand(cmdString, sqlConnection);
