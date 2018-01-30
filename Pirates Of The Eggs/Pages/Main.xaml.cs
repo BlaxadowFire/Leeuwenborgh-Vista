@@ -107,11 +107,6 @@ namespace Pirates_Of_The_Eggs
             MainWindow.MainFrame.Navigate(new Agenda()); 
         }
 
-        private void BTNCheck_Click(object sender, RoutedEventArgs e)
-        {
-            BTNCheck.Content = TableInfo.DynamicTableRead(Convert.ToInt16(TXTCheck.Text));
-        }
-
         private void Btn_ClickRefresh(object sender, RoutedEventArgs e)
         {
             MainWindow.MainFrame.Navigate(new Main());

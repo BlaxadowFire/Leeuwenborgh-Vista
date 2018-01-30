@@ -207,7 +207,7 @@ namespace Pirates_Of_The_Eggs
             {
                 
                 sqlConnection.Open();
-                if (TableInfo.TableAlreadyTaken == true)
+                if (TableInfo.TableAlreadyTaken && !CheckBetaald())
                 {
                     cmdString = $@"select MAX(OrderID) as MaxID from Orders where TafelID = {Main.TableChoice}";
                 }
@@ -218,12 +218,14 @@ namespace Pirates_Of_The_Eggs
 
                 SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
                 SqlDataReader sqlDataReader = cmd.ExecuteReader();
-                CheckBetaald();
                 while (sqlDataReader.Read())
                 {
-                    DataReader = sqlDataReader.GetInt32(sqlDataReader.GetOrdinal("MaxID"));
+                    try
+                    {
+                        DataReader = sqlDataReader.GetInt32(sqlDataReader.GetOrdinal("MaxID"));
+                    }catch (Exception){ }
                 }
-                if (TableInfo.TableAlreadyTaken == false || TableInfo.TableAlreadyTaken==true && TableInfo.IsBetaald==1)
+                if (!TableInfo.TableAlreadyTaken || TableInfo.TableAlreadyTaken && CheckBetaald())
                 {
                     DataReader++;
                 }
@@ -242,7 +244,7 @@ namespace Pirates_Of_The_Eggs
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
                 sqlConnection.Open();
-                cmdString = $"Select Betaald as Betaald from Orders where OrderID={TableInfo.CurrentOrderNo}";
+                cmdString = $"Select Betaald as Betaald from Orders where OrderID = {TableInfo.CurrentOrderNo} AND TafelID = {Main.TableChoice}";
                 SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
                 SqlDataReader sqlDataReader = cmd.ExecuteReader();
                 while (sqlDataReader.Read())
@@ -250,7 +252,11 @@ namespace Pirates_Of_The_Eggs
                     TableInfo.IsBetaald = sqlDataReader.GetInt32(sqlDataReader.GetOrdinal("Betaald"));
                 }
                 sqlConnection.Close();
-                return (true);
+                if (TableInfo.IsBetaald == 1)
+                {
+                    return true;
+                }
+                return false;
             }
             
             
