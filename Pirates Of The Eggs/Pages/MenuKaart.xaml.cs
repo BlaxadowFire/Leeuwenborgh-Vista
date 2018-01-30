@@ -30,6 +30,7 @@ namespace Pirates_Of_The_Eggs
             InitializeComponent();
             SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + "Order No. ";
             SelectedGerechtenPrice.Text = Main.TableChoice + "\r\n";
+            OrderIDCheck(null,null);
             LoadOrderNumber(null, null);
             Amount.Text = "\r\n";
         }
@@ -137,7 +138,7 @@ namespace Pirates_Of_The_Eggs
             {
                 sqlConnection.Open();
                 cmdString = $@"UPDATE Tafels SET TafelGebruik=0 WHERE TafelID= {Main.TableChoice}";
-                TableInfo.DynamicTable(Main.TableChoice);
+                TableInfo.DynamicTable0(Main.TableChoice);
 
                 SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
                 SqlDataReader sqlDataReader = cmd.ExecuteReader();
@@ -156,7 +157,7 @@ namespace Pirates_Of_The_Eggs
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
                 sqlConnection.Open();
-                cmdString = $"INSERT INTO [Orders] values ({/*GerechtID*/1}, {/*OrderID*/21}, {/*TafelID*/Main.TableChoice}, {/*Betaald*/0})";
+                cmdString = $"INSERT INTO [Orders] values ({/*GerechtID*/1}, {/*OrderID*/TableInfo.CurrentOrderNo}, {/*TafelID*/Main.TableChoice}, {/*Betaald*/0})";
                     //cmd1.Connection = sqlConnection;
                     //cmd1.Parameters.AddWithValue("@TafelID", SelectedGerechten.Text);
                     SqlCommand cmdCommand = new SqlCommand(cmdString, sqlConnection);
@@ -176,11 +177,15 @@ namespace Pirates_Of_The_Eggs
             int DataReader = 0;
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
-                if (TableInfo.DynamicTableRead(Main.TableChoice) == 1)
+                sqlConnection.Open();
+                if (TableInfo.TableAlreadyTaken == true)
                 {
-                    
+                    cmdString = $@"select MAX(OrderID) as MaxID from Orders where TafelID = {Main.TableChoice}";
                 }
-                cmdString = $@"select MAX(OrderID) as MaxID from Orders where TafelID = {Main.TableChoice}";
+                else
+                {
+                    cmdString = $@"select MAX(OrderID) as MaxID from Orders";
+                }
 
 
                 SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
@@ -189,9 +194,11 @@ namespace Pirates_Of_The_Eggs
                 {
                     DataReader = sqlDataReader.GetInt32(sqlDataReader.GetOrdinal("MaxID"));
                 }
-                ;
-
-
+                if (TableInfo.TableAlreadyTaken == false)
+                {
+                    DataReader++;
+                }
+                TableInfo.CurrentOrderNo = DataReader;
 
                 SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + DataReader.ToString();
                 sqlConnection.Close();
