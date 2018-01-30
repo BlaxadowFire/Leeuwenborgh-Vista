@@ -54,7 +54,7 @@ namespace Pirates_Of_The_Eggs
                     //{
                     //((Button)obj).Background = Brushes.Red;
                     ((Button)TableButtons.Children[DataReader-1]).Background = Brushes.Red;
-                    TableInfo.DynamicTable(DataReader);
+                    TableInfo.DynamicTable1(DataReader);
                     //}
                 }
                 sqlConnection.Close();
@@ -65,7 +65,15 @@ namespace Pirates_Of_The_Eggs
         {
             TableChoice = Convert.ToInt16(((Button)sender).Content);
 
-                string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+            if (TableInfo.DynamicTableRead(TableChoice) == 1)
+            {
+                TableInfo.TableAlreadyTaken = true;
+            }
+            else
+            {
+                TableInfo.TableAlreadyTaken = false;
+            }
+            string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
                 string cmdString;
 
                 using (SqlConnection sqlConnection = new SqlConnection(strConnection))

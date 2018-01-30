@@ -29,108 +29,108 @@ namespace Pirates_Of_The_Eggs
         public static int Table19;
         public static int Table20;
 
-        public static void DynamicTable(int x)
+        public static void DynamicTable1(int x)
         {
             switch (x)
             {
                 case 1:
                 {
-                    Table1 = Table1 == 0 ? 1 : 0;
+                    Table1 = 1;
                     break;
                 }
                 case 2:
                 {
-                    Table2 = Table2 == 0 ? 1 : 0;
+                    Table2 = 1;
                         break;
                 }
                 case 3:
                 {
-                    Table3 = Table3 == 0 ? 1 : 0;
+                    Table3 = 1;
                         break;
                 }
                 case 4:
                 {
-                    Table4 = Table4 == 0 ? 1 : 0;
+                    Table4 = 1;
                         break;
                 }
                 case 5:
                 {
-                    Table5 = Table5 == 0 ? 1 : 0;
+                    Table5 = 1;
                         break;
                 }
                 case 6:
                 {
-                    Table6 = Table6 == 0 ? 1 : 0;
+                    Table6 = 1;
                         break;
                 }
                 case 7:
                 {
-                    Table7 = Table7 == 0 ? 1 : 0;
+                    Table7 = 1;
                         break;
                 }
                 case 8:
                 {
-                    Table8 = Table8 == 0 ? 1 : 0;
+                    Table8 = 1;
                         break;
                 }
                 case 9:
                 {
-                    Table9 = Table9 == 0 ? 1 : 0;
+                    Table9 = 1;
                         break;
                 }
                 case 10:
                 {
-                    Table10 = Table10 == 0 ? 1 : 0;
+                    Table10 = 1;
                         break;
                 }
                 case 11:
                 {
-                    Table11 = Table11 == 0 ? 1 : 0;
+                    Table11 = 1;
                         break;
                 }
                 case 12:
                 {
-                    Table12 = Table12 == 0 ? 1 : 0;
+                    Table12 = 1;
                         break;
                 }
                 case 13:
                 {
-                    Table13 = Table13 == 0 ? 1 : 0;
+                    Table13 = 1;
                         break;
                 }
                 case 14:
                 {
-                    Table14 = Table14 == 0 ? 1 : 0;
+                    Table14 = 1;
                         break;
                 }
                 case 15:
                 {
-                    Table15 = Table15 == 0 ? 1 : 0;
+                    Table15 = 1;
                         break;
                 }
                 case 16:
                 {
-                    Table16 = Table16 == 0 ? 1 : 0;
+                    Table16 = 1;
                         break;
                 }
                 case 17:
                 {
-                    Table17 = Table17 == 0 ? 1 : 0;
+                    Table17 = 1;
                         break;
                 }
                 case 18:
                 {
-                    Table18 = Table18 == 0 ? 1 : 0;
+                    Table18 = 1;
                         break;
                 }
                 case 19:
                 {
-                    Table19 = Table19 == 0 ? 1 : 0;
+                    Table19 = 1;
                         break;
                 }
                 case 20:
                 {
-                    Table20 = Table20 == 0 ? 1 : 0;
+                    Table20 = 1;
                         break;
                 }
             }
@@ -223,5 +223,9 @@ namespace Pirates_Of_The_Eggs
             }
             return 0;
         }
+
+        public static bool TableAlreadyTaken;
+
+        public static int CurrentOrderNo;
     }
 }
