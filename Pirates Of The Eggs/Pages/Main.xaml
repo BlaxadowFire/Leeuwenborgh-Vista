@@ -9,10 +9,10 @@
       Title="Main">
 
     <Grid>
-        <Button Content="Menukaart" HorizontalAlignment="Left" Margin="24,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF4388CC" Click="ShowMenuKaart_Click" />
-        <Button Content="Vaste klanten" HorizontalAlignment="Left" Margin="178,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF4388CC" />
-        <Button Content="Bonnen" HorizontalAlignment="Left" Margin="333,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF4388CC" Click="ShowBonnen_Click" />
-        <Button Content="Refresh" HorizontalAlignment="Left" Margin="487,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF4388CC" Click="Btn_ClickRefresh"/>
+        <Button Content="Menukaart" HorizontalAlignment="Left" Margin="24,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="ShowMenuKaart_Click" />
+        <Button Content="Vaste klanten" HorizontalAlignment="Left" Margin="178,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" />
+        <Button Content="Bonnen" HorizontalAlignment="Left" Margin="333,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="ShowBonnen_Click" />
+        <Button Content="Refresh" HorizontalAlignment="Left" Margin="487,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="Btn_ClickRefresh"/>
         <Grid Name="TableButtons">
             <Button Content="1" HorizontalAlignment="Left" Margin="43,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
             <Button Content="2" HorizontalAlignment="Left" Margin="199,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
@@ -36,7 +36,7 @@
             <Button Content="20" HorizontalAlignment="Left" Margin="668,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
 
             <Grid Name="CheckGrid">
-                <TextBox Name="TXTCheck" HorizontalAlignment="Left" Height="23" Margin="720,406,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                <TextBox Name="TXTCheck" HorizontalAlignment="Left" Height="23" Margin="720,406,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="TXTCheck_TextChanged"/>
                 <Button Name="BTNCheck" Content="Button" HorizontalAlignment="Left" Margin="748,435,0,0" VerticalAlignment="Top" Width="75" Click="BTNCheck_Click"/>
             </Grid>
 

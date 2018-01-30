@@ -115,5 +115,10 @@ namespace Pirates_Of_The_Eggs
         {
             MainWindow.MainFrame.Navigate(new Main());
         }
+
+        private void TXTCheck_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
