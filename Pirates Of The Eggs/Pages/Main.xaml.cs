@@ -69,6 +69,7 @@ namespace Pirates_Of_The_Eggs
             if (TableInfo.DynamicTableRead(TableChoice) == 1)
             {
                 TableInfo.TableAlreadyTaken = true;
+                MenuKaart.CheckBetaald();
             }
             else
             {
@@ -114,6 +115,11 @@ namespace Pirates_Of_The_Eggs
         private void Btn_ClickRefresh(object sender, RoutedEventArgs e)
         {
             MainWindow.MainFrame.Navigate(new Main());
+        }
+
+        private void TXTCheck_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

@@ -4,9 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Pirates_Of_The_Eggs"
-      mc:Ignorable="d" 
-      d:DesignHeight="500" d:DesignWidth="850"
-      Title="MenuKaart">
+      mc:Ignorable="d" d:DesignWidth="850"
+      Title="MenuKaart" Height="474">
 
     <Grid>
         <TextBlock Name="TxtBlockNumber" HorizontalAlignment="Left" Margin="0,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="39" Width="210" Foreground="#FF040404">
@@ -42,6 +41,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <DataGrid Name="OrderDataGrid" HorizontalAlignment="Left" Height="148" VerticalAlignment="Top" Width="317" CanUserResizeRows="False" CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" IsReadOnly="True" Margin="525,42,0,0"/>
         <Grid HorizontalAlignment="Left" Height="180" Margin="215,190,0,0" VerticalAlignment="Top" Width="310">
             <Button Content="Drank" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="60" Background="#FF4388CC" Click="GerechtenFilter"/>
             <Button Content="Soep" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="60" Margin="155,0,0,0" Background="#FF4388CC" Click="GerechtenFilter"/>
@@ -50,17 +50,17 @@
             <Button Content="Dessert" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="60" Margin="0,120,0,0" Background="#FF4388CC" Click="GerechtenFilter"/>
             <Button Content="Alle" HorizontalAlignment="Left" VerticalAlignment="Top" Width="155" Height="60" Margin="155,120,0,0" Background="#FF4388CC" Click="GerechtenFilter"/>
         </Grid>
-        <TextBox Name="SelectedGerechten" Height="190" Margin="564,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" Text="Tafel: " IsEnabled="False" AllowDrop="False" HorizontalAlignment="Left"/>
+        <TextBox Name="SelectedGerechten" Height="42" Margin="564,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" Text="Tafel: " IsEnabled="False" AllowDrop="False" HorizontalAlignment="Left"/>
         <TextBox HorizontalAlignment="Left" Height="61" Margin="525,190,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="317"/>
         <Grid HorizontalAlignment="Left" Height="119" Margin="525,251,0,0" VerticalAlignment="Top" Width="312">
-            <Button Content="Opslaan" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="2,-1,0,0" Background="#FF4388CC" Click="Btn_SendAantal"/>
-            <Button Content="Betalen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="162,-1,-5,0" Background="#FF4388CC" Click="BetalenButton"/>
-            <Button Content="Terug" HorizontalAlignment="Left" Width="160" Margin="2,59,0,0" Background="#FF4388CC" Click="ShowTerug_Click"/>
-            <Button Content="Opsplitsen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="162,59,-5,0" Background="#FF4388CC" Click="ShowOpsplitsen_Click"/>
+            <Button Content="Opslaan" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="2,-1,0,0" Background="#FF069913" Click="Btn_SendAantal"/>
+            <Button Content="Betalen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="162,-1,-5,0" Background="#FF069913" Click="BetalenButton"/>
+            <Button Content="Terug" HorizontalAlignment="Left" Width="160" Margin="2,59,0,0" Background="#FF069913" Click="ShowTerug_Click"/>
+            <Button Content="Opsplitsen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="162,59,-5,0" Background="#FF069913" Click="ShowOpsplitsen_Click"/>
         </Grid>
-        <TextBox x:Name="SelectedGerechtenPrice" HorizontalAlignment="Left" Height="190" Margin="654,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188"  IsEnabled="False"/>
-        <TextBox Name="Amount" HorizontalAlignment="Left" Height="190" Margin="525,0,0,0" VerticalAlignment="Top" Width="39" IsEnabled="False"/>
-    <!--
+        <TextBox x:Name="SelectedGerechtenPrice" HorizontalAlignment="Left" Height="42" Margin="654,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="188"  IsEnabled="False"/>
+        <TextBox Name="Amount" HorizontalAlignment="Left" Height="42" Margin="525,0,0,0" VerticalAlignment="Top" Width="39" IsEnabled="False"/>
+        <!--
         <ListBox Name="myListBox">
             <ListBoxItem>
                 <StackPanel Name="myStackPanel" Orientation="Horizontal">

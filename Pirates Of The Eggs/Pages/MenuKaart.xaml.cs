@@ -25,13 +25,14 @@ namespace Pirates_Of_The_Eggs
     {
         Pirates_of_the_eggsDataSet datasource = new Pirates_of_the_eggsDataSet();
 
+        public bool TableFree = true;
+
         public MenuKaart()
         {
             InitializeComponent();
             SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + "Order No. ";
             SelectedGerechtenPrice.Text = Main.TableChoice + "\r\n";
             OrderIDCheck(null,null);
-            LoadOrderNumber(null, null);
             Amount.Text = "\r\n";
         }
 
@@ -80,6 +81,7 @@ namespace Pirates_Of_The_Eggs
             string Price =string.Empty;
             int Amount;
             DataRowView drv = (DataRowView)MyDataGrid.SelectedItem;
+
             if (drv != null)
             {
                 Order = drv[1].ToString();
@@ -90,6 +92,11 @@ namespace Pirates_Of_The_Eggs
                 }
                 Amount = Convert.ToInt32(TxtBlockNumber.Text);
                 this.Amount.Text = this.Amount.Text + "\r\n" + Amount;
+                for (int i = 0; i < Amount; i++)
+                {
+                    LoadOrderNumber(sender, e, Convert.ToInt32(drv[0]));
+                }
+
                 SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + Order;
                 SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + "\r\n" + Price;
                 Btn_ClickClear(sender, e);
@@ -147,9 +154,30 @@ namespace Pirates_Of_The_Eggs
                 };
                 sqlConnection.Close();
             }
+            Betaald(sender,e);
         }
 
-        private void LoadOrderNumber(object sender, RoutedEventArgs e)
+        private void Betaald(object sender, RoutedEventArgs e)
+        {
+            string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+            string cmdString = string.Empty;
+
+            using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+            {
+                sqlConnection.Open();
+                cmdString = $@"UPDATE Orders SET Betaald=1 WHERE TafelID= {Main.TableChoice}and OrderID={TableInfo.CurrentOrderNo}";
+                TableInfo.DynamicTable0(Main.TableChoice);
+
+                SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
+                SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                };
+                sqlConnection.Close();
+            }
+        }
+
+        private void LoadOrderNumber(object sender, RoutedEventArgs e, int x)
         {
             
             string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
@@ -157,7 +185,7 @@ namespace Pirates_Of_The_Eggs
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
                 sqlConnection.Open();
-                cmdString = $"INSERT INTO [Orders] values ({/*GerechtID*/1}, {/*OrderID*/TableInfo.CurrentOrderNo}, {/*TafelID*/Main.TableChoice}, {/*Betaald*/0})";
+                cmdString = $"INSERT INTO [Orders] values ({/*GerechtID*/x}, {/*OrderID*/TableInfo.CurrentOrderNo}, {/*TafelID*/Main.TableChoice}, {/*Betaald*/0})";
                     //cmd1.Connection = sqlConnection;
                     //cmd1.Parameters.AddWithValue("@TafelID", SelectedGerechten.Text);
                     SqlCommand cmdCommand = new SqlCommand(cmdString, sqlConnection);
@@ -177,6 +205,7 @@ namespace Pirates_Of_The_Eggs
             int DataReader = 0;
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
+                
                 sqlConnection.Open();
                 if (TableInfo.TableAlreadyTaken == true)
                 {
@@ -187,14 +216,14 @@ namespace Pirates_Of_The_Eggs
                     cmdString = $@"select MAX(OrderID) as MaxID from Orders";
                 }
 
-
                 SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
                 SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                CheckBetaald();
                 while (sqlDataReader.Read())
                 {
                     DataReader = sqlDataReader.GetInt32(sqlDataReader.GetOrdinal("MaxID"));
                 }
-                if (TableInfo.TableAlreadyTaken == false)
+                if (TableInfo.TableAlreadyTaken == false || TableInfo.TableAlreadyTaken==true && TableInfo.IsBetaald==1)
                 {
                     DataReader++;
                 }
@@ -203,6 +232,28 @@ namespace Pirates_Of_The_Eggs
                 SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + DataReader.ToString();
                 sqlConnection.Close();
             }
+        }
+
+        public static bool CheckBetaald()
+        {
+            string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+            string cmdString = string.Empty;
+            
+            using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+            {
+                sqlConnection.Open();
+                cmdString = $"Select Betaald as Betaald from Orders where OrderID={TableInfo.CurrentOrderNo}";
+                SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
+                SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    TableInfo.IsBetaald = sqlDataReader.GetInt32(sqlDataReader.GetOrdinal("Betaald"));
+                }
+                sqlConnection.Close();
+                return (true);
+            }
+            
+            
         }
     }
 }

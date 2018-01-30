@@ -23,8 +23,8 @@
             <Button Content="0" HorizontalAlignment="Left" Margin="70,180,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
             <Button Content="&lt;" HorizontalAlignment="Left" Margin="140,180,0,0" VerticalAlignment="Top" Width="70" Height="60" Background="White"/>
         </Grid>
-        <Button Content="Splitsen" HorizontalAlignment="Left" Margin="315,0,0,0" VerticalAlignment="Top" Width="210" Height="50"/>
-        <Button Content="Betalen" HorizontalAlignment="Left" Margin="315,134,0,0" VerticalAlignment="Top" Width="210" Height="50"/>
+        <Button Content="Splitsen" HorizontalAlignment="Left" Margin="315,0,0,0" VerticalAlignment="Top" Width="210" Height="50" Background="#FF4388CC"/>
+        <Button Content="Betalen" HorizontalAlignment="Left" Margin="315,134,0,0" VerticalAlignment="Top" Width="210" Height="50" Background="#FF4388CC"/>
         <TextBlock HorizontalAlignment="Left" Margin="315,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="39" Width="210" Foreground="#FF040404">
             <TextBlock.Background>
                 <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
