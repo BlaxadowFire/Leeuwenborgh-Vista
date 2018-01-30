@@ -9,7 +9,7 @@
       Title="Agenda">
 
     <Grid>
-        <Calendar HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="195" Margin="0,10,0,0" Style="{DynamicResource CalendarStyle1}">
+        <Calendar Name="Calendar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="195" Margin="100,10,0,0" Style="{DynamicResource CalendarStyle1}">
             <Calendar.Resources>
                 <Style x:Key="CalendarStyle1" TargetType="{x:Type Calendar}">
                     <Setter Property="Foreground" Value="#FF333333"/>
@@ -46,7 +46,8 @@
                 </Style>
             </Calendar.Resources>
         </Calendar>
-        <TextBox HorizontalAlignment="Left" Height="433" Margin="425,0,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="417"/>
+        <TextBox Name="Reservering" HorizontalAlignment="Left" Height="433" Margin="628,0,0,0" TextWrapping="Wrap" Text="Reservering" VerticalAlignment="Top" Width="214"/>
         <Button Content="Terug" HorizontalAlignment="Left" Margin="757,439,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <TextBox Name="LastName" HorizontalAlignment="Left" Height="433" Margin="426,0,0,0" TextWrapping="Wrap" Text="Achternaam" VerticalAlignment="Top" Width="202"/>
     </Grid>
 </Page>

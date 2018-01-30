@@ -27,6 +27,13 @@ GerechtID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
 SoortNaam varchar(50) NOT NULL
 );
 
+CREATE TABLE Reserveringen(
+ID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+LastName varchar(50) NOT NULL,
+ReservedDateTime DateTime NOT NULL,
+);
+
+
 INSERT INTO GerechtCategorie
 VALUES('Voorgerecht'),
 ('Soep'),
