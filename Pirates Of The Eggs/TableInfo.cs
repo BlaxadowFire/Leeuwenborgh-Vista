@@ -334,5 +334,7 @@ namespace Pirates_Of_The_Eggs
         public static bool TableAlreadyTaken;
 
         public static int CurrentOrderNo;
+
+        public static int IsBetaald;
     }
 }
