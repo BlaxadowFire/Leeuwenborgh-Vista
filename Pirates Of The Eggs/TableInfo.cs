@@ -136,6 +136,113 @@ namespace Pirates_Of_The_Eggs
             }
         }
 
+
+        public static void DynamicTable0(int x)
+        {
+            switch (x)
+            {
+                case 1:
+                    {
+                        Table1 =0;
+                        break;
+                    }
+                case 2:
+                    {
+                        Table2 =0;
+                        break;
+                    }
+                case 3:
+                    {
+                        Table3 =0;
+                        break;
+                    }
+                case 4:
+                    {
+                        Table4 =0;
+                        break;
+                    }
+                case 5:
+                    {
+                        Table5 =0;
+                        break;
+                    }
+                case 6:
+                    {
+                        Table6 =0;
+                        break;
+                    }
+                case 7:
+                    {
+                        Table7 =0;
+                        break;
+                    }
+                case 8:
+                    {
+                        Table8 =0;
+                        break;
+                    }
+                case 9:
+                    {
+                        Table9 =0;
+                        break;
+                    }
+                case 10:
+                    {
+                        Table10 =0;
+                        break;
+                    }
+                case 11:
+                    {
+                        Table11 =0;
+                        break;
+                    }
+                case 12:
+                    {
+                        Table12 =0;
+                        break;
+                    }
+                case 13:
+                    {
+                        Table13 =0;
+                        break;
+                    }
+                case 14:
+                    {
+                        Table14 =0;
+                        break;
+                    }
+                case 15:
+                    {
+                        Table15 =0;
+                        break;
+                    }
+                case 16:
+                    {
+                        Table16 =0;
+                        break;
+                    }
+                case 17:
+                    {
+                        Table17 =0;
+                        break;
+                    }
+                case 18:
+                    {
+                        Table18 =0;
+                        break;
+                    }
+                case 19:
+                    {
+                        Table19 =0;
+                        break;
+                    }
+                case 20:
+                    {
+                        Table20 =0;
+                        break;
+                    }
+            }
+        }
         public static int DynamicTableRead(int x)
         {
             switch (x)
