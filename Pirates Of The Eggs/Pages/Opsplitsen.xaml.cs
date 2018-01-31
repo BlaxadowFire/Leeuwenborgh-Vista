@@ -27,7 +27,7 @@ namespace Pirates_Of_The_Eggs
 
         private void ShowMenuKaart_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.MainFrame.Navigate(new MenuKaart());
+            MainWindow.MainFrame.Navigate(new Main());
         }
 
         private void Btn_ClickNumber(object sender, RoutedEventArgs e)

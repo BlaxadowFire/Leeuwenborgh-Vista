@@ -62,7 +62,7 @@
         </Grid>
         <Label Height="42" Margin="564,0,0,0" VerticalAlignment="Top" Width="90" Content="Tafel: " IsEnabled="False" AllowDrop="False" HorizontalAlignment="Left"/>
         <Label Height="42" Margin="564,15,0,0" VerticalAlignment="Top" Width="90" Content="OrderNo: " IsEnabled="False" AllowDrop="False" HorizontalAlignment="Left"/>
-        <TextBox Name="TotaalPrijs" HorizontalAlignment="Left" Height="61" Margin="525,190,0,0" TextWrapping="Wrap" Text="Totaalprijs" VerticalAlignment="Top" Width="317"/>
+        <TextBox Name="TotaalPrijs" HorizontalAlignment="Left" Height="61" Margin="525,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="317"/>
         <Grid HorizontalAlignment="Left" Height="119" Margin="525,251,0,0" VerticalAlignment="Top" Width="312">
             <Button Content="Opslaan" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="2,-1,0,0" Background="#FF069913" Click="CheckOrder"/>
             <Button Content="Betalen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="160" Height="60" Margin="162,-1,-5,0" Background="#FF069913" Click="BetalenButton"/>
