@@ -30,10 +30,8 @@ namespace Pirates_Of_The_Eggs
         public MenuKaart()
         {
             InitializeComponent();
-            SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + "Order No. ";
-            SelectedGerechtenPrice.Text = Main.TableChoice + "\r\n";
+            TafelNo.Content = Main.TableChoice;
             OrderIDCheck(null,null);
-            Amount.Text = "\r\n";
         }
 
         private void ShowTerug_Click(object sender, RoutedEventArgs e)
@@ -91,21 +89,20 @@ namespace Pirates_Of_The_Eggs
                     TxtBlockNumber.Text = "1";
                 }
                 Amount = Convert.ToInt32(TxtBlockNumber.Text);
-                this.Amount.Text = this.Amount.Text + "\r\n" + Amount;
                 for (int i = 0; i < Amount; i++)
                 {
                     LoadOrderNumber(sender, e, Convert.ToInt32(drv[0]));
                 }
-
-                SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + Order;
-                SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + "\r\n" + Price;
                 Btn_ClickClear(sender, e);
             } 
         }
 
         private void Btn_ClickNumber(object sender, RoutedEventArgs e)
         {
-            TxtBlockNumber.Text = TxtBlockNumber.Text + ((Button)sender).Content;
+            if (TxtBlockNumber.Text == "" || Convert.ToInt16(TxtBlockNumber.Text) <= 10)
+            {
+                TxtBlockNumber.Text = TxtBlockNumber.Text + ((Button)sender).Content;
+            }
         }
 
         private void Btn_ClickBackspace(object sender, RoutedEventArgs e)
@@ -200,39 +197,45 @@ namespace Pirates_Of_The_Eggs
 
         private void OrderIDCheck(object sender, RoutedEventArgs e)
         {
-            string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
-            string cmdString = string.Empty;
-            int DataReader = 0;
-            using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+            int i = 0;
+            while (i <= 2)
             {
-                
-                sqlConnection.Open();
-                if (TableInfo.TableAlreadyTaken && !CheckBetaald())
+                string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+                string cmdString = string.Empty;
+                int DataReader = 0;
+                using (SqlConnection sqlConnection = new SqlConnection(strConnection))
                 {
-                    cmdString = $@"select MAX(OrderID) as MaxID from Orders where TafelID = {Main.TableChoice}";
-                }
-                else
-                {
-                    cmdString = $@"select MAX(OrderID) as MaxID from Orders";
-                }
 
-                SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
-                SqlDataReader sqlDataReader = cmd.ExecuteReader();
-                while (sqlDataReader.Read())
-                {
-                    try
+                    sqlConnection.Open();
+                    if (TableInfo.TableAlreadyTaken && !CheckBetaald())
                     {
-                        DataReader = sqlDataReader.GetInt32(sqlDataReader.GetOrdinal("MaxID"));
-                    }catch (Exception){ }
-                }
-                if (!TableInfo.TableAlreadyTaken || TableInfo.TableAlreadyTaken && CheckBetaald())
-                {
-                    DataReader++;
-                }
-                TableInfo.CurrentOrderNo = DataReader;
+                        cmdString = $@"select MAX(OrderID) as MaxID from Orders where TafelID = {Main.TableChoice}";
+                    }
+                    else
+                    {
+                        cmdString = $@"select MAX(OrderID) as MaxID from Orders";
+                    }
 
-                SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + DataReader.ToString();
-                sqlConnection.Close();
+                    SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
+                    SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                    while (sqlDataReader.Read())
+                    {
+                        try
+                        {
+                            DataReader = sqlDataReader.GetInt32(sqlDataReader.GetOrdinal("MaxID"));
+                        }
+                        catch (Exception) { }
+                    }
+                    if (!TableInfo.TableAlreadyTaken || TableInfo.TableAlreadyTaken && CheckBetaald())
+                    {
+                        DataReader++;
+                    }
+                    TableInfo.CurrentOrderNo = DataReader;
+
+                    OrderNo.Content = DataReader.ToString();
+                    sqlConnection.Close();
+                }
+                i++;
             }
         }
 
@@ -258,8 +261,58 @@ namespace Pirates_Of_The_Eggs
                 }
                 return false;
             }
-            
-            
+                       
+        }
+        public void RemoveButton(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CheckOrder(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+                string CmdString = string.Empty;
+
+                using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+                {
+                    datasource.Clear();
+                    CmdString = $@"SELECT * FROM Orders INNER JOIN Gerechten ON Orders.GerechtID = Gerechten.GerechtID WHERE OrderID = {TableInfo.CurrentOrderNo} ORDER BY Orders.ID, Orders.GerechtID";
+                    SqlCommand cmd = new SqlCommand(CmdString, sqlConnection);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                    DataTable dt = datasource.Tables["Orders"];
+
+                    sda.Fill(dt);
+                    OrderDataGrid.ItemsSource = dt.DefaultView;
+                    /*
+                    OrderDataGrid.Columns[1].Visibility = Visibility.Hidden;
+                    OrderDataGrid.Columns[2].Visibility = Visibility.Hidden;
+                    OrderDataGrid.Columns[3].Visibility = Visibility.Hidden;
+                    OrderDataGrid.Columns[4].Visibility = Visibility.Hidden;
+                    OrderDataGrid.Columns[5].Visibility = Visibility.Hidden;
+                    OrderDataGrid.Columns[6].Visibility = Visibility.Hidden;
+                    OrderDataGrid.Columns[9].Visibility = Visibility.Hidden;*/
+                }
+                HideOrderGridData();
+            }
+           catch (Exception) { CheckOrder(sender, e); }
+        }
+
+        private void HideOrderGridData()
+        {
+            try
+            {
+                OrderDataGrid.Columns[1].Visibility = Visibility.Hidden;
+                OrderDataGrid.Columns[2].Visibility = Visibility.Hidden;
+                OrderDataGrid.Columns[3].Visibility = Visibility.Hidden;
+                OrderDataGrid.Columns[4].Visibility = Visibility.Hidden;
+                OrderDataGrid.Columns[5].Visibility = Visibility.Hidden;
+                OrderDataGrid.Columns[6].Visibility = Visibility.Hidden;
+                OrderDataGrid.Columns[9].Visibility = Visibility.Hidden;
+            }
+            catch (Exception) { }
         }
     }
 }
