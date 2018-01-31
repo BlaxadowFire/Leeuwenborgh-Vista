@@ -30,10 +30,8 @@ namespace Pirates_Of_The_Eggs
         public MenuKaart()
         {
             InitializeComponent();
-            SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + "Order No. ";
-            SelectedGerechtenPrice.Text = Main.TableChoice + "\r\n";
+            TafelNo.Content = Main.TableChoice;
             OrderIDCheck(null,null);
-            Amount.Text = "\r\n";
         }
 
         private void ShowTerug_Click(object sender, RoutedEventArgs e)
@@ -91,14 +89,10 @@ namespace Pirates_Of_The_Eggs
                     TxtBlockNumber.Text = "1";
                 }
                 Amount = Convert.ToInt32(TxtBlockNumber.Text);
-                this.Amount.Text = this.Amount.Text + "\r\n" + Amount;
                 for (int i = 0; i < Amount; i++)
                 {
                     LoadOrderNumber(sender, e, Convert.ToInt32(drv[0]));
                 }
-
-                SelectedGerechten.Text = SelectedGerechten.Text + "\r\n" + Order;
-                SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + "\r\n" + Price;
                 Btn_ClickClear(sender, e);
             } 
         }
@@ -203,39 +197,45 @@ namespace Pirates_Of_The_Eggs
 
         private void OrderIDCheck(object sender, RoutedEventArgs e)
         {
-            string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
-            string cmdString = string.Empty;
-            int DataReader = 0;
-            using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+            int i = 0;
+            while (i <= 2)
             {
-                
-                sqlConnection.Open();
-                if (TableInfo.TableAlreadyTaken && !CheckBetaald())
+                string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+                string cmdString = string.Empty;
+                int DataReader = 0;
+                using (SqlConnection sqlConnection = new SqlConnection(strConnection))
                 {
-                    cmdString = $@"select MAX(OrderID) as MaxID from Orders where TafelID = {Main.TableChoice}";
-                }
-                else
-                {
-                    cmdString = $@"select MAX(OrderID) as MaxID from Orders";
-                }
 
-                SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
-                SqlDataReader sqlDataReader = cmd.ExecuteReader();
-                while (sqlDataReader.Read())
-                {
-                    try
+                    sqlConnection.Open();
+                    if (TableInfo.TableAlreadyTaken && !CheckBetaald())
                     {
-                        DataReader = sqlDataReader.GetInt32(sqlDataReader.GetOrdinal("MaxID"));
-                    }catch (Exception){ }
-                }
-                if (!TableInfo.TableAlreadyTaken || TableInfo.TableAlreadyTaken && CheckBetaald())
-                {
-                    DataReader++;
-                }
-                TableInfo.CurrentOrderNo = DataReader;
+                        cmdString = $@"select MAX(OrderID) as MaxID from Orders where TafelID = {Main.TableChoice}";
+                    }
+                    else
+                    {
+                        cmdString = $@"select MAX(OrderID) as MaxID from Orders";
+                    }
 
-                SelectedGerechtenPrice.Text = SelectedGerechtenPrice.Text + DataReader.ToString();
-                sqlConnection.Close();
+                    SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
+                    SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                    while (sqlDataReader.Read())
+                    {
+                        try
+                        {
+                            DataReader = sqlDataReader.GetInt32(sqlDataReader.GetOrdinal("MaxID"));
+                        }
+                        catch (Exception) { }
+                    }
+                    if (!TableInfo.TableAlreadyTaken || TableInfo.TableAlreadyTaken && CheckBetaald())
+                    {
+                        DataReader++;
+                    }
+                    TableInfo.CurrentOrderNo = DataReader;
+
+                    OrderNo.Content = DataReader.ToString();
+                    sqlConnection.Close();
+                }
+                i++;
             }
         }
 
