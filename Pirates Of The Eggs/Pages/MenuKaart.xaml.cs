@@ -105,7 +105,10 @@ namespace Pirates_Of_The_Eggs
 
         private void Btn_ClickNumber(object sender, RoutedEventArgs e)
         {
-            TxtBlockNumber.Text = TxtBlockNumber.Text + ((Button)sender).Content;
+            if (TxtBlockNumber.Text == "" || Convert.ToInt16(TxtBlockNumber.Text) <= 10)
+            {
+                TxtBlockNumber.Text = TxtBlockNumber.Text + ((Button)sender).Content;
+            }
         }
 
         private void Btn_ClickBackspace(object sender, RoutedEventArgs e)
@@ -258,8 +261,58 @@ namespace Pirates_Of_The_Eggs
                 }
                 return false;
             }
-            
-            
+                       
+        }
+        public void RemoveButton(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CheckOrder(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+                string CmdString = string.Empty;
+
+                using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+                {
+                    datasource.Clear();
+                    CmdString = $@"SELECT * FROM Orders INNER JOIN Gerechten ON Orders.GerechtID = Gerechten.GerechtID WHERE OrderID = {TableInfo.CurrentOrderNo} ORDER BY Orders.ID, Orders.GerechtID";
+                    SqlCommand cmd = new SqlCommand(CmdString, sqlConnection);
+                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
+
+                    DataTable dt = datasource.Tables["Orders"];
+
+                    sda.Fill(dt);
+                    OrderDataGrid.ItemsSource = dt.DefaultView;
+                    /*
+                    OrderDataGrid.Columns[1].Visibility = Visibility.Hidden;
+                    OrderDataGrid.Columns[2].Visibility = Visibility.Hidden;
+                    OrderDataGrid.Columns[3].Visibility = Visibility.Hidden;
+                    OrderDataGrid.Columns[4].Visibility = Visibility.Hidden;
+                    OrderDataGrid.Columns[5].Visibility = Visibility.Hidden;
+                    OrderDataGrid.Columns[6].Visibility = Visibility.Hidden;
+                    OrderDataGrid.Columns[9].Visibility = Visibility.Hidden;*/
+                }
+                HideOrderGridData();
+            }
+           catch (Exception) { CheckOrder(sender, e); }
+        }
+
+        private void HideOrderGridData()
+        {
+            try
+            {
+                OrderDataGrid.Columns[1].Visibility = Visibility.Hidden;
+                OrderDataGrid.Columns[2].Visibility = Visibility.Hidden;
+                OrderDataGrid.Columns[3].Visibility = Visibility.Hidden;
+                OrderDataGrid.Columns[4].Visibility = Visibility.Hidden;
+                OrderDataGrid.Columns[5].Visibility = Visibility.Hidden;
+                OrderDataGrid.Columns[6].Visibility = Visibility.Hidden;
+                OrderDataGrid.Columns[9].Visibility = Visibility.Hidden;
+            }
+            catch (Exception) { }
         }
     }
 }
