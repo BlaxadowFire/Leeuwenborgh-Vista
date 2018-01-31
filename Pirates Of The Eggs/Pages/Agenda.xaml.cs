@@ -23,31 +23,42 @@ namespace Pirates_Of_The_Eggs
     /// </summary>
     public partial class Agenda : Page
     {
+        Pirates_of_the_eggsDataSet datasource = new Pirates_of_the_eggsDataSet();
+
         public Agenda()
         {
             InitializeComponent();
         }
 
-        public void Datum()
-        {
-            var x = Calendar.SelectedDate;
-
-
-            string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
-            string Opslaan = string.Empty;
-            using (SqlConnection sqlConnection = new SqlConnection(strConnection))
-            {
-                Opslaan = $@"Insert into Reserveringen Values({LastName}, {x})";
-                
-                SqlCommand cmd = new SqlCommand(Opslaan, sqlConnection);
-                SqlDataReader sqlDataReader = cmd.ExecuteReader();
-            }
-            
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.MainFrame.Navigate(new Main());
+        }
+
+        public void Datum()
+        {
+            
+
+            
+        }        
+
+        public void DataSender_Click(object sender, RoutedEventArgs e)
+        {
+
+            string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+            string Opslaan = string.Empty;
+
+            using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+            {
+                LastName.Text.ToString();
+                
+
+                Opslaan = @"Insert into Reserveringen (LastName, ReservedDateTime)" +
+                "Values('" + LastName + "', '" + ReservedDateTime + "')";
+
+                SqlCommand cmd = new SqlCommand(Opslaan, sqlConnection);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+            }
         }
     }
 }

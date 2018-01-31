@@ -46,8 +46,10 @@
                 </Style>
             </Calendar.Resources>
         </Calendar>
-        <TextBox Name="Reservering" HorizontalAlignment="Left" Height="433" Margin="628,0,0,0" TextWrapping="Wrap" Text="Reservering" VerticalAlignment="Top" Width="214"/>
+        <TextBox Name="ReservedDateTime" HorizontalAlignment="Left" Height="34" Margin="242,196,0,0" TextWrapping="Wrap" Text="Reservering" VerticalAlignment="Top" Width="129"/>
         <Button Content="Terug" HorizontalAlignment="Left" Margin="757,439,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBox Name="LastName" HorizontalAlignment="Left" Height="433" Margin="426,0,0,0" TextWrapping="Wrap" Text="Achternaam" VerticalAlignment="Top" Width="202"/>
+        <TextBox Name="LastName" HorizontalAlignment="Left" Height="34" Margin="100,196,0,0" TextWrapping="Wrap" Text="Achternaam" VerticalAlignment="Top" Width="119"/>
+        <DataGrid Name="ReserveGrid" HorizontalAlignment="Left" Height="300" Margin="550,0,0,0" VerticalAlignment="Top" Width="300"/>
+        <Button Name="DataSender" Content="Button" HorizontalAlignment="Left" Margin="414,196,0,0" VerticalAlignment="Top" Width="86" Height="34" Click="DataSender_Click"/>
     </Grid>
 </Page>

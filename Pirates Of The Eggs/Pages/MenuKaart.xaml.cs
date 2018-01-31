@@ -64,7 +64,7 @@ namespace Pirates_Of_The_Eggs
                 SqlCommand cmd = new SqlCommand(CmdString, sqlConnection);
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
                 
-                DataTable dt = datasource.Tables["Gerechten"];
+                DataTable dt = datasource.Tables["Gerechten"];                
 
                 sda.Fill(dt);
                 MyDataGrid.ItemsSource = dt.DefaultView;
