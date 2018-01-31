@@ -3,34 +3,34 @@ CREATE DATABASE [Pirates of the eggs];
 USE [Pirates of the eggs];
 
 CREATE TABLE Gerechten(
-GerechtID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
-GerechtNaam varchar(50) NOT NULL,
-GerechtPrijs money NOT NULL,
-GerechtSoort int NOT NULL
+GerechtID int  IDENTITY(1,1) PRIMARY KEY,
+GerechtNaam varchar(50) ,
+GerechtPrijs money ,
+GerechtSoort int 
 );
 
 CREATE TABLE Tafels(
-TafelID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
-TafelGebruik int NOT NULL
+TafelID int  IDENTITY(1,1) PRIMARY KEY,
+TafelGebruik int 
 );
 
 CREATE TABLE Orders(
-ID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
-GerechtID int NOT NULL,
-OrderID int NOT NULL,
-TafelID int NOT NULL,
-Betaald int NOT NULL
+ID int  IDENTITY(1,1) PRIMARY KEY,
+GerechtID int ,
+OrderID int ,
+TafelID int ,
+Betaald int 
 );
 
 CREATE TABLE GerechtCategorie(
-GerechtID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
-SoortNaam varchar(50) NOT NULL
+GerechtID int  IDENTITY(1,1) PRIMARY KEY,
+SoortNaam varchar(50) 
 );
 
 CREATE TABLE Reserveringen(
-ID int NOT NULL IDENTITY(1,1) PRIMARY KEY,
-LastName varchar(50) NOT NULL,
-ReservedDateTime DateTime NOT NULL,
+ID int  IDENTITY(1,1) PRIMARY KEY,
+LastName varchar(50) ,
+ReservedDateTime DateTime ,
 );
 
 
@@ -95,23 +95,23 @@ VALUES (0),
 (0);
 
 insert into Orders (GerechtID, OrderID, TafelID, Betaald)
-values (0, 0, 1, 0),
-(0, 0, 2, 0),
-(0, 0, 3, 0),
-(0, 0, 4, 0),
-(0, 0, 5, 0),
-(0, 0, 6, 0),
-(0, 0, 7, 0),
-(0, 0, 8, 0),
-(0, 0, 9, 0),
-(0, 0, 10, 0),
-(0, 0, 11, 0),
-(0, 0, 12, 0),
-(0, 0, 13, 0),
-(0, 0, 14, 0),
-(0, 0, 15, 0),
-(0, 0, 16, 0),
-(0, 0, 17, 0),
-(0, 0, 18, 0),
-(0, 0, 19, 0),
-(0, 0, 20, 0);
+values (0, 0, 1, 1),
+(0, 0, 2, 1),
+(0, 0, 3, 1),
+(0, 0, 4, 1),
+(0, 0, 5, 1),
+(0, 0, 6, 1),
+(0, 0, 7, 1),
+(0, 0, 8, 1),
+(0, 0, 9, 1),
+(0, 0, 10, 1),
+(0, 0, 11, 1),
+(0, 0, 12, 1),
+(0, 0, 13, 1),
+(0, 0, 14, 1),
+(0, 0, 15, 1),
+(0, 0, 16, 1),
+(0, 0, 17, 1),
+(0, 0, 18, 1),
+(0, 0, 19, 1),
+(0, 0, 20, 1);
