@@ -27,7 +27,23 @@ namespace Pirates_Of_The_Eggs
 
         private void ShowMenuKaart_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow.MainFrame.Navigate(new MenuKaart());
+            MainWindow.MainFrame.Navigate(new Main());
+        }
+
+        private void Btn_ClickNumber(object sender, RoutedEventArgs e)
+        {
+            TxtBlockNumber.Text = TxtBlockNumber.Text + ((Button)sender).Content;
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            TxtBlck1.Text = Convert.ToString(Convert.ToInt32(TxtBox1.Text) / Convert.ToInt32(TxtBlockNumber.Text));
+
         }
     }
 }
