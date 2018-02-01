@@ -59,7 +59,7 @@ namespace In_Uitgaven
                 using (SqlConnection sqlConnection = new SqlConnection(strConnection))
                 {
                     sqlConnection.Open();
-                    cmdString = (string) ((Button)sender).Content == "In" ? $"INSERT INTO InOutCome VALUES('{DatumDp.SelectedDate}',€{AmountTxt.Text},'{SourceTxt.Text}')" : $"INSERT INTO InOutCome VALUES('{DatumDp.SelectedDate}',€-{AmountTxt.Text},'{SourceTxt.Text}')";
+                    cmdString = (string) ((Button)sender).Content == "In" ? $"INSERT INTO InOutCome VALUES('{DatumDp.SelectedDate}',€{AmountTxt.Text},'{SourceTxt.Text}','{CBox.SelectionBoxItem.ToString()}')" : $"INSERT INTO InOutCome VALUES('{DatumDp.SelectedDate}',€-{AmountTxt.Text},'{SourceTxt.Text}','{CBox.SelectionBoxItem.ToString()}')";
                     SqlCommand cmdCommand = new SqlCommand(cmdString, sqlConnection);
                     SqlDataReader sqlDataReader = cmdCommand.ExecuteReader();
                     while (sqlDataReader.Read())
@@ -128,7 +128,6 @@ namespace In_Uitgaven
             MessageBox.Show("Connection Succesfull!");
             AmountTxt.Focus();
             ConnectBtn.IsDefault = false;
-            CurAmBtn.IsDefault = true;
             return true;
         }
 
@@ -139,7 +138,13 @@ namespace In_Uitgaven
                 MessageBox.Show("Please Enter Password");
                 return;
             }
+            GetCurCash();
+            GetCurDig();
+            GetCurTot();
+        }
 
+        private void GetCurTot()
+        {
             try
             {
                 string cmdString = string.Empty;
@@ -151,8 +156,52 @@ namespace In_Uitgaven
                     SqlDataReader sqlDataReader = cmdCommand.ExecuteReader();
                     while (sqlDataReader.Read())
                     {
-                        Current_Amount.Content = "€" + sqlDataReader["Amount"];
-                        Current_Amount.Content = Current_Amount.Content.ToString().Remove(Current_Amount.Content.ToString().Length - 2);
+                        try
+                        {
+                        CurAmTot.Content = "€" + sqlDataReader["Amount"];
+                        CurAmTot.Content = CurAmTot.Content.ToString().Remove(CurAmTot.Content.ToString().Length - 2);
+                        }
+                        catch (ArgumentOutOfRangeException)
+                        {
+                            CurAmTot.Content = "€0";
+                        }
+                    }
+                sqlDataReader.Close();
+                }
+            }
+            catch (SqlException sqle)
+            {
+                MessageBox.Show("An unexpected error occurred!");
+                MessageBox.Show(sqle.Message);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("A criticall error occurred!");
+                MessageBox.Show(exc.Message);
+            }
+        }
+        private void GetCurCash()
+        {
+            try
+            {
+                string cmdString = string.Empty;
+                using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+                {
+                    sqlConnection.Open();
+                    cmdString = "SELECT SUM(Amount) as Amount from InOutcome WHERE MoneyType='Cash'";
+                    SqlCommand cmdCommand = new SqlCommand(cmdString, sqlConnection);
+                    SqlDataReader sqlDataReader = cmdCommand.ExecuteReader();
+                    while (sqlDataReader.Read())
+                    {
+                        try
+                        {
+                            CurAmCash.Content = "€" + sqlDataReader["Amount"];
+                            CurAmCash.Content = CurAmCash.Content.ToString().Remove(CurAmCash.Content.ToString().Length - 2);
+                        }
+                        catch (ArgumentOutOfRangeException)
+                        {
+                            CurAmCash.Content = "€0";
+                        }
                     }
                     sqlDataReader.Close();
                 }
@@ -167,7 +216,44 @@ namespace In_Uitgaven
                 MessageBox.Show("A criticall error occurred!");
                 MessageBox.Show(exc.Message);
             }
-
         }
+        private void GetCurDig()
+        {
+            try
+            {
+                string cmdString = string.Empty;
+                using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+                {
+                    sqlConnection.Open();
+                    cmdString = "SELECT SUM(Amount) as Amount from InOutcome WHERE MoneyType='Digital'";
+                    SqlCommand cmdCommand = new SqlCommand(cmdString, sqlConnection);
+                    SqlDataReader sqlDataReader = cmdCommand.ExecuteReader();
+                    while (sqlDataReader.Read())
+                    {
+                        try
+                        {
+                            CurAmDig.Content = "€" + sqlDataReader["Amount"];
+                            CurAmDig.Content = CurAmDig.Content.ToString().Remove(CurAmDig.Content.ToString().Length - 2);
+                        }
+                        catch(ArgumentOutOfRangeException)
+                        {
+                            CurAmDig.Content = "€0";
+                        }
+                    }
+                    sqlDataReader.Close();
+                }
+            }
+            catch (SqlException sqle)
+            {
+                MessageBox.Show("An unexpected error occurred!");
+                MessageBox.Show(sqle.Message);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("A criticall error occurred!");
+                MessageBox.Show(exc.Message);
+            }
+        }
+
     }
 }
