@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-<!--Input-->
+        <!--Input-->
         <DatePicker SelectedDate="{x:Static sys:DateTime.Now}" Name="DatumDp" HorizontalAlignment="Left" Margin="3,4,0,0" VerticalAlignment="Top" Width="120" DisplayDate="2018-02-01"/>
         <TextBox Name="AmountTxt" HorizontalAlignment="Left" Height="23" Margin="3,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox Name="SourceTxt" HorizontalAlignment="Left" Height="23" Margin="3,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -18,28 +18,27 @@
         </ComboBox>
         <Button Name="IntBtn" Content="In" HorizontalAlignment="Left" Margin="3,114,0,0" VerticalAlignment="Top" Width="59" Height="23" Click="Insert_Click"/>
         <Button Name="OutBtn" Content="Out" HorizontalAlignment="Left" Margin="64,114,0,0" VerticalAlignment="Top" Width="59" Height="23" Click="Insert_Click"/>
-<!--Input-->
+        <!--Input-->
 
-<!--IndicationLabels-->
+        <!--IndicationLabels-->
         <Label Content="Amount" HorizontalAlignment="Left" Margin="128,32,0,0" VerticalAlignment="Top"/>
         <Label Content="Source" HorizontalAlignment="Left" Margin="128,60,0,0" VerticalAlignment="Top"/>
         <Label Name="ConnectLbl" Content="Not Connected" HorizontalAlignment="Left" Margin="387,61,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label Content="Total" HorizontalAlignment="Left" Margin="123,256,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         <Label Content="Cash" HorizontalAlignment="Left" Margin="123,204,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
         <Label Content="Digital" HorizontalAlignment="Left" Margin="123,230,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Left" VerticalContentAlignment="Center"/>
-<!--IndicationLabels-->
+        <!--IndicationLabels-->
 
-<!--CurrentAmount-->
+        <!--CurrentAmount-->
         <Label x:Name="CurAmTot" HorizontalAlignment="Left" Margin="3,256,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="CurAmCash" HorizontalAlignment="Left" Margin="3,204,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Label x:Name="CurAmDig" HorizontalAlignment="Left" Margin="3,230,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
         <Button Name="CurAmBtn" Content="Check Current" HorizontalAlignment="Left" Margin="3,289,0,0" VerticalAlignment="Top" Width="120" Click="CurAmBtn_Click"/>
-<!--CurrentAmount-->
+        <!--CurrentAmount-->
 
-<!--Login-->
-        <PasswordBox Name="PasswordBox" HorizontalAlignment="Left" Height="23" Margin="387,5,0,0" VerticalAlignment="Top" Width="120" PasswordChar="☭"/>
+        <!--Connector-->
+        <PasswordBox Name="ConnectPWBox" HorizontalAlignment="Left" Height="23" Margin="387,5,0,0" VerticalAlignment="Top" Width="120" PasswordChar="☭"/>
         <Button Name="ConnectBtn" Content="Connect" HorizontalAlignment="Left" Margin="387,33,0,0" VerticalAlignment="Top" Width="120" Height="23" Click="ConnectButton" IsDefault="True"/>
-<!--Login-->
-
+        <!--Connector-->
     </Grid>
 </Window>

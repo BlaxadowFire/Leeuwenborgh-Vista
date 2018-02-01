@@ -34,7 +34,7 @@ namespace In_Uitgaven
         {
             InitializeComponent();
             SetCulture();
-            PasswordBox.Focus();
+            ConnectPWBox.Focus();
 
         }
 
@@ -49,7 +49,7 @@ namespace In_Uitgaven
         {
             if ((string)ConnectLbl.Content == "Not Connected")
             {
-                MessageBox.Show("Please Enter Password");
+                MessageBox.Show("Password Incorrect, please try again");
                 return;
             }
 
@@ -86,13 +86,13 @@ namespace In_Uitgaven
 
         private void ConnectButton(object sender, RoutedEventArgs e)
         {
-            strConnection = Connection + $";Password= {PasswordBox.Password}";
+            strConnection = Connection + $";Password= {ConnectPWBox.Password}";
             ConnectLbl.Content = TestConnection() ? "Connected" : "Not Connected";
         }
 
         private bool TestConnection()
         {
-            if (strConnection == string.Empty)
+            if (strConnection == string.Empty || ConnectPWBox.Password.Length == 0)
             {
                 MessageBox.Show("Please Enter Password");
                 ConnectLbl.Content = "Not Connected";
