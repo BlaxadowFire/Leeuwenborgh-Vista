@@ -55,6 +55,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="_In_UitGavenDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_In_UitGavenDataSet.xsd</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,6 +94,17 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="_In_UitGavenDataSet.xsc">
+      <DependentUpon>_In_UitGavenDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_In_UitGavenDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_In_UitGavenDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_In_UitGavenDataSet.xss">
+      <DependentUpon>_In_UitGavenDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -4,13 +4,21 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:In_Uitgaven"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="128,10,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="128,38,0,0" VerticalAlignment="Top" Width="75" Height="23"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="3,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Height="23" Margin="3,38,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-
+        <DatePicker SelectedDate="{x:Static sys:DateTime.Now}" Name="DatumDp" HorizontalAlignment="Left" Margin="3,4,0,0" VerticalAlignment="Top" Width="120" DisplayDate="2018-02-01"/>
+        <TextBox Name="AmountTxt" HorizontalAlignment="Left" Height="23" Margin="3,32,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox Name="SourceTxt" HorizontalAlignment="Left" Height="23" Margin="3,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Name="IntBtn" Content="In" HorizontalAlignment="Left" Margin="3,88,0,0" VerticalAlignment="Top" Width="59" Height="23" Click="Insert_Click"/>
+        <Button Name="OutBtn" Content="Out" HorizontalAlignment="Left" Margin="64,88,0,0" VerticalAlignment="Top" Width="59" Height="23" Click="Insert_Click"/>
+        <Label x:Name="Current_Amount" HorizontalAlignment="Left" Margin="3,264,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <PasswordBox Name="PasswordBox" HorizontalAlignment="Left" Height="23" Margin="387,5,0,0" VerticalAlignment="Top" Width="120" PasswordChar="☭"/>
+        <Button Name="ConnectBtn" Content="Connect" HorizontalAlignment="Left" Margin="387,33,0,0" VerticalAlignment="Top" Width="120" Height="23" Click="ConnectButton" IsDefault="True"/>
+        <Label Content="Amount" HorizontalAlignment="Left" Margin="128,32,0,0" VerticalAlignment="Top"/>
+        <Label Content="Source" HorizontalAlignment="Left" Margin="128,60,0,0" VerticalAlignment="Top"/>
+        <Label Name="ConnectLbl" Content="Not Connected" HorizontalAlignment="Left" Margin="387,61,0,0" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button Name="CurAmBtn" Content="Check Current" HorizontalAlignment="Left" Margin="3,289,0,0" VerticalAlignment="Top" Width="120" Click="CurAmBtn_Click"/>
     </Grid>
 </Window>
