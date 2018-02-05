@@ -28,9 +28,10 @@ SoortNaam varchar(50)
 );
 
 CREATE TABLE Reserveringen(
-ID int  IDENTITY(1,1) PRIMARY KEY,
-LastName varchar(50) ,
-ReservedDateTime DateTime ,
+ID int IDENTITY(1,1) PRIMARY KEY,
+LastName varchar(50) NOT NULL,
+ReservedDateTime DateTime,
+AmountOfPeople int NOT NULL
 );
 
 

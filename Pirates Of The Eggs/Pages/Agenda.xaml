@@ -3,51 +3,63 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:sys="clr-namespace:System;assembly=mscorlib"
       xmlns:local="clr-namespace:Pirates_Of_The_Eggs"
       mc:Ignorable="d" 
       d:DesignHeight="500" d:DesignWidth="850"
       Title="Agenda">
 
     <Grid>
-        <Calendar Name="Calendar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="195" Margin="100,10,0,0" Style="{DynamicResource CalendarStyle1}">
-            <Calendar.Resources>
-                <Style x:Key="CalendarStyle1" TargetType="{x:Type Calendar}">
-                    <Setter Property="Foreground" Value="#FF333333"/>
-                    <Setter Property="Background">
-                        <Setter.Value>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FFE4EAF0" Offset="0"/>
-                                <GradientStop Color="#FFECF0F4" Offset="0.16"/>
-                                <GradientStop Color="#FFFCFCFD" Offset="0.16"/>
-                                <GradientStop Color="#FFFFFFFF" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Setter.Value>
-                    </Setter>
-                    <Setter Property="BorderBrush">
-                        <Setter.Value>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#FFA3AEB9" Offset="0"/>
-                                <GradientStop Color="#FF8399A9" Offset="0.375"/>
-                                <GradientStop Color="#FF718597" Offset="0.375"/>
-                                <GradientStop Color="#FF617584" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Setter.Value>
-                    </Setter>
-                    <Setter Property="BorderThickness" Value="1"/>
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type Calendar}">
-                                <StackPanel x:Name="PART_Root" HorizontalAlignment="Center">
-                                    <CalendarItem x:Name="PART_CalendarItem" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Style="{TemplateBinding CalendarItemStyle}"/>
-                                </StackPanel>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </Calendar.Resources>
-        </Calendar>
-        <TextBox Name="Reservering" HorizontalAlignment="Left" Height="433" Margin="628,0,0,0" TextWrapping="Wrap" Text="Reservering" VerticalAlignment="Top" Width="214"/>
-        <Button Content="Terug" HorizontalAlignment="Left" Margin="757,439,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBox Name="LastName" HorizontalAlignment="Left" Height="433" Margin="426,0,0,0" TextWrapping="Wrap" Text="Achternaam" VerticalAlignment="Top" Width="202"/>
+        <Calendar Name="Calendar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="195" Margin="10,10,0,0" DisplayDate="2018-02-01" SelectedDate="{x:Static sys:DateTime.Now}"/>
+        <ComboBox Name="HourCB" HorizontalAlignment="Left" Margin="205,14,0,0" VerticalAlignment="Top" Width="60">
+            <ComboBoxItem>12</ComboBoxItem>
+            <ComboBoxItem>13</ComboBoxItem>
+            <ComboBoxItem>14</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>16</ComboBoxItem>
+            <ComboBoxItem>17</ComboBoxItem>
+            <ComboBoxItem>18</ComboBoxItem>
+            <ComboBoxItem>19</ComboBoxItem>
+            <ComboBoxItem>20</ComboBoxItem>
+            <ComboBoxItem>21</ComboBoxItem>
+            <ComboBoxItem>22</ComboBoxItem>
+            <ComboBoxItem>23</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="MinuteCB" HorizontalAlignment="Left" Margin="265,14,0,0" VerticalAlignment="Top" Width="60">
+            <ComboBoxItem>00</ComboBoxItem>
+            <ComboBoxItem>30</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Name="AantalPersonen" HorizontalAlignment="Left" Margin="205,41,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem>1</ComboBoxItem>
+            <ComboBoxItem>2</ComboBoxItem>
+            <ComboBoxItem>3</ComboBoxItem>
+            <ComboBoxItem>4</ComboBoxItem>
+            <ComboBoxItem>5</ComboBoxItem>
+            <ComboBoxItem>6</ComboBoxItem>
+            <ComboBoxItem>7</ComboBoxItem>
+            <ComboBoxItem>8</ComboBoxItem>
+            <ComboBoxItem>9</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>11</ComboBoxItem>
+            <ComboBoxItem>12</ComboBoxItem>
+            <ComboBoxItem>13</ComboBoxItem>
+            <ComboBoxItem>14</ComboBoxItem>
+            <ComboBoxItem>15</ComboBoxItem>
+            <ComboBoxItem>16</ComboBoxItem>
+            <ComboBoxItem>17</ComboBoxItem>
+            <ComboBoxItem>18</ComboBoxItem>
+            <ComboBoxItem>19</ComboBoxItem>
+            <ComboBoxItem>20</ComboBoxItem>
+        </ComboBox>
+        <TextBox Name="LastNameTB" HorizontalAlignment="Left" Height="25" Margin="205,68,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Reserveer" HorizontalAlignment="Left" Margin="205,98,0,0" VerticalAlignment="Top" Width="120" Height="80" Click="MakeReservation"/>
+        <Button Content="Terug" HorizontalAlignment="Left" Margin="757,439,0,0" VerticalAlignment="Top" Width="75" Click="Back_Click"/>
+        <Label Content="Aantal personen" HorizontalAlignment="Left" Margin="330,41,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tijdstip" HorizontalAlignment="Left" Margin="330,15,0,0" VerticalAlignment="Top"/>
+        <Label Content="Achternaam" HorizontalAlignment="Left" Margin="330,67,0,0" VerticalAlignment="Top"/>
+        <DataGrid Name="ReservationDT" HorizontalAlignment="Left" Height="156" Margin="589,10,0,0" VerticalAlignment="Top" Width="251" CanUserResizeRows="False" CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False" CanUserSortColumns="False" IsReadOnly="True" />
+        <Button Content="Haal reserveringen binnen" HorizontalAlignment="Left" Margin="589,171,0,0" VerticalAlignment="Top" Width="251" Click="GetReservation"/>
+        <TextBox Name="tb1" HorizontalAlignment="Left" Height="23" Margin="205,187,0,0" TextWrapping="Wrap" Text="Confirmation" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+
     </Grid>
 </Page>

@@ -28,9 +28,30 @@ namespace Pirates_Of_The_Eggs
         public Main()
         {
             InitializeComponent();
-            CheckTableFree(null, null);
+            StartTableCheck();
             TableChoice = 0;
             
+        }
+
+        private void StartTableCheck()
+        {
+            try
+            {
+                CheckTableFree(null, null);
+            }
+            catch (SqlException e)
+            {
+                if (e.Message.StartsWith("A network-related"))
+                {
+                    MessageBox.Show("Server timeout, are you connected to the internet?");
+                    MessageBox.Show("If you do have internet connection, the server may be offline!");
+                }
+                else
+                {
+                    MessageBox.Show("An unexpected error occurred.");
+                    MessageBox.Show(e.ToString());
+                }
+            }
         }
 
         private void CheckTableFree(object sender, RoutedEventArgs e)

@@ -85,9 +85,6 @@
     <Compile Include="Pages\MenuKaart.xaml.cs">
       <DependentUpon>MenuKaart.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\Opsplitsen.xaml.cs">
-      <DependentUpon>Opsplitsen.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Pirates_of_the_eggsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -114,10 +111,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\MenuKaart.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\Opsplitsen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

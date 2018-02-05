@@ -39,11 +39,6 @@ namespace Pirates_Of_The_Eggs
             MainWindow.MainFrame.Navigate(new Main());
         }
 
-        private void ShowOpsplitsen_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow.MainFrame.Navigate(new Opsplitsen());
-        }
-
         private void GerechtenFilter(object sender, RoutedEventArgs e)
         {
             datasource.Clear();
@@ -264,8 +259,23 @@ namespace Pirates_Of_The_Eggs
                        
         }
         public void RemoveButton(object sender, RoutedEventArgs e)
-        {
+        {/*
+            string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+            string cmdString = string.Empty;
+            using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+            {
+                sqlConnection.Open();
+                cmdString = $"INSERT INTO [Orders] values ({/*GerechtID*///x}, {/*OrderID*/TableInfo.CurrentOrderNo}, {/*TafelID*/Main.TableChoice}, {/*Betaald*/0})";
+                //cmd1.Connection = sqlConnection;
+                //cmd1.Parameters.AddWithValue("@TafelID", SelectedGerechten.Text);
+                /*SqlCommand cmdCommand = new SqlCommand(cmdString, sqlConnection);
+                SqlDataReader sqlDataReader1 = cmdCommand.ExecuteReader();
+                while (sqlDataReader1.Read())
+                {
 
+                };
+                sqlDataReader1.Close();
+            }*/
         }
 
         private void CheckOrder(object sender, RoutedEventArgs e)

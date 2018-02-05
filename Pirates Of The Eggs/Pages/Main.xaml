@@ -10,9 +10,8 @@
 
     <Grid>
         <Button Content="Menukaart" HorizontalAlignment="Left" Margin="24,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="ShowMenuKaart_Click" />
-        <Button Content="Vaste klanten" HorizontalAlignment="Left" Margin="178,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" />
-        <Button Content="Bonnen" HorizontalAlignment="Left" Margin="333,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="ShowBonnen_Click" />
-        <Button Content="Refresh" HorizontalAlignment="Left" Margin="487,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="Btn_ClickRefresh"/>
+        <Button Content="Bonnen" HorizontalAlignment="Left" Margin="178,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="ShowBonnen_Click" />
+        <Button Content="Refresh" HorizontalAlignment="Left" Margin="332,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="Btn_ClickRefresh"/>
         <Grid Name="TableButtons">
             <Button Content="1" HorizontalAlignment="Left" Margin="43,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
             <Button Content="2" HorizontalAlignment="Left" Margin="199,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
@@ -35,7 +34,6 @@
             <Button Content="19" HorizontalAlignment="Left" Margin="512,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
             <Button Content="20" HorizontalAlignment="Left" Margin="668,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
         </Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="433,0,0,0" TextWrapping="Wrap" Text="Tijd" VerticalAlignment="Top" Width="414" Foreground="Black" Background="#FFCDCDCD" Height="24"/>
-        <Button Content="Agenda" HorizontalAlignment="Left" VerticalAlignment="Top" Width="433" Height="24" Click="Button_Click"/>
+        <Button Content="Agenda / Reserveringen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="840" Height="24" Click="Button_Click"/>
     </Grid>
 </Page>
