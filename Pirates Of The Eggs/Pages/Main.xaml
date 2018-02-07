@@ -9,7 +9,7 @@
       Title="Main">
 
     <Grid>
-        <Button Content="Menukaart" HorizontalAlignment="Left" Margin="24,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="ShowMenuKaart_Click" />
+        <Button Content="Bar" HorizontalAlignment="Left" Margin="24,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="Bar_Click" />
         <Button Content="Bonnen" HorizontalAlignment="Left" Margin="178,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="ShowBonnen_Click" />
         <Button Content="Refresh" HorizontalAlignment="Left" Margin="332,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="Btn_ClickRefresh"/>
         <Grid Name="TableButtons">
