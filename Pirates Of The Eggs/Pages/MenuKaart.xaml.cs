@@ -24,14 +24,17 @@ namespace Pirates_Of_The_Eggs
     public partial class MenuKaart : Page
     {
         Pirates_of_the_eggsDataSet datasource = new Pirates_of_the_eggsDataSet();
+               
 
         public bool TableFree = true;
 
         public MenuKaart()
         {
-            InitializeComponent();
+            InitializeComponent();        
             TafelNo.Content = Main.TableChoice;
             OrderIDCheck(null,null);
+           
+            
         }
 
         private void ShowTerug_Click(object sender, RoutedEventArgs e)
@@ -258,24 +261,43 @@ namespace Pirates_Of_The_Eggs
             }
                        
         }
+        
+
         public void RemoveButton(object sender, RoutedEventArgs e)
-        {/*
+        {
+            string ID;            
+            
+            DataRowView drv = (DataRowView)OrderDataGrid.SelectedItem;
+
+            if (drv != null)
+            {
+                ID = drv[1].ToString();                      
+                
+               
+                RemoveItem(sender, e, Convert.ToInt32(drv[1]));
+                
+                Btn_ClickClear(sender, e);
+
+            }
+        }
+
+        private void RemoveItem(object sender, RoutedEventArgs e, int x)
+        {
             string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
             string cmdString = string.Empty;
             using (SqlConnection sqlConnection = new SqlConnection(strConnection))
             {
                 sqlConnection.Open();
-                cmdString = $"INSERT INTO [Orders] values ({/*GerechtID*///x}, {/*OrderID*/TableInfo.CurrentOrderNo}, {/*TafelID*/Main.TableChoice}, {/*Betaald*/0})";
-                //cmd1.Connection = sqlConnection;
-                //cmd1.Parameters.AddWithValue("@TafelID", SelectedGerechten.Text);
-                /*SqlCommand cmdCommand = new SqlCommand(cmdString, sqlConnection);
+                cmdString = $"Delete From [Orders] Where ID={x} ";
+                
+                SqlCommand cmdCommand = new SqlCommand(cmdString, sqlConnection);
                 SqlDataReader sqlDataReader1 = cmdCommand.ExecuteReader();
                 while (sqlDataReader1.Read())
                 {
 
                 };
                 sqlDataReader1.Close();
-            }*/
+            }
         }
 
         private void CheckOrder(object sender, RoutedEventArgs e)
@@ -323,6 +345,6 @@ namespace Pirates_Of_The_Eggs
                 OrderDataGrid.Columns[9].Visibility = Visibility.Hidden;
             }
             catch (Exception) { }
-        }
+        }        
     }
 }
