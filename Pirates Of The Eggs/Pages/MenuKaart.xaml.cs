@@ -86,7 +86,7 @@ namespace Pirates_Of_The_Eggs
                 Amount = Convert.ToInt32(TxtBlockNumber.Text);
                 for (int i = 0; i < Amount; i++)
                 {
-                    LoadOrderNumber(sender, e, Convert.ToInt32(drv[0]));
+                    InsertIntoOrder(sender, e, Convert.ToInt32(drv[0]));
                 }
                 Btn_ClickClear(sender, e);
             } 
@@ -169,7 +169,7 @@ namespace Pirates_Of_The_Eggs
             }
         }
 
-        private void LoadOrderNumber(object sender, RoutedEventArgs e, int x)
+        private void InsertIntoOrder(object sender, RoutedEventArgs e, int x)
         {
             
             string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
