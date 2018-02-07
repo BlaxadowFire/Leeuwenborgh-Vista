@@ -335,7 +335,13 @@ namespace Pirates_Of_The_Eggs
                     sqlConnection.Close();
                 }
             }
-            catch (Exception) { CheckOrder(sender, e); }
+            catch (Exception sqle)
+            {
+                if (!sqle.Message.StartsWith("Data is Null"))
+                {
+                    CheckOrder(sender, e);
+                }
+            }
         }
 
 

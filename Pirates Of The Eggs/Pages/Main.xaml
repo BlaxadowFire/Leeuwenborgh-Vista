@@ -10,8 +10,7 @@
 
     <Grid>
         <Button Content="Bar" HorizontalAlignment="Left" Margin="24,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="Bar_Click" />
-        <Button Content="Bonnen" HorizontalAlignment="Left" Margin="178,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="ShowBonnen_Click" />
-        <Button Content="Refresh" HorizontalAlignment="Left" Margin="332,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="Btn_ClickRefresh"/>
+        <Button Content="Refresh" HorizontalAlignment="Left" Margin="178,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="Btn_ClickRefresh"/>
         <Grid Name="TableButtons">
             <Button Content="1" HorizontalAlignment="Left" Margin="43,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
             <Button Content="2" HorizontalAlignment="Left" Margin="199,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
