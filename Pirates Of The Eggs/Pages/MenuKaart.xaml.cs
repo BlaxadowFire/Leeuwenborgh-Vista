@@ -26,6 +26,7 @@ namespace Pirates_Of_The_Eggs
         Pirates_of_the_eggsDataSet datasource = new Pirates_of_the_eggsDataSet();
 
         public bool TableFree = true;
+        public int DataReader = 0;
 
         public MenuKaart()
         {
@@ -190,14 +191,40 @@ namespace Pirates_Of_The_Eggs
             }
         }
 
+        private void IDCheckFirst()
+        {
+            
+            string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+            string cmdString = string.Empty;
+            
+            using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+            {
+                
+                sqlConnection.Open();
+                cmdString = $@"select MAX(OrderID) as MaxID from Orders where TafelID = {Main.TableChoice} and Orders.Betaald=0";
+
+                SqlCommand cmd = new SqlCommand(cmdString, sqlConnection);
+                SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                while (sqlDataReader.Read())
+                {
+                    try
+                    {
+                        DataReader = sqlDataReader.GetInt32(sqlDataReader.GetOrdinal("MaxID"));
+                    }
+                    catch (Exception) { }
+                }
+                sqlConnection.Close();
+            }
+        }
         private void OrderIDCheck(object sender, RoutedEventArgs e)
         {
             int i = 0;
             while (i <= 2)
             {
+                IDCheckFirst();
                 string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
                 string cmdString = string.Empty;
-                int DataReader = 0;
+                
                 using (SqlConnection sqlConnection = new SqlConnection(strConnection))
                 {
 
