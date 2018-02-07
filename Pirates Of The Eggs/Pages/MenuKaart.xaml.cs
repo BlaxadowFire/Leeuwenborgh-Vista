@@ -308,7 +308,36 @@ namespace Pirates_Of_The_Eggs
                 HideOrderGridData();
             }
            catch (Exception) { CheckOrder(sender, e); }
+           TotaalPrijsFunc(sender, e);
         }
+
+        private void TotaalPrijsFunc(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                string strConnection = ConfigurationManager.ConnectionStrings["POTEConnectionString"].ConnectionString;
+                string CmdString = string.Empty;
+                decimal x = 0;
+
+                using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+                {
+                    sqlConnection.Open();
+                    CmdString = $@"select SUM(GerechtPrijs) as TotaalPrijs from Gerechten INNER JOIN Orders ON Orders.GerechtID = Gerechten.GerechtID where OrderID = {TableInfo.CurrentOrderNo}";
+                    SqlCommand cmd = new SqlCommand(CmdString, sqlConnection);
+                    SqlDataReader sqlDataReader = cmd.ExecuteReader();
+                    while (sqlDataReader.Read())
+                    {
+                        x = sqlDataReader.GetDecimal(sqlDataReader.GetOrdinal("TotaalPrijs"));
+                    }
+                    double dblx = Convert.ToDouble(x);
+                    dblx = dblx * 1.21;
+                    TotaalPrijs.Text = dblx.ToString();
+                    sqlConnection.Close();
+                }
+            }
+            catch (Exception) { CheckOrder(sender, e); }
+        }
+
 
         private void HideOrderGridData()
         {
