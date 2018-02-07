@@ -12,6 +12,12 @@
     <Grid>
         <Calendar Name="Calendar" HorizontalAlignment="Left" VerticalAlignment="Top" Height="200" Width="195" Margin="10,10,0,0" DisplayDate="2018-02-01" SelectedDate="{x:Static sys:DateTime.Now}"/>
         <ComboBox Name="HourCB" HorizontalAlignment="Left" Margin="205,14,0,0" VerticalAlignment="Top" Width="60">
+
+            <ComboBoxItem>7</ComboBoxItem>
+            <ComboBoxItem>8</ComboBoxItem>
+            <ComboBoxItem>9</ComboBoxItem>
+            <ComboBoxItem>10</ComboBoxItem>
+            <ComboBoxItem>11</ComboBoxItem>
             <ComboBoxItem>12</ComboBoxItem>
             <ComboBoxItem>13</ComboBoxItem>
             <ComboBoxItem>14</ComboBoxItem>

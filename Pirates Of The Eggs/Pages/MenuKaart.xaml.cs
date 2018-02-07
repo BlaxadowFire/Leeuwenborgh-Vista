@@ -187,7 +187,7 @@ namespace Pirates_Of_The_Eggs
 
                     };
                     sqlDataReader1.Close();
-               }
+            }
         }
 
         private void OrderIDCheck(object sender, RoutedEventArgs e)

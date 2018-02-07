@@ -113,7 +113,7 @@ namespace Pirates_Of_The_Eggs
             MainWindow.MainFrame.Navigate(new MenuKaart());
         }
 
-        private void ShowMenuKaart_Click(object sender, RoutedEventArgs e)
+        private void Bar_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.MainFrame.Navigate(new MenuKaart());
         }
