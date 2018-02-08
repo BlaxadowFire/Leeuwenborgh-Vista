@@ -11,6 +11,7 @@
     <Grid>
         <Button Content="Bar" HorizontalAlignment="Left" Margin="24,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="Bar_Click" />
         <Button Content="Refresh" HorizontalAlignment="Left" Margin="178,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="Btn_ClickRefresh"/>
+        <Button Content="Edit" HorizontalAlignment="Left" Margin="332,406,0,0" VerticalAlignment="Top" Width="136" Height="43" Background="#FF069913" Click="Btn_Edit"/>
         <Grid Name="TableButtons">
             <Button Content="1" HorizontalAlignment="Left" Margin="43,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
             <Button Content="2" HorizontalAlignment="Left" Margin="199,56,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
@@ -33,6 +34,5 @@
             <Button Content="19" HorizontalAlignment="Left" Margin="512,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
             <Button Content="20" HorizontalAlignment="Left" Margin="668,276,0,0" VerticalAlignment="Top" Width="137" Height="58" Background="#FF4388CC" Click="Tafel_Click"/>
         </Grid>
-        <Button Content="Agenda / Reserveringen" HorizontalAlignment="Left" VerticalAlignment="Top" Width="840" Height="24" Click="Button_Click"/>
     </Grid>
 </Page>

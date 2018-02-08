@@ -82,6 +82,11 @@ namespace Pirates_Of_The_Eggs
             }
         }
 
+        private void Btn_Edit(object sender, RoutedEventArgs e)
+        {
+            MainWindow.MainFrame.Navigate(new Edit());
+        }
+
         private void Tafel_Click(object sender, RoutedEventArgs e)
         {
             CheckTableFree(sender, e);
