@@ -24,7 +24,8 @@ namespace Pirates_Of_The_Eggs
     public partial class MenuKaart : Page
     {
         Pirates_of_the_eggsDataSet datasource = new Pirates_of_the_eggsDataSet();
-               
+        Pirates_of_the_eggsDataSet datasource1 = new Pirates_of_the_eggsDataSet();
+
 
         public bool TableFree = true;
         public int DataReader = 0;
@@ -192,6 +193,7 @@ namespace Pirates_Of_The_Eggs
                     };
                     sqlDataReader1.Close();
             }
+            CheckOrder(null, null);
         }
 
         private void IDCheckFirst()
@@ -306,6 +308,7 @@ namespace Pirates_Of_The_Eggs
                 Btn_ClickClear(sender, e);
 
             }
+            CheckOrder(null, null);
         }
 
         private void RemoveItem(object sender, RoutedEventArgs e, int x)
@@ -336,23 +339,15 @@ namespace Pirates_Of_The_Eggs
 
                 using (SqlConnection sqlConnection = new SqlConnection(strConnection))
                 {
-                    datasource.Clear();
+                    datasource1.Clear();
                     CmdString = $@"SELECT * FROM Orders INNER JOIN Gerechten ON Orders.GerechtID = Gerechten.GerechtID WHERE OrderID = {TableInfo.CurrentOrderNo} ORDER BY Orders.ID, Orders.GerechtID";
                     SqlCommand cmd = new SqlCommand(CmdString, sqlConnection);
                     SqlDataAdapter sda = new SqlDataAdapter(cmd);
 
-                    DataTable dt = datasource.Tables["Orders"];
+                    DataTable dt = datasource1.Tables["Orders"];
 
                     sda.Fill(dt);
                     OrderDataGrid.ItemsSource = dt.DefaultView;
-                    /*
-                    OrderDataGrid.Columns[1].Visibility = Visibility.Hidden;
-                    OrderDataGrid.Columns[2].Visibility = Visibility.Hidden;
-                    OrderDataGrid.Columns[3].Visibility = Visibility.Hidden;
-                    OrderDataGrid.Columns[4].Visibility = Visibility.Hidden;
-                    OrderDataGrid.Columns[5].Visibility = Visibility.Hidden;
-                    OrderDataGrid.Columns[6].Visibility = Visibility.Hidden;
-                    OrderDataGrid.Columns[9].Visibility = Visibility.Hidden;*/
                 }
                 HideOrderGridData();
             }

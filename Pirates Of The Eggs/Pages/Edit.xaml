@@ -9,11 +9,11 @@
       Title="Edit">
 
     <Grid>
-        <DataGrid Name="MyDataGrid" HorizontalAlignment="Left" Height="490" Margin="488,0,0,0" VerticalAlignment="Top" Width="352"/>
+        <DataGrid Name="MyDataGrid" HorizontalAlignment="Left" Height="450" Margin="488,0,0,0" VerticalAlignment="Top" Width="352"/>
         <Button Content="Edit" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top" Width="74" Click="EditButton"/>
         <Button Content="Add" HorizontalAlignment="Left" Margin="84,122,0,0" VerticalAlignment="Top" Width="74" Click="AddButton"/>
-        <Button Content="Update" HorizontalAlignment="Left" Margin="432,10,0,0" VerticalAlignment="Top" Width="48" Height="480" Click="UpdateDataGrid"/>
-        <Button Name="BackButton" Content="Terug" HorizontalAlignment="Left" Margin="10,470,0,0" VerticalAlignment="Top" Width="75" Click="BackButton_OnClick"/>
+        <Button Content="Update" HorizontalAlignment="Left" Margin="432,10,0,0" VerticalAlignment="Top" Width="48" Height="440" Click="UpdateDataGrid"/>
+        <Button Name="BackButton" Content="Terug" HorizontalAlignment="Left" Margin="10,430,0,0" VerticalAlignment="Top" Width="75" Click="BackButton_OnClick"/>
         <TextBox Name="IDTxtBx" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
         <TextBox Name="GerechtNaamTxtBx" HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
         <TextBox Name="GerechtPrijsTxtBx" HorizontalAlignment="Left" Height="23" Margin="10,66,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
