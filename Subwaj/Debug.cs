@@ -26,6 +26,10 @@ namespace Subwaj
                         string strDebugInput = x;
                         switch (strDebugInput)
                         {
+                            case "":
+                                {
+                                return;
+                                }
                             case "credits":
                                 {
                                     Program.Credits();
