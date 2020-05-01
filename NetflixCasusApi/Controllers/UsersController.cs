@@ -102,6 +102,57 @@ namespace NetflixCasusApi.Controllers
             return user;
         }
 
+        [HttpPost("GetSubscriptionByUser")]
+        public async Task<ActionResult<Subscription>> GetSubscriptionByUser(User user)
+        {
+            if (user == null || !_context.User.Contains(user))
+                return NotFound();
+
+            var contextUser = _context.User.Find(user.UserId);
+            foreach (var sub in _context.Subscription.Include(s => s.Users))
+            {
+                if (sub.Users != null && sub.Users.Contains(contextUser))
+                    return sub;
+            }
+            //Workaround for code underneath of this comment.
+
+
+            //Subscription subscription = await _context.Subscription.Where(s => s.Users.Contains(contextUser)).FirstAsync();
+            
+            //Should work, but it doesn't work. It gives a strange error.
+
+            return NotFound();
+        }
+
+        [HttpPost("GetAllUsersByUser")]
+        public async Task<ActionResult<List<User>>> GetAllUsersByUser(User user)
+        {
+            Subscription subscription = null;
+            if (user == null || !_context.User.Contains(user))
+                return NotFound();
+
+            var contextUser = _context.User.Find(user.UserId);
+            foreach (var sub in _context.Subscription.Include(s => s.Users))
+            {
+                if (sub.Users != null && sub.Users.Contains(contextUser))
+                { 
+                    subscription = sub;
+                    break;
+                }
+            }
+
+            if (subscription.Users == null)
+                return NotFound();
+            //Workaround for code underneath of this comment.
+
+            //Subscription subscription = await _context.Subscription.Where(s => s.Users.Contains(contextUser)).FirstAsync();
+
+            //Should work, but it doesn't work. It gives a strange error.
+
+            return subscription.Users.ToList();
+        }
+
+
         private bool UserExists(int id)
         {
             return _context.User.Any(e => e.UserId == id);

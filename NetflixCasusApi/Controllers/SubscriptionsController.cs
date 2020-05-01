@@ -25,7 +25,7 @@ namespace NetflixCasusApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Subscription>>> GetSubscription()
         {
-            return await _context.Subscription.ToListAsync();
+            return await _context.Subscription.Include(s => s.Users).ToListAsync();
         }
 
         // GET: api/Subscriptions/5
@@ -100,6 +100,23 @@ namespace NetflixCasusApi.Controllers
             await _context.SaveChangesAsync();
 
             return subscription;
+        }
+
+        [HttpPost("AddUserToSubscription/{id}")]
+        public async Task<IActionResult> AddUserToSubscription(int id, User user)
+        {
+            Subscription subscription = await _context.Subscription.FindAsync(id);
+            
+            if (subscription.Users == null)
+            {
+                subscription.Users = new List<User>();
+            }
+            subscription.Users.Add(user);
+            
+            _context.Update(subscription);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
         }
 
         private bool SubscriptionExists(int id)

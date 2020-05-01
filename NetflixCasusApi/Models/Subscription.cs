@@ -6,5 +6,6 @@ namespace NetflixCasusApi.Models
     {
         public int SubscriptionId { get; set; }
         public ICollection<User> Users { get; set; }
+        public string PaymentMethod { get; set; }
     }
 }
