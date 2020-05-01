@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NetflixCasusApi.Data;
 
 namespace NetflixCasusApi.Migrations
 {
     [DbContext(typeof(NetflixCasusApiContext))]
-    partial class NetflixCasusApiContextModelSnapshot : ModelSnapshot
+    [Migration("20200501164715_ChangedMovieRelationWithMovieRating")]
+    partial class ChangedMovieRelationWithMovieRating
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -6,7 +6,7 @@ namespace NetflixCasusApi.Models
     {
         public int MovieId { get; set; }
         public string Name { get; set; }
-        public ICollection<MovieRating> MovieRatings { get; set; }
+        public ICollection<MovieMovieRating> MovieRatings { get; set; }
         public string Category { get; set; }
         public ICollection<Actor> Actors { get; set; }
     }
