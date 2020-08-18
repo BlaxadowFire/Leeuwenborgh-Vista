@@ -24,5 +24,18 @@ namespace OpendagWPF
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            /*
+            var Age = DateTime.Today.Date.Year - DateSelector.SelectedDate.Value.Date.Year;
+            if (DateSelector.SelectedDate.Value.Month > DateTime.Today.Month || DateSelector.SelectedDate.Value.Month == DateTime.Today.Month && DateSelector.SelectedDate.Value.Day > DateTime.Today.Day)
+            {
+                Age = Age - 1;
+            }
+            ResultLabel.Content = Age.ToString();
+            */
+            ResultLabel.Content = TxtBox.Text;
+        }
     }
 }
