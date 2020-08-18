@@ -1,0 +1,22 @@
+﻿<Window x:Class="_04._Tekenen.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_04._Tekenen"
+        mc:Ignorable="d"
+        Name="MainWin"
+        Title="MainWindow" 
+        Height="350" Width="525"
+        MouseDown="ManualDrawClick">
+    <Grid Name="MainGrid">
+        <Button Name="btnLine"  Content="Line" HorizontalAlignment="Left" Margin="432,10,0,0" VerticalAlignment="Top" Width="75" Click="DrawLine"/>
+        <Button Name="btnRectangle" Content="Rectangle" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="432,35,0,0" VerticalAlignment="Top" Width="75" Click="DrawRectangle"/>
+        <Button Name="btnEllipse" Content="Ellipse" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="432,60,0,0" VerticalAlignment="Top" Width="75" Click="DrawEllipse"/>
+        <Label x:Name="lblMousePosition" Content="Label" HorizontalAlignment="Left" Margin="432,85,0,0" VerticalAlignment="Top" Width="75"/>
+        <Grid Name="Canvas" Margin="0,0,100,0" Cursor="None">
+            <Canvas Background="Green" Name="canvas"/>
+        </Grid>
+        <Grid Name="CrosshairOverlay" Margin="0,0,100,0" Cursor="None" />
+    </Grid>
+</Window>
