@@ -1,0 +1,14 @@
+﻿<Window x:Name="Main" x:Class="Click_the_button.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Click_the_button"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <Label Content="Click the Shunhui" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" MouseLeftButtonDown="Label_MouseLeftButtonDown"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="117,54,0,0" VerticalAlignment="Top" Width="80" Source="pack://siteoforigin:,,,/Resources/11108671_465014147009503_3814363971795144671_n.jpg" MouseEnter="imagejump" MouseLeftButtonDown="image_MouseLeftButtonDown"/>
+
+    </Grid>
+</Window>
