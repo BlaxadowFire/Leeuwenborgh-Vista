@@ -23,15 +23,15 @@ namespace _09.Files_en_IO
                 string strReadWrite = Console.ReadLine();
                 if (strReadWrite == "1")
                 {
-                    Program.funRead();
+                    Program.FunRead();
                 }
                 else if (strReadWrite == "2")
                 {
-                    Program.funWrite();
+                    Program.FunWrite();
                 }
                 else if (strReadWrite == "3")
                 {
-                    Program.funEdit();
+                    Program.FunEdit();
                 }
                 else
                 {
@@ -41,7 +41,7 @@ namespace _09.Files_en_IO
             }
             while (true);
         }
-        public static void funRead()
+        public static void FunRead()
         {
             Console.Clear();
            //Console.WriteLine(File.ReadAllText(strPath + strFile));
@@ -52,7 +52,7 @@ namespace _09.Files_en_IO
             }
             Console.ReadLine();
         }
-        public static void funWrite()
+        public static void FunWrite()
         {
             labWrite:
             Console.Clear();
@@ -87,7 +87,7 @@ namespace _09.Files_en_IO
             */
 
         }
-        public static void funEdit()
+        public static void FunEdit()
         {
             labUserEdit:
             Console.Clear();
