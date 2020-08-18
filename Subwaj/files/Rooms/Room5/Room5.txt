@@ -1,0 +1,11 @@
+﻿                   
+                   
+   ╔════════════╗
+   ║   Room 5   ║
+   ╚════════════╝
+
+1.)    go to hall 7
+2.)    go to hall 6
+3.)    look at walls
+4.)    press big button
+5.)    puzzle

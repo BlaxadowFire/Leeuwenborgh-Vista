@@ -1,0 +1,5 @@
+﻿
+
+Try to activate the levers, so that all the numbers combined, sum up to the answer on the top left.
+
+Goodluck.
