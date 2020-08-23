@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RBGE.Source;
 
 namespace RBGE
 {
@@ -20,9 +21,22 @@ namespace RBGE
     /// </summary>
     public partial class MainWindow : Window
     {
+
+        private Canvas _displayCanvas;
+        private Game _rogueGame;
+
         public MainWindow()
         {
             InitializeComponent();
+            this._displayCanvas = display;
+            this._rogueGame = new Game(this._displayCanvas, this);
+        }
+
+        private void OnSizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            display.Height = e.NewSize.Height - 50;
+            display.Width = e.NewSize.Width - 50;
+            
         }
     }
 }
