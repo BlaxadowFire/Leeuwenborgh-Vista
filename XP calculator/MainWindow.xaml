@@ -1,0 +1,58 @@
+﻿<Window x:Class="XP_calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XP_calculator"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="418.627" Width="525">
+    <Grid>
+        <!--                                       Names                                             -->
+        <Label Content="Maurits" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tom" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
+        <Label Content="Stefan" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top"/>
+        <Label Content="Dennis" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top"/>
+        <Label Content="Julean" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top"/>
+        <Label Content="Nando" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
+        <Label Content="David" HorizontalAlignment="Left" Margin="10,166,0,0" VerticalAlignment="Top"/>
+        <Label Content="Bo" HorizontalAlignment="Left" Margin="10,192,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cedric" HorizontalAlignment="Left" Margin="10,218,0,0" VerticalAlignment="Top"/>
+        <Label Content="Jules" HorizontalAlignment="Left" Margin="10,244,0,0" VerticalAlignment="Top"/>
+        <Label Content="Michael" HorizontalAlignment="Left" Margin="10,270,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mark" HorizontalAlignment="Left" Margin="10,296,0,0" VerticalAlignment="Top"/>
+        <Label Content="Kevin" HorizontalAlignment="Left" Margin="10,322,0,0" VerticalAlignment="Top"/>
+        <Label Content="Shunhui" HorizontalAlignment="Left" Margin="10,348,0,0" VerticalAlignment="Top"/>
+        <!--                                    XP                                                  -->
+        <Label x:Name="lblXP1" Content="0" HorizontalAlignment="Left" Margin="68,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblXP2" Content="0" HorizontalAlignment="Left" Margin="68,36,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblXP3" Content="0" HorizontalAlignment="Left" Margin="68,62,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblXP4" Content="0" HorizontalAlignment="Left" Margin="68,88,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblXP5" Content="0" HorizontalAlignment="Left" Margin="68,114,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblXP6" Content="0" HorizontalAlignment="Left" Margin="68,140,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblXP7" Content="0" HorizontalAlignment="Left" Margin="68,166,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblXP8" Content="0" HorizontalAlignment="Left" Margin="68,192,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblXP9" Content="0" HorizontalAlignment="Left" Margin="68,218,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblXP10" Content="0" HorizontalAlignment="Left" Margin="68,244,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblXP11" Content="0" HorizontalAlignment="Left" Margin="68,270,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblXP12" Content="0" HorizontalAlignment="Left" Margin="68,296,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblXP13" Content="0" HorizontalAlignment="Left" Margin="68,322,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblXP14" Content="0" HorizontalAlignment="Left" Margin="68,348,0,0" VerticalAlignment="Top"/>
+        <!--                                       Give XP Checkbox                                    -->
+        <CheckBox x:Name="cbxXP1" Content="Give XP" HorizontalAlignment="Left" Margin="143,16,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbxXP2" Content="Give XP" HorizontalAlignment="Left" Margin="143,42,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbxXP3" Content="Give XP" HorizontalAlignment="Left" Margin="143,68,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbxXP4" Content="Give XP" HorizontalAlignment="Left" Margin="143,94,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbxXP5" Content="Give XP" HorizontalAlignment="Left" Margin="143,120,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbxXP6" Content="Give XP" HorizontalAlignment="Left" Margin="143,146,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbxXP7" Content="Give XP" HorizontalAlignment="Left" Margin="143,172,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbxXP8" Content="Give XP" HorizontalAlignment="Left" Margin="143,198,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbxXP9" Content="Give XP" HorizontalAlignment="Left" Margin="143,224,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbxXP10" Content="Give XP" HorizontalAlignment="Left" Margin="143,250,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbxXP11" Content="Give XP" HorizontalAlignment="Left" Margin="143,276,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbxXP12" Content="Give XP" HorizontalAlignment="Left" Margin="143,302,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbxXP13" Content="Give XP" HorizontalAlignment="Left" Margin="143,328,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="cbxXP14" Content="Give XP" HorizontalAlignment="Left" Margin="143,354,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbxXP" HorizontalAlignment="Left" Height="23" Margin="311,16,0,0" TextWrapping="Wrap" Text="Enter xp to add" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="329,47,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+    </Grid>
+</Window>
