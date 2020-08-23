@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace XP_calculator.Properties {
+namespace XP_calculator {
     using System;
     
     
@@ -22,24 +22,24 @@ namespace XP_calculator.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources {
+    internal class xpResource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources() {
+        internal xpResource() {
         }
         
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("XP_calculator.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("XP_calculator.xpResource", typeof(xpResource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -51,7 +51,7 @@ namespace XP_calculator.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace XP_calculator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
-        public static string xp1 {
+        internal static string xp1 {
             get {
                 return ResourceManager.GetString("xp1", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace XP_calculator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
-        public static string xp10 {
+        internal static string xp10 {
             get {
                 return ResourceManager.GetString("xp10", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace XP_calculator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
-        public static string xp11 {
+        internal static string xp11 {
             get {
                 return ResourceManager.GetString("xp11", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace XP_calculator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
-        public static string xp12 {
+        internal static string xp12 {
             get {
                 return ResourceManager.GetString("xp12", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace XP_calculator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
-        public static string xp13 {
+        internal static string xp13 {
             get {
                 return ResourceManager.GetString("xp13", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace XP_calculator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
-        public static string xp14 {
+        internal static string xp14 {
             get {
                 return ResourceManager.GetString("xp14", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace XP_calculator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
-        public static string xp2 {
+        internal static string xp2 {
             get {
                 return ResourceManager.GetString("xp2", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace XP_calculator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
-        public static string xp3 {
+        internal static string xp3 {
             get {
                 return ResourceManager.GetString("xp3", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace XP_calculator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
-        public static string xp4 {
+        internal static string xp4 {
             get {
                 return ResourceManager.GetString("xp4", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace XP_calculator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
-        public static string xp5 {
+        internal static string xp5 {
             get {
                 return ResourceManager.GetString("xp5", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace XP_calculator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
-        public static string xp6 {
+        internal static string xp6 {
             get {
                 return ResourceManager.GetString("xp6", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace XP_calculator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
-        public static string xp7 {
+        internal static string xp7 {
             get {
                 return ResourceManager.GetString("xp7", resourceCulture);
             }
@@ -171,7 +171,7 @@ namespace XP_calculator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
-        public static string xp8 {
+        internal static string xp8 {
             get {
                 return ResourceManager.GetString("xp8", resourceCulture);
             }
@@ -180,7 +180,7 @@ namespace XP_calculator.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 0.
         /// </summary>
-        public static string xp9 {
+        internal static string xp9 {
             get {
                 return ResourceManager.GetString("xp9", resourceCulture);
             }
