@@ -7,6 +7,56 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <ScrollBar HorizontalAlignment="Left" Margin="367,96,0,0" VerticalAlignment="Top" Height="181" RenderTransformOrigin="0.5,0.5">
+            <ScrollBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-23.13"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ScrollBar.RenderTransform>
+        </ScrollBar>
+        <ScrollBar HorizontalAlignment="Left" Margin="264,43,0,0" VerticalAlignment="Top" Height="181" RenderTransformOrigin="0.5,0.5">
+            <ScrollBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="41.718"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ScrollBar.RenderTransform>
+        </ScrollBar>
+        <ScrollBar HorizontalAlignment="Left" Margin="171,64,0,0" VerticalAlignment="Top" Height="181"/>
+        <ProgressBar Name="PB1" HorizontalAlignment="Left" Height="12" Margin="57,25,0,0" VerticalAlignment="Top" Width="416"/>
+        <ProgressBar Name="PB2" HorizontalAlignment="Left" Height="12" Margin="57,42,0,0" VerticalAlignment="Top" Width="416"/>
+        <ProgressBar Name="PB3" HorizontalAlignment="Left" Height="12" Margin="57,8,0,0" VerticalAlignment="Top" Width="416"/>
+        <ProgressBar Name="PB4" HorizontalAlignment="Left" Height="12" Margin="57,280,0,0" VerticalAlignment="Top" Width="416"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="26,74,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="26,99,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="26,124,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Slider x:Name="Slider1" HorizontalAlignment="Left" Margin="26,162,0,0" VerticalAlignment="Top" Width="132" ValueChanged="Slider1_ValueChanged"/>
+        <Slider x:Name="Slider2" HorizontalAlignment="Left" Margin="26,207,0,0" VerticalAlignment="Top" Width="132" ValueChanged="Slider2_ValueChanged"/>
+        <Slider x:Name="Slider4" HorizontalAlignment="Left" Margin="381,114,0,0" VerticalAlignment="Top" Width="132" RenderTransformOrigin="0.5,0.5" ValueChanged="Slider4_ValueChanged">
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="117.462"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+        </Slider>
+        <Slider x:Name="Slider3" HorizontalAlignment="Left" Margin="224,227,0,0" VerticalAlignment="Top" Width="132" RenderTransformOrigin="0.5,0.5" ValueChanged="Slider3_ValueChanged">
+            <Slider.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="179.807"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Slider.RenderTransform>
+        </Slider>
+
     </Grid>
 </Window>
