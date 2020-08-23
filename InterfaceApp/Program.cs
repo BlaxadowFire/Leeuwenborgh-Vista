@@ -10,6 +10,22 @@ namespace InterfaceApp
     {
         static void Main(string[] args)
         {
+            Computer computer = new Computer();
+            Phone phone = new Phone();
+            Devices(computer);
+            Devices(phone);
+            Console.ReadLine();
         }
+
+        public static void Devices(IDevice device)
+        {
+            Console.WriteLine("\r\n\r\nName:");
+            Console.WriteLine(device.Name());
+            Console.WriteLine("\r\nNIC:");
+            Console.WriteLine(device.NIC());
+            Console.WriteLine("\r\nTYPE:");
+            Console.WriteLine(device.Type());
+        }
+
     }
 }
