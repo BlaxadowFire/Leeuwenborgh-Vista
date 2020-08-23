@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace colortest
 {
@@ -10,6 +11,13 @@ namespace colortest
     {
         static void Main(string[] args)
         {
+            foreach (int i in ConsoleColor)
+            {
+                Console.Clear();
+                Console.BackgroundColor = ConsoleColor[i];
+                Thread.Sleep(500);
+            }
+            Console.ReadLine();
         }
     }
 }
