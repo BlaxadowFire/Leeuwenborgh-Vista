@@ -7,6 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        
+        <TextBox Name="SummonerNameTxtBox" HorizontalAlignment="Left" Height="23" Margin="31,41,0,0" TextWrapping="Wrap" Text="summoner name" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="167,41,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="Button_Click"/>
+        <ComboBox Name="RegionCBox" HorizontalAlignment="Left" Margin="31,69,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem>br</ComboBoxItem>
+            <ComboBoxItem>eune</ComboBoxItem>
+            <ComboBoxItem>euw</ComboBoxItem>
+            <ComboBoxItem>global</ComboBoxItem>
+            <ComboBoxItem>jp</ComboBoxItem>
+            <ComboBoxItem>kr</ComboBoxItem>
+            <ComboBoxItem>lan</ComboBoxItem>
+            <ComboBoxItem>las</ComboBoxItem>
+            <ComboBoxItem>na</ComboBoxItem>
+            <ComboBoxItem>oce</ComboBoxItem>
+            <ComboBoxItem>ru</ComboBoxItem>
+            <ComboBoxItem>tr</ComboBoxItem>
+        </ComboBox>
+
     </Grid>
 </Window>
