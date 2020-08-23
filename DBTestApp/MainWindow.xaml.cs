@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace DBTestApp
 {
@@ -20,9 +23,27 @@ namespace DBTestApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        ConsoleDataSet DataSource = new ConsoleDataSet();
+        public string strConnection = ConfigurationManager.ConnectionStrings["MyConnection"].ConnectionString;
+        public string CmdString = string.Empty;
+
         public MainWindow()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        public void LoadData()
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(strConnection))
+            {
+                CmdString = "SELECT * FROM Games";
+                SqlCommand cmd = new SqlCommand(CmdString, sqlConnection);
+                SqlDataAdapter sda = new SqlDataAdapter(cmd);
+                DataTable dt = DataSource.Tables["Games"];
+                sda.Fill(dt);
+                Data.ItemsSource = dt.DefaultView;
+            };
         }
     }
 }
