@@ -1,0 +1,13 @@
+﻿                    
+                   
+                               ╔════════════╗
+                               ║ NOT A MENU ║
+                               ╚════════════╝
+
+1.)    back to Not game
+2.)    show map
+3.)    Help
+4.)    Options
+5.)    back to main menu
+6.)    code
+0.)    Exit Not game

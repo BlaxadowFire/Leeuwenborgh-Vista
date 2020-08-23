@@ -1,0 +1,31 @@
+﻿<Window x:Class="WindowMenu.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WindowMenu"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.CommandBindings>
+        <CommandBinding Command="New" CanExecute="NewCommand_CanExecute" Executed="NewCommand_Executed" />
+    </Window.CommandBindings>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Command="New" />
+                <Separator />
+                <MenuItem Header="_Exit" Click="OnExit" />
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Command="Cut" />
+                <MenuItem Command="Copy" />
+                <MenuItem Command="Paste" />
+            </MenuItem>
+            <MenuItem Header="_Navigate">
+                <MenuItem Header="_Home" Click="GoToHomePage"  />
+                <MenuItem Header="_About" Click="GoToAboutPage"  />
+            </MenuItem>
+        </Menu>
+        <Frame x:Name="_NavigationFrame" NavigationUIVisibility="Hidden" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+    </DockPanel>
+</Window>

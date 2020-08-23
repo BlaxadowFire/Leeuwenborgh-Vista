@@ -1,0 +1,9 @@
+﻿  
+  
+   ╔════════════╗
+   ║   Hall 3   ║                   
+   ╚════════════╝
+
+1.)    go to Shop
+2.)    go to room 3
+3.)    look at walls

@@ -1,0 +1,12 @@
+﻿                   
+                   
+   ╔════════════╗
+   ║   Room 3   ║
+   ╚════════════╝
+
+1.)    go to hall 4
+2.)    go to hall 2
+3.)    look at walls
+4.)    press big button
+5.)    puzzle
+6.)    go to hall 3
