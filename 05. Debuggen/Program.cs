@@ -14,7 +14,7 @@ namespace _05.Debuggen
         
         static void Main(string[] args)
         {
-            int[] array = new int[5];
+            int[] array = new int[6];
             for (int i = 0; i <= 5; i++)
             {
                 Console.WriteLine(array[i]);
