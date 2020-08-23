@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello_user">Hello %1$s </string>
+    <string name="enter_your_name">Enter your name</string>
+    <string name="set_name">Set Name</string>
+    <string name="reset_name">Reset Name</string>
+</resources>
